@@ -1,5 +1,4 @@
-ResCon
-======
+###ResCon
 
 Author: Manavalan Gajapathy, Joseph D. Ng, University of Alabama in Huntsville
 Licensed under GNU Lesser General Public License
