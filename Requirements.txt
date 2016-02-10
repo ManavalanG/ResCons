@@ -1,0 +1,7 @@
+Following are the Requirements to run ResCon script:
+- Python 2.7
+- Module Biopython 1.63
+
+Optional:
+- Local installation of Clustal omega
+- Module ‘natsort’
