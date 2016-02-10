@@ -47,7 +47,7 @@ import csv
 import operator
 from math import log as math_log
 import StringIO
-from importmodul import clustalo_api
+from clustalo_embl_api import clustalo_api
 
 terminal_output = False			# to show or not to show error/info in the terminal
 # terminal_output = True
