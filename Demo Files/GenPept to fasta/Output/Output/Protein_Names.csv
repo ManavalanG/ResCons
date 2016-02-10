@@ -1,0 +1,11 @@
+Data below is obtained from fasta file:  "/Users/Mana/Desktop/Demo Files/GenPept to fasta/Output/genbank_to_Fasta_formatted.fasta"
+Total number of sequences present in fasta file:  6
+Number of unique names present among them:  4
+
+### Following are the unique names extracted: ###
+
+ Name, Count
+inorganic pyrophosphatase,3
+nucleosome remodeling factor - 38kD_$ isoform C,1
+nucleosome remodeling factor - 38kD_$ isoform B,1
+nucleosome remodeling factor - 38kD_$ isoform A,1

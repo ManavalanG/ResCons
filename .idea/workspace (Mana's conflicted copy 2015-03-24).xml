@@ -1,0 +1,698 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="ChangeListManager">
+    <list default="true" id="faf117c2-6ac5-4e02-b07e-e68c84d0d725" name="Default" comment="" />
+    <ignored path="ResCons.iws" />
+    <ignored path=".idea/workspace.xml" />
+    <option name="TRACKING_ENABLED" value="true" />
+    <option name="SHOW_DIALOG" value="false" />
+    <option name="HIGHLIGHT_CONFLICTS" value="true" />
+    <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
+    <option name="LAST_RESOLUTION" value="IGNORE" />
+  </component>
+  <component name="ChangesViewManager" flattened_view="true" show_ignored="false" />
+  <component name="CreatePatchCommitExecutor">
+    <option name="PATCH_PATH" value="" />
+  </component>
+  <component name="DaemonCodeAnalyzer">
+    <disable_hints />
+  </component>
+  <component name="ExecutionTargetManager" SELECTED_TARGET="default_target" />
+  <component name="FavoritesManager">
+    <favorites_list name="ResCons" />
+  </component>
+  <component name="FileEditorManager">
+    <leaf>
+      <file leaf-file-name="Ver17_ResCon.py" pinned="false" current="true" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/Ver17_ResCon.py">
+          <provider selected="true" editor-type-id="text-editor">
+            <state line="49" column="14" selection-start="1740" selection-end="1740" vertical-scroll-proportion="-0.35714287" vertical-offset="570" max-vertical-offset="19470">
+              <folding>
+                <element signature="e#22#788#1" expanded="false" />
+                <element signature="e#4764#5976#0" expanded="false" />
+                <element signature="e#6039#6180#0" expanded="false" />
+                <element signature="e#6397#7069#0" expanded="false" />
+                <element signature="e#7335#8678#0" expanded="false" />
+                <element signature="e#8777#8896#0" expanded="false" />
+                <element signature="e#9409#9613#0" expanded="false" />
+                <element signature="e#9718#9828#0" expanded="false" />
+                <element signature="e#10007#18277#0" expanded="false" />
+                <element signature="e#10528#11060#0" expanded="false" />
+                <element signature="e#10562#10620#0" expanded="false" />
+                <element signature="e#10654#10750#0" expanded="false" />
+                <element signature="e#18463#36265#0" expanded="false" />
+                <element signature="e#36420#44369#0" expanded="false" />
+                <element signature="e#44519#50862#0" expanded="false" />
+                <element signature="e#51039#59086#0" expanded="false" />
+                <element signature="e#59282#65437#0" expanded="false" />
+                <element signature="e#81516#87145#0" expanded="false" />
+                <element signature="e#87252#87472#0" expanded="false" />
+                <element signature="e#87512#87516#0" expanded="false" />
+                <element signature="e#87625#87697#0" expanded="false" />
+                <element signature="e#87841#88237#0" expanded="false" />
+                <element signature="e#88335#88476#0" expanded="false" />
+                <element signature="e#88577#88714#0" expanded="false" />
+                <element signature="e#88817#88961#0" expanded="false" />
+                <element signature="e#89099#89279#0" expanded="false" />
+                <element signature="e#89458#89791#0" expanded="false" />
+                <element signature="e#89887#90070#0" expanded="false" />
+                <element signature="e#90209#91249#0" expanded="false" />
+                <element signature="e#91352#91546#0" expanded="false" />
+                <element signature="e#91651#92000#0" expanded="false" />
+                <element signature="e#92066#96484#0" expanded="false" />
+                <element signature="e#96591#98123#0" expanded="false" />
+                <element signature="e#115108#115696#0" expanded="false" />
+                <element signature="e#115726#116315#0" expanded="false" />
+                <element signature="e#129078#129226#0" expanded="false" />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="test.py" pinned="false" current="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/test.py">
+          <provider selected="true" editor-type-id="text-editor">
+            <state line="0" column="0" selection-start="0" selection-end="119" vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="150">
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+    </leaf>
+  </component>
+  <component name="FindManager">
+    <FindUsagesManager>
+      <setting name="OPEN_NEW_TAB" value="false" />
+    </FindUsagesManager>
+  </component>
+  <component name="IdeDocumentHistory">
+    <option name="changedFiles">
+      <list>
+        <option value="$PROJECT_DIR$/2_Log_stderr_rescons.txt" />
+        <option value="$PROJECT_DIR$/family I/pos_Ecoli.txt" />
+        <option value="$PROJECT_DIR$/Extract clades script/extract_subtree_seqs.py" />
+        <option value="$PROJECT_DIR$/Family II IPPases/Active site notes.txt" />
+        <option value="$PROJECT_DIR$/470/pos_yeast.txt" />
+        <option value="$PROJECT_DIR$/Ver_11_ResCons copy.py" />
+        <option value="$PROJECT_DIR$/test_unit/genpept to fasta.py" />
+        <option value="$PROJECT_DIR$/Ver_11_ResCons - Copy_2.py" />
+        <option value="$PROJECT_DIR$/Get_Title.py" />
+        <option value="$PROJECT_DIR$/Get_Title_from_fasta_file.py" />
+        <option value="$PROJECT_DIR$/test_unit/test.py" />
+        <option value="$PROJECT_DIR$/Ver_11_ResCons.py" />
+        <option value="$PROJECT_DIR$/Ver_12_ResCons.py" />
+        <option value="$PROJECT_DIR$/html_formatting_table.py" />
+        <option value="$PROJECT_DIR$/Ver_14_ResCons.py" />
+        <option value="$PROJECT_DIR$/test_threading.py" />
+        <option value="$PROJECT_DIR$/Ver_13_ResCons.py" />
+        <option value="$PROJECT_DIR$/Ver_14_threading_ResCons.py" />
+        <option value="$PROJECT_DIR$/Log_stderr_rescons.txt" />
+        <option value="$PROJECT_DIR$/Ver_15_ResCons_thread_safe.py" />
+        <option value="$PROJECT_DIR$/Ver_14_ResCons_thread_safe.py" />
+        <option value="$PROJECT_DIR$/Ver_15_ResCons.py" />
+        <option value="$PROJECT_DIR$/Logs_ResCon.txt" />
+        <option value="$PROJECT_DIR$/Ver_16_ResCons.py" />
+        <option value="$PROJECT_DIR$/Ver16_ResCon.py" />
+        <option value="$PROJECT_DIR$/test.py" />
+        <option value="$PROJECT_DIR$/Ver17_ResCon.py" />
+      </list>
+    </option>
+  </component>
+  <component name="ProjectFrameBounds">
+    <option name="x" value="370" />
+    <option name="y" value="71" />
+    <option name="width" value="1382" />
+    <option name="height" value="914" />
+  </component>
+  <component name="ProjectLevelVcsManager" settingsEditedManually="false">
+    <OptionsSetting value="true" id="Add" />
+    <OptionsSetting value="true" id="Remove" />
+    <OptionsSetting value="true" id="Checkout" />
+    <OptionsSetting value="true" id="Update" />
+    <OptionsSetting value="true" id="Status" />
+    <OptionsSetting value="true" id="Edit" />
+    <ConfirmationsSetting value="0" id="Add" />
+    <ConfirmationsSetting value="0" id="Remove" />
+  </component>
+  <component name="ProjectReloadState">
+    <option name="STATE" value="0" />
+  </component>
+  <component name="ProjectView">
+    <navigator currentView="ProjectPane" proportions="" version="1" splitterProportion="0.5">
+      <flattenPackages />
+      <showMembers />
+      <showModules />
+      <showLibraryContents />
+      <hideEmptyPackages />
+      <abbreviatePackageNames />
+      <autoscrollToSource />
+      <autoscrollFromSource />
+      <sortByType />
+    </navigator>
+    <panes>
+      <pane id="ProjectPane">
+        <subPane>
+          <PATH>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="ResCons" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
+            </PATH_ELEMENT>
+          </PATH>
+          <PATH>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="ResCons" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="ResCons" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+          </PATH>
+        </subPane>
+      </pane>
+      <pane id="Scope" />
+    </panes>
+  </component>
+  <component name="PropertiesComponent">
+    <property name="last_opened_file_path" value="$PROJECT_DIR$" />
+    <property name="options.lastSelected" value="com.jetbrains.python.configuration.PyActiveSdkModuleConfigurable" />
+    <property name="options.splitter.main.proportions" value="0.3" />
+    <property name="options.splitter.details.proportions" value="0.2" />
+    <property name="options.searchVisible" value="true" />
+    <property name="SearchEverywhereHistory" value="" />
+    <property name="recentsLimit" value="5" />
+    <property name="FullScreen" value="false" />
+  </component>
+  <component name="PyConsoleOptionsProvider">
+    <option name="myPythonConsoleState">
+      <console-settings />
+    </option>
+  </component>
+  <component name="RecentsManager">
+    <key name="CopyFile.RECENT_KEYS">
+      <recent name="C:\Users\Mana\Dropbox\ResCons" />
+      <recent name="$PROJECT_DIR$" />
+    </key>
+  </component>
+  <component name="RunManager" selected="Python.test">
+    <configuration default="false" name="Ver_15_ResCons" type="PythonConfigurationType" factoryName="Python" temporary="true">
+      <option name="INTERPRETER_OPTIONS" value="" />
+      <option name="PARENT_ENVS" value="true" />
+      <envs>
+        <env name="PYTHONUNBUFFERED" value="1" />
+      </envs>
+      <option name="SDK_HOME" value="" />
+      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$" />
+      <option name="IS_MODULE_SDK" value="true" />
+      <option name="ADD_CONTENT_ROOTS" value="true" />
+      <option name="ADD_SOURCE_ROOTS" value="true" />
+      <module name="ResCons" />
+      <option name="SCRIPT_NAME" value="$PROJECT_DIR$/Ver_15_ResCons.py" />
+      <option name="PARAMETERS" value="" />
+      <RunnerSettings RunnerId="PythonRunner" />
+      <ConfigurationWrapper RunnerId="PythonRunner" />
+      <method />
+    </configuration>
+    <configuration default="false" name="test" type="PythonConfigurationType" factoryName="Python" temporary="true">
+      <option name="INTERPRETER_OPTIONS" value="" />
+      <option name="PARENT_ENVS" value="true" />
+      <envs>
+        <env name="PYTHONUNBUFFERED" value="1" />
+      </envs>
+      <option name="SDK_HOME" value="" />
+      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$" />
+      <option name="IS_MODULE_SDK" value="true" />
+      <option name="ADD_CONTENT_ROOTS" value="true" />
+      <option name="ADD_SOURCE_ROOTS" value="true" />
+      <module name="ResCons" />
+      <option name="SCRIPT_NAME" value="$PROJECT_DIR$/test.py" />
+      <option name="PARAMETERS" value="" />
+      <RunnerSettings RunnerId="PythonRunner" />
+      <ConfigurationWrapper RunnerId="PythonRunner" />
+      <method />
+    </configuration>
+    <configuration default="false" name="Ver_16_ResCons" type="PythonConfigurationType" factoryName="Python" temporary="true">
+      <option name="INTERPRETER_OPTIONS" value="" />
+      <option name="PARENT_ENVS" value="true" />
+      <envs>
+        <env name="PYTHONUNBUFFERED" value="1" />
+      </envs>
+      <option name="SDK_HOME" value="C:\Python27\python.exe" />
+      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$" />
+      <option name="IS_MODULE_SDK" value="false" />
+      <option name="ADD_CONTENT_ROOTS" value="true" />
+      <option name="ADD_SOURCE_ROOTS" value="true" />
+      <module name="ResCons" />
+      <option name="SCRIPT_NAME" value="$PROJECT_DIR$/Ver_16_ResCons.py" />
+      <option name="PARAMETERS" value="" />
+      <RunnerSettings RunnerId="PythonRunner" />
+      <ConfigurationWrapper RunnerId="PythonRunner" />
+      <method />
+    </configuration>
+    <configuration default="false" name="Ver16_ResCon" type="PythonConfigurationType" factoryName="Python" temporary="true">
+      <option name="INTERPRETER_OPTIONS" value="" />
+      <option name="PARENT_ENVS" value="true" />
+      <envs>
+        <env name="PYTHONUNBUFFERED" value="1" />
+      </envs>
+      <option name="SDK_HOME" value="" />
+      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$" />
+      <option name="IS_MODULE_SDK" value="true" />
+      <option name="ADD_CONTENT_ROOTS" value="true" />
+      <option name="ADD_SOURCE_ROOTS" value="true" />
+      <module name="ResCons" />
+      <option name="SCRIPT_NAME" value="$PROJECT_DIR$/Ver16_ResCon.py" />
+      <option name="PARAMETERS" value="" />
+      <RunnerSettings RunnerId="PythonRunner" />
+      <ConfigurationWrapper RunnerId="PythonRunner" />
+      <method />
+    </configuration>
+    <configuration default="false" name="Ver17_ResCon" type="PythonConfigurationType" factoryName="Python" temporary="true">
+      <option name="INTERPRETER_OPTIONS" value="" />
+      <option name="PARENT_ENVS" value="true" />
+      <envs>
+        <env name="PYTHONUNBUFFERED" value="1" />
+      </envs>
+      <option name="SDK_HOME" value="" />
+      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$" />
+      <option name="IS_MODULE_SDK" value="true" />
+      <option name="ADD_CONTENT_ROOTS" value="true" />
+      <option name="ADD_SOURCE_ROOTS" value="true" />
+      <module name="ResCons" />
+      <option name="SCRIPT_NAME" value="$PROJECT_DIR$/Ver17_ResCon.py" />
+      <option name="PARAMETERS" value="" />
+      <RunnerSettings RunnerId="PythonRunner" />
+      <ConfigurationWrapper RunnerId="PythonRunner" />
+      <method />
+    </configuration>
+    <configuration default="true" type="tests" factoryName="py.test">
+      <option name="INTERPRETER_OPTIONS" value="" />
+      <option name="PARENT_ENVS" value="true" />
+      <envs />
+      <option name="SDK_HOME" value="" />
+      <option name="WORKING_DIRECTORY" value="" />
+      <option name="IS_MODULE_SDK" value="false" />
+      <option name="ADD_CONTENT_ROOTS" value="true" />
+      <option name="ADD_SOURCE_ROOTS" value="true" />
+      <module name="ResCons" />
+      <option name="SCRIPT_NAME" value="" />
+      <option name="CLASS_NAME" value="" />
+      <option name="METHOD_NAME" value="" />
+      <option name="FOLDER_NAME" value="" />
+      <option name="TEST_TYPE" value="TEST_SCRIPT" />
+      <option name="PATTERN" value="" />
+      <option name="USE_PATTERN" value="false" />
+      <option name="testToRun" value="" />
+      <option name="keywords" value="" />
+      <option name="params" value="" />
+      <option name="USE_PARAM" value="false" />
+      <option name="USE_KEYWORD" value="false" />
+      <method />
+    </configuration>
+    <configuration default="true" type="tests" factoryName="Nosetests">
+      <option name="INTERPRETER_OPTIONS" value="" />
+      <option name="PARENT_ENVS" value="true" />
+      <envs />
+      <option name="SDK_HOME" value="" />
+      <option name="WORKING_DIRECTORY" value="" />
+      <option name="IS_MODULE_SDK" value="false" />
+      <option name="ADD_CONTENT_ROOTS" value="true" />
+      <option name="ADD_SOURCE_ROOTS" value="true" />
+      <module name="ResCons" />
+      <option name="SCRIPT_NAME" value="" />
+      <option name="CLASS_NAME" value="" />
+      <option name="METHOD_NAME" value="" />
+      <option name="FOLDER_NAME" value="" />
+      <option name="TEST_TYPE" value="TEST_SCRIPT" />
+      <option name="PATTERN" value="" />
+      <option name="USE_PATTERN" value="false" />
+      <option name="PARAMS" value="" />
+      <option name="USE_PARAM" value="false" />
+      <method />
+    </configuration>
+    <configuration default="true" type="PythonConfigurationType" factoryName="Python">
+      <option name="INTERPRETER_OPTIONS" value="" />
+      <option name="PARENT_ENVS" value="true" />
+      <envs>
+        <env name="PYTHONUNBUFFERED" value="1" />
+      </envs>
+      <option name="SDK_HOME" value="" />
+      <option name="WORKING_DIRECTORY" value="" />
+      <option name="IS_MODULE_SDK" value="false" />
+      <option name="ADD_CONTENT_ROOTS" value="true" />
+      <option name="ADD_SOURCE_ROOTS" value="true" />
+      <module name="ResCons" />
+      <option name="SCRIPT_NAME" value="" />
+      <option name="PARAMETERS" value="" />
+      <method />
+    </configuration>
+    <configuration default="true" type="tests" factoryName="Unittests">
+      <option name="INTERPRETER_OPTIONS" value="" />
+      <option name="PARENT_ENVS" value="true" />
+      <envs />
+      <option name="SDK_HOME" value="" />
+      <option name="WORKING_DIRECTORY" value="" />
+      <option name="IS_MODULE_SDK" value="false" />
+      <option name="ADD_CONTENT_ROOTS" value="true" />
+      <option name="ADD_SOURCE_ROOTS" value="true" />
+      <module name="ResCons" />
+      <option name="SCRIPT_NAME" value="" />
+      <option name="CLASS_NAME" value="" />
+      <option name="METHOD_NAME" value="" />
+      <option name="FOLDER_NAME" value="" />
+      <option name="TEST_TYPE" value="TEST_SCRIPT" />
+      <option name="PATTERN" value="" />
+      <option name="USE_PATTERN" value="false" />
+      <option name="PUREUNITTEST" value="true" />
+      <option name="PARAMS" value="" />
+      <option name="USE_PARAM" value="false" />
+      <method />
+    </configuration>
+    <configuration default="true" type="tests" factoryName="Doctests">
+      <option name="INTERPRETER_OPTIONS" value="" />
+      <option name="PARENT_ENVS" value="true" />
+      <envs />
+      <option name="SDK_HOME" value="" />
+      <option name="WORKING_DIRECTORY" value="" />
+      <option name="IS_MODULE_SDK" value="false" />
+      <option name="ADD_CONTENT_ROOTS" value="true" />
+      <option name="ADD_SOURCE_ROOTS" value="true" />
+      <module name="ResCons" />
+      <option name="SCRIPT_NAME" value="" />
+      <option name="CLASS_NAME" value="" />
+      <option name="METHOD_NAME" value="" />
+      <option name="FOLDER_NAME" value="" />
+      <option name="TEST_TYPE" value="TEST_SCRIPT" />
+      <option name="PATTERN" value="" />
+      <option name="USE_PATTERN" value="false" />
+      <method />
+    </configuration>
+    <configuration default="true" type="tests" factoryName="Attests">
+      <option name="INTERPRETER_OPTIONS" value="" />
+      <option name="PARENT_ENVS" value="true" />
+      <envs />
+      <option name="SDK_HOME" value="" />
+      <option name="WORKING_DIRECTORY" value="" />
+      <option name="IS_MODULE_SDK" value="false" />
+      <option name="ADD_CONTENT_ROOTS" value="true" />
+      <option name="ADD_SOURCE_ROOTS" value="true" />
+      <module name="ResCons" />
+      <option name="SCRIPT_NAME" value="" />
+      <option name="CLASS_NAME" value="" />
+      <option name="METHOD_NAME" value="" />
+      <option name="FOLDER_NAME" value="" />
+      <option name="TEST_TYPE" value="TEST_SCRIPT" />
+      <option name="PATTERN" value="" />
+      <option name="USE_PATTERN" value="false" />
+      <method />
+    </configuration>
+    <list size="5">
+      <item index="0" class="java.lang.String" itemvalue="Python.Ver_15_ResCons" />
+      <item index="1" class="java.lang.String" itemvalue="Python.test" />
+      <item index="2" class="java.lang.String" itemvalue="Python.Ver_16_ResCons" />
+      <item index="3" class="java.lang.String" itemvalue="Python.Ver16_ResCon" />
+      <item index="4" class="java.lang.String" itemvalue="Python.Ver17_ResCon" />
+    </list>
+    <recent_temporary>
+      <list size="5">
+        <item index="0" class="java.lang.String" itemvalue="Python.Ver17_ResCon" />
+        <item index="1" class="java.lang.String" itemvalue="Python.test" />
+        <item index="2" class="java.lang.String" itemvalue="Python.Ver16_ResCon" />
+        <item index="3" class="java.lang.String" itemvalue="Python.Ver_16_ResCons" />
+        <item index="4" class="java.lang.String" itemvalue="Python.Ver_15_ResCons" />
+      </list>
+    </recent_temporary>
+  </component>
+  <component name="ShelveChangesManager" show_recycled="false" />
+  <component name="SvnConfiguration">
+    <configuration />
+  </component>
+  <component name="TaskManager">
+    <task active="true" id="Default" summary="Default task">
+      <changelist id="faf117c2-6ac5-4e02-b07e-e68c84d0d725" name="Default" comment="" />
+      <created>1423694648429</created>
+      <updated>1423694648429</updated>
+    </task>
+    <servers />
+  </component>
+  <component name="ToolWindowManager">
+    <frame x="370" y="71" width="1382" height="914" extended-state="0" />
+    <editor active="false" />
+    <layout>
+      <window_info id="Changes" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
+      <window_info id="Terminal" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="10" side_tool="false" content_ui="tabs" />
+      <window_info id="TODO" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
+      <window_info id="Structure" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.25" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
+      <window_info id="Project" active="true" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.18442322" sideWeight="0.49938348" order="0" side_tool="false" content_ui="combo" />
+      <window_info id="Debug" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.4" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
+      <window_info id="Favorites" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.20940486" sideWeight="0.50061655" order="2" side_tool="true" content_ui="tabs" />
+      <window_info id="Event Log" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.22519685" sideWeight="0.5" order="8" side_tool="true" content_ui="tabs" />
+      <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.19464721" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
+      <window_info id="Version Control" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="9" side_tool="false" content_ui="tabs" />
+      <window_info id="Cvs" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.25" sideWeight="0.5" order="4" side_tool="false" content_ui="tabs" />
+      <window_info id="Message" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
+      <window_info id="Ant Build" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.25" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
+      <window_info id="Find" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.32913387" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
+      <window_info id="Commander" active="false" anchor="right" auto_hide="false" internal_type="SLIDING" type="SLIDING" visible="false" weight="0.4" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
+      <window_info id="Hierarchy" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.25" sideWeight="0.5" order="2" side_tool="false" content_ui="combo" />
+      <window_info id="Inspection" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.4" sideWeight="0.5" order="5" side_tool="false" content_ui="tabs" />
+    </layout>
+  </component>
+  <component name="Vcs.Log.UiProperties">
+    <option name="RECENTLY_FILTERED_USER_GROUPS">
+      <collection />
+    </option>
+  </component>
+  <component name="VcsContentAnnotationSettings">
+    <option name="myLimit" value="2678400000" />
+  </component>
+  <component name="VcsManagerConfiguration">
+    <option name="myTodoPanelSettings">
+      <TodoPanelSettings />
+    </option>
+  </component>
+  <component name="XDebuggerManager">
+    <breakpoint-manager>
+      <option name="time" value="12" />
+    </breakpoint-manager>
+  </component>
+  <component name="editorHistoryManager">
+    <entry file="file://$PROJECT_DIR$/Ver17_ResCon.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="49" column="14" selection-start="1740" selection-end="1740" vertical-scroll-proportion="0.0" vertical-offset="570" max-vertical-offset="19470">
+          <folding>
+            <element signature="e#22#788#1" expanded="false" />
+            <element signature="e#4764#5976#0" expanded="false" />
+            <element signature="e#6039#6180#0" expanded="false" />
+            <element signature="e#6397#7069#0" expanded="false" />
+            <element signature="e#7335#8678#0" expanded="false" />
+            <element signature="e#8777#8896#0" expanded="false" />
+            <element signature="e#9409#9613#0" expanded="false" />
+            <element signature="e#9718#9828#0" expanded="false" />
+            <element signature="e#10007#18277#0" expanded="false" />
+            <element signature="e#10528#11060#0" expanded="false" />
+            <element signature="e#10562#10620#0" expanded="false" />
+            <element signature="e#10654#10750#0" expanded="false" />
+            <element signature="e#18463#36265#0" expanded="false" />
+            <element signature="e#36420#44369#0" expanded="false" />
+            <element signature="e#44519#50862#0" expanded="false" />
+            <element signature="e#51039#59086#0" expanded="false" />
+            <element signature="e#59282#65437#0" expanded="false" />
+            <element signature="e#81516#87145#0" expanded="false" />
+            <element signature="e#87252#87472#0" expanded="false" />
+            <element signature="e#87512#87516#0" expanded="false" />
+            <element signature="e#87625#87697#0" expanded="false" />
+            <element signature="e#87841#88237#0" expanded="false" />
+            <element signature="e#88335#88476#0" expanded="false" />
+            <element signature="e#88577#88714#0" expanded="false" />
+            <element signature="e#88817#88961#0" expanded="false" />
+            <element signature="e#89099#89279#0" expanded="false" />
+            <element signature="e#89458#89791#0" expanded="false" />
+            <element signature="e#89887#90070#0" expanded="false" />
+            <element signature="e#90209#91249#0" expanded="false" />
+            <element signature="e#91352#91546#0" expanded="false" />
+            <element signature="e#91651#92000#0" expanded="false" />
+            <element signature="e#92066#96484#0" expanded="false" />
+            <element signature="e#96591#98123#0" expanded="false" />
+            <element signature="e#115108#115696#0" expanded="false" />
+            <element signature="e#115726#116315#0" expanded="false" />
+            <element signature="e#129078#129226#0" expanded="false" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/test.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="0" column="0" selection-start="0" selection-end="119" vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="150">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/Ver17_ResCon.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="0" column="0" selection-start="0" selection-end="0" vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="0">
+          <folding>
+            <element signature="e#22#788#1" expanded="false" />
+            <element signature="e#4764#5976#0" expanded="false" />
+            <element signature="e#6039#6180#0" expanded="false" />
+            <element signature="e#6397#7069#0" expanded="false" />
+            <element signature="e#7335#8678#0" expanded="false" />
+            <element signature="e#8777#8896#0" expanded="false" />
+            <element signature="e#9409#9613#0" expanded="false" />
+            <element signature="e#9718#9828#0" expanded="false" />
+            <element signature="e#10007#18277#0" expanded="false" />
+            <element signature="e#10528#11060#0" expanded="false" />
+            <element signature="e#10562#10620#0" expanded="false" />
+            <element signature="e#10654#10750#0" expanded="false" />
+            <element signature="e#18463#36265#0" expanded="false" />
+            <element signature="e#36420#44369#0" expanded="false" />
+            <element signature="e#44519#50862#0" expanded="false" />
+            <element signature="e#51039#59086#0" expanded="false" />
+            <element signature="e#59282#65437#0" expanded="false" />
+            <element signature="e#81516#87145#0" expanded="false" />
+            <element signature="e#87252#87472#0" expanded="false" />
+            <element signature="e#87512#87516#0" expanded="false" />
+            <element signature="e#87625#87697#0" expanded="false" />
+            <element signature="e#87841#88237#0" expanded="false" />
+            <element signature="e#88335#88476#0" expanded="false" />
+            <element signature="e#88577#88714#0" expanded="false" />
+            <element signature="e#88817#88961#0" expanded="false" />
+            <element signature="e#89099#89279#0" expanded="false" />
+            <element signature="e#89458#89791#0" expanded="false" />
+            <element signature="e#89887#90070#0" expanded="false" />
+            <element signature="e#90209#91249#0" expanded="false" />
+            <element signature="e#91352#91546#0" expanded="false" />
+            <element signature="e#91651#92000#0" expanded="false" />
+            <element signature="e#92066#96484#0" expanded="false" />
+            <element signature="e#96591#98123#0" expanded="false" />
+            <element signature="e#115108#115696#0" expanded="false" />
+            <element signature="e#115726#116315#0" expanded="false" />
+            <element signature="e#129078#129226#0" expanded="false" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/Ver16_ResCon.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="0" column="0" selection-start="0" selection-end="0" vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="0" />
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/470/pos_Ecoli.txt">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="0" column="0" selection-start="0" selection-end="0" vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="0" />
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/470/pos_yeast.txt">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="0" column="0" selection-start="0" selection-end="0" vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="0" />
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/470/pos_Ecoli.txt">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="0" column="0" selection-start="0" selection-end="0" vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="0" />
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/470/pos_yeast.txt">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="0" column="0" selection-start="0" selection-end="0" vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="0" />
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/470/pos_Ecoli.txt">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="0" column="0" selection-start="0" selection-end="0" vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="0" />
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/family I/pos_Ecoli.txt">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="0" column="0" selection-start="0" selection-end="0" vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="0" />
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/470/Template_Ecoli_IPPase.fasta">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="0" column="0" selection-start="0" selection-end="0" vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="0" />
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/470/pos_yeast.txt">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="0" column="0" selection-start="0" selection-end="0" vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="0" />
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/470/pos_Ecoli.txt">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="0" column="0" selection-start="0" selection-end="0" vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="0" />
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/Logs_ResCon.txt">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="0" column="0" selection-start="0" selection-end="0" vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="0" />
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/seqs.fasta">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="0" column="0" selection-start="0" selection-end="0" vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="0" />
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/Ver16_ResCon.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="0" column="0" selection-start="0" selection-end="0" vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="0" />
+      </provider>
+    </entry>
+    <entry file="file:///Library/Frameworks/Python.framework/Versions/2.7/lib/python2.7/os.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="156" column="0" selection-start="4248" selection-end="4248" vertical-scroll-proportion="0.0" vertical-offset="1814" max-vertical-offset="11220" />
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/test.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="0" column="0" selection-start="0" selection-end="119" vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="150">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/Ver17_ResCon.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="49" column="14" selection-start="1740" selection-end="1740" vertical-scroll-proportion="-0.35714287" vertical-offset="570" max-vertical-offset="19470">
+          <folding>
+            <element signature="e#22#788#1" expanded="false" />
+            <element signature="e#4764#5976#0" expanded="false" />
+            <element signature="e#6039#6180#0" expanded="false" />
+            <element signature="e#6397#7069#0" expanded="false" />
+            <element signature="e#7335#8678#0" expanded="false" />
+            <element signature="e#8777#8896#0" expanded="false" />
+            <element signature="e#9409#9613#0" expanded="false" />
+            <element signature="e#9718#9828#0" expanded="false" />
+            <element signature="e#10007#18277#0" expanded="false" />
+            <element signature="e#10528#11060#0" expanded="false" />
+            <element signature="e#10562#10620#0" expanded="false" />
+            <element signature="e#10654#10750#0" expanded="false" />
+            <element signature="e#18463#36265#0" expanded="false" />
+            <element signature="e#36420#44369#0" expanded="false" />
+            <element signature="e#44519#50862#0" expanded="false" />
+            <element signature="e#51039#59086#0" expanded="false" />
+            <element signature="e#59282#65437#0" expanded="false" />
+            <element signature="e#81516#87145#0" expanded="false" />
+            <element signature="e#87252#87472#0" expanded="false" />
+            <element signature="e#87512#87516#0" expanded="false" />
+            <element signature="e#87625#87697#0" expanded="false" />
+            <element signature="e#87841#88237#0" expanded="false" />
+            <element signature="e#88335#88476#0" expanded="false" />
+            <element signature="e#88577#88714#0" expanded="false" />
+            <element signature="e#88817#88961#0" expanded="false" />
+            <element signature="e#89099#89279#0" expanded="false" />
+            <element signature="e#89458#89791#0" expanded="false" />
+            <element signature="e#89887#90070#0" expanded="false" />
+            <element signature="e#90209#91249#0" expanded="false" />
+            <element signature="e#91352#91546#0" expanded="false" />
+            <element signature="e#91651#92000#0" expanded="false" />
+            <element signature="e#92066#96484#0" expanded="false" />
+            <element signature="e#96591#98123#0" expanded="false" />
+            <element signature="e#115108#115696#0" expanded="false" />
+            <element signature="e#115726#116315#0" expanded="false" />
+            <element signature="e#129078#129226#0" expanded="false" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+  </component>
+</project>
+

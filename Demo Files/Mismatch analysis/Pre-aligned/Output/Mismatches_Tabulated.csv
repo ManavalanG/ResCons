@@ -1,0 +1,37 @@
+Data below is obtained from file:    "C:/Users/Mana_Dell/Dropbox/ResCons/Demo Files/Mismatch analysis/Pre-aligned/Clustal_pre_aligned.aln"
+Reference file used:    "C:/Users/Mana_Dell/Dropbox/ResCons/Demo Files/Mismatch analysis/Pre-aligned/Reference.fasta"
+Number of sequences
+       in alignment (excluding Reference sequence):      4
+       that have all residues matching (excluding Reference sequence):   0 (0.0 %)
+       that have at least one mismatching residue:      4 (100.0 %)
+
+
+*** Records that have mismatches in at least one of the query sites ***
+
+S.No ,Title_1,Title_2,Title_3,Title_4,Sequence Length,No. of Mismatches,2 "S",3 "L",4 "L",5 "N",9 "G",23 "P",56 "Y",71 "D",78 "Y",79 "P"
+1,WP_0027768i,Bacteria,Campylobacter,coli,144,3,D,=,S,K,=,=,=,=,=,=
+2,WP_0098740i,Bacteria,Buchnera,aphidicola,148,3,N,=,N,K,=,=,=,=,=,=
+3,WP_0196459i,Bacteria,Novispirillum,itersonii,146,5,D,I,K,K,=,=,=,=,M,=
+4,WP_0121692i,Bacteria,Azorhizobium,caulinodans,146,6,R,I,D,A,=,=,=,=,R,A
+
+
+*** Unique residues seen at the query sites and their count. ***
+** (Note: Calculation doesn't include Reference sequences's residue at that position) **
+
+,Expected Residue, ,Identity_count,% Identity,Unique residues' count and fraction
+,2 "S",,0,0.0,D: 2 (50.0%),R: 1 (25.0%),N: 1 (25.0%)
+,3 "L",,2,50.0,L: 2 (50.0%),I: 2 (50.0%)
+,4 "L",,0,0.0,S: 1 (25.0%),N: 1 (25.0%),K: 1 (25.0%),D: 1 (25.0%)
+,5 "N",,0,0.0,K: 3 (75.0%),A: 1 (25.0%)
+,9 "G",,4,100.0,G: 4 (100.0%)
+,23 "P",,4,100.0,P: 4 (100.0%)
+,56 "Y",,4,100.0,Y: 4 (100.0%)
+,71 "D",,4,100.0,D: 4 (100.0%)
+,78 "Y",,2,50.0,Y: 2 (50.0%),R: 1 (25.0%),M: 1 (25.0%)
+,79 "P",,3,75.0,P: 3 (75.0%),A: 1 (25.0%)
+
+
+*** Records that Do Not have mismatches at any of the query sites ***
+
+S.No ,Title_1,Title_2,Title_3,Title_4,Sequence Length,No. of Mismatches,2 "S",3 "L",4 "L",5 "N",9 "G",23 "P",56 "Y",71 "D",78 "Y",79 "P"
+1,WP_0202604i,Bacteria,Escherichia,coli,148,0,=,=,=,=,=,=,=,=,=,=

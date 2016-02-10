@@ -1,0 +1,122 @@
+2015-04-09 14:36:39 Filter_by_id        INFO     User has requested tool 'Filter fasta by sequences ID'.
+2015-04-09 14:36:39 Filter_by_id        INFO     User chose 'Include IDs in list'.
+2015-04-09 14:36:39 Filter_by_id        INFO     State of 'IDs are Partial': False
+2015-04-09 14:36:39 Filter_by_id        INFO     Text file (containing IDs) provided by user:
+	/Users/Mana/Dropbox/ResCons/Demo Files/Filter fasta by Sequence ID/List_complete.txt
+2015-04-09 14:36:39 Filter_by_id        INFO     Output folder path provided by user:
+	/Users/Mana/Dropbox/ResCons/Demo Files/Filter fasta by Sequence ID/Output/
+2015-04-09 14:36:39 Filter_by_id        INFO     IDs recognised by software: ['NP_066952|Eukaryota|Metazoa|Chordata|Homo|sapiens', 'YP_007162693|Bacteria|Cyanobacteria|Oscillatoriophycideae|Cyanobacterium|aponinum_PCC_10605', 'YP_004164947|Bacteria|Bacteroidetes|Flavobacteriia|Cellulophaga|algicola_DSM_14237', 'YP_007065375|Bacteria|Cyanobacteria|Nostocales|Calothrix|sp._PCC_7507']
+2015-04-09 14:36:39 Filter_by_id        INFO      Number of sequences present in fasta file:  18
+ Number of IDs present in IDs-text file:  4
+ Number of matching sequence records extracted and written in output file:  4
+ Output file: /Users/Mana/Dropbox/ResCons/Demo Files/Filter fasta by Sequence ID/Output/Filtered_Sequences_based_on_IDs.fasta
+2015-04-09 14:36:40 Filter_by_id        INFO     Job done! Ready for next job.
+
+
+2015-04-09 14:36:42 Filter_by_id        INFO     User has requested tool 'Filter fasta by sequences ID'.
+2015-04-09 14:36:42 Filter_by_id        INFO     User chose 'Include IDs in list'.
+2015-04-09 14:36:42 Filter_by_id        INFO     State of 'IDs are Partial': True
+2015-04-09 14:36:42 Filter_by_id        INFO     Text file (containing IDs) provided by user:
+	/Users/Mana/Dropbox/ResCons/Demo Files/Filter fasta by Sequence ID/List_complete.txt
+2015-04-09 14:36:42 Run_Script_Main     ERROR    Error that resulted when creating path "/Users/Mana/Dropbox/ResCons/Demo Files/Filter fasta by Sequence ID/Output/":
+  [Errno 17] File exists: '/Users/Mana/Dropbox/ResCons/Demo Files/Filter fasta by Sequence ID/Output/'
+2015-04-09 14:36:42 Run_Script_Main     ERROR    Folder "/Users/Mana/Dropbox/ResCons/Demo Files/Filter fasta by Sequence ID/Output/" already exists. All or some files in it may get overwritten by ResCons. Do you wish to continue?
+2015-04-09 14:36:43 Run_Script_Main     INFO     User has selected (True = Yes, False = No):  True
+2015-04-09 14:36:43 Run_Script_Main     INFO     ResCons will continue as user has requested.
+2015-04-09 14:36:43 Filter_by_id        INFO     Output folder path provided by user:
+	/Users/Mana/Dropbox/ResCons/Demo Files/Filter fasta by Sequence ID/Output/
+2015-04-09 14:36:43 Filter_by_id        INFO     IDs recognised by software: ['NP_066952|Eukaryota|Metazoa|Chordata|Homo|sapiens', 'YP_007162693|Bacteria|Cyanobacteria|Oscillatoriophycideae|Cyanobacterium|aponinum_PCC_10605', 'YP_004164947|Bacteria|Bacteroidetes|Flavobacteriia|Cellulophaga|algicola_DSM_14237', 'YP_007065375|Bacteria|Cyanobacteria|Nostocales|Calothrix|sp._PCC_7507']
+2015-04-09 14:36:43 Filter_by_id        INFO      Number of sequences present in fasta file:  18
+ Number of IDs present in IDs-text file:  4
+ Number of matching sequence records extracted and written in output file:  4
+ Output file: /Users/Mana/Dropbox/ResCons/Demo Files/Filter fasta by Sequence ID/Output/Filtered_Sequences_based_on_IDs.fasta
+2015-04-09 14:36:44 Filter_by_id        INFO     Job done! Ready for next job.
+
+
+2015-04-09 14:36:49 Filter_by_id        INFO     User has requested tool 'Filter fasta by sequences ID'.
+2015-04-09 14:36:49 Filter_by_id        INFO     User chose 'Include IDs in list'.
+2015-04-09 14:36:49 Filter_by_id        INFO     State of 'IDs are Partial': True
+2015-04-09 14:36:49 Filter_by_id        INFO     Text file (containing IDs) provided by user:
+	/Users/Mana/Dropbox/ResCons/Demo Files/Filter fasta by Sequence ID/List_partial.txt
+2015-04-09 14:36:49 Run_Script_Main     ERROR    Error that resulted when creating path "/Users/Mana/Dropbox/ResCons/Demo Files/Filter fasta by Sequence ID/Output/":
+  [Errno 17] File exists: '/Users/Mana/Dropbox/ResCons/Demo Files/Filter fasta by Sequence ID/Output/'
+2015-04-09 14:36:49 Run_Script_Main     ERROR    Folder "/Users/Mana/Dropbox/ResCons/Demo Files/Filter fasta by Sequence ID/Output/" already exists. All or some files in it may get overwritten by ResCons. Do you wish to continue?
+2015-04-09 14:36:51 Run_Script_Main     INFO     User has selected (True = Yes, False = No):  True
+2015-04-09 14:36:51 Run_Script_Main     INFO     ResCons will continue as user has requested.
+2015-04-09 14:36:51 Filter_by_id        INFO     Output folder path provided by user:
+	/Users/Mana/Dropbox/ResCons/Demo Files/Filter fasta by Sequence ID/Output/
+2015-04-09 14:36:51 Filter_by_id        INFO     IDs recognised by software: ['NP_066952', 'YP_007162693', 'YP_004164947', 'YP_007065375']
+2015-04-09 14:36:51 Filter_by_id        INFO      Number of sequences present in fasta file:  18
+ Number of IDs present in IDs-text file:  4
+ Number of matching sequence records extracted and written in output file:  4
+ Output file: /Users/Mana/Dropbox/ResCons/Demo Files/Filter fasta by Sequence ID/Output/Filtered_Sequences_based_on_IDs.fasta
+2015-04-09 14:36:53 Filter_by_id        INFO     Job done! Ready for next job.
+
+
+2015-04-09 14:36:54 Filter_by_id        INFO     User has requested tool 'Filter fasta by sequences ID'.
+2015-04-09 14:36:54 Filter_by_id        INFO     User chose 'Include IDs in list'.
+2015-04-09 14:36:54 Filter_by_id        INFO     State of 'IDs are Partial': False
+2015-04-09 14:36:54 Filter_by_id        INFO     Text file (containing IDs) provided by user:
+	/Users/Mana/Dropbox/ResCons/Demo Files/Filter fasta by Sequence ID/List_partial.txt
+2015-04-09 14:36:54 Run_Script_Main     ERROR    Error that resulted when creating path "/Users/Mana/Dropbox/ResCons/Demo Files/Filter fasta by Sequence ID/Output/":
+  [Errno 17] File exists: '/Users/Mana/Dropbox/ResCons/Demo Files/Filter fasta by Sequence ID/Output/'
+2015-04-09 14:36:54 Run_Script_Main     ERROR    Folder "/Users/Mana/Dropbox/ResCons/Demo Files/Filter fasta by Sequence ID/Output/" already exists. All or some files in it may get overwritten by ResCons. Do you wish to continue?
+2015-04-09 14:36:55 Run_Script_Main     INFO     User has selected (True = Yes, False = No):  True
+2015-04-09 14:36:55 Run_Script_Main     INFO     ResCons will continue as user has requested.
+2015-04-09 14:36:55 Filter_by_id        INFO     Output folder path provided by user:
+	/Users/Mana/Dropbox/ResCons/Demo Files/Filter fasta by Sequence ID/Output/
+2015-04-09 14:36:55 Filter_by_id        INFO     IDs recognised by software: ['NP_066952', 'YP_007162693', 'YP_004164947', 'YP_007065375']
+2015-04-09 14:36:55 Filter_by_id        INFO      Number of sequences present in fasta file:  18
+ Number of IDs present in IDs-text file:  4
+ Number of matching sequence records extracted and written in output file:  0
+ Output file: /Users/Mana/Dropbox/ResCons/Demo Files/Filter fasta by Sequence ID/Output/Filtered_Sequences_based_on_IDs.fasta
+2015-04-09 14:36:56 Filter_by_id        INFO     Job done! Ready for next job.
+
+
+2015-04-09 14:37:16 blast_filter        INFO     User selected tool - 'Filtering sequences by Blast e-value'.
+2015-04-09 14:37:16 blast_filter        INFO     E-threshold entered by user: 1e-32
+2015-04-09 14:37:16 blast_filter        INFO     User chose 'Lower than E-threshold'
+2015-04-09 14:37:16 blast_filter        INFO     Blast XML file provided by user :
+	/Users/Mana/Dropbox/ResCons/Demo Files/Filter fasta by Blast E-value/Blast_results.xml
+2015-04-09 14:37:16 blast_filter        INFO     Fasta file provided by user :
+	/Users/Mana/Dropbox/ResCons/Demo Files/Filter fasta by Blast E-value/Sequences_demo.fasta
+2015-04-09 14:37:16 Run_Script_Main     ERROR    Error that resulted when creating path "/Users/Mana/Dropbox/ResCons/Demo Files/Filter fasta by Blast E-value/Output/":
+  [Errno 17] File exists: '/Users/Mana/Dropbox/ResCons/Demo Files/Filter fasta by Blast E-value/Output/'
+2015-04-09 14:37:16 Run_Script_Main     ERROR    Folder "/Users/Mana/Dropbox/ResCons/Demo Files/Filter fasta by Blast E-value/Output/" already exists. All or some files in it may get overwritten by ResCons. Do you wish to continue?
+2015-04-09 14:37:17 Run_Script_Main     INFO     User has selected (True = Yes, False = No):  True
+2015-04-09 14:37:17 Run_Script_Main     INFO     ResCons will continue as user has requested.
+2015-04-09 14:37:17 blast_filter        INFO     Output folder provided by user :
+	/Users/Mana/Dropbox/ResCons/Demo Files/Filter fasta by Blast E-value/Output/
+2015-04-09 14:37:17 blast_filter        INFO     Total number of sequences in input fasta file:	 18
+2015-04-09 14:37:17 blast_filter        INFO     Filtered sequences are stored in file:  
+	'/Users/Mana/Dropbox/ResCons/Demo Files/Filter fasta by Blast E-value/Output/Filtered_Sequences_E_1e-32.fasta'
+2015-04-09 14:37:17 blast_filter        INFO     Total number of sequences in input fasta file:	 18
+Total number of records with E-value less than entered threshold in blast xml file:  6
+Number of sequences written in above output file:  6
+2015-04-09 14:37:18 blast_filter        INFO     Blast-Filtering job is done! Ready for next job
+
+
+2015-04-09 14:37:20 blast_filter        INFO     User selected tool - 'Filtering sequences by Blast e-value'.
+2015-04-09 14:37:20 blast_filter        INFO     E-threshold entered by user: 1e-32
+2015-04-09 14:37:20 blast_filter        INFO     User chose 'Higher than and equal to E-threshold'
+2015-04-09 14:37:20 blast_filter        INFO     Note that checking 'Higher than and equal to E-threshold' will also record sequences that are not in blast XML file but are present in provided fasta file that do not have any e-value listed in XML file
+2015-04-09 14:37:21 blast_filter        INFO     Blast XML file provided by user :
+	/Users/Mana/Dropbox/ResCons/Demo Files/Filter fasta by Blast E-value/Blast_results.xml
+2015-04-09 14:37:21 blast_filter        INFO     Fasta file provided by user :
+	/Users/Mana/Dropbox/ResCons/Demo Files/Filter fasta by Blast E-value/Sequences_demo.fasta
+2015-04-09 14:37:21 Run_Script_Main     ERROR    Error that resulted when creating path "/Users/Mana/Dropbox/ResCons/Demo Files/Filter fasta by Blast E-value/Output/":
+  [Errno 17] File exists: '/Users/Mana/Dropbox/ResCons/Demo Files/Filter fasta by Blast E-value/Output/'
+2015-04-09 14:37:21 Run_Script_Main     ERROR    Folder "/Users/Mana/Dropbox/ResCons/Demo Files/Filter fasta by Blast E-value/Output/" already exists. All or some files in it may get overwritten by ResCons. Do you wish to continue?
+2015-04-09 14:37:23 Run_Script_Main     INFO     User has selected (True = Yes, False = No):  True
+2015-04-09 14:37:23 Run_Script_Main     INFO     ResCons will continue as user has requested.
+2015-04-09 14:37:23 blast_filter        INFO     Output folder provided by user :
+	/Users/Mana/Dropbox/ResCons/Demo Files/Filter fasta by Blast E-value/Output/
+2015-04-09 14:37:23 blast_filter        INFO     Total number of sequences in input fasta file:	 18
+2015-04-09 14:37:23 blast_filter        INFO     Filtered sequences are stored in file:  
+	'/Users/Mana/Dropbox/ResCons/Demo Files/Filter fasta by Blast E-value/Output/Filtered_Sequences_E_1e-32.fasta'
+2015-04-09 14:37:23 blast_filter        INFO     Total number of sequences in input fasta file:  18
+Total number of records with E-value less than entered threshold in blast xml file:  6
+Number of sequences written in above output file:  12
+2015-04-09 14:37:26 blast_filter        INFO     Blast-Filtering job is done! Ready for next job
+
+

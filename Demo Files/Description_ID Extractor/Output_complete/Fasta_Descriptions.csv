@@ -1,0 +1,429 @@
+Data below is obtained from fasta file:  "/Users/Mana/Desktop/Demo Files/Name Extractor/Sequences_demo.fasta"
+Total number of sequences present in fasta file:  677
+Number of unique descriptions present among them:  422
+
+### Following are the unique descriptions extracted: ###
+
+ Description, Count
+inorganic pyrophosphatase [Prochlorococcus marinus].,18
+inorganic pyrophosphatase [Escherichia coli].,17
+V-type H(+)-translocating pyrophosphatase [Leptospira interrogans].,13
+pyrophosphatase [Streptococcus sanguinis].,10
+pyrophosphatase [Rhizobium leguminosarum].,10
+putative manganese-dependent inorganic pyrophosphatase [Streptococcus mutans].,10
+pyrophosphatase [Listeria monocytogenes].,9
+inorganic pyrophosphatase [Chlamydia trachomatis].,9
+pyrophosphatase [Staphylococcus epidermidis].,7
+pyrophosphatase [Rhodopseudomonas palustris].,6
+inorganic pyrophosphatase [Pseudomonas stutzeri].,6
+inorganic pyrophosphatase [Neisseria meningitidis].,6
+pyrophosphatase [Streptococcus sobrinus].,5
+pyrophosphatase [Bacillus subtilis].,5
+manganese-dependent inorganic pyrophosphatase [Lactobacillus casei].,5
+inorganic pyrophosphatase [Vibrio vulnificus].,5
+inorganic pyrophosphatase [Rhodopseudomonas palustris].,5
+inorganic pyrophosphatase [Pseudomonas fluorescens].,5
+inorganic pyrophosphatase [Clostridium botulinum].,5
+MULTISPECIES: inorganic pyrophosphatase [Pseudomonas].,5
+pyrophosphatase [Xanthomonas campestris].,4
+pyrophosphatase [Streptococcus salivarius].,4
+pyrophosphatase [Streptococcus mutans].,4
+pyrophosphatase [Lactococcus lactis].,4
+potassium transporter [Propionibacterium acnes].,4
+potassium transporter [Clostridium botulinum].,4
+inorganic pyrophosphatase [Ralstonia solanacearum].,4
+inorganic pyrophosphatase [Helicobacter pylori].,4
+inorganic pyrophosphatase [Fusobacterium nucleatum].,4
+Manganese-dependent inorganic pyrophosphatase [Lactobacillus paracasei].,4
+pyrophosphatase [Streptococcus pyogenes].,3
+pyrophosphatase [Sinorhizobium meliloti].,3
+pyrophosphatase [Lactobacillus salivarius].,3
+pyrophosphatase [Lactobacillus delbrueckii].,3
+pyrophosphatase [Brevibacillus brevis].,3
+pyrophosphatase [Bacillus coagulans].,3
+potassium transporter [Leptospira interrogans].,3
+inorganic pyrophosphatase [Pseudomonas mendocina].,3
+inorganic pyrophosphatase [Propionibacterium acnes].,3
+inorganic pyrophosphatase [Mycobacterium smegmatis].,3
+inorganic pyrophosphatase [Microcystis aeruginosa].,3
+inorganic pyrophosphatase [Aliivibrio fischeri].,3
+V-type H(+)-translocating pyrophosphatase [Leptospira borgpetersenii].,3
+pyrophosphatase [Streptococcus thermophilus].,2
+pyrophosphatase [Streptococcus suis].,2
+pyrophosphatase [Streptococcus dysgalactiae].,2
+pyrophosphatase [Streptococcus anginosus].,2
+pyrophosphatase [Streptococcus agalactiae].,2
+pyrophosphatase [Staphylococcus haemolyticus].,2
+pyrophosphatase [Sinorhizobium fredii].,2
+pyrophosphatase [Rhodospirillum rubrum].,2
+pyrophosphatase [Methylococcus capsulatus].,2
+pyrophosphatase [Methylobacterium extorquens].,2
+pyrophosphatase [Mesorhizobium loti].,2
+pyrophosphatase [Lactococcus garvieae].,2
+pyrophosphatase [Lactobacillus reuteri].,2
+pyrophosphatase [Lactobacillus buchneri].,2
+pyrophosphatase [Herbaspirillum seropedicae].,2
+pyrophosphatase [Brevibacillus laterosporus].,2
+pyrophosphatase [Bradyrhizobium japonicum].,2
+pyrophosphatase [Bacillus megaterium].,2
+pyrophosphatase [Agrobacterium tumefaciens].,2
+potassium transporter [Sorangium cellulosum].,2
+potassium transporter [Leptospira borgpetersenii].,2
+potassium transporter [Fusobacterium nucleatum].,2
+potassium transporter [Chlorobium phaeobacteroides].,2
+potassium transporter [Chlorobium limicola].,2
+potassium transporter [Cellulomonas flavigena].,2
+potassium transporter [Cellulomonas fimi].,2
+membrane-bound proton-translocating pyrophosphatase [Xanthomonas translucens].,2
+manganese-dependent inorganic pyrophosphatase [Streptococcus pneumoniae].,2
+manganese-dependent inorganic pyrophosphatase [Lactobacillus plantarum].,2
+inorganic pyrophosphatase_$ partial [Pseudomonas putida].,2
+inorganic pyrophosphatase [Zymomonas mobilis].,2
+inorganic pyrophosphatase [Xanthomonas oryzae].,2
+inorganic pyrophosphatase [Vibrio parahaemolyticus].,2
+inorganic pyrophosphatase [Sinorhizobium fredii].,2
+inorganic pyrophosphatase [Rhodobacter sphaeroides].,2
+inorganic pyrophosphatase [Rhizobium leguminosarum].,2
+inorganic pyrophosphatase [Pseudomonas putida].,2
+inorganic pyrophosphatase [Propionibacterium freudenreichii].,2
+inorganic pyrophosphatase [Pasteurella multocida].,2
+inorganic pyrophosphatase [Myxococcus xanthus].,2
+inorganic pyrophosphatase [Methylococcus capsulatus].,2
+inorganic pyrophosphatase [Klebsiella pneumoniae].,2
+inorganic pyrophosphatase [Histophilus somni].,2
+inorganic pyrophosphatase [Herbaspirillum seropedicae].,2
+inorganic pyrophosphatase [Geodermatophilus obscurus].,2
+inorganic pyrophosphatase [Desulfovibrio vulgaris].,2
+inorganic pyrophosphatase [Chlorobium phaeobacteroides].,2
+inorganic pyrophosphatase [Buchnera aphidicola].,2
+inorganic diphosphatase [Fibrobacter succinogenes].,2
+MULTISPECIES: potassium transporter [Thermoanaerobacter].,2
+MULTISPECIES: inorganic pyrophosphatase [Vibrio].,2
+MULTISPECIES: inorganic pyrophosphatase [Shewanella].,2
+MULTISPECIES: inorganic pyrophosphatase [Leptospira].,2
+MULTISPECIES: inorganic pyrophosphatase [Arthrobacter].,2
+MULTISPECIES: inorganic pyrophosphatase [Agrobacterium].,2
+MULTISPECIES: V-type H(+)-translocating pyrophosphatase [Leptospira].,2
+MULTISPECIES: Inorganic pyrophosphatase [Ruminococcus].,2
+Inorganic pyrophosphatase/exopolyphosphatase [Faecalibacterium prausnitzii].,2
+v-type h(+)-translocating pyrophosphatase [Marivirga tractuosa].,1
+pyrophosphate-energized proton pump [Xanthomonas translucens].,1
+pyrophosphate-energized proton pump [Cellulophaga lytica].,1
+pyrophosphatase_$ partial [Streptococcus sobrinus].,1
+pyrophosphatase_$ partial [Staphylococcus epidermidis].,1
+pyrophosphatase_$ partial [Brucella abortus].,1
+pyrophosphatase [Xanthomonas oryzae].,1
+pyrophosphatase [Xanthomonas citri].,1
+pyrophosphatase [Xanthobacter autotrophicus].,1
+pyrophosphatase [Weissella halotolerans].,1
+pyrophosphatase [Virgibacillus halodenitrificans].,1
+pyrophosphatase [Thermoanaerobacterium thermosaccharolyticum].,1
+pyrophosphatase [Syntrophomonas wolfei].,1
+pyrophosphatase [Streptococcus uberis].,1
+pyrophosphatase [Streptococcus intermedius].,1
+pyrophosphatase [Streptococcus iniae].,1
+pyrophosphatase [Streptococcus gordonii].,1
+pyrophosphatase [Streptococcus ferus].,1
+pyrophosphatase [Streptococcus equi].,1
+pyrophosphatase [Streptococcus canis].,1
+pyrophosphatase [Staphylococcus xylosus].,1
+pyrophosphatase [Staphylococcus warneri].,1
+pyrophosphatase [Staphylococcus intermedius].,1
+pyrophosphatase [Staphylococcus hominis].,1
+pyrophosphatase [Staphylococcus carnosus].,1
+pyrophosphatase [Sebaldella termitidis].,1
+pyrophosphatase [Rhodospirillum photometricum].,1
+pyrophosphatase [Rhodomicrobium vannielii].,1
+pyrophosphatase [Rhizobium phaseoli].,1
+pyrophosphatase [Pediococcus pentosaceus].,1
+pyrophosphatase [Pediococcus acidilactici].,1
+pyrophosphatase [Paenibacillus polymyxa].,1
+pyrophosphatase [Novispirillum itersonii].,1
+pyrophosphatase [Nitrosospira multiformis].,1
+pyrophosphatase [Nitrosomonas eutropha].,1
+pyrophosphatase [Nitrosomonas europaea].,1
+pyrophosphatase [Nitrobacter winogradskyi].,1
+pyrophosphatase [Nitrobacter hamburgensis].,1
+pyrophosphatase [Moorella thermoacetica].,1
+pyrophosphatase [Methylophilus methylotrophus].,1
+pyrophosphatase [Methylocystis parvus].,1
+pyrophosphatase [Lysinibacillus sphaericus].,1
+pyrophosphatase [Listeria innocua].,1
+pyrophosphatase [Lactococcus raffinolactis].,1
+pyrophosphatase [Lactobacillus sanfranciscensis].,1
+pyrophosphatase [Lactobacillus sakei].,1
+pyrophosphatase [Lactobacillus helveticus].,1
+pyrophosphatase [Lactobacillus brevis].,1
+pyrophosphatase [Lactobacillus acidophilus].,1
+pyrophosphatase [Halobacillus halophilus].,1
+pyrophosphatase [Deinococcus radiodurans].,1
+pyrophosphatase [Clostridium botulinum].,1
+pyrophosphatase [Clostridium acetobutylicum].,1
+pyrophosphatase [Brucella ovis].,1
+pyrophosphatase [Beijerinckia indica].,1
+pyrophosphatase [Bacillus pumilus].,1
+pyrophosphatase [Bacillus methanolicus].,1
+pyrophosphatase [Bacillus cereus].,1
+pyrophosphatase [Bacillus cellulosilyticus].,1
+pyrophosphatase [Bacillus atrophaeus].,1
+pyrophosphatase [Bacillus amyloliquefaciens].,1
+pyrophosphatase [Azospirillum lipoferum].,1
+pyrophosphatase [Amphibacillus xylanus].,1
+pyrophosphatase [Allochromatium vinosum].,1
+pyrophosphatase [Aeromonas hydrophila].,1
+pyrophosphatase [Aerococcus viridans].,1
+pyrophosphatase [Aerococcus urinae].,1
+putative manganese-dependent inorganic pyrophosphatase domain protein [Lactobacillus delbrueckii].,1
+putative manganese-dependent inorganic pyrophosphatase [Moorella thermoacetica].,1
+putative manganese-dependent inorganic pyrophosphatase [Lactobacillus plantarum].,1
+putative manganese-dependent inorganic pyrophosphatase [Bacillus subtilis].,1
+putative manganese-dependent inorganic pyrophosphatase [Bacillus azotoformans].,1
+putative K(+)-stimulated pyrophosphate-energized sodium pump HppA [[Clostridium] stercorarium].,1
+potassium-transporting ATPase subunit C [Pectobacterium carotovorum].,1
+potassium transporter [[Clostridium] sticklandii].,1
+potassium transporter [Thermomicrobium roseum].,1
+potassium transporter [Syntrophomonas wolfei].,1
+potassium transporter [Saccharomonospora viridis].,1
+potassium transporter [Prosthecochloris aestuarii].,1
+potassium transporter [Propionibacterium propionicum].,1
+potassium transporter [Prevotella ruminicola].,1
+potassium transporter [Planctomyces brasiliensis].,1
+potassium transporter [Pelodictyon luteolum].,1
+potassium transporter [Myxococcus xanthus].,1
+potassium transporter [Myxococcus fulvus].,1
+potassium transporter [Moorella thermoacetica].,1
+potassium transporter [Methylomonas methanica].,1
+potassium transporter [Methylococcus capsulatus].,1
+potassium transporter [Marinilabilia salmonicolor].,1
+potassium transporter [Leptospira biflexa].,1
+potassium transporter [Isosphaera pallida].,1
+potassium transporter [Geodermatophilus obscurus].,1
+potassium transporter [Frankia alni].,1
+potassium transporter [Dictyoglomus thermophilum].,1
+potassium transporter [Clostridium tetani].,1
+potassium transporter [Chlorobium phaeovibrioides].,1
+potassium transporter [Chlorobaculum tepidum].,1
+potassium transporter [Bdellovibrio bacteriovorus].,1
+potassium transporter [Bacteroides fragilis].,1
+membrane-bound proton-translocating pyrophosphatase_$ partial [Plesiomonas shigelloides].,1
+membrane-bound proton-translocating pyrophosphatase [Sorangium cellulosum].,1
+membrane-bound proton-translocating pyrophosphatase [Sinorhizobium fredii NGR234].,1
+membrane-bound proton-translocating pyrophosphatase [Pedobacter heparinus].,1
+membrane-bound proton-translocating pyrophosphatase [Flavobacterium johnsoniae].,1
+membrane-bound proton-translocating pyrophosphatase [Capnocytophaga ochracea].,1
+membrane-bound proton-translocating pyrophosphatase [Agrobacterium tumefaciens].,1
+manganese-dependent inorganic pyrophosphatase_$ partial [Clostridium botulinum].,1
+manganese-dependent inorganic pyrophosphatase [Vibrio mimicus].,1
+manganese-dependent inorganic pyrophosphatase [Vibrio campbellii].,1
+manganese-dependent inorganic pyrophosphatase [Streptococcus thermophilus].,1
+manganese-dependent inorganic pyrophosphatase [Streptococcus sobrinus].,1
+manganese-dependent inorganic pyrophosphatase [Plesiomonas shigelloides].,1
+manganese-dependent inorganic pyrophosphatase [Pediococcus pentosaceus].,1
+manganese-dependent inorganic pyrophosphatase [Lactobacillus sakei].,1
+manganese-dependent inorganic pyrophosphatase [Lactobacillus delbrueckii].,1
+manganese-dependent inorganic pyrophosphatase [Fusobacterium nucleatum].,1
+manganese-dependent inorganic pyrophosphatase [Desulfovibrio vulgaris str. Hildenborough].,1
+manganese-dependent inorganic pyrophosphatase [Desulfovibrio vulgaris str. 'Miyazaki F'].,1
+manganese-dependent inorganic pyrophosphatase [Clostridium pasteurianum].,1
+inorganic pyrophosphatase_$ partial [Klebsiella pneumoniae].,1
+inorganic pyrophosphatase_$ partial [Escherichia coli].,1
+inorganic pyrophosphatase_$ partial [Clostridium botulinum].,1
+inorganic pyrophosphatase [Xenorhabdus nematophila].,1
+inorganic pyrophosphatase [Xanthomonas translucens].,1
+inorganic pyrophosphatase [Xanthobacter autotrophicus].,1
+inorganic pyrophosphatase [Wolinella succinogenes].,1
+inorganic pyrophosphatase [Weeksella virosa].,1
+inorganic pyrophosphatase [Vitreoscilla stercoraria].,1
+inorganic pyrophosphatase [Vibrio gazogenes].,1
+inorganic pyrophosphatase [Vibrio cholerae].,1
+inorganic pyrophosphatase [Trichormus azollae].,1
+inorganic pyrophosphatase [Trichodesmium erythraeum].,1
+inorganic pyrophosphatase [Thiobacillus thioparus].,1
+inorganic pyrophosphatase [Thermus thermophilus].,1
+inorganic pyrophosphatase [Thermomicrobium roseum].,1
+inorganic pyrophosphatase [Thermoanaerobacterium thermosaccharolyticum].,1
+inorganic pyrophosphatase [Streptococcus sanguinis].,1
+inorganic pyrophosphatase [Stigmatella aurantiaca].,1
+inorganic pyrophosphatase [Starkeya novella].,1
+inorganic pyrophosphatase [Spirosoma linguale].,1
+inorganic pyrophosphatase [Sorangium cellulosum].,1
+inorganic pyrophosphatase [Sinorhizobium meliloti].,1
+inorganic pyrophosphatase [Sinorhizobium fredii NGR234].,1
+inorganic pyrophosphatase [Serratia marcescens].,1
+inorganic pyrophosphatase [Saprospira grandis].,1
+inorganic pyrophosphatase [Saccharomonospora viridis].,1
+inorganic pyrophosphatase [Ruminococcus albus].,1
+inorganic pyrophosphatase [Rickettsia typhi].,1
+inorganic pyrophosphatase [Rickettsia australis].,1
+inorganic pyrophosphatase [Rickettsia akari].,1
+inorganic pyrophosphatase [Rhodospirillum rubrum].,1
+inorganic pyrophosphatase [Rhodospirillum photometricum].,1
+inorganic pyrophosphatase [Rhodomicrobium vannielii].,1
+inorganic pyrophosphatase [Rhodobacter capsulatus].,1
+inorganic pyrophosphatase [Renibacterium salmoninarum].,1
+inorganic pyrophosphatase [Ralstonia pickettii].,1
+inorganic pyrophosphatase [Pseudoalteromonas haloplanktis].,1
+inorganic pyrophosphatase [Prosthecochloris aestuarii].,1
+inorganic pyrophosphatase [Propionibacterium propionicum].,1
+inorganic pyrophosphatase [Planctomyces brasiliensis].,1
+inorganic pyrophosphatase [Piscirickettsia salmonis].,1
+inorganic pyrophosphatase [Pirellula staleyi].,1
+inorganic pyrophosphatase [Pelodictyon luteolum].,1
+inorganic pyrophosphatase [Pedobacter heparinus].,1
+inorganic pyrophosphatase [Pectobacterium carotovorum].,1
+inorganic pyrophosphatase [Paracoccus denitrificans].,1
+inorganic pyrophosphatase [Orientia tsutsugamushi].,1
+inorganic pyrophosphatase [Nitrosospira multiformis].,1
+inorganic pyrophosphatase [Nitrosococcus oceani].,1
+inorganic pyrophosphatase [Nitrobacter winogradskyi].,1
+inorganic pyrophosphatase [Nitrobacter hamburgensis].,1
+inorganic pyrophosphatase [Neorickettsia sennetsu].,1
+inorganic pyrophosphatase [Neorickettsia risticii].,1
+inorganic pyrophosphatase [Neisseria sicca].,1
+inorganic pyrophosphatase [Neisseria lactamica].,1
+inorganic pyrophosphatase [Myxococcus fulvus].,1
+inorganic pyrophosphatase [Mycobacterium leprae].,1
+inorganic pyrophosphatase [Mycobacterium gilvum].,1
+inorganic pyrophosphatase [Moraxella catarrhalis].,1
+inorganic pyrophosphatase [Methylophilus methylotrophus].,1
+inorganic pyrophosphatase [Methylomonas methanica].,1
+inorganic pyrophosphatase [Methylobacterium extorquens].,1
+inorganic pyrophosphatase [Methylobacillus flagellatus].,1
+inorganic pyrophosphatase [Mesorhizobium loti].,1
+inorganic pyrophosphatase [Meiothermus ruber].,1
+inorganic pyrophosphatase [Marivirga tractuosa].,1
+inorganic pyrophosphatase [Marinilabilia salmonicolor].,1
+inorganic pyrophosphatase [Leptospira biflexa].,1
+inorganic pyrophosphatase [Legionella pneumophila].,1
+inorganic pyrophosphatase [Lactococcus lactis].,1
+inorganic pyrophosphatase [Kytococcus sedentarius].,1
+inorganic pyrophosphatase [Isosphaera pallida].,1
+inorganic pyrophosphatase [Helicobacter mustelae].,1
+inorganic pyrophosphatase [Helicobacter felis].,1
+inorganic pyrophosphatase [Helicobacter cinaedi].,1
+inorganic pyrophosphatase [Helicobacter acinonychis].,1
+inorganic pyrophosphatase [Halothiobacillus neapolitanus].,1
+inorganic pyrophosphatase [Halorhodospira halophila].,1
+inorganic pyrophosphatase [Haemophilus parasuis].,1
+inorganic pyrophosphatase [Haemophilus ducreyi].,1
+inorganic pyrophosphatase [Gluconobacter oxydans].,1
+inorganic pyrophosphatase [Gallibacterium anatis].,1
+inorganic pyrophosphatase [Frankia alni].,1
+inorganic pyrophosphatase [Francisella tularensis].,1
+inorganic pyrophosphatase [Francisella novicida].,1
+inorganic pyrophosphatase [Fluoribacter dumoffii].,1
+inorganic pyrophosphatase [Flavobacterium johnsoniae].,1
+inorganic pyrophosphatase [Erwinia amylovora].,1
+inorganic pyrophosphatase [Enterobacter cloacae].,1
+inorganic pyrophosphatase [Enterobacter aerogenes].,1
+inorganic pyrophosphatase [Elizabethkingia meningoseptica].,1
+inorganic pyrophosphatase [Ehrlichia ruminantium].,1
+inorganic pyrophosphatase [Ehrlichia canis].,1
+inorganic pyrophosphatase [Dichelobacter nodosus].,1
+inorganic pyrophosphatase [Desulfovibrio salexigens].,1
+inorganic pyrophosphatase [Desulfovibrio desulfuricans].,1
+inorganic pyrophosphatase [Desulfomicrobium baculatum].,1
+inorganic pyrophosphatase [Cytophaga hutchinsonii].,1
+inorganic pyrophosphatase [Coxiella burnetii].,1
+inorganic pyrophosphatase [Corynebacterium variabile].,1
+inorganic pyrophosphatase [Corynebacterium glutamicum].,1
+inorganic pyrophosphatase [Corynebacterium diphtheriae].,1
+inorganic pyrophosphatase [Clostridium tetani].,1
+inorganic pyrophosphatase [Clostridium sporogenes].,1
+inorganic pyrophosphatase [Clostridium perfringens].,1
+inorganic pyrophosphatase [Clostridium ljungdahlii].,1
+inorganic pyrophosphatase [Clostridium kluyveri].,1
+inorganic pyrophosphatase [Clostridium beijerinckii].,1
+inorganic pyrophosphatase [Clostridium acidurici].,1
+inorganic pyrophosphatase [Chromobacterium violaceum].,1
+inorganic pyrophosphatase [Chlorobium phaeovibrioides].,1
+inorganic pyrophosphatase [Chlorobium limicola].,1
+inorganic pyrophosphatase [Cellulophaga lytica].,1
+inorganic pyrophosphatase [Cellulomonas flavigena].,1
+inorganic pyrophosphatase [Cellulomonas fimi].,1
+inorganic pyrophosphatase [Campylobacter lari].,1
+inorganic pyrophosphatase [Campylobacter jejuni].,1
+inorganic pyrophosphatase [Campylobacter curvus].,1
+inorganic pyrophosphatase [Campylobacter concisus].,1
+inorganic pyrophosphatase [Burkholderia cepacia].,1
+inorganic pyrophosphatase [Bordetella pertussis].,1
+inorganic pyrophosphatase [Bordetella avium].,1
+inorganic pyrophosphatase [Bifidobacterium asteroides].,1
+inorganic pyrophosphatase [Beijerinckia indica].,1
+inorganic pyrophosphatase [Bartonella quintana].,1
+inorganic pyrophosphatase [Bartonella bacilliformis].,1
+inorganic pyrophosphatase [Bacillus amyloliquefaciens].,1
+inorganic pyrophosphatase [Azospirillum lipoferum].,1
+inorganic pyrophosphatase [Avibacterium paragallinarum].,1
+inorganic pyrophosphatase [Atopobium parvulum].,1
+inorganic pyrophosphatase [Aquaspirillum serpens].,1
+inorganic pyrophosphatase [Anaplasma phagocytophilum].,1
+inorganic pyrophosphatase [Anaplasma centrale].,1
+inorganic pyrophosphatase [Anabaena variabilis].,1
+inorganic pyrophosphatase [Allochromatium vinosum].,1
+inorganic pyrophosphatase [Agrobacterium tumefaciens].,1
+inorganic pyrophosphatase [Aeromonas salmonicida].,1
+inorganic pyrophosphatase [Aeromonas hydrophila].,1
+inorganic pyrophosphatase [Acidithiobacillus ferrooxidans].,1
+inorganic pyrophosphatase PpaC [Staphylococcus aureus].,1
+inorganic pyrophosphatase PpaC [Bacillus licheniformis].,1
+inorganic pyrophosphatase Ppa [[Clostridium] stercorarium].,1
+inorganic pyrophosphatase (PPase) [Cytophaga hutchinsonii].,1
+inorganic diphosphatase [Xanthomonas translucens].,1
+inorganic diphosphatase [Treponema succinifaciens].,1
+inorganic diphosphatase [Synechococcus elongatus PCC 7942].,1
+inorganic diphosphatase [Leptospira interrogans].,1
+inorganic diphosphatase [Leptospira borgpetersenii].,1
+inorganic diphosphatase [Acinetobacter baumannii].,1
+inorganic diphosphatase [Acidaminococcus fermentans].,1
+V-type H(+)-translocating pyrophosphatase [Spirosoma linguale].,1
+V-type H(+)-translocating pyrophosphatase [Pirellula staleyi].,1
+V-type H(+)-translocating pyrophosphatase [Clostridium butyricum].,1
+Pyrophosphate-energized proton pump (Pyrophosphate-energized inorganic pyrophosphatase) (H(+)-PPase) (Membrane-bound proton-translocating pyrophosphatase) [[Clostridium] sticklandii].,1
+Probable manganese-dependent inorganic pyrophosphatase [Listeria monocytogenes].,1
+MutT/NUDIX family hydrolase /pyrophosphatase [Bdellovibrio bacteriovorus].,1
+Manganese-dependent inorganic pyrophosphatase [Streptococcus agalactiae].,1
+Manganese-dependent inorganic pyrophosphatase [Erwinia amylovora].,1
+Manganese-dependent inorganic pyrophosphatase [Bacillus subtilis].,1
+MULTISPECIES: vacuolar-type H(+)-translocating pyrophosphatase [Bacteroides].,1
+MULTISPECIES: soluble inorganic pyrophosphatase 2 [Chlamydia].,1
+MULTISPECIES: pyrophosphatase [Staphylococcus].,1
+MULTISPECIES: pyrophosphatase [Methylophilus].,1
+MULTISPECIES: pyrophosphatase [Leuconostoc].,1
+MULTISPECIES: pyrophosphatase [Lactobacillus].,1
+MULTISPECIES: pyrophosphatase [Enterococcus].,1
+MULTISPECIES: pyrophosphatase [Clostridium].,1
+MULTISPECIES: pyrophosphatase [Brucella].,1
+MULTISPECIES: pyrophosphatase [Bacillus].,1
+MULTISPECIES: potassium-transporting ATPase subunit C [Klebsiella].,1
+MULTISPECIES: potassium transporter [Micromonospora].,1
+MULTISPECIES: potassium transporter [Frankia].,1
+MULTISPECIES: potassium transporter [Chloroflexus].,1
+MULTISPECIES: inorganic pyrophosphatase [Xanthomonas].,1
+MULTISPECIES: inorganic pyrophosphatase [Thermoanaerobacter].,1
+MULTISPECIES: inorganic pyrophosphatase [Streptomyces].,1
+MULTISPECIES: inorganic pyrophosphatase [Serratia].,1
+MULTISPECIES: inorganic pyrophosphatase [Rhizobium].,1
+MULTISPECIES: inorganic pyrophosphatase [Mycobacterium].,1
+MULTISPECIES: inorganic pyrophosphatase [Micromonospora].,1
+MULTISPECIES: inorganic pyrophosphatase [Methylophilus].,1
+MULTISPECIES: inorganic pyrophosphatase [Methylobacterium].,1
+MULTISPECIES: inorganic pyrophosphatase [Erwinia].,1
+MULTISPECIES: inorganic pyrophosphatase [Corynebacterium].,1
+MULTISPECIES: inorganic pyrophosphatase [Chloroflexus].,1
+MULTISPECIES: inorganic pyrophosphatase [Bordetella].,1
+MULTISPECIES: Inorganic pyrophosphatase/exopolyphosphatase [Thermoanaerobacter].,1
+MULTISPECIES: Inorganic pyrophosphatase/exopolyphosphatase [Eubacterium].,1
+Inorganic pyrophosphatase/exopolyphosphatase [Butyrivibrio fibrisolvens].,1
+Inorganic pyrophosphatase [Pseudomonas syringae].,1
+Inorganic pyrophosphatase [Pseudomonas pseudoalcaligenes].,1
+Inorganic pyrophosphatase [Propionibacterium acidipropionici].,1
+Inorganic pyrophosphatase [Enterobacter cloacae].,1
+Inorganic pyrophosphatase [Campylobacter showae].,1
+Inorganic pyrophosphatase [Butyrivibrio fibrisolvens].,1
+Inorganic pyrophosphatase [Bifidobacterium breve].,1
+Inorganic pyrophosphatase [Anabaena cylindrica].,1
+H+ translocating pyrophosphate synthase [Xanthomonas oryzae].,1
+ADP-ribose pyrophosphatase [Faecalibacterium prausnitzii].,1
+ADP-ribose pyrophosphatase [Enterobacter cloacae].,1
+ADP-ribose pyrophosphatase [Butyrivibrio fibrisolvens].,1

@@ -1,0 +1,603 @@
+<?xml version="1.0"?>
+<!DOCTYPE BlastOutput PUBLIC "-//NCBI//NCBI BlastOutput/EN" "http://www.ncbi.nlm.nih.gov/dtd/NCBI_BlastOutput.dtd">
+<BlastOutput>
+  <BlastOutput_program>blastp</BlastOutput_program>
+  <BlastOutput_version>BLASTP 2.2.31+</BlastOutput_version>
+  <BlastOutput_reference>Stephen F. Altschul, Thomas L. Madden, Alejandro A. Sch&amp;auml;ffer, Jinghui Zhang, Zheng Zhang, Webb Miller, and David J. Lipman (1997), &quot;Gapped BLAST and PSI-BLAST: a new generation of protein database search programs&quot;, Nucleic Acids Res. 25:3389-3402.</BlastOutput_reference>
+  <BlastOutput_db>n/a</BlastOutput_db>
+  <BlastOutput_query-ID>Query_105674</BlastOutput_query-ID>
+  <BlastOutput_query-def>WP_0202604i|Bacteria|Escherichia|coli| inorganic pyrophosphatase [Escherichia coli]</BlastOutput_query-def>
+  <BlastOutput_query-len>148</BlastOutput_query-len>
+  <BlastOutput_param>
+    <Parameters>
+      <Parameters_matrix>BLOSUM62</Parameters_matrix>
+      <Parameters_expect>10</Parameters_expect>
+      <Parameters_gap-open>11</Parameters_gap-open>
+      <Parameters_gap-extend>1</Parameters_gap-extend>
+      <Parameters_filter>F</Parameters_filter>
+    </Parameters>
+  </BlastOutput_param>
+<BlastOutput_iterations>
+<Iteration>
+  <Iteration_iter-num>1</Iteration_iter-num>
+  <Iteration_query-ID>Query_105674</Iteration_query-ID>
+  <Iteration_query-def>WP_0202604i|Bacteria|Escherichia|coli| inorganic pyrophosphatase [Escherichia coli]</Iteration_query-def>
+  <Iteration_query-len>148</Iteration_query-len>
+<Iteration_hits>
+<Hit>
+  <Hit_num>1</Hit_num>
+  <Hit_id>Query_105676</Hit_id>
+  <Hit_def>NP_066952|Eukaryota|Metazoa|Chordata|Homo|sapiens| inorganic pyrophosphatase [Homo sapiens]</Hit_def>
+  <Hit_accession>Query_105676</Hit_accession>
+  <Hit_len>289</Hit_len>
+  <Hit_hsps>
+    <Hsp>
+      <Hsp_num>1</Hsp_num>
+      <Hsp_bit-score>40.4318</Hsp_bit-score>
+      <Hsp_score>93</Hsp_score>
+      <Hsp_evalue>3.23308e-09</Hsp_evalue>
+      <Hsp_query-from>16</Hsp_query-from>
+      <Hsp_query-to>145</Hsp_query-to>
+      <Hsp_hit-from>44</Hsp_hit-from>
+      <Hsp_hit-to>194</Hsp_hit-to>
+      <Hsp_query-frame>0</Hsp_query-frame>
+      <Hsp_hit-frame>0</Hsp_hit-frame>
+      <Hsp_identity>43</Hsp_identity>
+      <Hsp_positive>43</Hsp_positive>
+      <Hsp_gaps>29</Hsp_gaps>
+      <Hsp_align-len>155</Hsp_align-len>
+      <Hsp_qseq>IYVVIEIP--ANA----------DPIKYEIDKESGALFVDRFMSTAMFYPCNYGYINHTL------------SLDGDPVDVLVPTPYPLQPGSVIRCRPVGVLKMTDEAGEDAKLIAVAVPHSKLSKEYDHIKDVNDL-PELLKAQIAHFFEHYK</Hsp_qseq>
+      <Hsp_hseq>FHMVVEVPRWSNAKMEIATKDPLNPIKQDVKKGKLRYVANLFPYKGYIW--NYGAIPQTWEDPGHNDKHTGCCGDNDPIDVCEIGSKVCARGEIIGVKVLGILAMIDEGETDWKVIAINVDDPDAA-NYNDINDVKRLKPGYLEATV-DWFRRYK</Hsp_hseq>
+      <Hsp_midline>   V E P   NA           PIK    K         F         NYG I  T               D DP DV          G  I     G L M DE   D K IA  V        Y  I DV  L P  L A     F  YK</Hsp_midline>
+    </Hsp>
+  </Hit_hsps>
+</Hit>
+<Hit>
+  <Hit_num>2</Hit_num>
+  <Hit_id>Query_105677</Hit_id>
+  <Hit_def>YP_007162693|Bacteria|Cyanobacteria|Oscillatoriophycideae|Cyanobacterium|aponinum_PCC_10605| inorganic pyrophosphatase [Cyanobacterium aponinum PCC 10605]</Hit_def>
+  <Hit_accession>Query_105677</Hit_accession>
+  <Hit_len>169</Hit_len>
+  <Hit_hsps>
+    <Hsp>
+      <Hsp_num>1</Hsp_num>
+      <Hsp_bit-score>94.7449</Hsp_bit-score>
+      <Hsp_score>234</Hsp_score>
+      <Hsp_evalue>2.54588e-29</Hsp_evalue>
+      <Hsp_query-from>16</Hsp_query-from>
+      <Hsp_query-to>148</Hsp_query-to>
+      <Hsp_hit-from>15</Hsp_hit-from>
+      <Hsp_hit-to>142</Hsp_hit-to>
+      <Hsp_query-frame>0</Hsp_query-frame>
+      <Hsp_hit-frame>0</Hsp_hit-frame>
+      <Hsp_identity>53</Hsp_identity>
+      <Hsp_positive>53</Hsp_positive>
+      <Hsp_gaps>5</Hsp_gaps>
+      <Hsp_align-len>133</Hsp_align-len>
+      <Hsp_qseq>IYVVIEIPANADPIKYEIDKESGALFVDRFMSTAMFYPCNYGYINHTLSLDGDPVDVLVPTPYPLQPGSVIRCRPVGVLKMTDEAGEDAKLIAVAVPHSKLSKEYDHIKDVNDLPELLKAQIAHFFEHYKDLE</Hsp_qseq>
+      <Hsp_hseq>INVLIEIPGGSKN-KYEFDKDMNAFILDRVLFSSVKYPYDYGFVPNTLADDGDPLDGMVMMDEPTFPGCVIAARPVCMLEMIDGGDRDEKILCVPAEDPR----YDHVKSLKDIAPHRLEEIAEFFRSYKNLE</Hsp_hseq>
+      <Hsp_midline>I V IEIP      KYE DK   A   DR       YP  YG    TL  DGDP D  V    P  PG VI  RPV  L M D    D K   V          YDH K   D        IA FF  YK LE</Hsp_midline>
+    </Hsp>
+  </Hit_hsps>
+</Hit>
+<Hit>
+  <Hit_num>3</Hit_num>
+  <Hit_id>Query_105678</Hit_id>
+  <Hit_def>YP_004262651|Bacteria|Bacteroidetes|Flavobacteriia|Cellulophaga|lytica_DSM_7489| inorganic pyrophosphatase [Cellulophaga lytica DSM 7489]</Hit_def>
+  <Hit_accession>Query_105678</Hit_accession>
+  <Hit_len>175</Hit_len>
+  <Hit_hsps>
+    <Hsp>
+      <Hsp_num>1</Hsp_num>
+      <Hsp_bit-score>93.5893</Hsp_bit-score>
+      <Hsp_score>231</Hsp_score>
+      <Hsp_evalue>8.3859e-29</Hsp_evalue>
+      <Hsp_query-from>18</Hsp_query-from>
+      <Hsp_query-to>148</Hsp_query-to>
+      <Hsp_hit-from>11</Hsp_hit-from>
+      <Hsp_hit-to>136</Hsp_hit-to>
+      <Hsp_query-frame>0</Hsp_query-frame>
+      <Hsp_hit-frame>0</Hsp_hit-frame>
+      <Hsp_identity>54</Hsp_identity>
+      <Hsp_positive>54</Hsp_positive>
+      <Hsp_gaps>5</Hsp_gaps>
+      <Hsp_align-len>131</Hsp_align-len>
+      <Hsp_qseq>VVIEIPANADPIKYEIDKESGALFVDRFMSTAMFYPCNYGYINHTLSLDGDPVDVLVPTPYPLQPGSVIRCRPVGVLKMTDEAGEDAKLIAVAVPHSKLSKEYDHIKDVNDLPELLKAQIAHFFEHYKDLE</Hsp_qseq>
+      <Hsp_hseq>VLIEIPKGSRN-KYEYDFDLKKIRFDRMLFSSMMYPADYGFIPETLALDGDPLDVLVLGGEPTFPMCVVEVKPIGVFHMADEKGPDEKIICVPVSDPI----WNILNDLSDMNPHQIKEIEHFFQVYKDLE</Hsp_hseq>
+      <Hsp_midline>V IEIP      KYE D        DR     M YP  YG I  TL LDGDP DVLV    P  P  V    P GV  M DE G D K I V V             D  D        I HFF  YKDLE</Hsp_midline>
+    </Hsp>
+  </Hit_hsps>
+</Hit>
+<Hit>
+  <Hit_num>4</Hit_num>
+  <Hit_id>Query_105679</Hit_id>
+  <Hit_def>YP_004164947|Bacteria|Bacteroidetes|Flavobacteriia|Cellulophaga|algicola_DSM_14237| inorganic pyrophosphatase [Cellulophaga algicola DSM 14237]</Hit_def>
+  <Hit_accession>Query_105679</Hit_accession>
+  <Hit_len>183</Hit_len>
+  <Hit_hsps>
+    <Hsp>
+      <Hsp_num>1</Hsp_num>
+      <Hsp_bit-score>93.9745</Hsp_bit-score>
+      <Hsp_score>232</Hsp_score>
+      <Hsp_evalue>6.84063e-29</Hsp_evalue>
+      <Hsp_query-from>18</Hsp_query-from>
+      <Hsp_query-to>148</Hsp_query-to>
+      <Hsp_hit-from>19</Hsp_hit-from>
+      <Hsp_hit-to>144</Hsp_hit-to>
+      <Hsp_query-frame>0</Hsp_query-frame>
+      <Hsp_hit-frame>0</Hsp_hit-frame>
+      <Hsp_identity>60</Hsp_identity>
+      <Hsp_positive>60</Hsp_positive>
+      <Hsp_gaps>5</Hsp_gaps>
+      <Hsp_align-len>131</Hsp_align-len>
+      <Hsp_qseq>VVIEIPANADPIKYEIDKESGALFVDRFMSTAMFYPCNYGYINHTLSLDGDPVDVLVPTPYPLQPGSVIRCRPVGVLKMTDEAGEDAKLIAVAVPHSKLSKEYDHIKDVNDLPELLKAQIAHFFEHYKDLE</Hsp_qseq>
+      <Hsp_hseq>VLIEIPKGSRN-KYEYDFTLHKIRFDRMLFSSMMYPGDYGFIPETLALDSDPLDVLVLGHEPTYPMVVMEVRPIGVFHMTDEKGPDEKIICVPVSDPIWGNNRD-ISDLN--PHRLK-EIEHFFRVYKDLE</Hsp_hseq>
+      <Hsp_midline>V IEIP      KYE D        DR     M YP  YG I  TL LD DP DVLV    P  P  V   RP GV  MTDE G D K I V V         D I D N  P  LK  I HFF  YKDLE</Hsp_midline>
+    </Hsp>
+  </Hit_hsps>
+</Hit>
+<Hit>
+  <Hit_num>5</Hit_num>
+  <Hit_id>Query_105680</Hit_id>
+  <Hit_def>YP_004788406|Bacteria|Bacteroidetes|Flavobacteriia|Muricauda|ruestringensis_DSM_13258| inorganic pyrophosphatase [Muricauda ruestringensis DSM 13258]</Hit_def>
+  <Hit_accession>Query_105680</Hit_accession>
+  <Hit_len>175</Hit_len>
+  <Hit_hsps>
+    <Hsp>
+      <Hsp_num>1</Hsp_num>
+      <Hsp_bit-score>98.9821</Hsp_bit-score>
+      <Hsp_score>245</Hsp_score>
+      <Hsp_evalue>6.87529e-31</Hsp_evalue>
+      <Hsp_query-from>18</Hsp_query-from>
+      <Hsp_query-to>148</Hsp_query-to>
+      <Hsp_hit-from>11</Hsp_hit-from>
+      <Hsp_hit-to>136</Hsp_hit-to>
+      <Hsp_query-frame>0</Hsp_query-frame>
+      <Hsp_hit-frame>0</Hsp_hit-frame>
+      <Hsp_identity>62</Hsp_identity>
+      <Hsp_positive>62</Hsp_positive>
+      <Hsp_gaps>5</Hsp_gaps>
+      <Hsp_align-len>131</Hsp_align-len>
+      <Hsp_qseq>VVIEIPANADPIKYEIDKESGALFVDRFMSTAMFYPCNYGYINHTLSLDGDPVDVLVPTPYPLQPGSVIRCRPVGVLKMTDEAGEDAKLIAVAVPHSKLSKEYDHIKDVNDLPELLKAQIAHFFEHYKDLE</Hsp_qseq>
+      <Hsp_hseq>VLVEIPKGSRN-KYEYDFTLNKIRFDRTLFSSMMYPGDYGFIPETLALDGDPLDVLVLCTEPTYPMVVIEVKPVGVFHMTDEKGPDEKIICVPVSDPIWSKR-DDISELN--PHRLK-EIEHFFQVYKDLE</Hsp_hseq>
+      <Hsp_midline>V  EIP      KYE D        DR     M YP  YG I  TL LDGDP DVLV    P  P  VI   PVGV  MTDE G D K I V V     SK  D I   N  P  LK  I HFF  YKDLE</Hsp_midline>
+    </Hsp>
+  </Hit_hsps>
+</Hit>
+<Hit>
+  <Hit_num>6</Hit_num>
+  <Hit_id>Query_105681</Hit_id>
+  <Hit_def>YP_007070257|Bacteria|Cyanobacteria|Oscillatoriophycideae|Leptolyngbya|sp._PCC_7376| inorganic pyrophosphatase [Leptolyngbya sp. PCC 7376]</Hit_def>
+  <Hit_accession>Query_105681</Hit_accession>
+  <Hit_len>170</Hit_len>
+  <Hit_hsps>
+    <Hsp>
+      <Hsp_num>1</Hsp_num>
+      <Hsp_bit-score>90.5077</Hsp_bit-score>
+      <Hsp_score>223</Hsp_score>
+      <Hsp_evalue>1.00661e-27</Hsp_evalue>
+      <Hsp_query-from>1</Hsp_query-from>
+      <Hsp_query-to>148</Hsp_query-to>
+      <Hsp_hit-from>1</Hsp_hit-from>
+      <Hsp_hit-to>142</Hsp_hit-to>
+      <Hsp_query-frame>0</Hsp_query-frame>
+      <Hsp_hit-frame>0</Hsp_hit-frame>
+      <Hsp_identity>53</Hsp_identity>
+      <Hsp_positive>53</Hsp_positive>
+      <Hsp_gaps>6</Hsp_gaps>
+      <Hsp_align-len>148</Hsp_align-len>
+      <Hsp_qseq>MSLLNVPAGKDLPEDIYVVIEIPANADPIKYEIDKESGALFVDRFMSTAMFYPCNYGYINHTLSLDGDPVDVLVPTPYPLQPGSVIRCRPVGVLKMTDEAGEDAKLIAVAVPHSKLSKEYDHIKDVNDLPELLKAQIAHFFEHYKDLE</Hsp_qseq>
+      <Hsp_hseq>MDLSRIPAQPE-PGLVNVLVEITGGSKN-KYEFDKDMNAFILDRVLFSSVKYPYDYGFIPNTLADDGDPLDGMVIMDEPTFPGCVIAARPIGMMEMIDGGDRDEKILCVPAEDPR----YNDIKSIKQISQHRLDEIAEFFASYKNLE</Hsp_hseq>
+      <Hsp_midline>M L   PA    P    V  EI       KYE DK   A   DR       YP  YG I  TL  DGDP D  V    P  PG VI  RP G   M D    D K   V          Y  IK            IA FF  YK LE</Hsp_midline>
+    </Hsp>
+  </Hit_hsps>
+</Hit>
+<Hit>
+  <Hit_num>7</Hit_num>
+  <Hit_id>Query_105682</Hit_id>
+  <Hit_def>YP_007065375|Bacteria|Cyanobacteria|Nostocales|Calothrix|sp._PCC_7507| inorganic pyrophosphatase [Calothrix sp. PCC 7507]</Hit_def>
+  <Hit_accession>Query_105682</Hit_accession>
+  <Hit_len>170</Hit_len>
+  <Hit_hsps>
+    <Hsp>
+      <Hsp_num>1</Hsp_num>
+      <Hsp_bit-score>86.2705</Hsp_bit-score>
+      <Hsp_score>212</Hsp_score>
+      <Hsp_evalue>3.70176e-26</Hsp_evalue>
+      <Hsp_query-from>1</Hsp_query-from>
+      <Hsp_query-to>148</Hsp_query-to>
+      <Hsp_hit-from>1</Hsp_hit-from>
+      <Hsp_hit-to>142</Hsp_hit-to>
+      <Hsp_query-frame>0</Hsp_query-frame>
+      <Hsp_hit-frame>0</Hsp_hit-frame>
+      <Hsp_identity>56</Hsp_identity>
+      <Hsp_positive>56</Hsp_positive>
+      <Hsp_gaps>6</Hsp_gaps>
+      <Hsp_align-len>148</Hsp_align-len>
+      <Hsp_qseq>MSLLNVPAGKDLPEDIYVVIEIPANADPIKYEIDKESGALFVDRFMSTAMFYPCNYGYINHTLSLDGDPVDVLVPTPYPLQPGSVIRCRPVGVLKMTDEAGEDAKLIAVAVPHSKLSKEYDHIKDVNDLPELLKAQIAHFFEHYKDLE</Hsp_qseq>
+      <Hsp_hseq>MDLSLIPA-QPKPGLINVLIEISGGSKN-KYEYDKDLQAFALDRVLYASVKYPYDYGFIPNTLADDGDPLDGIVIIDEPTFPGCIIAARPIGFLEMIDGGDRDEKILAVPDKDPR----YAQVKSLKDIAPHRLDEIAEFFRSYKNLE</Hsp_hseq>
+      <Hsp_midline>M L   PA    P  I V IEI       KYE DK   A   DR       YP  YG I  TL  DGDP D  V    P  PG  I  RP G L M D    D K  AV          Y   K   D        IA FF  YK LE</Hsp_midline>
+    </Hsp>
+  </Hit_hsps>
+</Hit>
+<Hit>
+  <Hit_num>8</Hit_num>
+  <Hit_id>Query_105683</Hit_id>
+  <Hit_def>YP_007049604|Bacteria|Cyanobacteria|Nostocales|Nostoc|sp._PCC_7107| inorganic pyrophosphatase [Nostoc sp. PCC 7107]</Hit_def>
+  <Hit_accession>Query_105683</Hit_accession>
+  <Hit_len>169</Hit_len>
+  <Hit_hsps>
+    <Hsp>
+      <Hsp_num>1</Hsp_num>
+      <Hsp_bit-score>95.1301</Hsp_bit-score>
+      <Hsp_score>235</Hsp_score>
+      <Hsp_evalue>1.84045e-29</Hsp_evalue>
+      <Hsp_query-from>1</Hsp_query-from>
+      <Hsp_query-to>148</Hsp_query-to>
+      <Hsp_hit-from>1</Hsp_hit-from>
+      <Hsp_hit-to>142</Hsp_hit-to>
+      <Hsp_query-frame>0</Hsp_query-frame>
+      <Hsp_hit-frame>0</Hsp_hit-frame>
+      <Hsp_identity>57</Hsp_identity>
+      <Hsp_positive>57</Hsp_positive>
+      <Hsp_gaps>6</Hsp_gaps>
+      <Hsp_align-len>148</Hsp_align-len>
+      <Hsp_qseq>MSLLNVPAGKDLPEDIYVVIEIPANADPIKYEIDKESGALFVDRFMSTAMFYPCNYGYINHTLSLDGDPVDVLVPTPYPLQPGSVIRCRPVGVLKMTDEAGEDAKLIAVAVPHSKLSKEYDHIKDVNDLPELLKAQIAHFFEHYKDLE</Hsp_qseq>
+      <Hsp_hseq>MDLSRIPA-QPKPGILNVLIEIPGGSKN-KYEYDKELEAFALDRVLYSSVKYPFDYGFVPNTLADDGDPLDGMVIIDEPTFPGCIIAARPIGMLEMIDGGDRDEKILCVPDKDPR----YTHVKSLNDVAPHRLDEIAEFFRSYKNLE</Hsp_hseq>
+      <Hsp_midline>M L   PA    P    V IEIP      KYE DKE  A   DR       YP  YG    TL  DGDP D  V    P  PG  I  RP G L M D    D K   V          Y H K  ND        IA FF  YK LE</Hsp_midline>
+    </Hsp>
+  </Hit_hsps>
+</Hit>
+<Hit>
+  <Hit_num>9</Hit_num>
+  <Hit_id>Query_105684</Hit_id>
+  <Hit_def>YP_004282029|Bacteria|Aquificae|Desulfurobacteriales|Desulfurobacterium|thermolithotrophum_DSM_11699| inorganic pyrophosphatase [Desulfurobacterium thermolithotrophum DSM 11699]</Hit_def>
+  <Hit_accession>Query_105684</Hit_accession>
+  <Hit_len>174</Hit_len>
+  <Hit_hsps>
+    <Hsp>
+      <Hsp_num>1</Hsp_num>
+      <Hsp_bit-score>184.111</Hsp_bit-score>
+      <Hsp_score>466</Hsp_score>
+      <Hsp_evalue>8.80714e-64</Hsp_evalue>
+      <Hsp_query-from>1</Hsp_query-from>
+      <Hsp_query-to>148</Hsp_query-to>
+      <Hsp_hit-from>1</Hsp_hit-from>
+      <Hsp_hit-to>145</Hsp_hit-to>
+      <Hsp_query-frame>0</Hsp_query-frame>
+      <Hsp_hit-frame>0</Hsp_hit-frame>
+      <Hsp_identity>88</Hsp_identity>
+      <Hsp_positive>88</Hsp_positive>
+      <Hsp_gaps>3</Hsp_gaps>
+      <Hsp_align-len>148</Hsp_align-len>
+      <Hsp_qseq>MSLLNVPAGKDLPEDIYVVIEIPANADPIKYEIDKESGALFVDRFMSTAMFYPCNYGYINHTLSLDGDPVDVLVPTPYPLQPGSVIRCRPVGVLKMTDEAGEDAKLIAVAVPHSKLSKEYDHIKDVNDLPELLKAQIAHFFEHYKDLE</Hsp_qseq>
+      <Hsp_hseq>MDVRKIPAGKNVPEDIYAVIEIPQGSN-VKYEVDKESGAVFVDRFLFTPMFYPANYGFVPNTLAEDGDPIDVLVISRQPVTPGSVIRCRPIGVLVMEDESGQDEKIL--AVPVDKLDLTFKNIKEITDLPEATLNEIKHFFEHYKDLE</Hsp_hseq>
+      <Hsp_midline>M     PAGK  PEDIY VIEIP      KYE DKESGA FVDRF  T MFYP NYG    TL  DGDP DVLV    P  PGSVIRCRP GVL M DE G D K    AVP  KL      IK   DLPE     I HFFEHYKDLE</Hsp_midline>
+    </Hsp>
+  </Hit_hsps>
+</Hit>
+<Hit>
+  <Hit_num>10</Hit_num>
+  <Hit_id>Query_105685</Hit_id>
+  <Hit_def>YP_007132473|Bacteria|Cyanobacteria|Pleurocapsales|Stanieria|cyanosphaera_PCC_7437| Inorganic pyrophosphatase [Stanieria cyanosphaera PCC 7437]</Hit_def>
+  <Hit_accession>Query_105685</Hit_accession>
+  <Hit_len>169</Hit_len>
+  <Hit_hsps>
+    <Hsp>
+      <Hsp_num>1</Hsp_num>
+      <Hsp_bit-score>88.5817</Hsp_bit-score>
+      <Hsp_score>218</Hsp_score>
+      <Hsp_evalue>4.51583e-27</Hsp_evalue>
+      <Hsp_query-from>1</Hsp_query-from>
+      <Hsp_query-to>148</Hsp_query-to>
+      <Hsp_hit-from>1</Hsp_hit-from>
+      <Hsp_hit-to>142</Hsp_hit-to>
+      <Hsp_query-frame>0</Hsp_query-frame>
+      <Hsp_hit-frame>0</Hsp_hit-frame>
+      <Hsp_identity>56</Hsp_identity>
+      <Hsp_positive>56</Hsp_positive>
+      <Hsp_gaps>6</Hsp_gaps>
+      <Hsp_align-len>148</Hsp_align-len>
+      <Hsp_qseq>MSLLNVPAGKDLPEDIYVVIEIPANADPIKYEIDKESGALFVDRFMSTAMFYPCNYGYINHTLSLDGDPVDVLVPTPYPLQPGSVIRCRPVGVLKMTDEAGEDAKLIAVAVPHSKLSKEYDHIKDVNDLPELLKAQIAHFFEHYKDLE</Hsp_qseq>
+      <Hsp_hseq>MDLARIPA-QPKPGLINVLIEIPAGSKN-KYEFDKDMNAFALDRVLFSSVQYPYDYGFVPNTLADDGDPLDGMVLMDQATFPGCVIAARPIGMLEMIDGGDRDEKIL--CVPDA--DPRYRNVNSLKDVAPHRLDEIAEFFKTYKNLE</Hsp_hseq>
+      <Hsp_midline>M L   PA    P  I V IEIPA     KYE DK   A   DR       YP  YG    TL  DGDP D  V       PG VI  RP G L M D    D K     VP       Y       D        IA FF  YK LE</Hsp_midline>
+    </Hsp>
+  </Hit_hsps>
+</Hit>
+<Hit>
+  <Hit_num>11</Hit_num>
+  <Hit_id>Query_105686</Hit_id>
+  <Hit_def>YP_007127661|Bacteria|Cyanobacteria|Oscillatoriophycideae|Gloeocapsa|sp._PCC_7428| Inorganic pyrophosphatase [Gloeocapsa sp. PCC 7428]</Hit_def>
+  <Hit_accession>Query_105686</Hit_accession>
+  <Hit_len>179</Hit_len>
+  <Hit_hsps>
+    <Hsp>
+      <Hsp_num>1</Hsp_num>
+      <Hsp_bit-score>87.0409</Hsp_bit-score>
+      <Hsp_score>214</Hsp_score>
+      <Hsp_evalue>2.54428e-26</Hsp_evalue>
+      <Hsp_query-from>13</Hsp_query-from>
+      <Hsp_query-to>148</Hsp_query-to>
+      <Hsp_hit-from>12</Hsp_hit-from>
+      <Hsp_hit-to>142</Hsp_hit-to>
+      <Hsp_query-frame>0</Hsp_query-frame>
+      <Hsp_hit-frame>0</Hsp_hit-frame>
+      <Hsp_identity>53</Hsp_identity>
+      <Hsp_positive>53</Hsp_positive>
+      <Hsp_gaps>5</Hsp_gaps>
+      <Hsp_align-len>136</Hsp_align-len>
+      <Hsp_qseq>PEDIYVVIEIPANADPIKYEIDKESGALFVDRFMSTAMFYPCNYGYINHTLSLDGDPVDVLVPTPYPLQPGSVIRCRPVGVLKMTDEAGEDAKLIAVAVPHSKLSKEYDHIKDVNDLPELLKAQIAHFFEHYKDLE</Hsp_qseq>
+      <Hsp_hseq>PGVINVLIEITAGSKN-KYEYDKDLQAFALDRVLYSSVQYPYDYGFVPNTLADDGDPLDGMVLMDEPTFPGCVIAARPIGMLIMIDGGDHDEKILCVPDKDPR----YKHVKSLADIAPHRLDEIAEFFRSYKNLE</Hsp_hseq>
+      <Hsp_midline>P  I V IEI A     KYE DK   A   DR       YP  YG    TL  DGDP D  V    P  PG VI  RP G L M D    D K   V          Y H K   D        IA FF  YK LE</Hsp_midline>
+    </Hsp>
+  </Hit_hsps>
+</Hit>
+<Hit>
+  <Hit_num>12</Hit_num>
+  <Hit_id>Query_105687</Hit_id>
+  <Hit_def>YP_007139175|Bacteria|Cyanobacteria|Nostocales|Calothrix|sp._PCC_6303| inorganic pyrophosphatase [Calothrix sp. PCC 6303]</Hit_def>
+  <Hit_accession>Query_105687</Hit_accession>
+  <Hit_len>169</Hit_len>
+  <Hit_hsps>
+    <Hsp>
+      <Hsp_num>1</Hsp_num>
+      <Hsp_bit-score>94.3597</Hsp_bit-score>
+      <Hsp_score>233</Hsp_score>
+      <Hsp_evalue>3.90935e-29</Hsp_evalue>
+      <Hsp_query-from>1</Hsp_query-from>
+      <Hsp_query-to>148</Hsp_query-to>
+      <Hsp_hit-from>1</Hsp_hit-from>
+      <Hsp_hit-to>142</Hsp_hit-to>
+      <Hsp_query-frame>0</Hsp_query-frame>
+      <Hsp_hit-frame>0</Hsp_hit-frame>
+      <Hsp_identity>57</Hsp_identity>
+      <Hsp_positive>57</Hsp_positive>
+      <Hsp_gaps>6</Hsp_gaps>
+      <Hsp_align-len>148</Hsp_align-len>
+      <Hsp_qseq>MSLLNVPAGKDLPEDIYVVIEIPANADPIKYEIDKESGALFVDRFMSTAMFYPCNYGYINHTLSLDGDPVDVLVPTPYPLQPGSVIRCRPVGVLKMTDEAGEDAKLIAVAVPHSKLSKEYDHIKDVNDLPELLKAQIAHFFEHYKDLE</Hsp_qseq>
+      <Hsp_hseq>MDLSRIPA-QPKPGIINVLIEITGGSKN-KYEFDKDLNAFALDRVLYSSVKYPYDYGFVPNTLADDGDPLDGMVIMDEPTFPGCVIAARPIGMLEMIDGGDRDEKILCVPAKDPR----YADVKTLKDLPQHRLDEIAEFFRSYKNLE</Hsp_hseq>
+      <Hsp_midline>M L   PA    P  I V IEI       KYE DK   A   DR       YP  YG    TL  DGDP D  V    P  PG VI  RP G L M D    D K   V          Y   K   DLP      IA FF  YK LE</Hsp_midline>
+    </Hsp>
+  </Hit_hsps>
+</Hit>
+<Hit>
+  <Hit_num>13</Hit_num>
+  <Hit_id>Query_105688</Hit_id>
+  <Hit_def>YP_005257157|Bacteria|Firmicutes|Clostridia|Sulfobacillus|acidophilus_DSM_10332| inorganic pyrophosphatase [Sulfobacillus acidophilus DSM 10332]</Hit_def>
+  <Hit_accession>Query_105688</Hit_accession>
+  <Hit_len>158</Hit_len>
+  <Hit_hsps>
+    <Hsp>
+      <Hsp_num>1</Hsp_num>
+      <Hsp_bit-score>111.309</Hsp_bit-score>
+      <Hsp_score>277</Hsp_score>
+      <Hsp_evalue>9.24865e-36</Hsp_evalue>
+      <Hsp_query-from>18</Hsp_query-from>
+      <Hsp_query-to>148</Hsp_query-to>
+      <Hsp_hit-from>5</Hsp_hit-from>
+      <Hsp_hit-to>130</Hsp_hit-to>
+      <Hsp_query-frame>0</Hsp_query-frame>
+      <Hsp_hit-frame>0</Hsp_hit-frame>
+      <Hsp_identity>61</Hsp_identity>
+      <Hsp_positive>61</Hsp_positive>
+      <Hsp_gaps>7</Hsp_gaps>
+      <Hsp_align-len>132</Hsp_align-len>
+      <Hsp_qseq>VVIEIPANADPIKYEIDKESGALFVDRFMSTAMFYPCNYGYINHTLSLDGDPVDVLVPTPYPLQPGSVIRCRPVGVLKMTDEAGEDAKLIAVAVPHSKLSKEYDHIKDVNDL-PELLKAQIAHFFEHYKDLE</Hsp_qseq>
+      <Hsp_hseq>VVIEIPRGSQN-KYEVDHETGRIRLDRVLFSPMHYPAEYGLIENTLSEDGDPLDALVLTSFPTFPGCIVRARIVGLLEMSDDKGVDNKLLGVAADDPR----FDGIQSLDDVNPHILK-EIPHFFQTYKQLE</Hsp_hseq>
+      <Hsp_midline>VVIEIP      KYE D E G    DR     M YP  YG I  TLS DGDP D LV T  P  PG   R R VG L M D  G D KL  VA          D I    D  P  LK  I HFF  YK LE</Hsp_midline>
+    </Hsp>
+    <Hsp>
+      <Hsp_num>2</Hsp_num>
+      <Hsp_bit-score>11.5418</Hsp_bit-score>
+      <Hsp_score>18</Hsp_score>
+      <Hsp_evalue>6.6236</Hsp_evalue>
+      <Hsp_query-from>17</Hsp_query-from>
+      <Hsp_query-to>23</Hsp_query-to>
+      <Hsp_hit-from>114</Hsp_hit-from>
+      <Hsp_hit-to>120</Hsp_hit-to>
+      <Hsp_query-frame>0</Hsp_query-frame>
+      <Hsp_hit-frame>0</Hsp_hit-frame>
+      <Hsp_identity>3</Hsp_identity>
+      <Hsp_positive>3</Hsp_positive>
+      <Hsp_gaps>0</Hsp_gaps>
+      <Hsp_align-len>7</Hsp_align-len>
+      <Hsp_qseq>YVVIEIP</Hsp_qseq>
+      <Hsp_hseq>HILKEIP</Hsp_hseq>
+      <Hsp_midline>    EIP</Hsp_midline>
+    </Hsp>
+  </Hit_hsps>
+</Hit>
+<Hit>
+  <Hit_num>14</Hit_num>
+  <Hit_id>Query_105689</Hit_id>
+  <Hit_def>YP_005009634|Bacteria|Bacteroidetes|Sphingobacteriia|Niastella|koreensis_GR20-10| inorganic pyrophosphatase [Niastella koreensis GR20-10]</Hit_def>
+  <Hit_accession>Query_105689</Hit_accession>
+  <Hit_len>182</Hit_len>
+  <Hit_hsps>
+    <Hsp>
+      <Hsp_num>1</Hsp_num>
+      <Hsp_bit-score>105.531</Hsp_bit-score>
+      <Hsp_score>262</Hsp_score>
+      <Hsp_evalue>2.74495e-33</Hsp_evalue>
+      <Hsp_query-from>6</Hsp_query-from>
+      <Hsp_query-to>148</Hsp_query-to>
+      <Hsp_hit-from>11</Hsp_hit-from>
+      <Hsp_hit-to>148</Hsp_hit-to>
+      <Hsp_query-frame>0</Hsp_query-frame>
+      <Hsp_hit-frame>0</Hsp_hit-frame>
+      <Hsp_identity>56</Hsp_identity>
+      <Hsp_positive>56</Hsp_positive>
+      <Hsp_gaps>5</Hsp_gaps>
+      <Hsp_align-len>143</Hsp_align-len>
+      <Hsp_qseq>VPAGKDLPEDIYVVIEIPANADPIKYEIDKESGALFVDRFMSTAMFYPCNYGYINHTLSLDGDPVDVLVPTPYPLQPGSVIRCRPVGVLKMTDEAGEDAKLIAVAVPHSKLSKEYDHIKDVNDLPELLKAQIAHFFEHYKDLE</Hsp_qseq>
+      <Hsp_hseq>VTPGEQAPRIVNALIEIPQGSRA-KYEIDKESGLLKLDRIIYSSFYYPCNYGFIPQTYGDDKDPLDILVITSQPVQAMCLMEAKVIGVMQMIDNGDGDDKIIAVAATDPSVR----HYNNIEEIPPHFFDELRHFFEEYKTLE</Hsp_hseq>
+      <Hsp_midline>V  G   P      IEIP      KYEIDKESG L  DR       YPCNYG I  T   D DP D LV T  P Q          GV  M D    D K IAVA           H       P        HFFE YK LE</Hsp_midline>
+    </Hsp>
+  </Hit_hsps>
+</Hit>
+<Hit>
+  <Hit_num>15</Hit_num>
+  <Hit_id>Query_105690</Hit_id>
+  <Hit_def>YP_004445607|Bacteria|Bacteroidetes|Sphingobacteriia|Haliscomenobacter|hydrossis_DSM_1100| inorganic pyrophosphatase [Haliscomenobacter hydrossis DSM 1100]</Hit_def>
+  <Hit_accession>Query_105690</Hit_accession>
+  <Hit_len>180</Hit_len>
+  <Hit_hsps>
+    <Hsp>
+      <Hsp_num>1</Hsp_num>
+      <Hsp_bit-score>98.5969</Hsp_bit-score>
+      <Hsp_score>244</Hsp_score>
+      <Hsp_evalue>1.15935e-30</Hsp_evalue>
+      <Hsp_query-from>5</Hsp_query-from>
+      <Hsp_query-to>148</Hsp_query-to>
+      <Hsp_hit-from>10</Hsp_hit-from>
+      <Hsp_hit-to>148</Hsp_hit-to>
+      <Hsp_query-frame>0</Hsp_query-frame>
+      <Hsp_hit-frame>0</Hsp_hit-frame>
+      <Hsp_identity>54</Hsp_identity>
+      <Hsp_positive>54</Hsp_positive>
+      <Hsp_gaps>5</Hsp_gaps>
+      <Hsp_align-len>144</Hsp_align-len>
+      <Hsp_qseq>NVPAGKDLPEDIYVVIEIPANADPIKYEIDKESGALFVDRFMSTAMFYPCNYGYINHTLSLDGDPVDVLVPTPYPLQPGSVIRCRPVGVLKMTDEAGEDAKLIAVAVPHSKLSKEYDHIKDVNDLPELLKAQIAHFFEHYKDLE</Hsp_qseq>
+      <Hsp_hseq>HVSPGDNLPGVVNGIIEIPKGTRA-KYELDKESGLLRLDRVLYSSVYYPANYGFIPQSYCEDKDPLDILILSQIDVVPMCIVPGKVIGVMRMLDNGEADDKIIAVAEGDPSVS----HINDISELPAHFISEMRSFFEDYKKLE</Hsp_hseq>
+      <Hsp_midline> V  G  LP      IEIP      KYE DKESG L  DR       YP NYG I      D DP D L        P         GV  M D    D K IAVA      S    HI D   LP         FFE YK LE</Hsp_midline>
+    </Hsp>
+    <Hsp>
+      <Hsp_num>2</Hsp_num>
+      <Hsp_bit-score>12.6974</Hsp_bit-score>
+      <Hsp_score>21</Hsp_score>
+      <Hsp_evalue>3.52515</Hsp_evalue>
+      <Hsp_query-from>120</Hsp_query-from>
+      <Hsp_query-to>137</Hsp_query-to>
+      <Hsp_hit-from>8</Hsp_hit-from>
+      <Hsp_hit-to>25</Hsp_hit-to>
+      <Hsp_query-frame>0</Hsp_query-frame>
+      <Hsp_hit-frame>0</Hsp_hit-frame>
+      <Hsp_identity>4</Hsp_identity>
+      <Hsp_positive>4</Hsp_positive>
+      <Hsp_gaps>0</Hsp_gaps>
+      <Hsp_align-len>18</Hsp_align-len>
+      <Hsp_qseq>YDHIKDVNDLPELLKAQI</Hsp_qseq>
+      <Hsp_hseq>WHHVSPGDNLPGVVNGII</Hsp_hseq>
+      <Hsp_midline>  H      LP      I</Hsp_midline>
+    </Hsp>
+  </Hit_hsps>
+</Hit>
+<Hit>
+  <Hit_num>16</Hit_num>
+  <Hit_id>Query_105691</Hit_id>
+  <Hit_def>YP_004366927|Bacteria|Deinococcus-Thermus|Deinococci|Marinithermus|hydrothermalis_DSM_14884| inorganic pyrophosphatase [Marinithermus hydrothermalis DSM 14884]</Hit_def>
+  <Hit_accession>Query_105691</Hit_accession>
+  <Hit_len>177</Hit_len>
+  <Hit_hsps>
+    <Hsp>
+      <Hsp_num>1</Hsp_num>
+      <Hsp_bit-score>122.479</Hsp_bit-score>
+      <Hsp_score>306</Hsp_score>
+      <Hsp_evalue>8.262e-40</Hsp_evalue>
+      <Hsp_query-from>2</Hsp_query-from>
+      <Hsp_query-to>148</Hsp_query-to>
+      <Hsp_hit-from>3</Hsp_hit-from>
+      <Hsp_hit-to>144</Hsp_hit-to>
+      <Hsp_query-frame>0</Hsp_query-frame>
+      <Hsp_hit-frame>0</Hsp_hit-frame>
+      <Hsp_identity>60</Hsp_identity>
+      <Hsp_positive>60</Hsp_positive>
+      <Hsp_gaps>5</Hsp_gaps>
+      <Hsp_align-len>147</Hsp_align-len>
+      <Hsp_qseq>SLLNVPAGKDLPEDIYVVIEIPANADPIKYEIDKESGALFVDRFMSTAMFYPCNYGYINHTLSLDGDPVDVLVPTPYPLQPGSVIRCRPVGVLKMTDEAGEDAKLIAVAVPHSKLSKEYDHIKDVNDLPELLKAQIAHFFEHYKDLE</Hsp_qseq>
+      <Hsp_hseq>KLHDLPIGDQAPDVVHMVIEVPKGS-ANKYEFDEATGMVKLDRVLPSAQFYPGDYGFIPQTLAEDGDPLDGIVLSTYPLLPGVLVEVRVVGLIEMEDEKGPDSKVLAVVAEDPR----FNEIQDLEQVPQATRTEIAHFFETYKDLE</Hsp_hseq>
+      <Hsp_midline> L   P G   P     VIE P      KYE D   G    DR    A FYP  YG I  TL  DGDP D  V   YPL PG     R VG   M DE G D K  AV             I D    P      IAHFFE YKDLE</Hsp_midline>
+    </Hsp>
+  </Hit_hsps>
+</Hit>
+<Hit>
+  <Hit_num>17</Hit_num>
+  <Hit_id>Query_105692</Hit_id>
+  <Hit_def>YP_004238254|Bacteria|Bacteroidetes|Flavobacteriia|Weeksella|virosa_DSM_16922| inorganic pyrophosphatase [Weeksella virosa DSM 16922]</Hit_def>
+  <Hit_accession>Query_105692</Hit_accession>
+  <Hit_len>161</Hit_len>
+  <Hit_hsps>
+    <Hsp>
+      <Hsp_num>1</Hsp_num>
+      <Hsp_bit-score>106.686</Hsp_bit-score>
+      <Hsp_score>265</Hsp_score>
+      <Hsp_evalue>6.00168e-34</Hsp_evalue>
+      <Hsp_query-from>19</Hsp_query-from>
+      <Hsp_query-to>148</Hsp_query-to>
+      <Hsp_hit-from>6</Hsp_hit-from>
+      <Hsp_hit-to>130</Hsp_hit-to>
+      <Hsp_query-frame>0</Hsp_query-frame>
+      <Hsp_hit-frame>0</Hsp_hit-frame>
+      <Hsp_identity>59</Hsp_identity>
+      <Hsp_positive>59</Hsp_positive>
+      <Hsp_gaps>5</Hsp_gaps>
+      <Hsp_align-len>130</Hsp_align-len>
+      <Hsp_qseq>VIEIPANADPIKYEIDKESGALFVDRFMSTAMFYPCNYGYINHTLSLDGDPVDVLVPTPYPLQPGSVIRCRPVGVLKMTDEAGEDAKLIAVAVPHSKLSKEYDHIKDVNDLPELLKAQIAHFFEHYKDLE</Hsp_qseq>
+      <Hsp_hseq>IIEIPRGSRN-KYEMDHETGMIRFDRVLYSPMFYPADYGFVPDTLGLDGDPLDVLVFLTEPTFPGCLIEVKPIGVLNMSDDKGRDEKIICVPVADPTWN-QLENIEDMNS--HTLKA-VEHFFKTYKDLE</Hsp_hseq>
+      <Hsp_midline> IEIP      KYE D E G    DR     MFYP  YG    TL LDGDP DVLV    P  PG  I   P GVL M D  G D K I V V           I D N     LKA   HFF  YKDLE</Hsp_midline>
+    </Hsp>
+    <Hsp>
+      <Hsp_num>2</Hsp_num>
+      <Hsp_bit-score>14.2382</Hsp_bit-score>
+      <Hsp_score>25</Hsp_score>
+      <Hsp_evalue>1.08742</Hsp_evalue>
+      <Hsp_query-from>55</Hsp_query-from>
+      <Hsp_query-to>76</Hsp_query-to>
+      <Hsp_hit-from>138</Hsp_hit-from>
+      <Hsp_hit-to>159</Hsp_hit-to>
+      <Hsp_query-frame>0</Hsp_query-frame>
+      <Hsp_hit-frame>0</Hsp_hit-frame>
+      <Hsp_identity>6</Hsp_identity>
+      <Hsp_positive>6</Hsp_positive>
+      <Hsp_gaps>0</Hsp_gaps>
+      <Hsp_align-len>22</Hsp_align-len>
+      <Hsp_qseq>NYGYINHTLSLDGDPVDVLVPT</Hsp_qseq>
+      <Hsp_hseq>GYGDKEQALQIIQEAFDRFVPS</Hsp_hseq>
+      <Hsp_midline> YG     L       D  VP </Hsp_midline>
+    </Hsp>
+  </Hit_hsps>
+</Hit>
+<Hit>
+  <Hit_num>18</Hit_num>
+  <Hit_id>Query_105693</Hit_id>
+  <Hit_def>YP_004268229|Bacteria|Planctomycetes|Planctomycetia|Planctomyces|brasiliensis_DSM_5305| inorganic pyrophosphatase [Planctomyces brasiliensis DSM 5305]</Hit_def>
+  <Hit_accession>Query_105693</Hit_accession>
+  <Hit_len>184</Hit_len>
+  <Hit_hsps>
+    <Hsp>
+      <Hsp_num>1</Hsp_num>
+      <Hsp_bit-score>111.309</Hsp_bit-score>
+      <Hsp_score>277</Hsp_score>
+      <Hsp_evalue>1.79587e-35</Hsp_evalue>
+      <Hsp_query-from>5</Hsp_query-from>
+      <Hsp_query-to>148</Hsp_query-to>
+      <Hsp_hit-from>7</Hsp_hit-from>
+      <Hsp_hit-to>145</Hsp_hit-to>
+      <Hsp_query-frame>0</Hsp_query-frame>
+      <Hsp_hit-frame>0</Hsp_hit-frame>
+      <Hsp_identity>57</Hsp_identity>
+      <Hsp_positive>57</Hsp_positive>
+      <Hsp_gaps>5</Hsp_gaps>
+      <Hsp_align-len>144</Hsp_align-len>
+      <Hsp_qseq>NVPAGKDLPEDIYVVIEIPANADPIKYEIDKESGALFVDRFMSTAMFYPCNYGYINHTLSLDGDPVDVLVPTPYPLQPGSVIRCRPVGVLKMTDEAGEDAKLIAVAVPHSKLSKEYDHIKDVNDLPELLKAQIAHFFEHYKDLE</Hsp_qseq>
+      <Hsp_hseq>DVTPGENLPQEFQAVIEIPMGSS-VKYELDKETGLLRLDRMLYSAVYYPANYGFIPQTLAEDDDPLDVLVMCKEAVSPLTLVNARAIGLMTMIDSGKRDHKILAVAID----DPEYNYIFEADELPPHRLNQLRRFFQDYKQLE</Hsp_hseq>
+      <Hsp_midline> V  G  LP     VIEIP      KYE DKE G L  DR    A  YP NYG I  TL  D DP DVLV       P      R  G   M D    D K  AVA        EY  I     LP     Q   FF  YK LE</Hsp_midline>
+    </Hsp>
+  </Hit_hsps>
+</Hit>
+</Iteration_hits>
+  <Iteration_stat>
+    <Statistics>
+      <Statistics_db-num>0</Statistics_db-num>
+      <Statistics_db-len>0</Statistics_db-len>
+      <Statistics_hsp-len>0</Statistics_hsp-len>
+      <Statistics_eff-space>0</Statistics_eff-space>
+      <Statistics_kappa>-1</Statistics_kappa>
+      <Statistics_lambda>-1</Statistics_lambda>
+      <Statistics_entropy>-1</Statistics_entropy>
+    </Statistics>
+  </Iteration_stat>
+</Iteration>
+</BlastOutput_iterations>
+</BlastOutput>
+

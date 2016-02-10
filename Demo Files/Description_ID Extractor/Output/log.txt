@@ -1,0 +1,140 @@
+2015-03-23 15:05:50 genbank2Fasta       INFO     User selected tool - 'GenBank/GenPept to Fasta converter'.
+2015-03-23 15:05:50 genbank2Fasta       INFO     GenBank/GenPept file provided by user: 
+ C:/Users/Mana/Dropbox/ResCons/test_unit/1_NCBI_RefSeq_Data_IPPase.gp
+2015-03-23 15:05:50 Run_Script_Main     ERROR    Error that resulted when creating path "C:/Users/Mana/Dropbox/ResCons/test_unit/Output/":
+  [Error 183] Cannot create a file when that file already exists: 'C:/Users/Mana/Dropbox/ResCons/test_unit/Output/'
+2015-03-23 15:05:50 Run_Script_Main     ERROR    Folder "C:/Users/Mana/Dropbox/ResCons/test_unit/Output/" already exists. All or some files in it may get overwritten by ResCons. Do you wish to continue?
+2015-03-23 15:05:51 Run_Script_Main     INFO     User has selected (True = Yes, False = No):  True
+2015-03-23 15:05:51 Run_Script_Main     INFO     ResCons will continue as user has requested.
+2015-03-23 15:05:51 genbank2Fasta       INFO     Output folder path provided by user: 
+ C:/Users/Mana/Dropbox/ResCons/test_unit/Output/
+2015-03-23 15:05:51 genbank2Fasta       INFO     State of 'Replace newick-hating-symbols with underscores':   True
+2015-03-23 15:05:51 genbank2Fasta       INFO     State of 'Ignore sequence records that are incomplete/partial?':   True
+2015-03-23 15:05:51 genbank2Fasta       INFO     Length of fasta ID requested by user':   127
+2015-03-23 15:05:51 genbank2Fasta       INFO     State of 'Header options':  {'Locus Name': True, 'Domain': True, 'Seq Length': False, 'Species': True, 'Seq Name': False, 'Phylum': True, 'Genus': True, 'Class': True, 'GI': False}
+2015-03-23 15:06:05 genbank2Fasta       INFO     Total number of fasta ID names whose names were longer than 127 characters and 
+ hence restricted to the maximum of 127 characters: 11
+2015-03-23 15:06:05 genbank2Fasta       INFO     Number of sequence records that are incomplete:  174
+2015-03-23 15:06:05 genbank2Fasta       INFO      Number of records present in input GenBank/GenPept file:  13570
+ Number of sequences written into Fasta file:  13396
+ GenBank/GenPept to Fasta conversion was done and was stored in file:
+  C:/Users/Mana/Dropbox/ResCons/test_unit/Output/genbank_to_Fasta_formatted.fasta
+2015-03-23 15:06:06 genbank2Fasta       INFO      Total number of records that have some level of taxonomy details:   13549
+ Total number of records that do not have any level of taxonomy details:   21
+2015-03-23 15:06:06 genbank2Fasta       INFO     Exiting 'genbank_converter' module. Ready for next job! 
+
+
+2015-03-23 15:06:12 genbank2Fasta       INFO     User selected tool - 'GenBank/GenPept to Fasta converter'.
+2015-03-23 15:06:12 genbank2Fasta       INFO     GenBank/GenPept file provided by user: 
+ C:/Users/Mana/Dropbox/ResCons/test_unit/simplified.gp
+2015-03-23 15:06:12 Run_Script_Main     ERROR    Error that resulted when creating path "C:/Users/Mana/Dropbox/ResCons/test_unit/Output/":
+  [Error 183] Cannot create a file when that file already exists: 'C:/Users/Mana/Dropbox/ResCons/test_unit/Output/'
+2015-03-23 15:06:12 Run_Script_Main     ERROR    Folder "C:/Users/Mana/Dropbox/ResCons/test_unit/Output/" already exists. All or some files in it may get overwritten by ResCons. Do you wish to continue?
+2015-03-23 15:06:12 Run_Script_Main     INFO     User has selected (True = Yes, False = No):  True
+2015-03-23 15:06:12 Run_Script_Main     INFO     ResCons will continue as user has requested.
+2015-03-23 15:06:12 genbank2Fasta       INFO     Output folder path provided by user: 
+ C:/Users/Mana/Dropbox/ResCons/test_unit/Output/
+2015-03-23 15:06:12 genbank2Fasta       INFO     State of 'Replace newick-hating-symbols with underscores':   True
+2015-03-23 15:06:12 genbank2Fasta       INFO     State of 'Ignore sequence records that are incomplete/partial?':   True
+2015-03-23 15:06:12 genbank2Fasta       INFO     Length of fasta ID requested by user':   127
+2015-03-23 15:06:12 genbank2Fasta       INFO     State of 'Header options':  {'Locus Name': True, 'Domain': True, 'Seq Length': False, 'Species': True, 'Seq Name': False, 'Phylum': True, 'Genus': True, 'Class': True, 'GI': False}
+2015-03-23 15:06:13 genbank2Fasta       INFO     Total number of fasta ID names whose names were longer than 127 characters and 
+ hence restricted to the maximum of 127 characters: 0
+2015-03-23 15:06:13 genbank2Fasta       INFO     Number of sequence records that are incomplete:  0
+2015-03-23 15:06:13 genbank2Fasta       INFO      Number of records present in input GenBank/GenPept file:  3
+ Number of sequences written into Fasta file:  3
+ GenBank/GenPept to Fasta conversion was done and was stored in file:
+  C:/Users/Mana/Dropbox/ResCons/test_unit/Output/genbank_to_Fasta_formatted.fasta
+2015-03-23 15:06:13 genbank2Fasta       INFO      Total number of records that have some level of taxonomy details:   3
+ Total number of records that do not have any level of taxonomy details:   0
+2015-03-23 15:06:13 genbank2Fasta       INFO     Exiting 'genbank_converter' module. Ready for next job! 
+
+
+2015-03-23 15:06:32 Run_Script_Main     INFO     ResCons begins!
+2015-03-23 15:06:32 Run_Script_Main     ERROR    Error that resulted when creating path "C:/Users/Mana/Dropbox/ResCons/Output/":
+  [Error 183] Cannot create a file when that file already exists: 'C:/Users/Mana/Dropbox/ResCons/Output/'
+2015-03-23 15:06:32 Run_Script_Main     ERROR    Folder "C:/Users/Mana/Dropbox/ResCons/Output/" already exists. All or some files in it may get overwritten by ResCons. Do you wish to continue?
+2015-03-23 15:06:33 Run_Script_Main     INFO     User has selected (True = Yes, False = No):  True
+2015-03-23 15:06:33 Run_Script_Main     INFO     ResCons will continue as user has requested.
+2015-03-23 15:06:33 Run_Script_Main     INFO     Output folder path provided by user: C:/Users/Mana/Dropbox/ResCons/Output/
+2015-03-23 15:06:33 GUI_Main            INFO     Sequences File that will be used for alignment:  C:/Users/Mana/Dropbox/ResCons/seqs.fasta
+2015-03-23 15:06:33 GUI_Main            INFO     All output files will be stored at: C:/Users/Mana/Dropbox/ResCons/Output/
+2015-03-23 15:06:33 Run_Script_Main     INFO     All residue positions entered are less than the length of reference sequence.
+2015-03-23 15:06:33 Clustal_Alignment   INFO     Clustal alignment was requested.
+2015-03-23 15:06:33 Clustal_Alignment   INFO     Number of sequences found in 'C:/Users/Mana/Dropbox/ResCons/seqs.fasta' are '10'
+2015-03-23 15:06:33 Clustal_Alignment   INFO     Reference seq is not present in file: 'C:/Users/Mana/Dropbox/ResCons/seqs.fasta'. 
+	A new file 'C:/Users/Mana/Dropbox/ResCons/Output/seqs_Reference_SeqAdded.fasta' is created with Reference Seq appended to it.
+2015-03-23 15:06:33 Clustal_Alignment   INFO     Clustal commandline provided by user: 
+	{'outfile': 'default.aln', 'outfmt': 'clu', 'force': 'True', 'verbose': 'True', 'auto': 'True', 'infile': 'C:/Users/Mana/Dropbox/ResCons/Output/seqs_Reference_SeqAdded.fasta'}
+2015-03-23 15:06:33 Clustal_Alignment   INFO     Equivalent command prompt command that will be used to execute clustal omega alignment: 
+	'clustalo -i C:/Users/Mana/Dropbox/ResCons/Output/seqs_Reference_SeqAdded.fasta -o C:/Users/Mana/Dropbox/ResCons/Output/Aligned_Clustalo_seqs_Reference_SeqAdded.aln --outfmt clu --auto -v --force'
+2015-03-23 15:06:33 Clustal_Alignment   INFO     Clustal alignment will begin now. Warning: It may take few seconds to several minutes depending on number of sequences provided and your processor.
+2015-03-23 15:06:34 Run_Script_Main     INFO     Clustal alignment was completed!
+2015-03-23 15:06:34 Fetch_Mismatch      INFO     Reference sequence is present in alignment file.
+2015-03-23 15:06:34 Fetch_Mismatch      INFO     Query sites requested: [3]
+2015-03-23 15:06:34 Fetch_Mismatch      INFO     Residues at those query sites: ['L']
+2015-03-23 15:06:34 Fetch_Mismatch      INFO     Corresponding sites in the alignment's Reference sequence : [32]
+2015-03-23 15:06:34 Fetch_Mismatch      INFO     Begin extracting residues across alignment at the requested query sites
+2015-03-23 15:06:34 Fetch_Mismatch      INFO     Mismatch details will be written in to file:  "
+	C:/Users/Mana/Dropbox/ResCons/Output/Mismatches_Tabulated.csv"
+2015-03-23 15:06:34 Fetch_Mismatch      INFO     Done writing mismatch details in to csv file mentioned above.
+2015-03-23 15:06:34 Fetch_Mismatch      INFO     Mismatch details will be written in to text file: 
+	C:/Users/Mana/Dropbox/ResCons/Output/Mismatches_Detailed.txt
+2015-03-23 15:06:34 Fetch_Mismatch      INFO     Done extracting and writing mismatch details in to text file mentioned above
+2015-03-23 15:06:34 GUI_Main            INFO     User has requested to format alignment in html format
+2015-03-23 15:06:34 Run_Script_Main     INFO     User requested HTML color formatting for clustal alignment
+2015-03-23 15:06:34 html_formatting     INFO     Alignment file used for formatting: C:/Users/Mana/Dropbox/ResCons/Output/Aligned_Clustalo_seqs_Reference_SeqAdded.aln
+2015-03-23 15:06:34 html_formatting     INFO     Formatted aligment will be stored in html file: 'C:/Users/Mana/Dropbox/ResCons/Output/Formatted_Alignment.html'
+2015-03-23 15:06:34 html_formatting     INFO     Alignment formatted was completed and saved as above mentioned html file.
+2015-03-23 15:06:41 Run_Script_Main     INFO     All requested jobs are done! Ready for next job!!
+
+
+2015-03-23 15:06:52 Descrip/ID_Extractor INFO     User has requested tool 'Fasta Description/ID Extractor'
+2015-03-23 15:06:52 Descrip/ID_Extractor INFO     User chose to use 'Description Extractor'
+2015-03-23 15:06:52 Descrip/ID_Extractor ERROR    'FASTA file' box is empty. Choose a file.
+2015-03-23 15:06:53 Unexpected_error    ERROR    Traceback (most recent call last):
+  File "C:\Python27\lib\lib-tk\Tkinter.py", line 1486, in __call__
+    return self.func(*args)
+  File "ResCons_ver17.py", line 1611, in description_extractor
+  File "ResCons_ver17.py", line 211, in raise_enabler
+Exception: Controlled termination by ResCon!
+
+2015-03-23 15:07:10 Descrip/ID_Extractor INFO     User has requested tool 'Fasta Description/ID Extractor'
+2015-03-23 15:07:10 Descrip/ID_Extractor INFO     User chose to use 'Description Extractor'
+2015-03-23 15:07:10 Descrip/ID_Extractor INFO     Fasta file provided by user: 'C:/Users/Mana/Dropbox/ResCons/Demo Files/Description_ID Extractor/Sequences_demo.fasta'
+2015-03-23 15:07:10 Run_Script_Main     ERROR    Error that resulted when creating path "C:/Users/Mana/Dropbox/ResCons/Demo Files/Description_ID Extractor/Output/":
+  [Error 183] Cannot create a file when that file already exists: 'C:/Users/Mana/Dropbox/ResCons/Demo Files/Description_ID Extractor/Output/'
+2015-03-23 15:07:10 Run_Script_Main     ERROR    Folder "C:/Users/Mana/Dropbox/ResCons/Demo Files/Description_ID Extractor/Output/" already exists. All or some files in it may get overwritten by ResCons. Do you wish to continue?
+2015-03-23 15:07:11 Run_Script_Main     INFO     User has selected (True = Yes, False = No):  True
+2015-03-23 15:07:11 Run_Script_Main     INFO     ResCons will continue as user has requested.
+2015-03-23 15:07:11 Descrip/ID_Extractor INFO     Output folder path provided by user: 'C:/Users/Mana/Dropbox/ResCons/Demo Files/Description_ID Extractor/Output/'
+2015-03-23 15:07:11 Descrip/ID_Extractor INFO     User has requested to replace comma in Description with '_$'
+2015-03-23 15:07:11 Descrip/ID_Extractor INFO     State of checkbox 'Extract Partial Description': False
+2015-03-23 15:07:11 Descrip/ID_Extractor INFO     All sequence headers in fasta file conform to the requirements.
+2015-03-23 15:07:11 Descrip/ID_Extractor INFO     Descriptions will be written into output file: 'C:/Users/Mana/Dropbox/ResCons/Demo Files/Description_ID Extractor/Output/Descriptions_Extracted.csv'
+2015-03-23 15:07:11 Descrip/ID_Extractor INFO     Data writing in to above csv file was completed.
+2015-03-23 15:07:11 Descrip/ID_Extractor INFO      Total number of sequences present in fasta file:  677
+ Number of unique Descriptions present among them:  422
+2015-03-23 15:07:12 Descrip/ID_Extractor INFO     Job done! Ready for next job.
+
+
+2015-03-23 15:07:16 Descrip/ID_Extractor INFO     User has requested tool 'Fasta Description/ID Extractor'
+2015-03-23 15:07:16 Descrip/ID_Extractor INFO     User chose to use 'Description Extractor'
+2015-03-23 15:07:16 Descrip/ID_Extractor INFO     Fasta file provided by user: 'C:/Users/Mana/Dropbox/ResCons/Demo Files/Description_ID Extractor/Sequences_demo.fasta'
+2015-03-23 15:07:16 Run_Script_Main     ERROR    Error that resulted when creating path "C:/Users/Mana/Dropbox/ResCons/Demo Files/Description_ID Extractor/Output/":
+  [Error 183] Cannot create a file when that file already exists: 'C:/Users/Mana/Dropbox/ResCons/Demo Files/Description_ID Extractor/Output/'
+2015-03-23 15:07:16 Run_Script_Main     ERROR    Folder "C:/Users/Mana/Dropbox/ResCons/Demo Files/Description_ID Extractor/Output/" already exists. All or some files in it may get overwritten by ResCons. Do you wish to continue?
+2015-03-23 15:07:16 Run_Script_Main     INFO     User has selected (True = Yes, False = No):  True
+2015-03-23 15:07:16 Run_Script_Main     INFO     ResCons will continue as user has requested.
+2015-03-23 15:07:16 Descrip/ID_Extractor INFO     Output folder path provided by user: 'C:/Users/Mana/Dropbox/ResCons/Demo Files/Description_ID Extractor/Output/'
+2015-03-23 15:07:16 Descrip/ID_Extractor INFO     User has requested to replace comma in Description with '_$'
+2015-03-23 15:07:16 Descrip/ID_Extractor INFO     State of checkbox 'Extract Partial Description': True
+2015-03-23 15:07:16 Descrip/ID_Extractor INFO     Regular expression provided by user: (.+) \[.+
+2015-03-23 15:07:17 Descrip/ID_Extractor INFO     All sequence headers in fasta file conform to the requirements.
+2015-03-23 15:07:17 Descrip/ID_Extractor INFO     Descriptions will be written into output file: 'C:/Users/Mana/Dropbox/ResCons/Demo Files/Description_ID Extractor/Output/Descriptions_Extracted.csv'
+2015-03-23 15:07:17 Descrip/ID_Extractor INFO     Data writing in to above csv file was completed.
+2015-03-23 15:07:17 Descrip/ID_Extractor INFO      Total number of sequences present in fasta file:  677
+ Number of unique Descriptions present among them:  37
+2015-03-23 15:07:17 Descrip/ID_Extractor INFO     Job done! Ready for next job.
+
+
