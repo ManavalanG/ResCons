@@ -11,7 +11,7 @@ See the user guide for further details about ResCon’s tools.
 
 
 ## To run ResCon script
-Moves following into a directory and run script using Python 2.7
+Moves following into a directory and run ResCon script using Python 2.7
 	- Verxx_ResCon.py
 	- clustalo_embl_api.py
 	- Rescon_Files (directory)
