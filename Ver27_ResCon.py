@@ -45,7 +45,6 @@ import threading
 from sys import platform as _platform	# to determine OS under use
 import csv
 import operator
-from math import log as math_log
 import StringIO
 from clustalo_embl_api import clustalo_api
 
@@ -258,6 +257,25 @@ else:		# for mac and ubuntu, log file is created in the same folder as this scri
 if not terminal_output:
 	sys.stderr = open(logger_filename, 'w')		# Logs and errors are directed to stderr which in turn gets logged.
 
+
+# Following are dummy variables which will be removed when scripting is completed
+# This is just to keep Pycharm's code inspection happy
+# or otherwise code inspection shows error everywhere suggesting 'unresolved reference'
+html_log = logging.getLogger('value')
+genbank_log = logging.getLogger('value')
+runscript_log = logging.getLogger('value')
+blast_log = logging.getLogger('value')
+mismatch_log = logging.getLogger('value')
+clustal_log = logging.getLogger('value')
+gui_log = logging.getLogger('value')
+clades_log = logging.getLogger('value')
+descr_filter_log = logging.getLogger('value')
+idfilter_log = logging.getLogger('value')
+header_extractor_log = logging.getLogger('value')
+unexpected_error_log = logging.getLogger('value')
+user_error_log = logging.getLogger('value')
+
+
 logging.basicConfig(level=logging.INFO, format='%(asctime)s %(name)-19s %(levelname)-8s %(message)s',
 					datefmt= '%Y-%m-%d %H:%M:%S')
 
@@ -449,7 +467,7 @@ def show_error(self, *args):
 	err_string = ''			# turning it a string makes it easier to read.
 	for x in err:
 		err_string += x
-	err_string += ('\n')
+	err_string += '\n'
 
 	if 'raise_enabler' not in err_string:	# error will pop up only when unexpected error occurs
 		temp = "Unexpected error occured. Click 'Yes' for more details on this error."
@@ -474,7 +492,7 @@ def show_error(self, *args):
 # Re-enable convert/submit job buttons and hide 'processing' label when 'Raise' function needs to be called
 # intentionally to avoid further execution of code when an error is noted.
 # Also defines what kind of 'raise' function is called
-def raise_enabler(str):
+def raise_enabler(string):
 	# to re-enable submit button and hide 'processing job label' of root window during unexpected errors
 	try:
 		global button_run_script
@@ -502,15 +520,15 @@ def raise_enabler(str):
 	except Exception as e:
 		pass
 
-	if str == 'stop':
+	if string == 'stop':
 		user_error_log.error("Resulted in an error that can be corrected by User. ResCon is ready for next job now!")
 		raise Exception("Error can be rectified by user (you)!. Controlled termination by ResCon!")
-	if str == 'OSError':
+	if string == 'OSError':
 		raise OSError
-	elif str == 'none':		# in cases where submit buttons need to be activated but raise fn not to be called
+	elif string == 'none':		# in cases where submit buttons need to be activated but raise fn not to be called
 		pass
 	else:
-		raise Exception(str)
+		raise Exception(string)
 
 
 # Function to index each character (residue) in the Reference sequence
@@ -595,7 +613,7 @@ def is_ref_in_seqs_file():
 	outfile_ref_added = None
 	if Reference.id not in all_seqs_id:
 		all_seqs_input.append(Reference)
-		OutputFile_temp = (SeqQuery_FileName).replace('.fasta', '') + "_Reference_SeqAdded.fasta"
+		OutputFile_temp = SeqQuery_FileName.replace('.fasta', '') + "_Reference_SeqAdded.fasta"
 		outfile_ref_added = Output_Path + OutputFile_temp
 		Output_handle = open(outfile_ref_added, 'w')
 		SeqIO.write(all_seqs_input, Output_handle, 'fasta')
@@ -610,8 +628,8 @@ def is_ref_in_seqs_file():
 
 	else:
 		clustal_log.info('Reference seq is present in file: %s' % SeqQuery_file)
-		Aligned_Filename = Output_Path + "Aligned_Clustalo_" + (SeqQuery_FileName).replace('.fasta', '')
-		tree_filename = Output_Path + "Tree_" + (SeqQuery_FileName).replace('.fasta', '') + ".newick"
+		Aligned_Filename = Output_Path + "Aligned_Clustalo_" + SeqQuery_FileName.replace('.fasta', '')
+		tree_filename = Output_Path + "Tree_" + SeqQuery_FileName.replace('.fasta', '') + ".newick"
 
 		# verify sequence in Reference file matches to that in Sequences file
 		refseq_in_input = all_seqs_input[ all_seqs_id.index(Reference.id) ].seq
@@ -722,7 +740,7 @@ def clustal_alignment_local():
 		return None
 
 	is_clustalo_present = which('clustalo')			#tests if clustal omega is available in the system
-	if is_clustalo_present == None:
+	if is_clustalo_present is None:
 		temp = 'It appears Clustal Omega is not available in your system. Click Cancel if you believe this is not true.'
 		clustal_log.error(temp)
 		response = tkMessageBox.askokcancel('Clustal Omega not installed', temp, default = 'ok')
@@ -928,7 +946,7 @@ def fetch_mismatch():
 			Reference_index = serial_no
 
 	# Checks if Reference seq is present in MSA and if present, checks if they match or not
-	if Reference_index == None:
+	if Reference_index is None:
 		temp = ('Error: Alignment file "%s" does not have Sequence ID corresponding to your reference sequence. '
 				'Fix it and try again!' % Aligned_Filename)
 		mismatch_log.error(temp)
@@ -1009,7 +1027,7 @@ def fetch_mismatch():
 	mismatch_log.debug('Determined the title to be used in csv and tect files.')
 
 
-	if checkboxval_Clustal.get() == True:	# To account for input file used depending on clustal alignment was selected or not
+	if checkboxval_Clustal.get():	# To account for input file used depending on clustal alignment was selected or not
 		input_file = SeqQuery_file
 	else:
 		input_file = Aligned_Filename
@@ -1122,7 +1140,7 @@ def fetch_mismatch():
 		# for column_no in range(0, len(query_in_Alignment)):
 		for column_no in query_in_Alignment:
 			column_aa = msa_ref_removed[:,column_no]
-			column_aa = column_aa.upper()		# to help if seqs are in lower case or mix of lower and upper cases
+			column_aa = str(column_aa).upper()		# to help if seqs are in lower case or mix of lower and upper cases
 
 			# Identifies most frequent residue. If it is gap, next most common residue is chosen.
 			# At the moment, doesn't account for the issue where more than one residue are sharing second most common status.
@@ -1142,6 +1160,7 @@ def fetch_mismatch():
 
 		# # calculates shannon entropy - Turned off for now as it needs to be tested further
 		# # Non-standard amino acids are treated as 'gaps'; Similar to Scorecons server
+		# If this need to be used import this ->  from math import log as math_log
 		# score_shannon = 0
 		# gaps_rel_freq = 0
 		# for symbol in aa_label:
@@ -1758,7 +1777,7 @@ def html_formatting():
 
 	limit_col_temp = limit_col
 	for table_no in range(0, no_of_tables):
-		table_string = ('<TABLE border="1" cellpadding="0" cellspacing="0" HEIGHT="90px" style="table-layout:fixed">\n')
+		table_string = '<TABLE border="1" cellpadding="0" cellspacing="0" HEIGHT="90px" style="table-layout:fixed">\n'
 		if table_no < (no_of_tables - 1):
 			end_col = limit_col_temp
 		else:
@@ -2437,18 +2456,18 @@ def Extract_Clades():
 
 			Clade_SeqID = []
 			for SeqNo in range(0, len(Clade_Of_Interest)):
-				id = str(Clade_Of_Interest[SeqNo].name)
-				if id != 'None':
-					Clade_SeqID.append(id)
+				id_no = str(Clade_Of_Interest[SeqNo].name)
+				if id_no != 'None':
+					Clade_SeqID.append(id_no)
 
 			Fasta_id = []
 			Extracted_Seqs = []
 			for seq_record in SeqIO.parse(Extract_input_fasta, "fasta"):
 				title = seq_record.description
 				title_list = title.split()
-				id = title_list[0]
-				Fasta_id.append(id)
-				if id in Clade_SeqID:
+				id_no = title_list[0]
+				Fasta_id.append(id_no)
+				if id_no in Clade_SeqID:
 					Extracted_Seqs.append(seq_record)
 
 
@@ -2482,7 +2501,7 @@ def Extract_Clades():
 			else:
 				# 'None' is replaced with zero. Or else it results in bug in Windows/ubuntu
 				for i in range(0, len(branches_sorted)):
-					if branches_sorted[i] == None:
+					if branches_sorted[i] is None:
 						branches_sorted[i] = 0
 				closest = min(range(len(branches_sorted)), key=lambda x: abs(branches_sorted[x] - Branch_Length))
 				probables = branches_sorted[closest-2 : closest+3]
@@ -3270,11 +3289,11 @@ def read_user_input():
 
 	try:
 		Reference = SeqIO.read(Reference_file, "fasta")
-	except (ValueError, IOError) as Exception:
+	except (ValueError, IOError) as exception:
 		temp = ("Error reading Reference file:  '%s'. "
 				"Make sure it is in fasta format and has only one sequence." %Reference_file)
 		runscript_log.error(temp)
-		runscript_log.error('Error that resulted: %s' % Exception)
+		runscript_log.error('Error that resulted: %s' % exception)
 		popup_error(temp)
 		raise_enabler('stop')
 
@@ -3734,31 +3753,31 @@ def top_win():
 	else:
 		button_blast_filter.configure(bg = '#F8F8F8', fg = 'black', font=('times', '10'))
 
-	Blast_xml_label = label_text(frame_blast, "   XML BLAST file   ", 2, 20, 3, 0)
+	label_text(frame_blast, "   XML BLAST file   ", 2, 20, 3, 0)
 
 	Blast_xml_filename = StringVar()
 	Blast_xml = entry_box(frame_blast, Blast_xml_filename, 50, 3, 1)
 
 	filetype_xml = [('xml files', '*.xml'), ('All files', '*.*')]
-	Blast_xml_browse = browse_button(frame_blast, lambda: browse_for_file_change_outpath(Blast_xml, output_blast_entry, filetype_xml), 3, 2)
+	browse_button(frame_blast, lambda: browse_for_file_change_outpath(Blast_xml, output_blast_entry, filetype_xml), 3, 2)
 
-	Blast_fasta_label = label_text(frame_blast, "   FASTA file   ", 2, 20, 4, 0)
+	label_text(frame_blast, "   FASTA file   ", 2, 20, 4, 0)
 
 	Blast_fasta_filename = StringVar()
 	Blast_fasta = entry_box(frame_blast, Blast_fasta_filename, 50, 4, 1)
 
 	filetype_fasta = [('fasta files', '*.fasta'), ('All files', '*.*')]
-	Blast_fasta_browse = browse_button(frame_blast, lambda: browse_for_file(Blast_fasta, filetype_fasta), 4, 2)
+	browse_button(frame_blast, lambda: browse_for_file(Blast_fasta, filetype_fasta), 4, 2)
 
-	output_blast_label = label_text(frame_blast, "   Output folder   ", 2, 20, 5, 0)
+	label_text(frame_blast, "   Output folder   ", 2, 20, 5, 0)
 
 	output_blast_filename = StringVar()
 	output_blast_entry = entry_box(frame_blast, output_blast_filename, 50, 5, 1)
 
 	# filetype_all = []
-	output_blast_browse = browse_button(frame_blast, lambda: browse_for_directory(output_blast_entry), 5, 2)
+	browse_button(frame_blast, lambda: browse_for_directory(output_blast_entry), 5, 2)
 
-	E_threshold_label = label_text(frame_blast, "   E-value Threshold    ", 2, 20, 7, 0)
+	label_text(frame_blast, "   E-value Threshold    ", 2, 20, 7, 0)
 
 	E_threshold = StringVar()
 	E_threshold_entry = entry_box(frame_blast, E_threshold, 20, 7, 1)
@@ -3798,24 +3817,24 @@ def top_win():
 	else:
 		button_genbank.configure(bg = '#F8F8F8', fg = 'black', font=('times', '10'))
 
-	genbank_label = label_text(frame_genbank, "   GenPept/GenBank file", 2, 20, 12, 0)
+	label_text(frame_genbank, "   GenPept/GenBank file", 2, 20, 12, 0)
 
 	genbank_filename = StringVar()
 	genbank_entry = entry_box(frame_genbank, genbank_filename, 50, 12, 1)
 
 	filetype_genbank = [('genbank files', '*.gp'),  ('genbank files', '*.gb'), ('All files', '*.*')]
-	genbank_browse = browse_button(frame_genbank, lambda: browse_for_file_change_outpath(genbank_entry, output_genbank_entry, filetype_genbank), 12, 2)
+	browse_button(frame_genbank, lambda: browse_for_file_change_outpath(genbank_entry, output_genbank_entry, filetype_genbank), 12, 2)
 
 
-	output_genbank_label = label_text(frame_genbank, "   Output folder", 2, 20, 13, 0)
+	label_text(frame_genbank, "   Output folder", 2, 20, 13, 0)
 
 	output_genbank_filename = StringVar()
 	output_genbank_entry = entry_box(frame_genbank, output_genbank_filename, 50, 13, 1)
 
-	output_genbank_browse = browse_button(frame_genbank, lambda: browse_for_directory(output_genbank_entry), 13, 2)
+	browse_button(frame_genbank, lambda: browse_for_directory(output_genbank_entry), 13, 2)
 
 
-	fasta_id_length_label = label_text(frame_genbank, "   Fasta ID length", 2, 20, 15, 0)
+	label_text(frame_genbank, "   Fasta ID length", 2, 20, 15, 0)
 
 	fasta_id_length_entry_val = StringVar()
 	fasta_id_length_entry_val.set(fasta_id_length_default)	# value obtained from settings file
@@ -3825,7 +3844,7 @@ def top_win():
 	frame_options = Frame(frame_genbank, bd=2)
 	frame_options.grid(row = 17, column = 0, columnspan=4, sticky = 'w')
 
-	options_label = label_text(frame_options, '   Header options', 1, 20, 1, 0)
+	label_text(frame_options, '   Header options', 1, 20, 1, 0)
 
 	# for checkbox values - change this list also in genpept_converter fn when you change here
 	# options_list = ['Locus ID' ,'Version', 'GI', 'Taxon ID', 'Domain', 'Phylum', 'Class', 'Genus', 'Species', 'Seq Length', 'Seq Name']
@@ -3851,7 +3870,7 @@ def top_win():
 	# options_dict['Seq Name'].set(False)
 	# options_dict['Taxon ID'].set(False)
 
-	more_options_label = label_text(frame_genbank, '   Retrieval options', 2, 20, 18, 0)
+	label_text(frame_genbank, '   Retrieval options', 2, 20, 18, 0)
 
 	global Newick_hate_sym_checkbox
 	Newick_hate_sym_checkboxval = BooleanVar()
@@ -3894,31 +3913,31 @@ def top_win():
 	else:
 		button_clades.configure(bg = 'steelblue', fg= 'white',font=('times', '11', 'italic'))
 
-	Newick_label = label_text(frame_clade, "   Tree file   ", 2, 20, 18, 0)
+	label_text(frame_clade, "   Tree file   ", 2, 20, 18, 0)
 
 	Newick_filename = StringVar()
 	Newick_entry = entry_box(frame_clade, Newick_filename, 50, 18, 1)
 
 	filetype_tree = [('Newick files', '*.newick *.nwk'), ('Nexus files', '*.nexus *.nex *.nxs'), ('Text files', '*.txt'),
 					   ('NeXML files', '*.xml *.nexml'), ('PhyloXML files', '*.xml *.phyloxml'), ('All files', '*.*')]
-	newick_browse = browse_button(frame_clade, lambda: browse_for_file_change_outpath(Newick_entry,
+	browse_button(frame_clade, lambda: browse_for_file_change_outpath(Newick_entry,
 															output_subtree_entry, filetype_tree), 18, 2)
 
-	Fasta_Original_label = label_text(frame_clade, "   FASTA file    ", 2, 20, 19, 0)
+	label_text(frame_clade, "   FASTA file    ", 2, 20, 19, 0)
 
 	Fasta_Original_filename = StringVar()
 	Fasta_Original_entry = entry_box(frame_clade, Fasta_Original_filename, 50, 19, 1)
 
-	Fasta_Original_browse = browse_button(frame_clade, lambda: browse_for_file(Fasta_Original_entry, filetype_fasta), 19, 2)
+	browse_button(frame_clade, lambda: browse_for_file(Fasta_Original_entry, filetype_fasta), 19, 2)
 
-	output_subtree_label = label_text(frame_clade, "   Output folder    ", 2, 20, 20, 0)
+	label_text(frame_clade, "   Output folder    ", 2, 20, 20, 0)
 
 	output_subtree_filename = StringVar()
 	output_subtree_entry = entry_box(frame_clade, output_subtree_filename, 50, 20, 1)
 
-	output_subtree_browse = browse_button(frame_clade, lambda: browse_for_directory(output_subtree_entry), 20, 2)
+	browse_button(frame_clade, lambda: browse_for_directory(output_subtree_entry), 20, 2)
 
-	BranchLength_label = label_text(frame_clade, "   Clade's Branch Length    ", 2, 20, 22, 0)
+	label_text(frame_clade, "   Clade's Branch Length    ", 2, 20, 22, 0)
 
 	BranchLength = StringVar()
 	BranchLength_entry = entry_box(frame_clade, BranchLength, 20, 22, 1)
@@ -4015,15 +4034,15 @@ def top_win():
 	descr_extr_file_entry = entry_box(frame_descr_extractor, descr_extractor_filename, 50, 27, 1)
 
 	filetype_descr_extractor = [('fasta files', '*.fasta'), ('All files', '*.*')]
-	descr_extractor_browse = browse_button(frame_descr_extractor,
+	browse_button(frame_descr_extractor,
 				lambda:browse_for_file_change_outpath(descr_extr_file_entry, output_descr_extract_entry, filetype_descr_extractor), 27, 2)
 
-	output_descr_extract_label = label_text(frame_descr_extractor, "   Output folder   ", 2, 20, 28, 0)
+	label_text(frame_descr_extractor, "   Output folder   ", 2, 20, 28, 0)
 
 	output_descr_extract_filename = StringVar()
 	output_descr_extract_entry = entry_box(frame_descr_extractor, output_descr_extract_filename, 50, 28, 1)
 
-	output_descr_extract_browse = browse_button(frame_descr_extractor,
+	browse_button(frame_descr_extractor,
 										  lambda:browse_for_directory(output_descr_extract_entry), 28, 2)
 
 	frame_partial_descr = Frame(frame_descr_extractor)
@@ -4084,14 +4103,14 @@ def top_win():
 	else:
 		button_namefilter.configure(bg = '#F8F8F8', fg = 'black', font=('times', '10'))
 
-	fasta_label = label_text(frame_fasta_name_filter, "   FASTA file   ", 2, 20, 36, 0)
+	label_text(frame_fasta_name_filter, "   FASTA file   ", 2, 20, 36, 0)
 
 	fasta_filename = StringVar()
 	fasta_filename_entry = entry_box(frame_fasta_name_filter, fasta_filename, 50, 36, 1)
 	fasta_filename_entry.grid(columnspan = 2)
 
 	filetype_fasta = [('fasta files', '*.fasta'), ('All files', '*.*')]
-	fasta_browse = browse_button(frame_fasta_name_filter,
+	browse_button(frame_fasta_name_filter,
 								 lambda:browse_for_file_change_outpath(fasta_filename_entry, output_filter_name_entry, filetype_fasta),36, 2)
 
 	label_text(frame_fasta_name_filter, "   Output folder   ", 2, 20, 37, 0)
@@ -4109,7 +4128,7 @@ def top_win():
 	frame_name_in_file.grid(row = 39, column = 0, columnspan = 10, sticky = W)
 	frame_name_in_file.grid_remove()
 
-	namelist_4filtering_label = label_text(frame_namelist, "  List of Descriptions  ", 2, 20, 1, 0)
+	label_text(frame_namelist, "  List of Descriptions  ", 2, 20, 1, 0)
 
 	namelist_4filtering =  StringVar()
 	namelist_4filtering_entry = entry_box(frame_namelist, namelist_4filtering, 50, 1, 1)
@@ -4188,17 +4207,17 @@ def top_win():
 	else:
 		button_idfilter.configure(bg = '#F8F8F8', fg = 'black', font=('times', '10'))
 
-	fasta_label2 = label_text(frame_fasta_id_filter, "   FASTA file   ", 2, 20, 45, 0)
+	label_text(frame_fasta_id_filter, "   FASTA file   ", 2, 20, 45, 0)
 
 	fasta_filename2 = StringVar()
 	fasta_filename2_entry = entry_box(frame_fasta_id_filter, fasta_filename2, 50, 45, 1)
 	fasta_filename2_entry.grid(columnspan=2)
 
 	filetype_fasta = [('fasta files', '*.fasta'), ('All files', '*.*')]
-	fasta_browse2 = browse_button(frame_fasta_id_filter,
+	browse_button(frame_fasta_id_filter,
 								  lambda:browse_for_file_change_outpath(fasta_filename2_entry, output_idlist_entry, filetype_fasta),45, 3)
 
-	idfile_labelval = label_text(frame_fasta_id_filter, "   File with IDs", 2, 20, 46, 0)
+	label_text(frame_fasta_id_filter, "   File with IDs", 2, 20, 46, 0)
 
 	idlist_filename = StringVar()
 	idlist_filename_entry = entry_box(frame_fasta_id_filter, idlist_filename, 50, 46, 1)
