@@ -21,7 +21,6 @@ Author's Email id: manavalan.g@gmail.com
 '''
 
 __author__ = "Manavalan Gajapathy, Joseph D. Ng"
-# __credits__ = ["Joseph Ng"]
 __license__ = "Lesser General Public License"
 __version__ = "18 beta"
 __email__ = "manavalan.g@gmail.com"
@@ -76,6 +75,8 @@ Ver 27 (under development) major modifications:
 1. Added lower case or mixed upper/lower case support for Liu08 scoring method.
 
 2. (In progress) Implement Liu08 scoring without sequence weighting.
+		Completed - Calculation part is done
+		TODO - Ability to choose which conservation score to use for analysis
 
 
 ------------------------------------------------------------------------------------------------------------------------
@@ -899,7 +900,7 @@ def fetch_mismatch():
 	global query_site_actual
 	global identity_perc_list
 	# global similarity_perc_list
-	global liu08_score_list
+	global liu08_weighted_score_list
 	global protein_mode
 	global dict_identifier_status
 	global match_seqs_total
@@ -1104,7 +1105,8 @@ def fetch_mismatch():
 			msa_ref_removed.append(item)
 	msa_ref_removed = MultipleSeqAlignment(msa_ref_removed)		# List of SeqRecords is now converted to be a MSA
 
-	liu08_score_list = []
+	liu08_weighted_score_list = []
+	liu08_simple_score_list = []
 	if protein_mode:
 		#get frequency and unique amino acid count to calculate sequence weight
 		alignment_len = len(msa_ref_removed[0].seq)
@@ -1149,14 +1151,22 @@ def fetch_mismatch():
 			if sorted_aa_count[0][0] == '-' and sorted_aa_count[1][0] != 0:
 				aa_most = sorted_aa_count[1][0]
 
-			# Calculates Liu08 residue conservation score
-			# While Liu08 score ranges from 0 to 10, here we calculate it as percentage from 0 to 100
-			liu08_score = 0
+			# Calculates Liu08 Sequence Weighted residue conservation score
+			# While Liu08 score ranges from 0 to 10, here we present it as percentage from 0 to 100
+			liu08_weighted_score = 0
 			for row_no in range(0, len(column_aa)):
 				matrix_score = float( dict_similarity_matrix[aa_most][column_aa[row_no]] )
-				liu08_score += (dict_seq_weight[row_no] * matrix_score)
-			liu08_score_list.append(liu08_score * 10)	# multiplied by 10 to present in percentage
-			# print '%i Liu08  %s  %0.2f' %(column_no,aa_most, liu08_score)
+				liu08_weighted_score += (dict_seq_weight[row_no] * matrix_score)
+			liu08_weighted_score_list.append(liu08_weighted_score * 10)	# multiplied by 10 to present in percentage
+			# print '%i Liu08  %s  %0.2f' %(column_no,aa_most, liu08_weighted_score)
+
+			# Calculates simple Liu08 NON-Sequence Weighted residue conservation score
+			liu08_simple_score = 0
+			for aa in aa_label:
+				matrix_score = float(dict_similarity_matrix[aa_most][aa])
+				liu08_simple_score += ( matrix_score * dict_pos_freq[column_no][aa] )
+			liu08_simple_score_list.append(liu08_simple_score/len(column_aa) * 10)
+
 
 		# # calculates shannon entropy - Turned off for now as it needs to be tested further
 		# # Non-standard amino acids are treated as 'gaps'; Similar to Scorecons server
@@ -1329,7 +1339,7 @@ def fetch_mismatch():
 	Output_handle_mismatch_csv.write("\n\n*** Unique residues seen at the query sites and their count. ***\n"
 									 "** (Note: Calculation doesn't include Reference sequences's residue at that position) **\n\n")
 	if protein_mode:
-		Output_handle_mismatch_csv.write(",Expected Residue, ,Identity_count,% Identity,% Conservation_Liu08,"
+		Output_handle_mismatch_csv.write(",Expected Residue, ,Identity_count,% Identity,% Conservation_Liu08_Weighted,"
 									 "Unique residues' count and fraction\n")
 	else:
 		Output_handle_mismatch_csv.write(",Expected Residue, ,Identity_count,% Identity,"
@@ -1392,7 +1402,7 @@ def fetch_mismatch():
 
 		# unique_residues_list.append(unique_each)
 		if protein_mode:			# residue conservation details added only if protein mode is used
-			unique_res_detail += (',%i,%3.1f,%0.1f' % (identity_count, identity_perc, liu08_score_list[no]))
+			unique_res_detail += (',%i,%3.1f,%0.1f' % (identity_count, identity_perc, liu08_weighted_score_list[no]))
 		else:
 			unique_res_detail += (',%i,%3.1f' % (identity_count, identity_perc))
 		unique_res_detail += unique_each
@@ -1476,8 +1486,8 @@ def fetch_mismatch():
 											 '%%\t(%i residues are identical)' % identity_count_list[num] + '\n')
 
 			if protein_mode:		# residue conservation details only if proteins sequences are used
-				Output_handle_mismatch_txt.write('% Conservation_Score_Liu08'.ljust(45) + ':\t' +
-													str(liu08_score_list[num]) + '%%\n')
+				Output_handle_mismatch_txt.write('% Conservation_Score_Liu08_Weighted'.ljust(45) + ':\t' +
+													str(liu08_weighted_score_list[num]) + '%%\n')
 
 			if len(Mismatch) != 0:					# This is to write into output file if mismatches were found
 				Output_handle_mismatch_txt.write('\n*** Following are the mismatches noted ***\n\n')
@@ -1501,7 +1511,7 @@ def html_formatting():
 	# global unique_residues_line
 	global identity_perc_list
 	# global similarity_perc_list
-	global liu08_score_list
+	global liu08_weighted_score_list
 	global query_site_residues
 	global query_site_actual
 	global Reference
@@ -1647,7 +1657,7 @@ def html_formatting():
 
 		iden = identity_perc_list
 		# simi = similarity_perc_list
-		simi = liu08_score_list
+		simi = liu08_weighted_score_list
 		width = 0.25
 		numb = range(len(query_site_residues))
 		numb2 = [x+width for x in numb]
@@ -1726,7 +1736,7 @@ def html_formatting():
 							  '\t\t});\n\n\tvar legendHolder = document.createElement("div");\n'
 							  '\tlegendHolder.innerHTML = bar.generateLegend();\n'
 							  '\tdocument.getElementById("legend").appendChild(legendHolder.firstChild);'
-							  '\n\t}\n</script>\n' % (query_site_actual, identity_perc_list, liu08_score_list))
+							  '\n\t}\n</script>\n' % (query_site_actual, identity_perc_list, liu08_weighted_score_list))
 
 	elif chart_method == 'chartnew.js':
 		if ( 63*len(query_site_actual) ) < 325:
@@ -1745,7 +1755,7 @@ def html_formatting():
 
 		if protein_mode:
 			out_html_handle.write('\t\t{	fillColor : "rgba(255,140,0, 1.0)",\n\t\t\ttitle: "%% Conservation",\n'
-								  '\t\t\tdata : %s  }\n\t\t]\n\t}\n' % liu08_score_list)
+								  '\t\t\tdata : %s  }\n\t\t]\n\t}\n' % liu08_weighted_score_list)
 		else:
 			out_html_handle.write('\t\t]\n\t}\n')
 
@@ -1764,7 +1774,7 @@ def html_formatting():
 	for n in range(0, len(identity_perc_list)):
 		row2.append("%3.1f" % identity_perc_list[n])
 		if protein_mode:
-			row3.append("%3.1f" % liu08_score_list[n])
+			row3.append("%3.1f" % liu08_weighted_score_list[n])
 
 	if protein_mode:		# for protein seqs, conservation_liu08 data is added
 		rows = [row1, row2, row3]
@@ -1822,7 +1832,7 @@ def html_formatting():
 			# select highlighting color depending on conservation score
 			color_code = '#FFFFFF'		# white being the default background color
 			if (aa_no+1) in query_site_actual:	# 'aa_no+1' accounts for pythonic count
-				conservation_score = liu08_score_list[ query_site_actual.index(aa_no+1) ]
+				conservation_score = liu08_weighted_score_list[ query_site_actual.index(aa_no+1) ]
 				score_range = [10, 20, 30, 40, 50, 60, 70, 80, 90, 100]
 				for no in range(0, len(score_range)):
 					if (conservation_score) <= ( float(score_range[no]) + 0.001): # 0.001 is added to get around float precision problems
