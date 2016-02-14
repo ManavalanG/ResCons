@@ -1,0 +1,355 @@
+
+<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.0 Transitional//EN">
+<html><head><title>Python: module Ver27_ResCon</title>
+<meta charset="utf-8">
+</head><body bgcolor="#f0f0f8">
+
+<table width="100%" cellspacing=0 cellpadding=2 border=0 summary="heading">
+<tr bgcolor="#7799ee">
+<td valign=bottom>&nbsp;<br>
+<font color="#ffffff" face="helvetica, arial">&nbsp;<br><big><big><strong>Ver27_ResCon</strong></big></big> (version 18 beta)</font></td
+><td align=right valign=bottom
+><font color="#ffffff" face="helvetica, arial"><a href=".">index</a><br><a href="file:///C:/users/mana_dell/dropbox/rescons/under_testing/sphinx_testing%20-%20copy/new%20folder/ver27_rescon.py">c:\users\mana_dell\dropbox\rescons\under_testing\sphinx_testing - copy\new folder\ver27_rescon.py</a></font></td></tr></table>
+    <p><tt>LICENSE:<br>
+Copyright&nbsp;(C)&nbsp;&lt;2015&gt;&nbsp;&nbsp;Manavalan&nbsp;Gajapathy,&nbsp;Joseph&nbsp;D.&nbsp;Ng<br>
+&nbsp;<br>
+ResCon&nbsp;is&nbsp;free&nbsp;software;&nbsp;you&nbsp;can&nbsp;redistribute&nbsp;it&nbsp;and/or<br>
+modify&nbsp;it&nbsp;under&nbsp;the&nbsp;terms&nbsp;of&nbsp;the&nbsp;GNU&nbsp;Lesser&nbsp;General&nbsp;Public<br>
+License&nbsp;as&nbsp;published&nbsp;by&nbsp;the&nbsp;Free&nbsp;Software&nbsp;Foundation;&nbsp;either<br>
+version&nbsp;2.1&nbsp;or&nbsp;version&nbsp;3&nbsp;of&nbsp;the&nbsp;License.<br>
+&nbsp;<br>
+ResCon&nbsp;is&nbsp;distributed&nbsp;in&nbsp;the&nbsp;hope&nbsp;that&nbsp;it&nbsp;will&nbsp;be&nbsp;useful,<br>
+but&nbsp;WITHOUT&nbsp;ANY&nbsp;WARRANTY;&nbsp;without&nbsp;even&nbsp;the&nbsp;implied&nbsp;warranty&nbsp;of<br>
+MERCHANTABILITY&nbsp;or&nbsp;FITNESS&nbsp;FOR&nbsp;A&nbsp;PARTICULAR&nbsp;PURPOSE.&nbsp;&nbsp;See&nbsp;the&nbsp;GNU<br>
+Lesser&nbsp;General&nbsp;Public&nbsp;License&nbsp;for&nbsp;more&nbsp;details.<br>
+&nbsp;<br>
+You&nbsp;should&nbsp;have&nbsp;received&nbsp;a&nbsp;copy&nbsp;of&nbsp;the&nbsp;GNU&nbsp;Lesser&nbsp;General&nbsp;Public<br>
+License&nbsp;along&nbsp;with&nbsp;ResCon;&nbsp;if&nbsp;not,&nbsp;write&nbsp;to&nbsp;the&nbsp;Free&nbsp;Software<br>
+Foundation,&nbsp;Inc.,&nbsp;51&nbsp;Franklin&nbsp;Street,&nbsp;Fifth&nbsp;Floor,&nbsp;Boston,&nbsp;MA&nbsp;&nbsp;02110-1301&nbsp;&nbsp;USA<br>
+&nbsp;<br>
+Author's&nbsp;Email&nbsp;id:&nbsp;manavalan.g@gmail.com</tt></p>
+<p>
+<table width="100%" cellspacing=0 cellpadding=2 border=0 summary="section">
+<tr bgcolor="#aa55cc">
+<td colspan=3 valign=bottom>&nbsp;<br>
+<font color="#ffffff" face="helvetica, arial"><big><strong>Modules</strong></big></font></td></tr>
+    
+<tr><td bgcolor="#aa55cc"><tt>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</tt></td><td>&nbsp;</td>
+<td width="100%"><table width="100%" summary="list"><tr><td width="25%" valign=top><a href="Bio.AlignIO.html">Bio.AlignIO</a><br>
+<a href="FixTk.html">FixTk</a><br>
+<a href="Bio.Blast.NCBIXML.html">Bio.Blast.NCBIXML</a><br>
+<a href="Bio.Phylo.html">Bio.Phylo</a><br>
+<a href="Bio.SeqIO.html">Bio.SeqIO</a><br>
+</td><td width="25%" valign=top><a href="StringIO.html">StringIO</a><br>
+<a href="ast.html">ast</a><br>
+<a href="csv.html">csv</a><br>
+<a href="errno.html">errno</a><br>
+<a href="logging.html">logging</a><br>
+</td><td width="25%" valign=top><a href="operator.html">operator</a><br>
+<a href="os.html">os</a><br>
+<a href="re.html">re</a><br>
+<a href="shutil.html">shutil</a><br>
+<a href="subprocess.html">subprocess</a><br>
+</td><td width="25%" valign=top><a href="sys.html">sys</a><br>
+<a href="threading.html">threading</a><br>
+<a href="tkMessageBox.html">tkMessageBox</a><br>
+<a href="_tkinter.html">_tkinter</a><br>
+<a href="traceback.html">traceback</a><br>
+</td></tr></table></td></tr></table><p>
+<table width="100%" cellspacing=0 cellpadding=2 border=0 summary="section">
+<tr bgcolor="#eeaa77">
+<td colspan=3 valign=bottom>&nbsp;<br>
+<font color="#ffffff" face="helvetica, arial"><big><strong>Functions</strong></big></font></td></tr>
+    
+<tr><td bgcolor="#eeaa77"><tt>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</tt></td><td>&nbsp;</td>
+<td width="100%"><dl><dt><a name="-Extract_Clades"><strong>Extract_Clades</strong></a>()</dt><dd><tt>#&nbsp;Function&nbsp;that&nbsp;reads&nbsp;phylogenetic&nbsp;tree&nbsp;and&nbsp;then&nbsp;outputs&nbsp;a&nbsp;fasta&nbsp;file&nbsp;with&nbsp;sequences&nbsp;from&nbsp;a<br>
+#&nbsp;subtree&nbsp;selected&nbsp;by&nbsp;user.&nbsp;Subtree&nbsp;is&nbsp;specified&nbsp;using&nbsp;clade's&nbsp;branch&nbsp;length.</tt></dd></dl>
+ <dl><dt><a name="-about"><strong>about</strong></a>()</dt><dd><tt>#&nbsp;function&nbsp;that&nbsp;displays&nbsp;text&nbsp;when&nbsp;help&nbsp;-&gt;&nbsp;about&nbsp;button&nbsp;is&nbsp;clicked</tt></dd></dl>
+ <dl><dt><a name="-blast_filter"><strong>blast_filter</strong></a>()</dt><dd><tt>#&nbsp;Function&nbsp;that&nbsp;reads&nbsp;blast&nbsp;xml&nbsp;file&nbsp;and&nbsp;then&nbsp;writes&nbsp;fasta&nbsp;files&nbsp;into&nbsp;an&nbsp;output&nbsp;file&nbsp;-&nbsp;all&nbsp;based&nbsp;on<br>
+#&nbsp;e-value&nbsp;entered&nbsp;by&nbsp;user</tt></dd></dl>
+ <dl><dt><a name="-browse_button"><strong>browse_button</strong></a>(win_name, browse_fn, row, column)</dt><dd><tt>#&nbsp;Function&nbsp;to&nbsp;make&nbsp;a&nbsp;browse&nbsp;button&nbsp;in&nbsp;tkinter</tt></dd></dl>
+ <dl><dt><a name="-browse_for_directory"><strong>browse_for_directory</strong></a>(entry_name)</dt><dd><tt>#&nbsp;Function&nbsp;to&nbsp;insert&nbsp;selected&nbsp;folder&nbsp;path&nbsp;into&nbsp;entry&nbsp;box</tt></dd></dl>
+ <dl><dt><a name="-browse_for_file"><strong>browse_for_file</strong></a>(entry_name, filetype)</dt><dd><tt>#&nbsp;Function&nbsp;that&nbsp;dictates&nbsp;type&nbsp;of&nbsp;input&nbsp;files&nbsp;and&nbsp;inserts&nbsp;selected&nbsp;file&nbsp;path&nbsp;into&nbsp;entry&nbsp;box</tt></dd></dl>
+ <dl><dt><a name="-browse_for_file_change_outpath"><strong>browse_for_file_change_outpath</strong></a>(entry_name, out_entry, filetype)</dt><dd><tt>#&nbsp;Function&nbsp;that&nbsp;dictates&nbsp;type&nbsp;of&nbsp;input&nbsp;files&nbsp;and&nbsp;inserts&nbsp;selected&nbsp;file&nbsp;path&nbsp;into&nbsp;entry&nbsp;box&nbsp;and&nbsp;output&nbsp;folder</tt></dd></dl>
+ <dl><dt><a name="-button_color"><strong>button_color</strong></a>(win_name, browse_fn, row, column)</dt></dl>
+ <dl><dt><a name="-checkbox_fn"><strong>checkbox_fn</strong></a>(appl, string, row_no, col_no, command_name)</dt><dd><tt>#&nbsp;Function&nbsp;to&nbsp;make&nbsp;a&nbsp;checkbox&nbsp;in&nbsp;tkinter</tt></dd></dl>
+ <dl><dt><a name="-clustal_alignment_local"><strong>clustal_alignment_local</strong></a>()</dt><dd><tt>#&nbsp;Function&nbsp;to&nbsp;perform&nbsp;clustal&nbsp;alignment,&nbsp;if&nbsp;needed.<br>
+#&nbsp;Can&nbsp;accept&nbsp;commands&nbsp;from&nbsp;user<br>
+#&nbsp;&nbsp;(note:&nbsp;user&nbsp;has&nbsp;to&nbsp;supply&nbsp;such&nbsp;commands&nbsp;in&nbsp;dictionary&nbsp;format).</tt></dd></dl>
+ <dl><dt><a name="-clustal_client"><strong>clustal_client</strong></a>()</dt></dl>
+ <dl><dt><a name="-clustalo_webserver_fn"><strong>clustalo_webserver_fn</strong></a>()</dt><dd><tt>#&nbsp;function&nbsp;to&nbsp;perform&nbsp;clustal&nbsp;alignment&nbsp;using&nbsp;EMBL-EBI&nbsp;webserver</tt></dd></dl>
+ <dl><dt><a name="-default_text"><strong>default_text</strong></a>(frame, default, width, row, column)</dt><dd><tt>#&nbsp;Function&nbsp;to&nbsp;have&nbsp;a&nbsp;label-like&nbsp;text&nbsp;box&nbsp;with&nbsp;copy-able&nbsp;text</tt></dd></dl>
+ <dl><dt><a name="-description_extractor"><strong>description_extractor</strong></a>()</dt><dd><tt>#&nbsp;Function&nbsp;that&nbsp;reads&nbsp;a&nbsp;fasta&nbsp;file&nbsp;and&nbsp;extracts&nbsp;description&nbsp;or&nbsp;identifier&nbsp;from&nbsp;sequences'&nbsp;header<br>
+#&nbsp;(their&nbsp;header&nbsp;has&nbsp;to&nbsp;be&nbsp;in&nbsp;specified&nbsp;format).</tt></dd></dl>
+ <dl><dt><a name="-disable_res_positions"><strong>disable_res_positions</strong></a>()</dt><dd><tt>#&nbsp;Function&nbsp;to&nbsp;disable&nbsp;'Residue&nbsp;positions'&nbsp;text&nbsp;field&nbsp;when&nbsp;'All'&nbsp;checkbutton&nbsp;is&nbsp;checked</tt></dd></dl>
+ <dl><dt><a name="-edit_settings"><strong>edit_settings</strong></a>(settings_win)</dt><dd><tt>#&nbsp;Function&nbsp;that&nbsp;reads&nbsp;settings&nbsp;changed&nbsp;by&nbsp;user&nbsp;through&nbsp;GUI</tt></dd></dl>
+ <dl><dt><a name="-entry_box"><strong>entry_box</strong></a>(win_name, var_name, width, row, column)</dt><dd><tt>#&nbsp;Function&nbsp;to&nbsp;make&nbsp;a&nbsp;entry&nbsp;box&nbsp;in&nbsp;tkinter</tt></dd></dl>
+ <dl><dt><a name="-fasta_filter_by_description"><strong>fasta_filter_by_description</strong></a>()</dt><dd><tt>#&nbsp;Function&nbsp;that&nbsp;reads&nbsp;fasta&nbsp;sequences&nbsp;and&nbsp;filters&nbsp;(excludes&nbsp;or&nbsp;includes)&nbsp;them&nbsp;based&nbsp;on&nbsp;user-provided&nbsp;Descriptions-list.<br>
+#&nbsp;Descriptions&nbsp;must&nbsp;be&nbsp;separated&nbsp;by&nbsp;double&nbsp;commas&nbsp;or&nbsp;provided&nbsp;in&nbsp;a&nbsp;file.</tt></dd></dl>
+ <dl><dt><a name="-fasta_filter_by_id"><strong>fasta_filter_by_id</strong></a>()</dt><dd><tt>#&nbsp;Function&nbsp;that&nbsp;reads&nbsp;fasta&nbsp;sequences&nbsp;and&nbsp;filters&nbsp;(excludes&nbsp;or&nbsp;includes)&nbsp;them&nbsp;based&nbsp;on&nbsp;user-provided&nbsp;sequence&nbsp;ID.<br>
+#&nbsp;IDs&nbsp;must&nbsp;be&nbsp;provided&nbsp;in&nbsp;a&nbsp;file.</tt></dd></dl>
+ <dl><dt><a name="-fetch_mismatch"><strong>fetch_mismatch</strong></a>()</dt><dd><tt>#&nbsp;Function&nbsp;that&nbsp;reads&nbsp;clustal&nbsp;alignment&nbsp;file&nbsp;and&nbsp;extracts&nbsp;details&nbsp;of&nbsp;mismatches,&nbsp;if&nbsp;any,&nbsp;at&nbsp;the&nbsp;sites&nbsp;requested<br>
+#&nbsp;and&nbsp;writes&nbsp;detailed&nbsp;info&nbsp;into&nbsp;csv&nbsp;and&nbsp;txt&nbsp;files.</tt></dd></dl>
+ <dl><dt><a name="-fn_to_pass"><strong>fn_to_pass</strong></a>()</dt><dd><tt>#&nbsp;Dummy&nbsp;function!</tt></dd></dl>
+ <dl><dt><a name="-gen_thread"><strong>gen_thread</strong></a>(proc_label, tool_fn)</dt><dd><tt>inside&nbsp;the&nbsp;tool&nbsp;getting&nbsp;called&nbsp;poses&nbsp;trouble&nbsp;as&nbsp;tkinter&nbsp;have&nbsp;trouble&nbsp;being&nbsp;thread-safe.<br>
+inside&nbsp;the&nbsp;tool&nbsp;getting&nbsp;called&nbsp;poses&nbsp;trouble&nbsp;as&nbsp;tkinter&nbsp;have&nbsp;trouble&nbsp;being&nbsp;thread-safe.<br>
+inside&nbsp;the&nbsp;tool&nbsp;getting&nbsp;called&nbsp;poses&nbsp;trouble&nbsp;as&nbsp;tkinter&nbsp;have&nbsp;trouble&nbsp;being&nbsp;thread-safe.</tt></dd></dl>
+ <dl><dt><a name="-genpept_converter"><strong>genpept_converter</strong></a>()</dt><dd><tt>#&nbsp;Function&nbsp;that&nbsp;reads&nbsp;GenPept/GenBank&nbsp;files&nbsp;and&nbsp;then&nbsp;outputs&nbsp;those&nbsp;sequences&nbsp;in&nbsp;fasta&nbsp;format&nbsp;-&nbsp;with&nbsp;their<br>
+#&nbsp;header&nbsp;having&nbsp;info&nbsp;about&nbsp;their&nbsp;taxanomy</tt></dd></dl>
+ <dl><dt><a name="-hide_expand"><strong>hide_expand</strong></a>(checkboxval, frame)</dt><dd><tt>#&nbsp;Function&nbsp;to&nbsp;hide&nbsp;or&nbsp;show&nbsp;further&nbsp;options&nbsp;based&nbsp;on&nbsp;checkbox&nbsp;status</tt></dd></dl>
+ <dl><dt><a name="-hide_expand_clustal"><strong>hide_expand_clustal</strong></a>(Clade_checkboxval, frame_clade)</dt><dd><tt>#&nbsp;Function&nbsp;to&nbsp;hide&nbsp;or&nbsp;show&nbsp;widgets&nbsp;depending&nbsp;on&nbsp;clustal&nbsp;alignment&nbsp;is&nbsp;requested&nbsp;or&nbsp;not</tt></dd></dl>
+ <dl><dt><a name="-html_formatting"><strong>html_formatting</strong></a>()</dt><dd><tt>#&nbsp;Function&nbsp;that&nbsp;reads&nbsp;clustal&nbsp;alignment(&nbsp;w/&nbsp;or&nbsp;w/o&nbsp;numbers)&nbsp;and&nbsp;highlights&nbsp;matches&nbsp;and&nbsp;mismatches&nbsp;in&nbsp;color<br>
+#&nbsp;at&nbsp;requested&nbsp;sites</tt></dd></dl>
+ <dl><dt><a name="-indexing"><strong>indexing</strong></a>(string, res)</dt><dd><tt>#&nbsp;Function&nbsp;to&nbsp;index&nbsp;each&nbsp;character&nbsp;(residue)&nbsp;in&nbsp;the&nbsp;Reference&nbsp;sequence</tt></dd></dl>
+ <dl><dt><a name="-is_ref_in_seqs_file"><strong>is_ref_in_seqs_file</strong></a>()</dt><dd><tt>#&nbsp;function&nbsp;to&nbsp;check&nbsp;for&nbsp;reference&nbsp;seq&nbsp;in&nbsp;query&nbsp;seqs.&nbsp;Appends&nbsp;it&nbsp;if&nbsp;not&nbsp;present.</tt></dd></dl>
+ <dl><dt><a name="-label_text"><strong>label_text</strong></a>(win_name, label_text, height, width, row, column)</dt><dd><tt>#&nbsp;Function&nbsp;to&nbsp;make&nbsp;a&nbsp;label&nbsp;in&nbsp;tkinter</tt></dd></dl>
+ <dl><dt><a name="-make_menu"><strong>make_menu</strong></a>(w)</dt><dd><tt>#&nbsp;Function&nbsp;that&nbsp;creates&nbsp;right&nbsp;click&nbsp;menu&nbsp;and&nbsp;its&nbsp;contents&nbsp;(thanks&nbsp;to&nbsp;stackoverflow)</tt></dd></dl>
+ <dl><dt><a name="-math_log"><strong>math_log</strong></a> = log(...)</dt><dd><tt>log(x[,&nbsp;base])<br>
+&nbsp;<br>
+Return&nbsp;the&nbsp;logarithm&nbsp;of&nbsp;x&nbsp;to&nbsp;the&nbsp;given&nbsp;base.<br>
+If&nbsp;the&nbsp;base&nbsp;not&nbsp;specified,&nbsp;returns&nbsp;the&nbsp;natural&nbsp;logarithm&nbsp;(base&nbsp;e)&nbsp;of&nbsp;x.</tt></dd></dl>
+ <dl><dt><a name="-new_thread"><strong>new_thread</strong></a>(tool_fn)</dt><dd><tt>#&nbsp;function&nbsp;to&nbsp;run&nbsp;a&nbsp;function&nbsp;in&nbsp;a&nbsp;new&nbsp;thread;&nbsp;intended&nbsp;to&nbsp;run&nbsp;clustal&nbsp;omega</tt></dd></dl>
+ <dl><dt><a name="-open_file"><strong>open_file</strong></a>(filename)</dt><dd><tt>#&nbsp;function&nbsp;to&nbsp;open&nbsp;a&nbsp;file&nbsp;externally&nbsp;in&nbsp;default&nbsp;application&nbsp;in&nbsp;any&nbsp;OS</tt></dd></dl>
+ <dl><dt><a name="-popup_error"><strong>popup_error</strong></a>(string)</dt><dd><tt>#&nbsp;Function&nbsp;to&nbsp;pop-up&nbsp;an&nbsp;error&nbsp;in&nbsp;gui</tt></dd></dl>
+ <dl><dt><a name="-raise_enabler"><strong>raise_enabler</strong></a>(str)</dt><dd><tt>#&nbsp;Re-enable&nbsp;convert/submit&nbsp;job&nbsp;buttons&nbsp;and&nbsp;hide&nbsp;'processing'&nbsp;label&nbsp;when&nbsp;'Raise'&nbsp;function&nbsp;needs&nbsp;to&nbsp;be&nbsp;called<br>
+#&nbsp;intentionally&nbsp;to&nbsp;avoid&nbsp;further&nbsp;execution&nbsp;of&nbsp;code&nbsp;when&nbsp;an&nbsp;error&nbsp;is&nbsp;noted.<br>
+#&nbsp;Also&nbsp;defines&nbsp;what&nbsp;kind&nbsp;of&nbsp;'raise'&nbsp;function&nbsp;is&nbsp;called</tt></dd></dl>
+ <dl><dt><a name="-read_user_input"><strong>read_user_input</strong></a>()</dt><dd><tt>#&nbsp;Function&nbsp;that&nbsp;reads&nbsp;inputs&nbsp;from&nbsp;user</tt></dd></dl>
+ <dl><dt><a name="-run_script"><strong>run_script</strong></a>()</dt><dd><tt>#&nbsp;Function&nbsp;to&nbsp;run&nbsp;the&nbsp;main&nbsp;script&nbsp;by&nbsp;calling&nbsp;appropriate&nbsp;functions,&nbsp;based&nbsp;on&nbsp;user&nbsp;input</tt></dd></dl>
+ <dl><dt><a name="-select_tools"><strong>select_tools</strong></a>(frame_name, button)</dt><dd><tt>#&nbsp;Function&nbsp;that&nbsp;highlights&nbsp;and&nbsp;shows&nbsp;the&nbsp;frame&nbsp;of&nbsp;corresponding&nbsp;tool&nbsp;selected&nbsp;in&nbsp;more&nbsp;tools&nbsp;window.</tt></dd></dl>
+ <dl><dt><a name="-seq_mode"><strong>seq_mode</strong></a>()</dt><dd><tt>#&nbsp;Function&nbsp;that&nbsp;determines&nbsp;if&nbsp;user&nbsp;wants&nbsp;ResCon&nbsp;to&nbsp;run&nbsp;in&nbsp;protein&nbsp;mode&nbsp;or&nbsp;dna/rna&nbsp;mode</tt></dd></dl>
+ <dl><dt><a name="-settings_win_fn"><strong>settings_win_fn</strong></a>()</dt><dd><tt>#&nbsp;Function&nbsp;that&nbsp;makes&nbsp;GUI&nbsp;interface&nbsp;for&nbsp;'Edit&nbsp;Settings'&nbsp;window&nbsp;available&nbsp;through&nbsp;menubar</tt></dd></dl>
+ <dl><dt><a name="-show_error"><strong>show_error</strong></a>(self, *args)</dt><dd><tt>#&nbsp;Function&nbsp;that&nbsp;enables&nbsp;displaying&nbsp;errors&nbsp;in&nbsp;gui&nbsp;when&nbsp;unexpected&nbsp;errors&nbsp;come&nbsp;up&nbsp;during&nbsp;execution&nbsp;of&nbsp;script.<br>
+#&nbsp;Thanks&nbsp;to&nbsp;stack-overflow&nbsp;for&nbsp;this&nbsp;function's&nbsp;basic&nbsp;skeleton&nbsp;(@Jochen&nbsp;Ritzel)</tt></dd></dl>
+ <dl><dt><a name="-show_menu"><strong>show_menu</strong></a>(e)</dt><dd><tt>#&nbsp;Function&nbsp;to&nbsp;show&nbsp;right-click&nbsp;menu&nbsp;when&nbsp;needed&nbsp;and&nbsp;what&nbsp;clicking&nbsp;on&nbsp;each&nbsp;would&nbsp;do</tt></dd></dl>
+ <dl><dt><a name="-top_win"><strong>top_win</strong></a>()</dt><dd><tt>#&nbsp;Function&nbsp;that&nbsp;draws&nbsp;GUI&nbsp;for&nbsp;'more&nbsp;tools'</tt></dd></dl>
+ <dl><dt><a name="-verify_filepath_exists"><strong>verify_filepath_exists</strong></a>(path)</dt><dd><tt>#&nbsp;Function&nbsp;to&nbsp;verify&nbsp;existence&nbsp;of&nbsp;a&nbsp;path&nbsp;and&nbsp;create&nbsp;it&nbsp;if&nbsp;non-existent.<br>
+#&nbsp;Also&nbsp;raises&nbsp;warning&nbsp;when&nbsp;folder&nbsp;is&nbsp;already&nbsp;present&nbsp;as&nbsp;it&nbsp;may&nbsp;rewrite&nbsp;files&nbsp;in&nbsp;them.</tt></dd></dl>
+</td></tr></table><p>
+<table width="100%" cellspacing=0 cellpadding=2 border=0 summary="section">
+<tr bgcolor="#55aa55">
+<td colspan=3 valign=bottom>&nbsp;<br>
+<font color="#ffffff" face="helvetica, arial"><big><strong>Data</strong></big></font></td></tr>
+    
+<tr><td bgcolor="#55aa55"><tt>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</tt></td><td>&nbsp;</td>
+<td width="100%"><strong>ACTIVE</strong> = 'active'<br>
+<strong>ALL</strong> = 'all'<br>
+<strong>ANCHOR</strong> = 'anchor'<br>
+<strong>ARC</strong> = 'arc'<br>
+<strong>BASELINE</strong> = 'baseline'<br>
+<strong>BEVEL</strong> = 'bevel'<br>
+<strong>BOTH</strong> = 'both'<br>
+<strong>BOTTOM</strong> = 'bottom'<br>
+<strong>BROWSE</strong> = 'browse'<br>
+<strong>BUTT</strong> = 'butt'<br>
+<strong>CASCADE</strong> = 'cascade'<br>
+<strong>CENTER</strong> = 'center'<br>
+<strong>CHAR</strong> = 'char'<br>
+<strong>CHECKBUTTON</strong> = 'checkbutton'<br>
+<strong>CHORD</strong> = 'chord'<br>
+<strong>COMMAND</strong> = 'command'<br>
+<strong>CURRENT</strong> = 'current'<br>
+<strong>DISABLED</strong> = 'disabled'<br>
+<strong>DOTBOX</strong> = 'dotbox'<br>
+<strong>E</strong> = 'e'<br>
+<strong>END</strong> = 'end'<br>
+<strong>EW</strong> = 'ew'<br>
+<strong>EXCEPTION</strong> = 8<br>
+<strong>EXTENDED</strong> = 'extended'<br>
+<strong>FALSE</strong> = 0<br>
+<strong>FIRST</strong> = 'first'<br>
+<strong>FLAT</strong> = 'flat'<br>
+<strong>GROOVE</strong> = 'groove'<br>
+<strong>HIDDEN</strong> = 'hidden'<br>
+<strong>HORIZONTAL</strong> = 'horizontal'<br>
+<strong>INSERT</strong> = 'insert'<br>
+<strong>INSIDE</strong> = 'inside'<br>
+<strong>Image_in_GUI</strong> = False<br>
+<strong>LAST</strong> = 'last'<br>
+<strong>LEFT</strong> = 'left'<br>
+<strong>MITER</strong> = 'miter'<br>
+<strong>MOVETO</strong> = 'moveto'<br>
+<strong>MULTIPLE</strong> = 'multiple'<br>
+<strong>N</strong> = 'n'<br>
+<strong>NE</strong> = 'ne'<br>
+<strong>NO</strong> = 0<br>
+<strong>NONE</strong> = 'none'<br>
+<strong>NORMAL</strong> = 'normal'<br>
+<strong>NS</strong> = 'ns'<br>
+<strong>NSEW</strong> = 'nsew'<br>
+<strong>NUMERIC</strong> = 'numeric'<br>
+<strong>NW</strong> = 'nw'<br>
+<strong>OFF</strong> = 0<br>
+<strong>ON</strong> = 1<br>
+<strong>OUTSIDE</strong> = 'outside'<br>
+<strong>PAGES</strong> = 'pages'<br>
+<strong>PIESLICE</strong> = 'pieslice'<br>
+<strong>PROJECTING</strong> = 'projecting'<br>
+<strong>RADIOBUTTON</strong> = 'radiobutton'<br>
+<strong>RAISED</strong> = 'raised'<br>
+<strong>READABLE</strong> = 2<br>
+<strong>RIDGE</strong> = 'ridge'<br>
+<strong>RIGHT</strong> = 'right'<br>
+<strong>ROUND</strong> = 'round'<br>
+<strong>S</strong> = 's'<br>
+<strong>SCROLL</strong> = 'scroll'<br>
+<strong>SE</strong> = 'se'<br>
+<strong>SEL</strong> = 'sel'<br>
+<strong>SEL_FIRST</strong> = 'sel.first'<br>
+<strong>SEL_LAST</strong> = 'sel.last'<br>
+<strong>SEPARATOR</strong> = 'separator'<br>
+<strong>SINGLE</strong> = 'single'<br>
+<strong>SOLID</strong> = 'solid'<br>
+<strong>SUNKEN</strong> = 'sunken'<br>
+<strong>SW</strong> = 'sw'<br>
+<strong>StringTypes</strong> = (&lt;type 'str'&gt;, &lt;type 'unicode'&gt;)<br>
+<strong>TOP</strong> = 'top'<br>
+<strong>TRUE</strong> = 1<br>
+<strong>TclVersion</strong> = 8.5<br>
+<strong>TkVersion</strong> = 8.5<br>
+<strong>UNDERLINE</strong> = 'underline'<br>
+<strong>UNITS</strong> = 'units'<br>
+<strong>VERTICAL</strong> = 'vertical'<br>
+<strong>W</strong> = 'w'<br>
+<strong>WORD</strong> = 'word'<br>
+<strong>WRITABLE</strong> = 4<br>
+<strong>X</strong> = 'x'<br>
+<strong>Y</strong> = 'y'<br>
+<strong>YES</strong> = 1<br>
+<strong>__author__</strong> = 'Manavalan Gajapathy, Joseph D. Ng'<br>
+<strong>__email__</strong> = 'manavalan.g@gmail.com'<br>
+<strong>__license__</strong> = 'Lesser General Public License'<br>
+<strong>__version__</strong> = '18 beta'<br>
+<strong>aa_label</strong> = ['A', 'R', 'N', 'D', 'C', 'Q', 'E', 'G', 'H', 'I', 'L', 'K', 'M', 'F', 'P', 'S', 'T', 'W', 'Y', 'V', ...]<br>
+<strong>aa_no</strong> = 26<br>
+<strong>aa_set</strong> = ['AVFPMILW', 'DE', 'RK', 'STYHCNGQ', 'avfpmilw', 'de', 'rk', 'styhcngq']<br>
+<strong>aa_set_lower</strong> = ['avfpmilw', 'de', 'rk', 'styhcngq']<br>
+<strong>aa_set_str</strong> = 'AVFPMILW, DE, RK, STYHCNGQ'<br>
+<strong>aa_set_upper</strong> = ['AVFPMILW', 'DE', 'RK', 'STYHCNGQ']<br>
+<strong>additional_imports</strong> = True<br>
+<strong>app</strong> = &lt;Tkinter.Tk instance&gt;<br>
+<strong>blast_log</strong> = &lt;logging.Logger object&gt;<br>
+<strong>box_values</strong> = ['match_color_edit', 'similar_color_edit', 'mismatch_color_edit', 'id_delimiter_edit', 'aa_set_str_edit', 'connector_id_edit', 'newick_sym_replace_edit', 'symbols_to_be_replaced_str_edit']<br>
+<strong>button_clustal</strong> = &lt;Tkinter.Button instance&gt;<br>
+<strong>button_moretools</strong> = &lt;Tkinter.Button instance&gt;<br>
+<strong>button_output_main</strong> = &lt;Tkinter.Button instance&gt;<br>
+<strong>button_run_script</strong> = &lt;Tkinter.Button instance&gt;<br>
+<strong>button_seq</strong> = &lt;Tkinter.Button instance&gt;<br>
+<strong>button_templ</strong> = &lt;Tkinter.Button instance&gt;<br>
+<strong>char</strong> = '('<br>
+<strong>chart_method</strong> = 'chartnew.js'<br>
+<strong>checkbox_Clustal</strong> = &lt;Tkinter.Checkbutton instance&gt;<br>
+<strong>checkbox_formatting</strong> = &lt;Tkinter.Checkbutton instance&gt;<br>
+<strong>checkboxval_Clustal</strong> = &lt;Tkinter.BooleanVar instance&gt;<br>
+<strong>checkboxval_formatting</strong> = &lt;Tkinter.BooleanVar instance&gt;<br>
+<strong>clades_log</strong> = &lt;logging.Logger object&gt;<br>
+<strong>clustal_command</strong> = &lt;Tkinter.Entry instance&gt;<br>
+<strong>clustal_command_label</strong> = &lt;Tkinter.Label instance&gt;<br>
+<strong>clustal_command_value</strong> = &lt;Tkinter.StringVar instance&gt;<br>
+<strong>clustal_entry</strong> = &lt;Tkinter.Entry instance&gt;<br>
+<strong>clustal_filename</strong> = &lt;Tkinter.StringVar instance&gt;<br>
+<strong>clustal_local_user_command_string</strong> = "{'outfmt': 'fasta', 'iterations': 3, 'residuenum...orce': 'True', 'guidetree_out': 'default.newick'}"<br>
+<strong>clustal_log</strong> = &lt;logging.Logger object&gt;<br>
+<strong>clustal_web_user_command_string</strong> = '--email mg0010@uah.edu'<br>
+<strong>clustalo_command_local_default</strong> = "{'outfmt': 'fasta', 'iterations': 3, 'residuenum...orce': 'True', 'guidetree_out': 'default.newick'}"<br>
+<strong>clustalo_command_web_default</strong> = '--email mg0010@uah.edu'<br>
+<strong>clustalo_local</strong> = &lt;Tkinter.Radiobutton instance&gt;<br>
+<strong>clustalo_source</strong> = &lt;Tkinter.IntVar instance&gt;<br>
+<strong>clustalo_web</strong> = &lt;Tkinter.Radiobutton instance&gt;<br>
+<strong>connector_id</strong> = '|'<br>
+<strong>current_path</strong> = r'C:\Users\Mana_Dell\Dropbox\ResCons\Under_Testing\Sphinx_testing - Copy\New folder'<br>
+<strong>default_values</strong> = ['#42DB33', '#FFFF00', '#F73D94', '|', 'AVFPMILW, DE, RK, STYHCNGQ', '|', '_', "( ) [ ] : ; , '"]<br>
+<strong>descr_filter_log</strong> = &lt;logging.Logger object&gt;<br>
+<strong>dict_similarity_matrix</strong> = {'-': {'-': 0, 'A': 0, 'B': 0, 'C': 0, 'D': 0, 'E': 0, 'F': 0, 'G': 0, 'H': 0, 'I': 0, ...}, 'A': {'-': 0, 'A': 10, 'B': 0, 'C': 6, 'D': 3, 'E': 4, 'F': 3, 'G': 6, 'H': 3, 'I': 4, ...}, 'B': {'-': 0, 'A': 0, 'B': 0, 'C': 0, 'D': 0, 'E': 0, 'F': 0, 'G': 0, 'H': 0, 'I': 0, ...}, 'C': {'-': 0, 'A': 4, 'B': 0, 'C': 10, 'D': 3, 'E': 2, 'F': 3, 'G': 3, 'H': 3, 'I': 4, ...}, 'D': {'-': 0, 'A': 3, 'B': 0, 'C': 3, 'D': 10, 'E': 7, 'F': 3, 'G': 4, 'H': 4, 'I': 3, ...}, 'E': {'-': 0, 'A': 5, 'B': 0, 'C': 2, 'D': 7, 'E': 10, 'F': 3, 'G': 4, 'H': 5, 'I': 3, ...}, 'F': {'-': 0, 'A': 3, 'B': 0, 'C': 3, 'D': 3, 'E': 3, 'F': 10, 'G': 3, 'H': 4, 'I': 5, ...}, 'G': {'-': 0, 'A': 5, 'B': 0, 'C': 3, 'D': 4, 'E': 3, 'F': 3, 'G': 10, 'H': 3, 'I': 2, ...}, 'H': {'-': 0, 'A': 2, 'B': 0, 'C': 2, 'D': 3, 'E': 4, 'F': 3, 'G': 2, 'H': 10, 'I': 2, ...}, 'I': {'-': 0, 'A': 5, 'B': 0, 'C': 5, 'D': 3, 'E': 3, 'F': 6, 'G': 2, 'H': 3, 'I': 10, ...}, ...}<br>
+<strong>dir_path</strong> = 'C://temp'<br>
+<strong>dummy</strong> = &lt;Tkinter.Label instance&gt;<br>
+<strong>exception</strong> = WindowsError(183, 'Cannot create a file when that file already exists')<br>
+<strong>fasta_id_length_default</strong> = '127'<br>
+<strong>filemenu</strong> = &lt;Tkinter.Menu instance&gt;<br>
+<strong>filetype_alignment</strong> = [('clustal files', '*.aln *.clustal *.clu'), ('fasta files', '*.fa *.fasta *.a2m'), ('vienna files', '*.vie *.vienna'), ('phylip files', '*.phy *.phylip'), ('All files', '.* *.txt')]<br>
+<strong>filetype_all</strong> = []<br>
+<strong>filetype_fasta</strong> = [('fasta files', '*.fasta'), ('All files', '*.*')]<br>
+<strong>font_size</strong> = 12<br>
+<strong>frame1</strong> = &lt;Tkinter.Frame instance&gt;<br>
+<strong>frame2</strong> = &lt;Tkinter.Frame instance&gt;<br>
+<strong>frame_clustal</strong> = &lt;Tkinter.Frame instance&gt;<br>
+<strong>frame_mode</strong> = &lt;Tkinter.Frame instance&gt;<br>
+<strong>genbank_log</strong> = &lt;logging.Logger object&gt;<br>
+<strong>gui_log</strong> = &lt;logging.Logger object&gt;<br>
+<strong>header_extractor_log</strong> = &lt;logging.Logger object&gt;<br>
+<strong>helpmenu</strong> = &lt;Tkinter.Menu instance&gt;<br>
+<strong>html_log</strong> = &lt;logging.Logger object&gt;<br>
+<strong>id_delimiter</strong> = '|'<br>
+<strong>idfilter_log</strong> = &lt;logging.Logger object&gt;<br>
+<strong>index</strong> = 7<br>
+<strong>key</strong> = 'blast_log'<br>
+<strong>label_clustal</strong> = &lt;Tkinter.Label instance&gt;<br>
+<strong>label_res_pos</strong> = &lt;Tkinter.Label instance&gt;<br>
+<strong>label_seq</strong> = &lt;Tkinter.Label instance&gt;<br>
+<strong>label_templ</strong> = &lt;Tkinter.Label instance&gt;<br>
+<strong>label_title</strong> = &lt;Tkinter.Label instance&gt;<br>
+<strong>line</strong> = 'Z<font color="#c040c0">\t</font>0<font color="#c040c0">\t</font>0<font color="#c040c0">\t</font>0<font color="#c040c0">\t</font>0<font color="#c040c0">\t</font>0<font color="#c040c0">\t</font>0<font color="#c040c0">\t</font>0<font color="#c040c0">\t</font>0<font color="#c040c0">\t</font>0<font color="#c040c0">\t</font>0<font color="#c040c0">\t</font>0<font color="#c040c0">\t</font>0<font color="#c040c0">\t</font>0<font color="#c040c0">\t</font>0<font color="#c040c0">\t</font>0<font color="#c040c0">\t</font>0<font color="#c040c0">\t</font>0<font color="#c040c0">\t</font>0<font color="#c040c0">\t</font>0<font color="#c040c0">\t</font>0<font color="#c040c0">\t</font>0<font color="#c040c0">\t</font>0<font color="#c040c0">\t</font>0<font color="#c040c0">\t</font>0<font color="#c040c0">\t</font>0<font color="#c040c0">\t</font>0<font color="#c040c0">\t</font>0'<br>
+<strong>line_count</strong> = 29<br>
+<strong>line_list</strong> = ['Z', '0', '0', '0', '0', '0', '0', '0', '0', '0', '0', '0', '0', '0', '0', '0', '0', '0', '0', '0', ...]<br>
+<strong>linux_os</strong> = False<br>
+<strong>logger_filename</strong> = 'C://temp//Logs_ResCon.txt'<br>
+<strong>logging_dict</strong> = {'blast_log': 'blast_filter', 'clades_log': 'Extract_Clades', 'clustal_log': 'Clustal_Alignment', 'descr_filter_log': 'Filter_by_Descrip', 'genbank_log': 'genbank2Fasta', 'gui_log': 'GUI_Main', 'header_extractor_log': 'Descrip/ID_Extractor', 'html_log': 'html_formatting', 'idfilter_log': 'Filter_by_id', 'mismatch_log': 'Fetch_Mismatch', ...}<br>
+<strong>mac_os</strong> = False<br>
+<strong>match_color</strong> = '#42DB33'<br>
+<strong>matplot_reqd</strong> = False<br>
+<strong>menubar</strong> = &lt;Tkinter.Menu instance&gt;<br>
+<strong>mismatch_color</strong> = '#F73D94'<br>
+<strong>mismatch_log</strong> = &lt;logging.Logger object&gt;<br>
+<strong>mode1</strong> = &lt;Tkinter.Radiobutton instance&gt;<br>
+<strong>mode2</strong> = &lt;Tkinter.Radiobutton instance&gt;<br>
+<strong>natural_sorting</strong> = True<br>
+<strong>newick_sym_replace</strong> = '_'<br>
+<strong>no</strong> = 0<br>
+<strong>output_main_entry</strong> = &lt;Tkinter.Entry instance&gt;<br>
+<strong>output_main_label</strong> = &lt;Tkinter.Label instance&gt;<br>
+<strong>output_main_val</strong> = &lt;Tkinter.StringVar instance&gt;<br>
+<strong>processing</strong> = &lt;Tkinter.Label instance&gt;<br>
+<strong>processing_clustal</strong> = &lt;Tkinter.Label instance&gt;<br>
+<strong>protein_or_dna_mode</strong> = &lt;Tkinter.IntVar instance&gt;<br>
+<strong>regex_desc_extr</strong> = r'(.+) \[.+'<br>
+<strong>regex_desc_fltr</strong> = r'(.+) \[.+'<br>
+<strong>regex_id_extr</strong> = r'(\w+)\|.+'<br>
+<strong>resi_entry</strong> = &lt;Tkinter.Entry instance&gt;<br>
+<strong>resival</strong> = &lt;Tkinter.StringVar instance&gt;<br>
+<strong>respos_all</strong> = &lt;Tkinter.Checkbutton instance&gt;<br>
+<strong>respos_all_val</strong> = &lt;Tkinter.BooleanVar instance&gt;<br>
+<strong>right_click_menu</strong> = &lt;Tkinter.Menu instance&gt;<br>
+<strong>runscript_log</strong> = &lt;logging.Logger object&gt;<br>
+<strong>seq_entry</strong> = &lt;Tkinter.Entry instance&gt;<br>
+<strong>seq_filename</strong> = &lt;Tkinter.StringVar instance&gt;<br>
+<strong>settings_data</strong> = &lt;closed file 'C:\\Users\\Mana_Dell\\Dropbox\\Res...der/Rescon_Files/Settings_ResCon.txt', mode 'Ur'&gt;<br>
+<strong>settings_file_name</strong> = r'C:\Users\Mana_Dell\Dropbox\ResCons\Under_Testing... Copy\New folder/Rescon_Files/Settings_ResCon.txt'<br>
+<strong>simi_matrix_filename</strong> = 'Rescon_Files/Similarity_Matrix_S.txt'<br>
+<strong>simi_matrix_handle</strong> = &lt;closed file 'Rescon_Files/Similarity_Matrix_S.txt', mode 'Ur'&gt;<br>
+<strong>similar_color</strong> = '#FFFF00'<br>
+<strong>symbols_to_be_replaced</strong> = ['(', ')', '[', ']', ':', ';', ',', "'"]<br>
+<strong>symbols_to_be_replaced_str</strong> = "( ) [ ] : ; , '"<br>
+<strong>templ_entry</strong> = &lt;Tkinter.Entry instance&gt;<br>
+<strong>templ_filename</strong> = &lt;Tkinter.StringVar instance&gt;<br>
+<strong>terminal_output</strong> = False<br>
+<strong>title_bar_logo</strong> = r'Rescon_Files\128x128_part_no_bg_logo.ico'<br>
+<strong>title_list</strong> = ['Color:  Matching', 'Color:  Mismatching but similar', 'Color:  Mismatching and dissimilar', 'Delimiter used in FASTA IDs', 'Amino acids similarity sets', 'Connecting delimiter used in FASTA ID', 'Symbol replacing sensitive symbols', 'Sensitive symbols that are to be replaced']<br>
+<strong>trimmed_1</strong> = r'       (.+) \[.+'<br>
+<strong>trimmed_2</strong> = r'(.+) \[.+'<br>
+<strong>trimmed_3</strong> = r'(.+) \[.+'<br>
+<strong>ubuntu_os</strong> = False<br>
+<strong>unexpected_error_log</strong> = &lt;logging.Logger object&gt;<br>
+<strong>user_error_log</strong> = &lt;logging.Logger object&gt;<br>
+<strong>value</strong> = 'blast_filter'<br>
+<strong>var_name</strong> = 'regex_desc_fltr'<br>
+<strong>wantobjects</strong> = 1<br>
+<strong>win_os</strong> = True<br>
+<strong>x</strong> = 'STYHCNGQ'</td></tr></table><p>
+<table width="100%" cellspacing=0 cellpadding=2 border=0 summary="section">
+<tr bgcolor="#7799ee">
+<td colspan=3 valign=bottom>&nbsp;<br>
+<font color="#ffffff" face="helvetica, arial"><big><strong>Author</strong></big></font></td></tr>
+    
+<tr><td bgcolor="#7799ee"><tt>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</tt></td><td>&nbsp;</td>
+<td width="100%">Manavalan&nbsp;Gajapathy,&nbsp;Joseph&nbsp;D.&nbsp;Ng</td></tr></table>
+</body></html>

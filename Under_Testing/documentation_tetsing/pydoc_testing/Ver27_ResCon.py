@@ -70,7 +70,6 @@ else:
 	Image_in_GUI = False
 	matplot_reqd = False
 
-
 '''
 Ver 27 (under development) major modifications:
 
@@ -188,7 +187,6 @@ Ver 21 modifications:
 3. Added bar chart to html output showing similarity and identity % (using two methods:
 	1. used Matplotlib	- successfully done but final software product size increases to > 150 MB.
 	2. Used javascript in html5 - successfully implemented. Final software will remain the same size as now!)
-
 '''
 
 # This is to enable actions specific to particular operating system
@@ -229,9 +227,10 @@ elif _platform == "win32":		# for Windows
 # into output log file as it enables to record unexpected errors (stderr) from the program during its execution.
 current_path = os.path.dirname( os.path.realpath(__file__) )	# gets filepath of this script file
 if win_os and not ubuntu_os:
-	# In Windows, write privilages restricts writing log file in 'program files' folder
-	# This part writes log file to C:/temp folder. However if C: is not
-	# present, then this part will write into a drive that is present in that computer
+	"""In Windows, write privilages restricts writing log file in 'program files' folder
+	This part writes log file to C:/temp folder. However if C: is not
+	present, then this part will write into a drive that is present in that computer
+	"""
 	if os.path.exists('C:'):
 		logger_filename = 'C://temp//Logs_ResCon.txt'
 	else:
@@ -528,6 +527,10 @@ def indexing(string, res):
 # this function works in mac and ubuntu but not in windows. In windows, when this function is run, tkmessagebox module
 # inside the tool getting called poses trouble as tkinter have trouble being thread-safe.
 def gen_thread(proc_label, tool_fn):
+	"""inside the tool getting called poses trouble as tkinter have trouble being thread-safe.
+	inside the tool getting called poses trouble as tkinter have trouble being thread-safe.
+	inside the tool getting called poses trouble as tkinter have trouble being thread-safe.
+	"""
 	xyz = threading.Thread(target=tool_fn, args= ())
 	xyz.start()
 	proc_label.grid()
