@@ -74,10 +74,14 @@ Ver 27 (under development) major modifications:
 
 1. Added lower case or mixed upper/lower case support for Liu08 scoring method.
 
-2. (In progress) Implement Liu08 scoring without sequence weighting.
-		Completed - Calculation part is done
-		TODO - Ability to choose which conservation score to use for analysis
+2. Implemented Liu08 conservation scoring method without sequence weighting.
 
+3. Now can choose between three residue conservation scoring methods:
+		a. Liu08 - simple (w/o using sequence weights)
+		b. Liu08 - Sequence Weighted
+		c. Amino acid grouping based (ie. alphabet grouping)
+
+4. Added ability to choose between above methods through GUI 'Edit settings' from 'File' menu.
 
 ------------------------------------------------------------------------------------------------------------------------
 
@@ -1115,13 +1119,15 @@ def fetch_mismatch():
 			positions_concerned = query_in_Alignment
 		elif conserve_method == 'liu08_seqweighted':
 			liu08_weighted_score_list = []
-			positions_concerned = alignment_len
+			positions_concerned = range(alignment_len)
+		elif conserve_method == 'amino_acid_grouping':
+			positions_concerned = query_in_Alignment
 
 		# get frequency and unique amino acid count in a column
 		# All columns need to be processed here tp calculate sequence weight
 		dict_pos_freq = {}
 		dict_pos_unique_aa = {}
-		for column_no in range(0, positions_concerned):
+		for column_no in positions_concerned:
 			column_aa = msa_ref_removed[:,column_no]
 
 			unique_aa = list( set( column_aa ) )
@@ -1365,7 +1371,7 @@ def fetch_mismatch():
 	similarity_perc_list = []
 
 	# List 'conserve_score_list' will be used to write data in output files based on residue conservation method needed
-	if conserve_method == 'similar_amino_acid_grouping':
+	if conserve_method == 'amino_acid_grouping':
 		conserve_score_list = similarity_perc_list      # both lists will change when one changes
 	elif conserve_method == 'liu08_simple':
 		conserve_score_list = liu08_simple_score_list
@@ -1405,7 +1411,7 @@ def fetch_mismatch():
 				break
 
 		# if residue conservation score needs to be determined based on amino acid grouping set
-		if conserve_method == 'similar_amino_acid_grouping':
+		if conserve_method == 'amino_acid_grouping':
 			similarity_count = 0
 			for key in Dict_sorting_temp:
 				if key in aa_similar:
@@ -4322,6 +4328,7 @@ def edit_settings(settings_win):
 	global symbols_to_be_replaced, symbols_to_be_replaced_str
 	global dict_box_values
 	global Newick_hate_sym_checkbox
+	global conserve_method
 
 	# settings for mismatch analyzer
 	match_color = dict_box_values['match_color_edit'].get()
@@ -4338,6 +4345,8 @@ def edit_settings(settings_win):
 	aa_set_lower = [x.lower() for x in line_list]
 	aa_set = aa_set_upper + aa_set_lower
 	aa_set_str = ', '.join(aa_set_upper)
+
+	conserve_method = dict_box_values['conserve_method_edit'].get()     # gets residue conservation method needed
 
 	# settings for GenPept/GenBank to fasta converter
 	connector_id = dict_box_values['connector_id_edit'].get()
@@ -4374,12 +4383,9 @@ def edit_settings(settings_win):
 		settings_win.destroy()		# closes window
 
 
-# title_list = ['Color:  Matching', 'Color:  Mismatching but similar', 'Color:  Mismatching and dissimilar', 'Delimiter used in FASTA IDs', 'Amino acids similarity sets', 'Connecting delimiter used in FASTA ID', 'Symbol replacing sensitive symbols', 'Replace comma symbol with']
-# default_values = [match_color, similar_color, mismatch_color, id_delimiter, aa_set_str, connector_id, newick_sym_replace, symbol_replacing_comma]
-# box_values = ['match_color_edit', 'similar_color_edit', 'mismatch_color_edit', 'id_delimiter_edit', 'aa_set_str_edit', 'connector_id_edit', 'newick_sym_replace_edit', 'symbol_replacing_comma_edit']
-title_list = ['Color:  Matching', 'Color:  Mismatching but similar', 'Color:  Mismatching and dissimilar', 'Delimiter used in FASTA IDs', 'Amino acids similarity sets', 'Connecting delimiter used in FASTA ID', 'Symbol replacing sensitive symbols', 'Sensitive symbols that are to be replaced']
-default_values = [match_color, similar_color, mismatch_color, id_delimiter, aa_set_str, connector_id, newick_sym_replace, symbols_to_be_replaced_str]
-box_values = ['match_color_edit', 'similar_color_edit', 'mismatch_color_edit', 'id_delimiter_edit', 'aa_set_str_edit', 'connector_id_edit', 'newick_sym_replace_edit', 'symbols_to_be_replaced_str_edit']
+title_list = ['Color:  Matching', 'Color:  Mismatching but similar', 'Color:  Mismatching and dissimilar', 'Delimiter used in FASTA IDs', 'Amino acids similarity sets', 'Residue conservation scoring method', 'Connecting delimiter used in FASTA ID', 'Symbol replacing sensitive symbols', 'Sensitive symbols that are to be replaced']
+default_values = [match_color, similar_color, mismatch_color, id_delimiter, aa_set_str, conserve_method, connector_id, newick_sym_replace, symbols_to_be_replaced_str]
+box_values = ['match_color_edit', 'similar_color_edit', 'mismatch_color_edit', 'id_delimiter_edit', 'aa_set_str_edit', 'conserve_method_edit','connector_id_edit', 'newick_sym_replace_edit', 'symbols_to_be_replaced_str_edit']
 
 
 # Function that makes GUI interface for 'Edit Settings' window available through menubar
@@ -4398,7 +4404,7 @@ def settings_win_fn():
 
 	headings_list = ['Settings for Mismatch analyzer', 'Settings for GenPept/GenBank to fasta converter', 'Settings for Fasta Description / ID Extractor']
 	# default_values_edited = [match_color, similar_color, mismatch_color, id_delimiter, aa_set_str, connector_id, newick_sym_replace, symbol_replacing_comma]
-	default_values_edited = [match_color, similar_color, mismatch_color, id_delimiter, aa_set_str, connector_id, newick_sym_replace, symbols_to_be_replaced_str]
+	default_values_edited = [match_color, similar_color, mismatch_color, id_delimiter, aa_set_str, conserve_method, connector_id, newick_sym_replace, symbols_to_be_replaced_str]
 	dict_box_values = {k: '' for k in box_values}
 	dict_entry_box = {k: '' for k in box_values}	# to assist in coloring entry box with respective color
 
@@ -4419,7 +4425,7 @@ def settings_win_fn():
 	col = 0
 	check_no =0
 	for num in range(0, len(title_list)):
-		if num in [0,5,8]:		# to write title for each section
+		if num in [0,6,9]:		# to write title for each section
 			title = label_text(frame1_set, headings_list[check_no], 2, 43, row, 0)
 			if mac_os:
 				title.configure(font=('times', '16', 'bold', 'italic'))
@@ -4431,6 +4437,7 @@ def settings_win_fn():
 
 		label_text(frame1_set, title_list[num], 0, 37, row, col).grid(padx=10)
 
+		# buttons to choose color
 		if num == 0:
 			button_color(frame1_set, lambda: choose_color('match_color_edit', match_color), row, col).grid(sticky = E)
 		elif num == 1:
@@ -4440,11 +4447,22 @@ def settings_win_fn():
 
 		dict_box_values[box_values[num]] = StringVar()
 		dict_box_values[box_values[num]].set(default_values_edited[num])	# value obtained from settings file
-		dict_entry_box[box_values[num]] = entry_box(frame1_set, dict_box_values[box_values[num]], 15, row, col+1)
-		if num in [0,1,2]:
-			dict_entry_box[box_values[num]].configure(bg = default_values_edited[num])	# for respcetive background colors
 
-		label_text(frame1_set, ' Default:', 0, 7, row, col+2)
+		# Create drop down box for 'conservation method' option and for the rest, create a entry box
+		if box_values[num] == 'conserve_method_edit':
+			method_name = dict_box_values[box_values[num]].get()
+			dict_box_values[box_values[num]] = StringVar()
+			dict_box_values[box_values[num]].set(method_name)
+			dict_entry_box[box_values[num]] = OptionMenu(frame1_set,  dict_box_values[box_values[num]], "amino_acid_grouping", "liu08_simple", "liu08_seqweighted")
+			dict_entry_box[box_values[num]].grid(row = row, column= col+1)
+		else:
+			dict_entry_box[box_values[num]] = entry_box(frame1_set, dict_box_values[box_values[num]], 15, row, col+1)
+
+		# Colors entry box with respective background colors chosen
+		if num in [0,1,2]:
+			dict_entry_box[box_values[num]].configure(bg = default_values_edited[num])
+
+		label_text(frame1_set, ' Default:', 2, 7, row, col+2)
 		text_box = default_text(frame1_set, default_values[num], 15, row, col+3)
 		if win_os:
 			text_box.configure(bg=settings_win.cget('bg'), relief=FLAT)
@@ -4452,7 +4470,7 @@ def settings_win_fn():
 
 		row += 1
 
-	label_text(frame1_set, '', 0, 7, 20, 0)		# for spacing
+	# label_text(frame1_set, '', 0, 7, 20, 0)		# for spacing
 
 	# this enables to open 'settings file' if changes need to be made permanent
 	temp = "Note: To make your changes permanent, change values in 'Settings' file by clicking here!"

@@ -22,9 +22,9 @@
 
 
   ## Method to calculate conservation score ##
-  ## Available options:  similar_amino_acid, liu08_simple, liu08_seqweighted    (similar_amino_acid uses similar amino acid residues set defined above.)
+  ## Available options:  amino_acid_grouping, liu08_simple, liu08_seqweighted    (similar_amino_acid uses similar amino acid residues set defined above.)
   
-    conservation_method:    liu08_seqweighted
+    conservation_method:    liu08_simple
 
 
   ## Delimiter used in fasta IDs ##
