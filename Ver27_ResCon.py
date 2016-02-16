@@ -326,6 +326,9 @@ with open(settings_file_name, 'Ur') as settings_data:
 			elif var_name == 'mismatch_color':	# gets color for mismatching residues
 				mismatch_color = trimmed_3
 
+			elif var_name == 'conservation_method':		# gets scoring method to calculate residue conservation
+				conserve_method = trimmed_3
+
 			elif var_name == 'Clustalo_Command_local':	# gets clustalo command (for running locally)
 				line_list = line.split(' {')
 				clustalo_command_local_default = trimmed_3
@@ -900,7 +903,7 @@ def fetch_mismatch():
 	global query_site_actual
 	global identity_perc_list
 	# global similarity_perc_list
-	global liu08_weighted_score_list
+	global conserve_score_list
 	global protein_mode
 	global dict_identifier_status
 	global match_seqs_total
@@ -1096,23 +1099,29 @@ def fetch_mismatch():
 
 
 	# Calculate "Residue Conservation score" by Liu08 method using Similarity matrix S obtained from BLOSUM62 matrix
-
-	# Since Liu08 similarity (conservation) score needs to be calculated from MSA w/o reference seq, a new MSA is
-	# created that will not have reference sequence in it.
-	msa_ref_removed = []
-	for item_no, item in enumerate(data_alignment._records):
-		if item_no != Reference_index:
-			msa_ref_removed.append(item)
-	msa_ref_removed = MultipleSeqAlignment(msa_ref_removed)		# List of SeqRecords is now converted to be a MSA
-
-	liu08_weighted_score_list = []
-	liu08_simple_score_list = []
 	if protein_mode:
-		#get frequency and unique amino acid count to calculate sequence weight
+		# Since Liu08 similarity (conservation) score needs to be calculated from MSA w/o reference seq, a new MSA is
+		# created that will not have reference sequence in it.
+		msa_ref_removed = []
+		for item_no, item in enumerate(data_alignment._records):
+			if item_no != Reference_index:
+				msa_ref_removed.append(item)
+		msa_ref_removed = MultipleSeqAlignment(msa_ref_removed)		# List of SeqRecords is now converted to be a MSA
 		alignment_len = len(msa_ref_removed[0].seq)
+
+		# Choose which Liu08 scoring method (Sequence weighted or not)
+		if conserve_method  == 'liu08_simple':
+			liu08_simple_score_list = []
+			positions_concerned = query_in_Alignment
+		elif conserve_method == 'liu08_seqweighted':
+			liu08_weighted_score_list = []
+			positions_concerned = alignment_len
+
+		# get frequency and unique amino acid count in a column
+		# All columns need to be processed here tp calculate sequence weight
 		dict_pos_freq = {}
 		dict_pos_unique_aa = {}
-		for column_no in range(0, alignment_len):	# needs to be calculated for all columns to calculate seq weight
+		for column_no in range(0, positions_concerned):
 			column_aa = msa_ref_removed[:,column_no]
 
 			unique_aa = list( set( column_aa ) )
@@ -1124,19 +1133,18 @@ def fetch_mismatch():
 				column_aa = column_aa.upper()		# to help if seqs are in lower case or mix of lower and upper cases
 				dict_pos_freq[column_no][aa] = column_aa.count(aa)
 
-		# calculate seq weight for each seq
-		dict_seq_weight = {}
-		for seq_no in range(0, len(msa_ref_removed)):
-			sequence = msa_ref_removed[seq_no].seq
-			sequence = sequence.upper()				# to help if seqs are in lower case or mix of lower and upper cases
-			seq_weight = 0
-			for aa_no in range(0, len(sequence)):
-				# print dict_pos_freq[aa_no]
-				# if sequence[aa_no] not in ['-', 'B', 'J', 'O', 'U', 'X', 'Z']:
-				freq = float( dict_pos_freq[aa_no][ sequence[aa_no] ] )
-				if freq:
-					seq_weight += 1 / (freq * dict_pos_unique_aa[aa_no][0])
-			dict_seq_weight[seq_no] = seq_weight / alignment_len
+		# calculate seq weight for each seq when Liu08 seq weighted score needs to be determined
+		if conserve_method == 'liu08_seqweighted':
+			dict_seq_weight = {}
+			for seq_no in range(0, len(msa_ref_removed)):
+				sequence = msa_ref_removed[seq_no].seq
+				sequence = sequence.upper()				# to help if seqs are in lower case or mix of lower and upper cases
+				seq_weight = 0
+				for aa_no in range(0, len(sequence)):
+					freq = float( dict_pos_freq[aa_no][ sequence[aa_no] ] )
+					if freq:
+						seq_weight += 1 / (freq * dict_pos_unique_aa[aa_no][0])
+				dict_seq_weight[seq_no] = seq_weight / alignment_len
 
 		# determine residue conservation score by Liu08 method
 		# for column_no in range(0, len(query_in_Alignment)):
@@ -1153,19 +1161,22 @@ def fetch_mismatch():
 
 			# Calculates Liu08 Sequence Weighted residue conservation score
 			# While Liu08 score ranges from 0 to 10, here we present it as percentage from 0 to 100
-			liu08_weighted_score = 0
-			for row_no in range(0, len(column_aa)):
-				matrix_score = float( dict_similarity_matrix[aa_most][column_aa[row_no]] )
-				liu08_weighted_score += (dict_seq_weight[row_no] * matrix_score)
-			liu08_weighted_score_list.append(liu08_weighted_score * 10)	# multiplied by 10 to present in percentage
-			# print '%i Liu08  %s  %0.2f' %(column_no,aa_most, liu08_weighted_score)
+			if conserve_method == 'liu08_seqweighted':
+				liu08_weighted_score = 0
+				for row_no in range(0, len(column_aa)):
+					matrix_score = float( dict_similarity_matrix[aa_most][column_aa[row_no]] )
+					liu08_weighted_score += (dict_seq_weight[row_no] * matrix_score)
+				liu08_weighted_score_list.append(liu08_weighted_score * 10)	# multiplied by 10 to present in percentage
+				# print '%i Liu08  %s  %0.2f' %(column_no,aa_most, liu08_weighted_score)
 
 			# Calculates simple Liu08 NON-Sequence Weighted residue conservation score
-			liu08_simple_score = 0
-			for aa in aa_label:
-				matrix_score = float(dict_similarity_matrix[aa_most][aa])
-				liu08_simple_score += ( matrix_score * dict_pos_freq[column_no][aa] )
-			liu08_simple_score_list.append(liu08_simple_score/len(column_aa) * 10)
+			# Score is presented in percentage
+			if conserve_method == 'liu08_simple':
+				liu08_simple_score = 0
+				for aa in aa_label:
+					matrix_score = float(dict_similarity_matrix[aa_most][aa])
+					liu08_simple_score += ( matrix_score * dict_pos_freq[column_no][aa] )
+				liu08_simple_score_list.append(liu08_simple_score/len(column_aa) * 10)
 
 
 		# # calculates shannon entropy - Turned off for now as it needs to be tested further
@@ -1252,7 +1263,7 @@ def fetch_mismatch():
 			residues_data += (',' + res)
 		residues_data += '\n'
 
-		len_seq = 'problem_in_script'			# this part obtains the length of sequence
+		len_seq = None			# this part obtains the length of sequence
 		for no in range(0, len(data_alignment)):
 				if data_alignment._records[no].id == identifier:
 					seq = str(data_alignment._records[no].seq)
@@ -1260,7 +1271,7 @@ def fetch_mismatch():
 					len_seq = len(seq)
 					break
 
-		if len_seq == 'problem_in_script':
+		if len_seq is None:
 			mismatch_log.error("Error obtaining sequence length of '%s'." % identifier)
 
 		if mismatch_count > 0:				# Writes into output file if at least one mismatch found in  query positions
@@ -1351,7 +1362,16 @@ def fetch_mismatch():
 	identity_count_list = []
 	identity_perc_list = []
 	# similarity_count_list = []
-	# similarity_perc_list = []
+	similarity_perc_list = []
+
+	# List 'conserve_score_list' will be used to write data in output files based on residue conservation method needed
+	if conserve_method == 'similar_amino_acid_grouping':
+		conserve_score_list = similarity_perc_list      # both lists will change when one changes
+	elif conserve_method == 'liu08_simple':
+		conserve_score_list = liu08_simple_score_list
+	elif conserve_method == 'liu08_seqweighted':
+		conserve_score_list = liu08_weighted_score_list
+
 	for no in range(0, len(query_site_actual)):
 		for item in range(0, len(Dict_Unique_Residues[query_site_actual[no]])):
 			if Dict_Unique_Residues[query_site_actual[no]][item] == '':
@@ -1377,32 +1397,33 @@ def fetch_mismatch():
 			identity_perc = 0
 			identity_perc_list.append(identity_perc)
 
-		# # this obtains similarity count and percentage
-		# aa_similar = ''
-		# for group in aa_set:		# Note: aa_set is defined in settings text file and allowed to be changed via GUI
-		# 	if query_site_residues[no] in group:
-		# 		aa_similar = group
-		# 		break
-        #
-		# # print Dict_sorting_temp
-        #
-		# similarity_count = 0
-		# for key in Dict_sorting_temp:
-		# 	if key in aa_similar:
-		# 		similarity_count += Dict_sorting_temp[key]
-		# similarity_count_list.append(similarity_count)
-		# similarity_perc = float(similarity_count) / (len(aligned_ids_list) - 1) * 100
-		# similarity_perc_list.append(similarity_perc)
+		# this obtains residue conservation score (similarity count and percentage) by amino acid grouping method
+		aa_similar = ''
+		for group in aa_set:		# Note: aa_set is defined in settings text file and allowed to be changed via GUI
+			if query_site_residues[no] in group:
+				aa_similar = group
+				break
 
+		# if residue conservation score needs to be determined based on amino acid grouping set
+		if conserve_method == 'similar_amino_acid_grouping':
+			similarity_count = 0
+			for key in Dict_sorting_temp:
+				if key in aa_similar:
+					similarity_count += Dict_sorting_temp[key]
+			# similarity_count_list.append(similarity_count)
+			similarity_perc = float(similarity_count) / (len(aligned_ids_list) - 1) * 100
+			similarity_perc_list.append(similarity_perc)
+
+		# calculates count of unique amino acidss in column and sorts them in ascending order
 		unique_each = ''
 		for key, value in sorted(Dict_sorting_temp.iteritems(), key = lambda (k,v): (v,k), reverse = True):
 			perc = float (value) / (len(aligned_ids_list) - 1) * 100
 			perc = '%3.1f' %perc
 			unique_each += (',' + key + ': ' + str(value) + ' (' + str(perc) + '%)')
 
-		# unique_residues_list.append(unique_each)
+		# Collects data, which needs to be written into a output file, in a variable
 		if protein_mode:			# residue conservation details added only if protein mode is used
-			unique_res_detail += (',%i,%3.1f,%0.1f' % (identity_count, identity_perc, liu08_weighted_score_list[no]))
+			unique_res_detail += (',%i,%3.1f,%0.1f' % (identity_count, identity_perc, conserve_score_list[no]))
 		else:
 			unique_res_detail += (',%i,%3.1f' % (identity_count, identity_perc))
 		unique_res_detail += unique_each
@@ -1487,7 +1508,7 @@ def fetch_mismatch():
 
 			if protein_mode:		# residue conservation details only if proteins sequences are used
 				Output_handle_mismatch_txt.write('% Conservation_Score_Liu08_Weighted'.ljust(45) + ':\t' +
-													str(liu08_weighted_score_list[num]) + '%%\n')
+													str(conserve_score_list[num]) + '%%\n')
 
 			if len(Mismatch) != 0:					# This is to write into output file if mismatches were found
 				Output_handle_mismatch_txt.write('\n*** Following are the mismatches noted ***\n\n')
@@ -1510,8 +1531,7 @@ def html_formatting():
 	global Output_Path
 	# global unique_residues_line
 	global identity_perc_list
-	# global similarity_perc_list
-	global liu08_weighted_score_list
+	global conserve_score_list
 	global query_site_residues
 	global query_site_actual
 	global Reference
@@ -1657,7 +1677,7 @@ def html_formatting():
 
 		iden = identity_perc_list
 		# simi = similarity_perc_list
-		simi = liu08_weighted_score_list
+		simi = conserve_score_list
 		width = 0.25
 		numb = range(len(query_site_residues))
 		numb2 = [x+width for x in numb]
@@ -1736,7 +1756,7 @@ def html_formatting():
 							  '\t\t});\n\n\tvar legendHolder = document.createElement("div");\n'
 							  '\tlegendHolder.innerHTML = bar.generateLegend();\n'
 							  '\tdocument.getElementById("legend").appendChild(legendHolder.firstChild);'
-							  '\n\t}\n</script>\n' % (query_site_actual, identity_perc_list, liu08_weighted_score_list))
+							  '\n\t}\n</script>\n' % (query_site_actual, identity_perc_list, conserve_score_list))
 
 	elif chart_method == 'chartnew.js':
 		if ( 63*len(query_site_actual) ) < 325:
@@ -1755,7 +1775,7 @@ def html_formatting():
 
 		if protein_mode:
 			out_html_handle.write('\t\t{	fillColor : "rgba(255,140,0, 1.0)",\n\t\t\ttitle: "%% Conservation",\n'
-								  '\t\t\tdata : %s  }\n\t\t]\n\t}\n' % liu08_weighted_score_list)
+								  '\t\t\tdata : %s  }\n\t\t]\n\t}\n' % conserve_score_list)
 		else:
 			out_html_handle.write('\t\t]\n\t}\n')
 
@@ -1774,7 +1794,7 @@ def html_formatting():
 	for n in range(0, len(identity_perc_list)):
 		row2.append("%3.1f" % identity_perc_list[n])
 		if protein_mode:
-			row3.append("%3.1f" % liu08_weighted_score_list[n])
+			row3.append("%3.1f" % conserve_score_list[n])
 
 	if protein_mode:		# for protein seqs, conservation_liu08 data is added
 		rows = [row1, row2, row3]
@@ -1832,7 +1852,7 @@ def html_formatting():
 			# select highlighting color depending on conservation score
 			color_code = '#FFFFFF'		# white being the default background color
 			if (aa_no+1) in query_site_actual:	# 'aa_no+1' accounts for pythonic count
-				conservation_score = liu08_weighted_score_list[ query_site_actual.index(aa_no+1) ]
+				conservation_score = conserve_score_list[ query_site_actual.index(aa_no+1) ]
 				score_range = [10, 20, 30, 40, 50, 60, 70, 80, 90, 100]
 				for no in range(0, len(score_range)):
 					if (conservation_score) <= ( float(score_range[no]) + 0.001): # 0.001 is added to get around float precision problems
