@@ -1117,7 +1117,7 @@ def fetch_mismatch():
 
 
 	# Calculate "Residue Conservation score" by Liu08 method using Similarity matrix S obtained from BLOSUM62 matrix
-	if protein_mode:
+	if protein_mode and conserve_method != 'amino_acid_grouping':
 		# Since Liu08 similarity (conservation) score needs to be calculated from MSA w/o reference seq, a new MSA is
 		# created that will not have reference sequence in it.
 		if not ref_included:
@@ -1138,8 +1138,6 @@ def fetch_mismatch():
 		elif conserve_method == 'liu08_seqweighted':
 			liu08_weighted_score_list = []
 			positions_concerned = range(alignment_len)
-		elif conserve_method == 'amino_acid_grouping':
-			positions_concerned = query_in_Alignment
 
 		# get frequency and unique amino acid count in a column
 		# To calculate sequence weight, all columns need to be processed here
@@ -1313,15 +1311,26 @@ def fetch_mismatch():
 			No_Mismatches_details += (id_components  + ',' + str(len_seq)  + ',' + str(mismatch_count) + residues_data)
 			match_seqs_total += 1
 
-	Output_handle_mismatch_csv.write('Data below is obtained from file:    "' + input_file + '"\n')
-	Output_handle_mismatch_csv.write('Reference file used:    "' + Reference_file + '"\n')
+	Output_handle_mismatch_csv.write('Sequences file used:    "%s"\n' % input_file)
+	Output_handle_mismatch_csv.write('Reference file used:    "%s"\n' % Reference_file)
+	Output_handle_mismatch_csv.write('Residue conservation method used:    %s\n\n' %conserve_method)
+	# Output_handle_mismatch_csv.write('Reference sequence included in calculations:    %s\n\n' %ref_included)
 
-	perc_match = float(match_seqs_total -1) * 100 / ( len(data_alignment) -1)
-	perc_mismatch = float(mismatched_seqs_total) * 100 / (len(data_alignment) -1)
-	Output_handle_mismatch_csv.write('Number of sequences\n'
-									 '       in alignment (excluding Reference sequence):      %i\n' %(len(data_alignment)-1)+
-									 '       that have all residues matching (excluding Reference sequence):   %i (%2.1f %%)\n'
-									 %( (match_seqs_total -1), perc_match )+
+	if ref_included:		# reference sequence included in calculations
+		total_no_seqs = len(data_alignment)
+		ref_str = 'including Reference sequence'
+	else:
+		total_no_seqs = len(data_alignment)-1
+		match_seqs_total -= 1
+		ref_str = 'excluding Reference sequence'
+
+	perc_match = float(match_seqs_total) * 100 / total_no_seqs
+	perc_mismatch = float(mismatched_seqs_total) * 100 / total_no_seqs
+
+	Output_handle_mismatch_csv.write('Number of sequences\n' +
+									 '       in alignment (%s):      %i\n' %(ref_str, total_no_seqs)+
+									 '       that have all residues matching (%s):   %i (%2.1f %%)\n'
+									 %( ref_str, match_seqs_total, perc_match ) +
 									 '       that have at least one mismatching residue:      %i (%2.1f %%)\n\n\n'
 									 %( mismatched_seqs_total, perc_mismatch ) )
 
@@ -1373,8 +1382,12 @@ def fetch_mismatch():
 	if aa_set_str == '':
 		protein_mode = False
 
-	Output_handle_mismatch_csv.write("\n\n*** Unique residues seen at the query sites and their count. ***\n"
-									 "** (Note: Calculation doesn't include Reference sequences's residue at that position) **\n\n")
+	Output_handle_mismatch_csv.write("\n\n*** Unique residues seen at the query sites and their count. ***\n")
+	if ref_included:		# tells whether reference sequence is involved or not in calculations
+		Output_handle_mismatch_csv.write("** (Note: Calculation includes Reference sequences's residue at that position) **\n\n")
+	else:
+		Output_handle_mismatch_csv.write("** (Note: Calculation DOESN'T include Reference sequences's residue at that position) **\n\n")
+
 	if protein_mode:
 		Output_handle_mismatch_csv.write(",Expected Residue, ,Identity_count,% Identity,% Conservation_Liu08_Weighted,"
 									 "Unique residues' count and fraction\n")
@@ -1482,7 +1495,7 @@ def fetch_mismatch():
 
 		Output_file_Mismatch_txt = Output_Path + 'Mismatches_Detailed.txt'
 		Output_handle_mismatch_txt = open(Output_file_Mismatch_txt, 'w')
-		Output_handle_mismatch_txt.write('Data below is obtained from file'.ljust(38) + ':  "' + input_file + '"\n' +
+		Output_handle_mismatch_txt.write('Sequences file used'.ljust(38) + ':  "' + input_file + '"\n' +
 					'Reference file used'.ljust(38) + ':  "' + Reference_file + '"\n\n' +
 					'Query site(s) for which mismatching are requested'.ljust(55) + ':\t' + str(query_site_actual) + '\n' +
 					'Corresponding Query site residue(s) in Reference seq'.ljust(55) + ':\t' +  str(query_site_residues) + '\n' +
@@ -1676,14 +1689,22 @@ def html_formatting():
 	html_log.info("Formatted aligment will be stored in html file: '%s'" % html_out_name)
 	out_html_handle = open(html_out_name, 'w')
 
-	perc_match = float(match_seqs_total -1) * 100 / ( len(alignment) -1)
-	perc_mismatch = float(mismatched_seqs_total) * 100 / (len(alignment) -1)
-	info_lines = ('Number of sequences\n'
-				  '         in alignment (excluding Reference sequence)                    :  %i\n'
-				  '         that have all residues <ins>matching</ins> (excluding Reference sequence) :  %i  (%2.1f %%)\n'
-				  '         that have at least one <ins>mismatching</ins> residue                     :  %i  (%2.1f %%)\n\n'
-				  %( (len(alignment) -1), match_seqs_total -1, perc_match, mismatched_seqs_total, perc_mismatch) )
+	# Calculate numbers depending on inclusion of reference sequence or not
+	if ref_included:
+		total_no_seqs = len(alignment)
+		ref_str = 'including Reference sequence'
+	else:
+		total_no_seqs = len(alignment)-1
+		ref_str = 'excluding Reference sequence'
 
+	perc_match = float(match_seqs_total) * 100 / total_no_seqs
+	perc_mismatch = float(mismatched_seqs_total) * 100 / total_no_seqs
+
+	info_lines = ('Number of sequences\n'
+				  '         in alignment (%s)                    :  %i\n'
+				  '         that have all residues <ins>matching</ins> (%s) :  %i  (%2.1f %%)\n'
+				  '         that have at least one <ins>mismatching</ins> residue                     :  %i  (%2.1f %%)\n\n'
+				  %( ref_str, total_no_seqs, ref_str, match_seqs_total, perc_match, mismatched_seqs_total, perc_mismatch) )
 	info_lines += '-' * 100
 
 	if chart_method == 'chart.js':
@@ -1989,7 +2010,13 @@ def html_formatting():
 		else:
 			out_html_handle.write('\n')
 
-	temp = '\n<ins>Input files used:</ins>\n\t %s \n\t %s' %(Aligned_Filename, Reference_file)
+	temp = '\n<ins>Input files used:</ins>\n\t %s \n\t %s\n\n' %(Aligned_Filename, Reference_file)
+	temp += 'Residue conservation method used                :   %s\n' %conserve_method
+	if ref_included:
+		ref_temp = 'Yes'
+	else:
+		ref_temp = 'No'
+	temp += 'Is Reference sequence included in calculations? :   %s\n' % ref_temp
 	out_html_handle.write(temp + "\n</PRE>\n</BODY>\n</HTML>")
 	out_html_handle.close()
 	html_log.info('Alignment formatting was completed and saved as above mentioned html file.')
@@ -3341,6 +3368,10 @@ def read_user_input():
 	else:
 		runscript_log.info("ResCon will run in 'DNA/RNA mode' as user has requested.")
 
+	# log methods chosen
+	runscript_log.info("Residue conservation method chosen: %s" % conserve_method)
+	runscript_log.info("Reference sequence included in %%identity and %%conservation calculations: %s" %ref_included)
+
 	if not templ_entry.get():
 		temp = "'Reference file' box is empty. Choose a file."
 		runscript_log.error(temp)
@@ -3639,7 +3670,10 @@ resi_entry.configure(bg='#FFFF94')
 
 respos_all, respos_all_val = checkbox_fn(frame1, 'All', 6, 2, disable_res_positions)
 respos_all_val.set(False)
-respos_all.grid(sticky=E + W)
+if mac_os:		# Checkbox doesn't get centered in mac
+	respos_all.grid(sticky=W)
+else:
+	respos_all.grid(sticky=E + W)
 
 
 output_main_label = label_text(frame1, "   Output folder", 0, 20, 5, 0)
@@ -3720,7 +3754,10 @@ dummy.grid(padx = 15)
 
 checkbox_formatting, checkboxval_formatting = checkbox_fn(frame2, 'HTML Color-coding required?', 12, 1, fn_to_pass)
 checkboxval_formatting.set(True)
-checkbox_formatting.grid(sticky=E + W)
+if mac_os:			# Checkbox doesn't get centered in mac
+	checkbox_formatting.grid(sticky=W)
+else:
+	checkbox_formatting.grid(sticky=E + W)
 
 if linux_os:
 	button_run_script = Button(frame2, text='Submit job', width=16, command=lambda: gen_thread(processing, run_script),
@@ -4348,7 +4385,6 @@ Tk.report_callback_exception = show_error
 menubar = Menu(app)
 
 
-print ref_included
 # Function that reads settings changed by user through GUI
 def edit_settings(settings_win):
 	# global match_color, similar_color, mismatch_color, aa_set_str, aa_set, id_delimiter, connector_id, newick_sym_replace, symbol_replacing_comma
@@ -4382,9 +4418,6 @@ def edit_settings(settings_win):
 		ref_included = True
 	else:
 		ref_included = False
-
-	print ref_included
-
 
 	# settings for GenPept/GenBank to fasta converter
 	connector_id = dict_box_values['connector_id_edit'].get()
