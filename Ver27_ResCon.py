@@ -47,8 +47,8 @@ import operator
 import StringIO
 from clustalo_embl_api import clustalo_api
 
-terminal_output = False			# to show or not to show error/info in the terminal
-# terminal_output = True
+# terminal_output = False			# to show or not to show error/info in the terminal
+terminal_output = True
 
 additional_imports = True	# this enables to run script in case such features from thrid party libs are not desired.
 if additional_imports:
@@ -83,7 +83,15 @@ Ver 27 (under development) major modifications:
 
 4. Added ability to choose between above methods through GUI 'Edit settings' from 'File' menu.
 
+5. Option added through GUI 'Edit settings' to choose if reference sequence needs to be included in calculation
+   of %Identity and %Residue Conservation. Script changed to accomodate such calculation.
+
+   TODO: Output (csv & html) needs to be modified to reflect such changes
+   TODO: Logging needs to be added to enable logging options chosen by user
+
+
 ------------------------------------------------------------------------------------------------------------------------
+
 
 Ver 26 major modifications:
 
@@ -331,7 +339,13 @@ with open(settings_file_name, 'Ur') as settings_data:
 				mismatch_color = trimmed_3
 
 			elif var_name == 'conservation_method':		# gets scoring method to calculate residue conservation
-				conserve_method = trimmed_3
+				conserve_method = trimmed_3.lower()
+
+			elif var_name == 'ref_included_in_analysis':    # gets if ref sequence need to be included in stats or not
+				if trimmed_3 == 'No':
+					ref_included = False
+				else:
+					ref_included = True
 
 			elif var_name == 'Clustalo_Command_local':	# gets clustalo command (for running locally)
 				line_list = line.split(' {')
@@ -976,7 +990,7 @@ def fetch_mismatch():
 
 	# Indexes residues (characters) in reference sequence and also for reference sequence in alignment.
 	mismatch_log.debug('Begins indexing residues in reference seq and also of reference sequence in alignment')
-	ReferenceSeq_Aligned = str(data_alignment[Reference_index].seq)
+	reference_seq_aligned = str(data_alignment[Reference_index].seq)
 
 	# following line creates list of upper case alphabets.
 	# Includes non-amino acid chars as well to support nucleotides other than A, T, G and C
@@ -985,7 +999,7 @@ def fetch_mismatch():
 	Dict_aa_Index_Reference_Seq = {k: [] for k in aa_list}
 	Dict_aa_Index_Reference_Seq_inAlignment = {k: [] for k in aa_list}
 	for aa in aa_list:
-		Dict_aa_Index_Reference_Seq_inAlignment[aa] = indexing(ReferenceSeq_Aligned, aa)
+		Dict_aa_Index_Reference_Seq_inAlignment[aa] = indexing(reference_seq_aligned, aa)
 		Dict_aa_Index_Reference_Seq[aa] = indexing(Reference.seq, aa)
 	mismatch_log.debug('Done indexing residues in Reference seq and also of Reference sequence in alignment')
 
@@ -1106,12 +1120,16 @@ def fetch_mismatch():
 	if protein_mode:
 		# Since Liu08 similarity (conservation) score needs to be calculated from MSA w/o reference seq, a new MSA is
 		# created that will not have reference sequence in it.
-		msa_ref_removed = []
-		for item_no, item in enumerate(data_alignment._records):
-			if item_no != Reference_index:
-				msa_ref_removed.append(item)
-		msa_ref_removed = MultipleSeqAlignment(msa_ref_removed)		# List of SeqRecords is now converted to be a MSA
-		alignment_len = len(msa_ref_removed[0].seq)
+		if not ref_included:
+			msa_data = []
+			for item_no, item in enumerate(data_alignment._records):
+				if item_no != Reference_index:
+					msa_data.append(item)
+			msa_data = MultipleSeqAlignment(msa_data)		# List of SeqRecords is now converted to be a MSA
+		else:
+			msa_data = data_alignment
+
+		alignment_len = len(msa_data[0].seq)
 
 		# Choose which Liu08 scoring method (Sequence weighted or not)
 		if conserve_method  == 'liu08_simple':
@@ -1124,11 +1142,12 @@ def fetch_mismatch():
 			positions_concerned = query_in_Alignment
 
 		# get frequency and unique amino acid count in a column
-		# All columns need to be processed here tp calculate sequence weight
+		# To calculate sequence weight, all columns need to be processed here
+		# if conserve_method in ['liu08_simple', 'liu08_seqweighted']:
 		dict_pos_freq = {}
 		dict_pos_unique_aa = {}
 		for column_no in positions_concerned:
-			column_aa = msa_ref_removed[:,column_no]
+			column_aa = msa_data[:,column_no]
 
 			unique_aa = list( set( column_aa ) )
 			dict_pos_unique_aa[column_no] = [ len(unique_aa) ]
@@ -1139,11 +1158,12 @@ def fetch_mismatch():
 				column_aa = column_aa.upper()		# to help if seqs are in lower case or mix of lower and upper cases
 				dict_pos_freq[column_no][aa] = column_aa.count(aa)
 
+
 		# calculate seq weight for each seq when Liu08 seq weighted score needs to be determined
 		if conserve_method == 'liu08_seqweighted':
 			dict_seq_weight = {}
-			for seq_no in range(0, len(msa_ref_removed)):
-				sequence = msa_ref_removed[seq_no].seq
+			for seq_no in range(0, len(msa_data)):
+				sequence = msa_data[seq_no].seq
 				sequence = sequence.upper()				# to help if seqs are in lower case or mix of lower and upper cases
 				seq_weight = 0
 				for aa_no in range(0, len(sequence)):
@@ -1155,7 +1175,7 @@ def fetch_mismatch():
 		# determine residue conservation score by Liu08 method
 		# for column_no in range(0, len(query_in_Alignment)):
 		for column_no in query_in_Alignment:
-			column_aa = msa_ref_removed[:,column_no]
+			column_aa = msa_data[:,column_no]
 			column_aa = str(column_aa).upper()		# to help if seqs are in lower case or mix of lower and upper cases
 
 			# Identifies most frequent residue. If it is gap, next most common residue is chosen.
@@ -1236,7 +1256,7 @@ def fetch_mismatch():
 	No_Mismatches_details = ''
 	mismatched_seqs_total = 0
 	match_seqs_total = 0
-	mismatches_none = True			# This var is to get info if there is no mismtaches noted at any of the sites
+	mismatches_none = True		# This var is to get info if there is no mismatches noted at any of the sites tested
 	for identifier in aligned_ids_list:
 		mismatch_count = 0					# to count number of mismatches
 		for char in dict_clustal_residues[identifier]:
@@ -1345,7 +1365,7 @@ def fetch_mismatch():
 
 		# this part will enable calculating each unique residue's count and fraction w/o including reference seq's residue.
 		# This is so as to offer true calculation as reference seq' residue is always matching anyway.
-		if '' in Dict_Unique_Residues[query_site_actual[no]]:
+		if '' in Dict_Unique_Residues[query_site_actual[no]] and not ref_included:
 			Dict_Unique_Residues[query_site_actual[no]].remove('')
 
 	# if in case user sets 'similar aa sets' empty in settings (either through gui or settings file), the script will
@@ -1378,6 +1398,7 @@ def fetch_mismatch():
 	elif conserve_method == 'liu08_seqweighted':
 		conserve_score_list = liu08_weighted_score_list
 
+	# get stats about %Identity (and optionally %similarity) at column positions requested
 	for no in range(0, len(query_site_actual)):
 		for item in range(0, len(Dict_Unique_Residues[query_site_actual[no]])):
 			if Dict_Unique_Residues[query_site_actual[no]][item] == '':
@@ -1395,7 +1416,10 @@ def fetch_mismatch():
 		if query_site_residues[no] in Dict_sorting_temp:
 			identity_count = Dict_sorting_temp[query_site_residues[no]]
 			identity_count_list.append(identity_count)
-			identity_perc = float(identity_count) / (len(aligned_ids_list) - 1) * 100
+			if not ref_included:
+				identity_perc = float(identity_count) / (len(aligned_ids_list) - 1) * 100
+			else:
+				identity_perc = float(identity_count) / (len(aligned_ids_list)) * 100
 			identity_perc_list.append(identity_perc)
 		else:
 			identity_count = 0
@@ -1417,7 +1441,10 @@ def fetch_mismatch():
 				if key in aa_similar:
 					similarity_count += Dict_sorting_temp[key]
 			# similarity_count_list.append(similarity_count)
-			similarity_perc = float(similarity_count) / (len(aligned_ids_list) - 1) * 100
+			if not ref_included:
+				similarity_perc = float(similarity_count) / (len(aligned_ids_list) - 1) * 100
+			else:
+				similarity_perc = float(similarity_count) / (len(aligned_ids_list)) * 100
 			similarity_perc_list.append(similarity_perc)
 
 		# calculates count of unique amino acidss in column and sorts them in ascending order
@@ -4329,6 +4356,7 @@ def edit_settings(settings_win):
 	global dict_box_values
 	global Newick_hate_sym_checkbox
 	global conserve_method
+	global ref_included
 
 	# settings for mismatch analyzer
 	match_color = dict_box_values['match_color_edit'].get()
@@ -4347,6 +4375,12 @@ def edit_settings(settings_win):
 	aa_set_str = ', '.join(aa_set_upper)
 
 	conserve_method = dict_box_values['conserve_method_edit'].get()     # gets residue conservation method needed
+	conserve_method = conserve_method.lower()
+
+	if dict_box_values['ref_included_edit'].get() == 'Yes':   # gets if ref sequence to be involved in analysis or not
+		ref_included = True
+	else:
+		ref_included = False
 
 	# settings for GenPept/GenBank to fasta converter
 	connector_id = dict_box_values['connector_id_edit'].get()
@@ -4383,9 +4417,9 @@ def edit_settings(settings_win):
 		settings_win.destroy()		# closes window
 
 
-title_list = ['Color:  Matching', 'Color:  Mismatching but similar', 'Color:  Mismatching and dissimilar', 'Delimiter used in FASTA IDs', 'Amino acids similarity sets', 'Residue conservation scoring method', 'Connecting delimiter used in FASTA ID', 'Symbol replacing sensitive symbols', 'Sensitive symbols that are to be replaced']
-default_values = [match_color, similar_color, mismatch_color, id_delimiter, aa_set_str, conserve_method, connector_id, newick_sym_replace, symbols_to_be_replaced_str]
-box_values = ['match_color_edit', 'similar_color_edit', 'mismatch_color_edit', 'id_delimiter_edit', 'aa_set_str_edit', 'conserve_method_edit','connector_id_edit', 'newick_sym_replace_edit', 'symbols_to_be_replaced_str_edit']
+title_list = ['Color:  Matching', 'Color:  Mismatching but similar', 'Color:  Mismatching and dissimilar', 'Delimiter used in FASTA IDs', 'Amino acids similarity sets', 'Residue conservation scoring method', 'Include Reference sequence in calculations or not', 'Connecting delimiter used in FASTA ID', 'Symbol replacing sensitive symbols', 'Sensitive symbols that are to be replaced']
+default_values = [match_color, similar_color, mismatch_color, id_delimiter, aa_set_str, conserve_method, ref_included, connector_id, newick_sym_replace, symbols_to_be_replaced_str]
+box_values = ['match_color_edit', 'similar_color_edit', 'mismatch_color_edit', 'id_delimiter_edit', 'aa_set_str_edit', 'conserve_method_edit', 'ref_included_edit', 'connector_id_edit', 'newick_sym_replace_edit', 'symbols_to_be_replaced_str_edit']
 
 
 # Function that makes GUI interface for 'Edit Settings' window available through menubar
@@ -4404,7 +4438,7 @@ def settings_win_fn():
 
 	headings_list = ['Settings for Mismatch analyzer', 'Settings for GenPept/GenBank to fasta converter', 'Settings for Fasta Description / ID Extractor']
 	# default_values_edited = [match_color, similar_color, mismatch_color, id_delimiter, aa_set_str, connector_id, newick_sym_replace, symbol_replacing_comma]
-	default_values_edited = [match_color, similar_color, mismatch_color, id_delimiter, aa_set_str, conserve_method, connector_id, newick_sym_replace, symbols_to_be_replaced_str]
+	default_values_edited = [match_color, similar_color, mismatch_color, id_delimiter, aa_set_str, conserve_method, ref_included, connector_id, newick_sym_replace, symbols_to_be_replaced_str]
 	dict_box_values = {k: '' for k in box_values}
 	dict_entry_box = {k: '' for k in box_values}	# to assist in coloring entry box with respective color
 
@@ -4425,7 +4459,7 @@ def settings_win_fn():
 	col = 0
 	check_no =0
 	for num in range(0, len(title_list)):
-		if num in [0,6,9]:		# to write title for each section
+		if num in [0,7,10]:		# to write title for each section
 			title = label_text(frame1_set, headings_list[check_no], 2, 43, row, 0)
 			if mac_os:
 				title.configure(font=('times', '16', 'bold', 'italic'))
@@ -4448,13 +4482,22 @@ def settings_win_fn():
 		dict_box_values[box_values[num]] = StringVar()
 		dict_box_values[box_values[num]].set(default_values_edited[num])	# value obtained from settings file
 
-		# Create drop down box for 'conservation method' option and for the rest, create a entry box
-		if box_values[num] == 'conserve_method_edit':
+		# Create drop down box for 'conservation method' and 'ref seq include or not in analysis' options and for the rest, create a entry box
+		if box_values[num] in ['conserve_method_edit', 'ref_included_edit']:
 			method_name = dict_box_values[box_values[num]].get()
+			if box_values[num] == "conserve_method_edit":
+				options = ("Amino_Acid_Grouping", "Liu08_Simple", "Liu08_SeqWeighted")
+			else:
+				options = ('Yes', 'No')
+				if method_name:
+					method_name = 'Yes'
+				else:
+					method_name = 'No'
 			dict_box_values[box_values[num]] = StringVar()
 			dict_box_values[box_values[num]].set(method_name)
-			dict_entry_box[box_values[num]] = OptionMenu(frame1_set,  dict_box_values[box_values[num]], "amino_acid_grouping", "liu08_simple", "liu08_seqweighted")
-			dict_entry_box[box_values[num]].grid(row = row, column= col+1)
+			dict_entry_box[box_values[num]] = OptionMenu(frame1_set, dict_box_values[box_values[num]], *options)
+			# dict_entry_box[box_values[num]].config(width=9)
+			dict_entry_box[box_values[num]].grid(row = row, column= col+1, sticky= W)
 		else:
 			dict_entry_box[box_values[num]] = entry_box(frame1_set, dict_box_values[box_values[num]], 15, row, col+1)
 

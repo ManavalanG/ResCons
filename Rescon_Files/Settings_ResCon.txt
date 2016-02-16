@@ -15,6 +15,12 @@
     mismatch_color:  #F73D94
 
 
+  ## Include Reference sequence in %Identity and % residue conservation analysis ##
+  ## (Default is 'Yes'. If it should not be included, set it to 'No')
+
+    ref_included_in_analysis:     Yes
+
+
   ## Similar amino acid residues set ##
   ## (Default used in ResCon - AVFPMILW, DE, RK, STYHCNGQ
 
@@ -22,13 +28,14 @@
 
 
   ## Method to calculate conservation score ##
-  ## Available options:  amino_acid_grouping, liu08_simple, liu08_seqweighted    (similar_amino_acid uses similar amino acid residues set defined above.)
+  ## Available options:  Amino_Acid_Grouping, Liu08_Simple, Liu08_SeqWeighted    (similar_amino_acid uses similar amino acid residues set defined above.)
   
-    conservation_method:    liu08_simple
+    conservation_method:    Liu08_Simple
 
 
   ## Delimiter used in fasta IDs ##
   ## Default delimiter used is a pipe symbol
+
     id_delimiter:     |
 
 
@@ -38,7 +45,9 @@
 
     Clustalo_Command_local:  {'outfmt': 'fasta', 'iterations': 3, 'residuenumber': 'True', 'force': 'True', 'guidetree_out': 'default.newick'}
 
+
   ## Clustalo command (for web server) used in ResCon ##
+
     Clustalo_Command_web:  --email mg0010@uah.edu
 
   ## Method  used to draw bar chart in html output file ##

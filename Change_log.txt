@@ -2,8 +2,24 @@ Ver 27 (under development) major modifications:
 
 1. Added lower case or mixed upper/lower case support for Liu08 scoring method.
 
+2. Implemented Liu08 conservation scoring method without sequence weighting.
+
+3. Now can choose between three residue conservation scoring methods:
+		a. Liu08 - simple (w/o using sequence weights)
+		b. Liu08 - Sequence Weighted
+		c. Amino acid grouping based (ie. alphabet grouping)
+
+4. Added ability to choose between above methods through GUI 'Edit settings' from 'File' menu.
+
+5. Option added through GUI 'Edit settings' to choose if reference sequence needs to be included in calculation
+   of %Identity and %Residue Conservation. Script changed to accomodate such calculation.
+
+   TODO: Output (csv & html) needs to be modified to reflect such changes
+   TODO: Logging needs to be added to enable logging options chosen by user
+
 
 ------------------------------------------------------------------------------------------------------------------------
+
 
 Ver 26 major modifications:
 
