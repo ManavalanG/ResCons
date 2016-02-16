@@ -86,8 +86,8 @@ Ver 27 (under development) major modifications:
 5. Option added through GUI 'Edit settings' to choose if reference sequence needs to be included in calculation
    of %Identity and %Residue Conservation. Script changed to accomodate such calculation.
 
-   TODO: Output (csv & html) needs to be modified to reflect such changes
-   TODO: Logging needs to be added to enable logging options chosen by user
+   Completed: Output (csv & html) are modified to reflect such changes
+   Completed: Logging is added to enable logging the options chosen by user
 
 
 ------------------------------------------------------------------------------------------------------------------------
