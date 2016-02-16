@@ -4348,6 +4348,7 @@ Tk.report_callback_exception = show_error
 menubar = Menu(app)
 
 
+print ref_included
 # Function that reads settings changed by user through GUI
 def edit_settings(settings_win):
 	# global match_color, similar_color, mismatch_color, aa_set_str, aa_set, id_delimiter, connector_id, newick_sym_replace, symbol_replacing_comma
@@ -4381,6 +4382,9 @@ def edit_settings(settings_win):
 		ref_included = True
 	else:
 		ref_included = False
+
+	print ref_included
+
 
 	# settings for GenPept/GenBank to fasta converter
 	connector_id = dict_box_values['connector_id_edit'].get()
@@ -4489,7 +4493,7 @@ def settings_win_fn():
 				options = ("Amino_Acid_Grouping", "Liu08_Simple", "Liu08_SeqWeighted")
 			else:
 				options = ('Yes', 'No')
-				if method_name:
+				if int(method_name):
 					method_name = 'Yes'
 				else:
 					method_name = 'No'
