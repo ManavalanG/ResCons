@@ -21,6 +21,12 @@
     aa_set:           AVFPMILW, DE, RK, STYHCNGQ
 
 
+  ## Method to calculate conservation score ##
+  ## Available options:  similar_amino_acid, liu08_simple, liu08_seqweighted    (similar_amino_acid uses similar amino acid residues set defined above.)
+  
+    conservation_method:    liu08_seqweighted
+
+
   ## Delimiter used in fasta IDs ##
   ## Default delimiter used is a pipe symbol
     id_delimiter:     |
