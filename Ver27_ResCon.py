@@ -3646,11 +3646,14 @@ mode2 = Radiobutton(frame_mode, text="DNA/RNA mode", variable=protein_or_dna_mod
 mode2.grid(row=0, column= 2, padx=15, sticky = E+W)
 
 
-label_seq = label_text(frame1, "   Sequences file", 2, 20, 2, 0)
+label_seq = label_text(frame1, "   Sequences file", 2, 17, 2, 0)
 # label_seq.configure(fg='red')
 
 seq_filename = StringVar()
-seq_entry = entry_box(frame1, seq_filename, 50, 2, 1)
+if mac_os:
+	seq_entry = entry_box(frame1, seq_filename, 50, 2, 1)
+else:
+	seq_entry = entry_box(frame1, seq_filename, 60, 2, 1)
 
 # this binds the rigt-click menu to entry boxes. This needs to be done only once as bind_class is used.
 if mac_os:
@@ -3668,20 +3671,26 @@ filetype_alignment = [('clustal files', '*.aln *.clustal *.clu'), ('fasta files'
 # button_seq = browse_button(frame1, lambda: browse_for_file(seq_entry, filetype_fasta), 2, 2)
 button_seq = browse_button(frame1, lambda: browse_for_file_change_outpath(seq_entry, output_main_entry, filetype_fasta), 2, 2)
 
-label_templ = label_text(frame1, "   Reference file", 2, 20, 3, 0)
+label_templ = label_text(frame1, "   Reference file", 2, 17, 3, 0)
 # label_templ.configure(fg='blue')
 
 templ_filename = StringVar()
-templ_entry = entry_box(frame1, templ_filename, 50, 3, 1)
+if mac_os:
+	templ_entry = entry_box(frame1, templ_filename, 50, 3, 1)
+else:
+	templ_entry = entry_box(frame1, templ_filename, 60, 3, 1)
 
 button_templ = browse_button(frame1, lambda: browse_for_file(templ_entry, filetype_fasta), 3, 2)
 button_templ.grid(padx=25)
 
-label_res_pos = label_text(frame1, "   Residue positions", 2, 20, 6, 0)
+label_res_pos = label_text(frame1, "   Residue positions", 2, 17, 6, 0)
 
 resival = StringVar()
 resival.set('')
-resi_entry = entry_box(frame1, resival, 50, 6, 1)
+if mac_os:
+	resi_entry = entry_box(frame1, resival, 50, 6, 1)
+else:
+	resi_entry = entry_box(frame1, resival, 60, 6, 1)
 resi_entry.configure(bg='#FFFF94')
 
 respos_all, respos_all_val = checkbox_fn(frame1, 'All', 6, 2, disable_res_positions)
@@ -3692,11 +3701,14 @@ else:
 	respos_all.grid(sticky=E + W)
 
 
-output_main_label = label_text(frame1, "   Output folder", 0, 20, 5, 0)
+output_main_label = label_text(frame1, "   Output folder", 0, 17, 5, 0)
 
 output_main_val = StringVar()
 output_main_val.set('')
-output_main_entry = entry_box(frame1, output_main_val, 50, 5, 1)
+if mac_os:
+	output_main_entry = entry_box(frame1, output_main_val, 50, 5, 1)
+else:
+	output_main_entry = entry_box(frame1, output_main_val, 60, 5, 1)
 
 button_output_main = browse_button(frame1, lambda: browse_for_directory(output_main_entry), 5, 2)
 
@@ -3741,10 +3753,13 @@ clustalo_local.grid(row=6, column=1, sticky=E)
 clustalo_web = Radiobutton(frame2, text= 'Use Local Clustalo', variable= clustalo_source, value=2, command = clustal_client)
 clustalo_web.grid(row=7, column=1, sticky=E)
 
-label_clustal = label_text(frame2, "   Alignment file", 0, 20, 9, 0)
+label_clustal = label_text(frame2, "   Alignment file", 0, 17, 9, 0)
 
 clustal_filename = StringVar()
-clustal_entry = entry_box(frame2, clustal_filename, 50, 9, 1)
+if mac_os:
+	clustal_entry = entry_box(frame2, clustal_filename, 50, 9, 1)
+else:
+	clustal_entry = entry_box(frame2, clustal_filename, 60, 9, 1)
 
 button_clustal = browse_button(frame2, lambda: browse_for_file_change_outpath(clustal_entry, output_main_entry, filetype_alignment), 9, 2)
 button_clustal.grid(padx= 25)
@@ -3753,13 +3768,16 @@ frame_clustal = Frame(frame2, bd=3)
 frame_clustal.grid(row=9, column=0, columnspan=10, sticky='w')
 # frame_clustal.grid_remove()
 
-clustal_command_label = label_text(frame_clustal, "   Clustalo Command", 0, 20, 0, 0)
+clustal_command_label = label_text(frame_clustal, "   Clustalo Command", 0, 17, 0, 0)
 
 clustal_command_value = StringVar()
 clustal_command_value.set(clustalo_command_local_default)
 # clustal_command_value.set("{'outfmt': 'clu', 'iterations': 3, 'residuenumber': 'True', 'force': 'True', 'outfile': 'default', 'guidetree_out': 'default.newick'}")
 # clustal_command_value.set("{'outfmt': 'clu', 'auto':'True', 'force': 'True', 'outfile': 'default'}")
-clustal_command = entry_box(frame_clustal, clustal_command_value, 50, 0, 1)
+if mac_os:
+	clustal_command = entry_box(frame_clustal, clustal_command_value, 50, 0, 1)
+else:
+	clustal_command = entry_box(frame_clustal, clustal_command_value, 60, 0, 1)
 # clustal_command = Text(frame_clustal, font=('MS Sans Serif', 8), height =2, width = 50 )	# if the box needs to shows multiple lines, use this
 # clustal_command.grid(row=0, column = 1)
 # clustal_command.insert(END,clustalo_command_local_default)
@@ -3783,7 +3801,8 @@ index_no = options_lower.index(conserve_method)
 conserve_method_val = StringVar()
 conserve_method_val.set( options[index_no] )
 conserve_method_drop_options = OptionMenu(frame2, conserve_method_val, *options)
-conserve_method_drop_options.configure(width= 17)
+if mac_os:
+	conserve_method_drop_options.configure(width= 17)
 conserve_method_drop_options.grid(row= 13, column= 1, sticky = E)
 
 label_text(frame2, 'Use reference sequence in calculations', 2, 35, 14, 1).grid(columnspan=2)
@@ -3795,7 +3814,8 @@ if int(ref_included):
 else:
 	ref_included_val.set('No')
 ref_included_drop_options = OptionMenu(frame2, ref_included_val, *options)
-ref_included_drop_options.configure(width=17)
+if mac_os:
+	ref_included_drop_options.configure(width=17)
 ref_included_drop_options.grid(row= 14, column= 1, sticky = E)
 
 
