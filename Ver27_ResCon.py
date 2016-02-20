@@ -47,8 +47,8 @@ import operator
 import StringIO
 from clustalo_embl_api import clustalo_api
 
-# terminal_output = False			# to show or not to show error/info in the terminal
-terminal_output = True
+terminal_output = False			# to show or not to show error/info in the terminal
+# terminal_output = True
 
 additional_imports = True	# this enables to run script in case such features from thrid party libs are not desired.
 if additional_imports:
@@ -88,6 +88,11 @@ Ver 27 (under development) major modifications:
 
    Completed: Output (csv & html) are modified to reflect such changes
    Completed: Logging is added to enable logging the options chosen by user
+
+6. Moved option buttons to choose 'residue conservation method' and 'include reference seq in calculations?' from
+   'Edit settings' menu to 'Mismatch analyzer' canvas. This way makes more sense but looks ugly though.
+
+7. Removed checkbutton for 'html formatting' from 'Mismatch analyzer'. It is set to True in code.
 
 
 ------------------------------------------------------------------------------------------------------------------------
@@ -1135,13 +1140,13 @@ def fetch_mismatch():
 		if conserve_method  == 'liu08_simple':
 			liu08_simple_score_list = []
 			positions_concerned = query_in_Alignment
-		elif conserve_method == 'liu08_seqweighted':
+		elif conserve_method == 'liu08_seq_weighted':
 			liu08_weighted_score_list = []
 			positions_concerned = range(alignment_len)
 
 		# get frequency and unique amino acid count in a column
 		# To calculate sequence weight, all columns need to be processed here
-		# if conserve_method in ['liu08_simple', 'liu08_seqweighted']:
+		# if conserve_method in ['liu08_simple', 'liu08_seq_weighted']:
 		dict_pos_freq = {}
 		dict_pos_unique_aa = {}
 		for column_no in positions_concerned:
@@ -1158,7 +1163,7 @@ def fetch_mismatch():
 
 
 		# calculate seq weight for each seq when Liu08 seq weighted score needs to be determined
-		if conserve_method == 'liu08_seqweighted':
+		if conserve_method == 'liu08_seq_weighted':
 			dict_seq_weight = {}
 			for seq_no in range(0, len(msa_data)):
 				sequence = msa_data[seq_no].seq
@@ -1185,7 +1190,7 @@ def fetch_mismatch():
 
 			# Calculates Liu08 Sequence Weighted residue conservation score
 			# While Liu08 score ranges from 0 to 10, here we present it as percentage from 0 to 100
-			if conserve_method == 'liu08_seqweighted':
+			if conserve_method == 'liu08_seq_weighted':
 				liu08_weighted_score = 0
 				for row_no in range(0, len(column_aa)):
 					matrix_score = float( dict_similarity_matrix[aa_most][column_aa[row_no]] )
@@ -1408,7 +1413,7 @@ def fetch_mismatch():
 		conserve_score_list = similarity_perc_list      # both lists will change when one changes
 	elif conserve_method == 'liu08_simple':
 		conserve_score_list = liu08_simple_score_list
-	elif conserve_method == 'liu08_seqweighted':
+	elif conserve_method == 'liu08_seq_weighted':
 		conserve_score_list = liu08_weighted_score_list
 
 	# get stats about %Identity (and optionally %similarity) at column positions requested
@@ -3358,6 +3363,8 @@ def read_user_input():
 	global protein_or_dna_mode
 	global protein_mode
 	global respos_all_val
+	global ref_included
+	global conserve_method
 
 	# Obtains file path of Reference file
 	# Reference_file = "/Users/Mana/Dropbox/ResCons/Reference.fasta"		# remove this line
@@ -3367,10 +3374,6 @@ def read_user_input():
 		runscript_log.info("ResCon will run in 'Protein mode' as user has requested.")
 	else:
 		runscript_log.info("ResCon will run in 'DNA/RNA mode' as user has requested.")
-
-	# log methods chosen
-	runscript_log.info("Residue conservation method chosen: %s" % conserve_method)
-	runscript_log.info("Reference sequence included in %%identity and %%conservation calculations: %s" %ref_included)
 
 	if not templ_entry.get():
 		temp = "'Reference file' box is empty. Choose a file."
@@ -3507,6 +3510,18 @@ def read_user_input():
 				temp = "All residue positions entered are less than the length of reference sequence."
 				runscript_log.info(temp)
 
+	# Read conservation method and if reference seq need to be included in calculations
+	conserve_method = conserve_method_val.get()
+	conserve_method = ( conserve_method.lower() ).replace(' ', '_')
+	runscript_log.info("Residue conservation method chosen: %s" % conserve_method)
+
+	ref_included = ref_included_val.get()
+	runscript_log.info("Included Reference sequence in %%identity and %%conservation calculations?: %s" %ref_included)
+	if ref_included == 'Yes':
+		ref_included = True
+	else:
+		ref_included = False
+
 
 # Function to run the main script by calling appropriate functions, based on user input
 def run_script():
@@ -3562,7 +3577,8 @@ def run_script():
 	fetch_mismatch()
 	runscript_log.debug("Exited module 'fetch_mismatch' after successful processing.")
 
-	if checkboxval_formatting.get():	# if html formatting of clustal alignment is requested
+	# if checkboxval_formatting.get():	# if html formatting of clustal alignment is requested
+	if True:
 		gui_log.info('User has requested to format alignment in html format')
 		runscript_log.debug("Module 'html_formatting' called.")
 		button_run_script.configure(state = DISABLED)		# Disables submit job button while processing
@@ -3752,12 +3768,37 @@ dummy = label_text(frame_clustal, '', 0, 20, 0, 2)
 dummy.configure(width = 10)
 dummy.grid(padx = 15)
 
-checkbox_formatting, checkboxval_formatting = checkbox_fn(frame2, 'HTML Color-coding required?', 12, 1, fn_to_pass)
-checkboxval_formatting.set(True)
-if mac_os:			# Checkbox doesn't get centered in mac
-	checkbox_formatting.grid(sticky=W)
+# checkbox_formatting, checkboxval_formatting = checkbox_fn(frame2, 'HTML Color-coding required?', 12, 1, fn_to_pass)
+# checkboxval_formatting.set(True)
+# if mac_os:			# Checkbox doesn't get centered in mac
+# 	checkbox_formatting.grid(sticky=W)
+# else:
+# 	checkbox_formatting.grid(sticky=E + W)
+
+label_text(frame2, 'Residue conservation scoring method', 1, 35, 13, 1).grid(columnspan=2)
+
+options = ("Amino Acid Grouping", "Liu08 Simple", "Liu08 Seq Weighted")		# Easy readable format
+options_lower = ['amino_acid_grouping', 'liu08_simple', 'liu08_seq_weighted']
+index_no = options_lower.index(conserve_method)
+conserve_method_val = StringVar()
+conserve_method_val.set( options[index_no] )
+conserve_method_drop_options = OptionMenu(frame2, conserve_method_val, *options)
+conserve_method_drop_options.configure(width= 17)
+conserve_method_drop_options.grid(row= 13, column= 1, sticky = E)
+
+label_text(frame2, 'Use reference sequence in calculations', 2, 35, 14, 1).grid(columnspan=2)
+
+options = ('Yes', 'No')
+ref_included_val =StringVar()
+if int(ref_included):
+	ref_included_val.set('Yes')
 else:
-	checkbox_formatting.grid(sticky=E + W)
+	ref_included_val.set('No')
+ref_included_drop_options = OptionMenu(frame2, ref_included_val, *options)
+ref_included_drop_options.configure(width=17)
+ref_included_drop_options.grid(row= 14, column= 1, sticky = E)
+
+
 
 if linux_os:
 	button_run_script = Button(frame2, text='Submit job', width=16, command=lambda: gen_thread(processing, run_script),
@@ -3765,7 +3806,7 @@ if linux_os:
 else:
 	button_run_script = Button(frame2, text='Submit job', width=16, command=run_script, font=('times', '12', 'bold'),
 						  bg='steelblue', fg='white')
-button_run_script.grid(row=14, column=1, pady=20)
+button_run_script.grid(row=15, column=1, pady=20)
 if mac_os:
 	button_run_script.configure(font=('times', '14', 'bold'))			# for Mac
 
@@ -4392,8 +4433,6 @@ def edit_settings(settings_win):
 	global symbols_to_be_replaced, symbols_to_be_replaced_str
 	global dict_box_values
 	global Newick_hate_sym_checkbox
-	global conserve_method
-	global ref_included
 
 	# settings for mismatch analyzer
 	match_color = dict_box_values['match_color_edit'].get()
@@ -4410,14 +4449,6 @@ def edit_settings(settings_win):
 	aa_set_lower = [x.lower() for x in line_list]
 	aa_set = aa_set_upper + aa_set_lower
 	aa_set_str = ', '.join(aa_set_upper)
-
-	conserve_method = dict_box_values['conserve_method_edit'].get()     # gets residue conservation method needed
-	conserve_method = conserve_method.lower()
-
-	if dict_box_values['ref_included_edit'].get() == 'Yes':   # gets if ref sequence to be involved in analysis or not
-		ref_included = True
-	else:
-		ref_included = False
 
 	# settings for GenPept/GenBank to fasta converter
 	connector_id = dict_box_values['connector_id_edit'].get()
@@ -4454,9 +4485,9 @@ def edit_settings(settings_win):
 		settings_win.destroy()		# closes window
 
 
-title_list = ['Color:  Matching', 'Color:  Mismatching but similar', 'Color:  Mismatching and dissimilar', 'Delimiter used in FASTA IDs', 'Amino acids similarity sets', 'Residue conservation scoring method', 'Include Reference sequence in calculations or not', 'Connecting delimiter used in FASTA ID', 'Symbol replacing sensitive symbols', 'Sensitive symbols that are to be replaced']
-default_values = [match_color, similar_color, mismatch_color, id_delimiter, aa_set_str, conserve_method, ref_included, connector_id, newick_sym_replace, symbols_to_be_replaced_str]
-box_values = ['match_color_edit', 'similar_color_edit', 'mismatch_color_edit', 'id_delimiter_edit', 'aa_set_str_edit', 'conserve_method_edit', 'ref_included_edit', 'connector_id_edit', 'newick_sym_replace_edit', 'symbols_to_be_replaced_str_edit']
+title_list = ['Color:  Matching', 'Color:  Mismatching but similar', 'Color:  Mismatching and dissimilar', 'Delimiter used in FASTA IDs', 'Amino acids similarity sets', 'Connecting delimiter used in FASTA ID', 'Symbol replacing sensitive symbols', 'Sensitive symbols that are to be replaced']
+default_values = [match_color, similar_color, mismatch_color, id_delimiter, aa_set_str, connector_id, newick_sym_replace, symbols_to_be_replaced_str]
+box_values = ['match_color_edit', 'similar_color_edit', 'mismatch_color_edit', 'id_delimiter_edit', 'aa_set_str_edit', 'connector_id_edit', 'newick_sym_replace_edit', 'symbols_to_be_replaced_str_edit']
 
 
 # Function that makes GUI interface for 'Edit Settings' window available through menubar
@@ -4475,7 +4506,7 @@ def settings_win_fn():
 
 	headings_list = ['Settings for Mismatch analyzer', 'Settings for GenPept/GenBank to fasta converter', 'Settings for Fasta Description / ID Extractor']
 	# default_values_edited = [match_color, similar_color, mismatch_color, id_delimiter, aa_set_str, connector_id, newick_sym_replace, symbol_replacing_comma]
-	default_values_edited = [match_color, similar_color, mismatch_color, id_delimiter, aa_set_str, conserve_method, ref_included, connector_id, newick_sym_replace, symbols_to_be_replaced_str]
+	default_values_edited = [match_color, similar_color, mismatch_color, id_delimiter, aa_set_str, connector_id, newick_sym_replace, symbols_to_be_replaced_str]
 	dict_box_values = {k: '' for k in box_values}
 	dict_entry_box = {k: '' for k in box_values}	# to assist in coloring entry box with respective color
 
@@ -4496,7 +4527,7 @@ def settings_win_fn():
 	col = 0
 	check_no =0
 	for num in range(0, len(title_list)):
-		if num in [0,7,10]:		# to write title for each section
+		if num in [0,5,8]:		# to write title for each section
 			title = label_text(frame1_set, headings_list[check_no], 2, 43, row, 0)
 			if mac_os:
 				title.configure(font=('times', '16', 'bold', 'italic'))
@@ -4520,23 +4551,7 @@ def settings_win_fn():
 		dict_box_values[box_values[num]].set(default_values_edited[num])	# value obtained from settings file
 
 		# Create drop down box for 'conservation method' and 'ref seq include or not in analysis' options and for the rest, create a entry box
-		if box_values[num] in ['conserve_method_edit', 'ref_included_edit']:
-			method_name = dict_box_values[box_values[num]].get()
-			if box_values[num] == "conserve_method_edit":
-				options = ("Amino_Acid_Grouping", "Liu08_Simple", "Liu08_SeqWeighted")
-			else:
-				options = ('Yes', 'No')
-				if int(method_name):
-					method_name = 'Yes'
-				else:
-					method_name = 'No'
-			dict_box_values[box_values[num]] = StringVar()
-			dict_box_values[box_values[num]].set(method_name)
-			dict_entry_box[box_values[num]] = OptionMenu(frame1_set, dict_box_values[box_values[num]], *options)
-			# dict_entry_box[box_values[num]].config(width=9)
-			dict_entry_box[box_values[num]].grid(row = row, column= col+1, sticky= W)
-		else:
-			dict_entry_box[box_values[num]] = entry_box(frame1_set, dict_box_values[box_values[num]], 15, row, col+1)
+		dict_entry_box[box_values[num]] = entry_box(frame1_set, dict_box_values[box_values[num]], 15, row, col+1)
 
 		# Colors entry box with respective background colors chosen
 		if num in [0,1,2]:

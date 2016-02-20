@@ -1,221 +1,317 @@
-2016-02-12 15:17:07 Run_Script_Main     INFO     ResCons begins!
-2016-02-12 15:17:07 Run_Script_Main     INFO     ResCon will run in 'Protein mode' as user has requested.
-2016-02-12 15:17:07 Run_Script_Main     INFO     'Reference file provided by user: 
-	/Users/Mana/Dropbox/ResCons/UnShared_Old_Files/Demo Files/Mismatch analysis/Alignment required/Reference.fasta
-2016-02-12 15:17:07 Run_Script_Main     ERROR    Error that resulted when creating path "/Users/Mana/Dropbox/ResCons/UnShared_Old_Files/Demo Files/Mismatch analysis/Alignment required/Output/":
-  [Errno 17] File exists: '/Users/Mana/Dropbox/ResCons/UnShared_Old_Files/Demo Files/Mismatch analysis/Alignment required/Output/'
-2016-02-12 15:17:07 Run_Script_Main     WARNING  Folder "/Users/Mana/Dropbox/ResCons/UnShared_Old_Files/Demo Files/Mismatch analysis/Alignment required/Output/" already exists. All or some files in it may get overwritten by ResCons. Do you wish to continue?
-2016-02-12 15:17:08 Run_Script_Main     INFO     User has selected (True = Yes, False = No):  True
-2016-02-12 15:17:08 Run_Script_Main     INFO     ResCons will continue as user has requested.
-2016-02-12 15:17:08 Run_Script_Main     INFO     Output folder path provided by user: /Users/Mana/Dropbox/ResCons/UnShared_Old_Files/Demo Files/Mismatch analysis/Alignment required/Output/
-2016-02-12 15:17:08 GUI_Main            INFO     Sequences File that will be used for alignment:  /Users/Mana/Dropbox/ResCons/UnShared_Old_Files/Demo Files/Mismatch analysis/Alignment required/Sequences.fasta
-2016-02-12 15:17:08 GUI_Main            INFO     All output files will be stored at: /Users/Mana/Dropbox/ResCons/UnShared_Old_Files/Demo Files/Mismatch analysis/Alignment required/Output/
-2016-02-12 15:17:08 Run_Script_Main     INFO     All residue positions entered are less than the length of reference sequence.
-2016-02-12 15:17:08 Clustal_Alignment   INFO     Clustal alignment was requested.
-2016-02-12 15:17:08 Clustal_Alignment   INFO     Clustal omega source: User's computer
-2016-02-12 15:17:08 Clustal_Alignment   INFO     Number of sequences found in '/Users/Mana/Dropbox/ResCons/UnShared_Old_Files/Demo Files/Mismatch analysis/Alignment required/Sequences.fasta' are '4'
-2016-02-12 15:17:08 Clustal_Alignment   INFO     Reference seq is not present in file: '/Users/Mana/Dropbox/ResCons/UnShared_Old_Files/Demo Files/Mismatch analysis/Alignment required/Sequences.fasta'. 
-	A new file '/Users/Mana/Dropbox/ResCons/UnShared_Old_Files/Demo Files/Mismatch analysis/Alignment required/Output/Sequences_Reference_SeqAdded.fasta' is created with Reference Seq appended to it.
-2016-02-12 15:17:08 Clustal_Alignment   INFO     Clustal commandline provided by user: 
-	{'guidetree_out': 'default.newick', 'outfmt': 'fasta', 'force': 'True', 'iterations': 3, 'infile': '/Users/Mana/Dropbox/ResCons/UnShared_Old_Files/Demo Files/Mismatch analysis/Alignment required/Output/Sequences_Reference_SeqAdded.fasta', 'residuenumber': 'True'}
-2016-02-12 15:17:08 Clustal_Alignment   INFO     Equivalent command prompt command that will be used to execute clustal omega alignment: 
-	'clustalo -i "/Users/Mana/Dropbox/ResCons/UnShared_Old_Files/Demo Files/Mismatch analysis/Alignment required/Output/Sequences_Reference_SeqAdded.fasta" --guidetree-out "/Users/Mana/Dropbox/ResCons/UnShared_Old_Files/Demo Files/Mismatch analysis/Alignment required/Output/Tree_Sequences_Reference_SeqAdded.newick" -o "/Users/Mana/Dropbox/ResCons/UnShared_Old_Files/Demo Files/Mismatch analysis/Alignment required/Output/Aligned_Clustalo_Sequences_Reference_SeqAdded.fasta" --outfmt fasta --residuenumber --iterations 3 --force'
-2016-02-12 15:17:08 Clustal_Alignment   INFO     Clustal alignment will begin now. Warning: It may take few seconds to several minutes depending on sequences provided and your processor.
-2016-02-12 15:17:10 Run_Script_Main     INFO     Clustal alignment was completed using local Clustalo!
-2016-02-12 15:17:10 Clustal_Alignment   INFO     Deleted reference sequence appended fasta file: '/Users/Mana/Dropbox/ResCons/UnShared_Old_Files/Demo Files/Mismatch analysis/Alignment required/Output/Sequences_Reference_SeqAdded.fasta'
-2016-02-12 15:17:10 Fetch_Mismatch      INFO     Alignment format is detected as "fasta" format
-2016-02-12 15:17:10 Clustal_Alignment   INFO     Reference sequence matches to corresponding sequence in Alignment file provided.
-2016-02-12 15:17:10 Fetch_Mismatch      INFO     Reference sequence's ID is present in alignment file and their sequences match.
-2016-02-12 15:17:10 Fetch_Mismatch      INFO     Query sites requested: [3, 5]
-2016-02-12 15:17:10 Fetch_Mismatch      INFO     Residues at those query sites: ['L', 'N']
-2016-02-12 15:17:10 Fetch_Mismatch      INFO     Corresponding sites in the alignment's Reference sequence : [3, 5]
-2016-02-12 15:17:10 Fetch_Mismatch      INFO     Begin extracting residues across alignment at the requested query sites
-2016-02-12 15:17:10 Fetch_Mismatch      INFO     Mismatch details will be written in to file:
-  "	/Users/Mana/Dropbox/ResCons/UnShared_Old_Files/Demo Files/Mismatch analysis/Alignment required/Output/Mismatches_Tabulated.csv"
-2016-02-12 15:17:10 Fetch_Mismatch      INFO     Done writing mismatch details in to csv file mentioned above.
-2016-02-12 15:17:10 GUI_Main            INFO     User has requested to format alignment in html format
-2016-02-12 15:17:10 Run_Script_Main     INFO     User requested HTML color formatting for clustal alignment
-2016-02-12 15:17:10 html_formatting     INFO     Alignment file used for formatting: /Users/Mana/Dropbox/ResCons/UnShared_Old_Files/Demo Files/Mismatch analysis/Alignment required/Output/Aligned_Clustalo_Sequences_Reference_SeqAdded.fasta
-2016-02-12 15:17:10 html_formatting     INFO     Alignment format is detected as "fasta" format
-2016-02-12 15:17:10 html_formatting     INFO     Formatted aligment will be stored in html file: '/Users/Mana/Dropbox/ResCons/UnShared_Old_Files/Demo Files/Mismatch analysis/Alignment required/Output/Formatted_Alignment.html'
-2016-02-12 15:17:10 html_formatting     INFO     Alignment formatting was completed and saved as above mentioned html file.
-2016-02-12 15:17:11 Run_Script_Main     INFO     All requested jobs are done! Ready for next job!!
+2016-02-19 18:04:12 Run_Script_Main     INFO     ResCons begins!
+2016-02-19 18:04:12 Run_Script_Main     INFO     ResCon will run in 'Protein mode' as user has requested.
+2016-02-19 18:04:12 Run_Script_Main     INFO     'Reference file provided by user: 
+	/Users/Mana/Dropbox/ResCons/demo files/mismatch analysis/alignment required/Reference.fasta
+2016-02-19 18:04:12 Run_Script_Main     ERROR    Error that resulted when creating path "/Users/Mana/Dropbox/ResCons/demo files/mismatch analysis/alignment required/Output/":
+  [Errno 17] File exists: '/Users/Mana/Dropbox/ResCons/demo files/mismatch analysis/alignment required/Output/'
+2016-02-19 18:04:12 Run_Script_Main     WARNING  Folder "/Users/Mana/Dropbox/ResCons/demo files/mismatch analysis/alignment required/Output/" already exists. All or some files in it may get overwritten by ResCons. Do you wish to continue?
+2016-02-19 18:04:13 Run_Script_Main     INFO     User has selected (True = Yes, False = No):  True
+2016-02-19 18:04:13 Run_Script_Main     INFO     ResCons will continue as user has requested.
+2016-02-19 18:04:13 Run_Script_Main     INFO     Output folder path provided by user: /Users/Mana/Dropbox/ResCons/demo files/mismatch analysis/alignment required/Output/
+2016-02-19 18:04:13 GUI_Main            INFO     Sequences File that will be used for alignment:  /Users/Mana/Dropbox/ResCons/demo files/mismatch analysis/alignment required/Sequences.fasta
+2016-02-19 18:04:13 GUI_Main            INFO     All output files will be stored at: /Users/Mana/Dropbox/ResCons/demo files/mismatch analysis/alignment required/Output/
+2016-02-19 18:04:13 Run_Script_Main     INFO     All residue positions entered are less than the length of reference sequence.
+2016-02-19 18:04:13 Run_Script_Main     INFO     Residue conservation method chosen: amino_acid_grouping
+2016-02-19 18:04:13 Run_Script_Main     INFO     Included Reference sequence in %identity and %conservation calculations?: No
+2016-02-19 18:04:13 Clustal_Alignment   INFO     Clustal alignment was requested.
+2016-02-19 18:04:13 Clustal_Alignment   INFO     Clustal omega source: User's computer
+2016-02-19 18:04:13 Clustal_Alignment   INFO     Number of sequences found in '/Users/Mana/Dropbox/ResCons/demo files/mismatch analysis/alignment required/Sequences.fasta' are '4'
+2016-02-19 18:04:13 Clustal_Alignment   INFO     Reference seq is not present in file: '/Users/Mana/Dropbox/ResCons/demo files/mismatch analysis/alignment required/Sequences.fasta'. 
+	A new file '/Users/Mana/Dropbox/ResCons/demo files/mismatch analysis/alignment required/Output/Sequences_Reference_SeqAdded.fasta' is created with Reference Seq appended to it.
+2016-02-19 18:04:13 Clustal_Alignment   INFO     Clustal commandline provided by user: 
+	{'guidetree_out': 'default.newick', 'outfmt': 'fasta', 'force': 'True', 'iterations': 3, 'infile': '/Users/Mana/Dropbox/ResCons/demo files/mismatch analysis/alignment required/Output/Sequences_Reference_SeqAdded.fasta', 'residuenumber': 'True'}
+2016-02-19 18:04:13 Clustal_Alignment   INFO     Equivalent command prompt command that will be used to execute clustal omega alignment: 
+	'clustalo -i "/Users/Mana/Dropbox/ResCons/demo files/mismatch analysis/alignment required/Output/Sequences_Reference_SeqAdded.fasta" --guidetree-out "/Users/Mana/Dropbox/ResCons/demo files/mismatch analysis/alignment required/Output/Tree_Sequences_Reference_SeqAdded.newick" -o "/Users/Mana/Dropbox/ResCons/demo files/mismatch analysis/alignment required/Output/Aligned_Clustalo_Sequences_Reference_SeqAdded.fasta" --outfmt fasta --residuenumber --iterations 3 --force'
+2016-02-19 18:04:13 Clustal_Alignment   INFO     Clustal alignment will begin now. Warning: It may take few seconds to several minutes depending on sequences provided and your processor.
+2016-02-19 18:04:14 Run_Script_Main     INFO     Clustal alignment was completed using local Clustalo!
+2016-02-19 18:04:14 Clustal_Alignment   INFO     Deleted reference sequence appended fasta file: '/Users/Mana/Dropbox/ResCons/demo files/mismatch analysis/alignment required/Output/Sequences_Reference_SeqAdded.fasta'
+2016-02-19 18:04:14 Fetch_Mismatch      INFO     Alignment format is detected as "fasta" format
+2016-02-19 18:04:14 Clustal_Alignment   INFO     Reference sequence matches to corresponding sequence in Alignment file provided.
+2016-02-19 18:04:14 Fetch_Mismatch      INFO     Reference sequence's ID is present in alignment file and their sequences match.
+2016-02-19 18:04:14 Fetch_Mismatch      INFO     Query sites requested: [3, 30, 60, 90, 130]
+2016-02-19 18:04:14 Fetch_Mismatch      INFO     Residues at those query sites: ['L', 'K', 'N', 'P', 'P']
+2016-02-19 18:04:14 Fetch_Mismatch      INFO     Corresponding sites in the alignment's Reference sequence : [3, 30, 60, 90, 130]
+2016-02-19 18:04:14 Fetch_Mismatch      INFO     Begin extracting residues across alignment at the requested query sites
+2016-02-19 18:04:14 Fetch_Mismatch      INFO     Mismatch details will be written in to file:
+  "	/Users/Mana/Dropbox/ResCons/demo files/mismatch analysis/alignment required/Output/Mismatches_Tabulated.csv"
+2016-02-19 18:04:14 Fetch_Mismatch      INFO     Done writing mismatch details in to csv file mentioned above.
+2016-02-19 18:04:14 GUI_Main            INFO     User has requested to format alignment in html format
+2016-02-19 18:04:14 Run_Script_Main     INFO     User requested HTML color formatting for clustal alignment
+2016-02-19 18:04:14 html_formatting     INFO     Alignment file used for formatting: /Users/Mana/Dropbox/ResCons/demo files/mismatch analysis/alignment required/Output/Aligned_Clustalo_Sequences_Reference_SeqAdded.fasta
+2016-02-19 18:04:14 html_formatting     INFO     Alignment format is detected as "fasta" format
+2016-02-19 18:04:14 html_formatting     INFO     Formatted aligment will be stored in html file: '/Users/Mana/Dropbox/ResCons/demo files/mismatch analysis/alignment required/Output/Formatted_Alignment.html'
+2016-02-19 18:04:14 html_formatting     INFO     Alignment formatting was completed and saved as above mentioned html file.
+2016-02-19 18:04:15 Run_Script_Main     INFO     All requested jobs are done! Ready for next job!!
 
 
-2016-02-12 15:17:25 Run_Script_Main     INFO     ResCons begins!
-2016-02-12 15:17:25 Run_Script_Main     INFO     ResCon will run in 'Protein mode' as user has requested.
-2016-02-12 15:17:25 Run_Script_Main     INFO     'Reference file provided by user: 
-	/Users/Mana/Dropbox/ResCons/UnShared_Old_Files/Demo Files/Mismatch analysis/Alignment required/Reference.fasta
-2016-02-12 15:17:25 Run_Script_Main     ERROR    Error that resulted when creating path "/Users/Mana/Dropbox/ResCons/UnShared_Old_Files/Demo Files/Mismatch analysis/Alignment required/Output/":
-  [Errno 17] File exists: '/Users/Mana/Dropbox/ResCons/UnShared_Old_Files/Demo Files/Mismatch analysis/Alignment required/Output/'
-2016-02-12 15:17:25 Run_Script_Main     WARNING  Folder "/Users/Mana/Dropbox/ResCons/UnShared_Old_Files/Demo Files/Mismatch analysis/Alignment required/Output/" already exists. All or some files in it may get overwritten by ResCons. Do you wish to continue?
-2016-02-12 15:17:26 Run_Script_Main     INFO     User has selected (True = Yes, False = No):  True
-2016-02-12 15:17:26 Run_Script_Main     INFO     ResCons will continue as user has requested.
-2016-02-12 15:17:26 Run_Script_Main     INFO     Output folder path provided by user: /Users/Mana/Dropbox/ResCons/UnShared_Old_Files/Demo Files/Mismatch analysis/Alignment required/Output/
-2016-02-12 15:17:26 GUI_Main            INFO     Sequences File that will be used for alignment:  /Users/Mana/Dropbox/ResCons/UnShared_Old_Files/Demo Files/Mismatch analysis/Alignment required/Sequences.fasta
-2016-02-12 15:17:26 GUI_Main            INFO     All output files will be stored at: /Users/Mana/Dropbox/ResCons/UnShared_Old_Files/Demo Files/Mismatch analysis/Alignment required/Output/
-2016-02-12 15:17:26 Run_Script_Main     INFO     All residue positions entered are less than the length of reference sequence.
-2016-02-12 15:17:26 Clustal_Alignment   INFO     Clustal alignment was requested.
-2016-02-12 15:17:26 Clustal_Alignment   INFO     Clustal omega source: User's computer
-2016-02-12 15:17:26 Clustal_Alignment   INFO     Number of sequences found in '/Users/Mana/Dropbox/ResCons/UnShared_Old_Files/Demo Files/Mismatch analysis/Alignment required/Sequences.fasta' are '4'
-2016-02-12 15:17:26 Clustal_Alignment   INFO     Reference seq is not present in file: '/Users/Mana/Dropbox/ResCons/UnShared_Old_Files/Demo Files/Mismatch analysis/Alignment required/Sequences.fasta'. 
-	A new file '/Users/Mana/Dropbox/ResCons/UnShared_Old_Files/Demo Files/Mismatch analysis/Alignment required/Output/Sequences_Reference_SeqAdded.fasta' is created with Reference Seq appended to it.
-2016-02-12 15:17:26 Clustal_Alignment   INFO     Clustal commandline provided by user: 
-	{'guidetree_out': 'default.newick', 'outfmt': 'fasta', 'force': 'True', 'iterations': 3, 'infile': '/Users/Mana/Dropbox/ResCons/UnShared_Old_Files/Demo Files/Mismatch analysis/Alignment required/Output/Sequences_Reference_SeqAdded.fasta', 'residuenumber': 'True'}
-2016-02-12 15:17:26 Clustal_Alignment   INFO     Equivalent command prompt command that will be used to execute clustal omega alignment: 
-	'clustalo -i "/Users/Mana/Dropbox/ResCons/UnShared_Old_Files/Demo Files/Mismatch analysis/Alignment required/Output/Sequences_Reference_SeqAdded.fasta" --guidetree-out "/Users/Mana/Dropbox/ResCons/UnShared_Old_Files/Demo Files/Mismatch analysis/Alignment required/Output/Tree_Sequences_Reference_SeqAdded.newick" -o "/Users/Mana/Dropbox/ResCons/UnShared_Old_Files/Demo Files/Mismatch analysis/Alignment required/Output/Aligned_Clustalo_Sequences_Reference_SeqAdded.fasta" --outfmt fasta --residuenumber --iterations 3 --force'
-2016-02-12 15:17:26 Clustal_Alignment   INFO     Clustal alignment will begin now. Warning: It may take few seconds to several minutes depending on sequences provided and your processor.
-2016-02-12 15:17:28 Run_Script_Main     INFO     Clustal alignment was completed using local Clustalo!
-2016-02-12 15:17:28 Clustal_Alignment   INFO     Deleted reference sequence appended fasta file: '/Users/Mana/Dropbox/ResCons/UnShared_Old_Files/Demo Files/Mismatch analysis/Alignment required/Output/Sequences_Reference_SeqAdded.fasta'
-2016-02-12 15:17:28 Fetch_Mismatch      INFO     Alignment format is detected as "fasta" format
-2016-02-12 15:17:28 Clustal_Alignment   INFO     Reference sequence matches to corresponding sequence in Alignment file provided.
-2016-02-12 15:17:28 Fetch_Mismatch      INFO     Reference sequence's ID is present in alignment file and their sequences match.
-2016-02-12 15:17:28 Fetch_Mismatch      INFO     Query sites requested: [3, 5]
-2016-02-12 15:17:28 Fetch_Mismatch      INFO     Residues at those query sites: ['L', 'N']
-2016-02-12 15:17:28 Fetch_Mismatch      INFO     Corresponding sites in the alignment's Reference sequence : [3, 5]
-2016-02-12 15:17:28 Fetch_Mismatch      INFO     Begin extracting residues across alignment at the requested query sites
-2016-02-12 15:17:28 Fetch_Mismatch      INFO     Mismatch details will be written in to file:
-  "	/Users/Mana/Dropbox/ResCons/UnShared_Old_Files/Demo Files/Mismatch analysis/Alignment required/Output/Mismatches_Tabulated.csv"
-2016-02-12 15:17:28 Fetch_Mismatch      INFO     Done writing mismatch details in to csv file mentioned above.
-2016-02-12 15:17:28 GUI_Main            INFO     User has requested to format alignment in html format
-2016-02-12 15:17:28 Run_Script_Main     INFO     User requested HTML color formatting for clustal alignment
-2016-02-12 15:17:28 html_formatting     INFO     Alignment file used for formatting: /Users/Mana/Dropbox/ResCons/UnShared_Old_Files/Demo Files/Mismatch analysis/Alignment required/Output/Aligned_Clustalo_Sequences_Reference_SeqAdded.fasta
-2016-02-12 15:17:28 html_formatting     INFO     Alignment format is detected as "fasta" format
-2016-02-12 15:17:28 html_formatting     INFO     Formatted aligment will be stored in html file: '/Users/Mana/Dropbox/ResCons/UnShared_Old_Files/Demo Files/Mismatch analysis/Alignment required/Output/Formatted_Alignment.html'
-2016-02-12 15:17:28 html_formatting     INFO     Alignment formatting was completed and saved as above mentioned html file.
-2016-02-12 15:17:45 Run_Script_Main     INFO     All requested jobs are done! Ready for next job!!
+2016-02-19 18:04:27 Run_Script_Main     INFO     ResCons begins!
+2016-02-19 18:04:27 Run_Script_Main     INFO     ResCon will run in 'Protein mode' as user has requested.
+2016-02-19 18:04:27 Run_Script_Main     INFO     'Reference file provided by user: 
+	/Users/Mana/Dropbox/ResCons/demo files/mismatch analysis/alignment required/Reference.fasta
+2016-02-19 18:04:27 Run_Script_Main     INFO     Output folder path provided by user: /Users/Mana/Dropbox/ResCons/demo files/mismatch analysis/alignment required/Output/
+2016-02-19 18:04:27 GUI_Main            INFO     Sequences File that will be used for alignment:  /Users/Mana/Dropbox/ResCons/demo files/mismatch analysis/alignment required/Sequences.fasta
+2016-02-19 18:04:27 GUI_Main            INFO     All output files will be stored at: /Users/Mana/Dropbox/ResCons/demo files/mismatch analysis/alignment required/Output/
+2016-02-19 18:04:27 Run_Script_Main     INFO     All residue positions entered are less than the length of reference sequence.
+2016-02-19 18:04:27 Run_Script_Main     INFO     Residue conservation method chosen: amino_acid_grouping
+2016-02-19 18:04:27 Run_Script_Main     INFO     Included Reference sequence in %identity and %conservation calculations?: No
+2016-02-19 18:04:27 Clustal_Alignment   INFO     Clustal alignment was requested.
+2016-02-19 18:04:27 Clustal_Alignment   INFO     Clustal omega source: User's computer
+2016-02-19 18:04:27 Clustal_Alignment   INFO     Number of sequences found in '/Users/Mana/Dropbox/ResCons/demo files/mismatch analysis/alignment required/Sequences.fasta' are '4'
+2016-02-19 18:04:27 Clustal_Alignment   INFO     Reference seq is not present in file: '/Users/Mana/Dropbox/ResCons/demo files/mismatch analysis/alignment required/Sequences.fasta'. 
+	A new file '/Users/Mana/Dropbox/ResCons/demo files/mismatch analysis/alignment required/Output/Sequences_Reference_SeqAdded.fasta' is created with Reference Seq appended to it.
+2016-02-19 18:04:27 Clustal_Alignment   INFO     Clustal commandline provided by user: 
+	{'guidetree_out': 'default.newick', 'outfmt': 'fasta', 'force': 'True', 'iterations': 3, 'infile': '/Users/Mana/Dropbox/ResCons/demo files/mismatch analysis/alignment required/Output/Sequences_Reference_SeqAdded.fasta', 'residuenumber': 'True'}
+2016-02-19 18:04:27 Clustal_Alignment   INFO     Equivalent command prompt command that will be used to execute clustal omega alignment: 
+	'clustalo -i "/Users/Mana/Dropbox/ResCons/demo files/mismatch analysis/alignment required/Output/Sequences_Reference_SeqAdded.fasta" --guidetree-out "/Users/Mana/Dropbox/ResCons/demo files/mismatch analysis/alignment required/Output/Tree_Sequences_Reference_SeqAdded.newick" -o "/Users/Mana/Dropbox/ResCons/demo files/mismatch analysis/alignment required/Output/Aligned_Clustalo_Sequences_Reference_SeqAdded.fasta" --outfmt fasta --residuenumber --iterations 3 --force'
+2016-02-19 18:04:27 Clustal_Alignment   INFO     Clustal alignment will begin now. Warning: It may take few seconds to several minutes depending on sequences provided and your processor.
+2016-02-19 18:04:28 Run_Script_Main     INFO     Clustal alignment was completed using local Clustalo!
+2016-02-19 18:04:28 Clustal_Alignment   INFO     Deleted reference sequence appended fasta file: '/Users/Mana/Dropbox/ResCons/demo files/mismatch analysis/alignment required/Output/Sequences_Reference_SeqAdded.fasta'
+2016-02-19 18:04:28 Fetch_Mismatch      INFO     Alignment format is detected as "fasta" format
+2016-02-19 18:04:28 Clustal_Alignment   INFO     Reference sequence matches to corresponding sequence in Alignment file provided.
+2016-02-19 18:04:28 Fetch_Mismatch      INFO     Reference sequence's ID is present in alignment file and their sequences match.
+2016-02-19 18:04:28 Fetch_Mismatch      INFO     Query sites requested: [3, 30, 60, 90, 130]
+2016-02-19 18:04:28 Fetch_Mismatch      INFO     Residues at those query sites: ['L', 'K', 'N', 'P', 'P']
+2016-02-19 18:04:28 Fetch_Mismatch      INFO     Corresponding sites in the alignment's Reference sequence : [3, 30, 60, 90, 130]
+2016-02-19 18:04:28 Fetch_Mismatch      INFO     Begin extracting residues across alignment at the requested query sites
+2016-02-19 18:04:28 Fetch_Mismatch      INFO     Mismatch details will be written in to file:
+  "	/Users/Mana/Dropbox/ResCons/demo files/mismatch analysis/alignment required/Output/Mismatches_Tabulated.csv"
+2016-02-19 18:04:28 Fetch_Mismatch      INFO     Done writing mismatch details in to csv file mentioned above.
+2016-02-19 18:04:28 GUI_Main            INFO     User has requested to format alignment in html format
+2016-02-19 18:04:28 Run_Script_Main     INFO     User requested HTML color formatting for clustal alignment
+2016-02-19 18:04:28 html_formatting     INFO     Alignment file used for formatting: /Users/Mana/Dropbox/ResCons/demo files/mismatch analysis/alignment required/Output/Aligned_Clustalo_Sequences_Reference_SeqAdded.fasta
+2016-02-19 18:04:28 html_formatting     INFO     Alignment format is detected as "fasta" format
+2016-02-19 18:04:28 html_formatting     INFO     Formatted aligment will be stored in html file: '/Users/Mana/Dropbox/ResCons/demo files/mismatch analysis/alignment required/Output/Formatted_Alignment.html'
+2016-02-19 18:04:28 html_formatting     INFO     Alignment formatting was completed and saved as above mentioned html file.
+2016-02-19 18:04:29 Run_Script_Main     INFO     All requested jobs are done! Ready for next job!!
 
 
-2016-02-12 15:17:46 Run_Script_Main     INFO     ResCons begins!
-2016-02-12 15:17:46 Run_Script_Main     INFO     ResCon will run in 'Protein mode' as user has requested.
-2016-02-12 15:17:46 Run_Script_Main     INFO     'Reference file provided by user: 
-	/Users/Mana/Dropbox/ResCons/UnShared_Old_Files/Demo Files/Mismatch analysis/Alignment required/Reference.fasta
-2016-02-12 15:17:46 Run_Script_Main     INFO     Output folder path provided by user: /Users/Mana/Dropbox/ResCons/UnShared_Old_Files/Demo Files/Mismatch analysis/Alignment required/Output/
-2016-02-12 15:17:46 GUI_Main            INFO     Sequences File that will be used for alignment:  /Users/Mana/Dropbox/ResCons/UnShared_Old_Files/Demo Files/Mismatch analysis/Alignment required/Sequences.fasta
-2016-02-12 15:17:46 GUI_Main            INFO     All output files will be stored at: /Users/Mana/Dropbox/ResCons/UnShared_Old_Files/Demo Files/Mismatch analysis/Alignment required/Output/
-2016-02-12 15:17:46 Run_Script_Main     INFO     All residue positions entered are less than the length of reference sequence.
-2016-02-12 15:17:46 Clustal_Alignment   INFO     Clustal alignment was requested.
-2016-02-12 15:17:46 Clustal_Alignment   INFO     Clustal omega source: User's computer
-2016-02-12 15:17:46 Clustal_Alignment   INFO     Number of sequences found in '/Users/Mana/Dropbox/ResCons/UnShared_Old_Files/Demo Files/Mismatch analysis/Alignment required/Sequences.fasta' are '4'
-2016-02-12 15:17:46 Clustal_Alignment   INFO     Reference seq is not present in file: '/Users/Mana/Dropbox/ResCons/UnShared_Old_Files/Demo Files/Mismatch analysis/Alignment required/Sequences.fasta'. 
-	A new file '/Users/Mana/Dropbox/ResCons/UnShared_Old_Files/Demo Files/Mismatch analysis/Alignment required/Output/Sequences_Reference_SeqAdded.fasta' is created with Reference Seq appended to it.
-2016-02-12 15:17:46 Clustal_Alignment   INFO     Clustal commandline provided by user: 
-	{'guidetree_out': 'default.newick', 'outfmt': 'fasta', 'force': 'True', 'iterations': 3, 'infile': '/Users/Mana/Dropbox/ResCons/UnShared_Old_Files/Demo Files/Mismatch analysis/Alignment required/Output/Sequences_Reference_SeqAdded.fasta', 'residuenumber': 'True'}
-2016-02-12 15:17:46 Clustal_Alignment   INFO     Equivalent command prompt command that will be used to execute clustal omega alignment: 
-	'clustalo -i "/Users/Mana/Dropbox/ResCons/UnShared_Old_Files/Demo Files/Mismatch analysis/Alignment required/Output/Sequences_Reference_SeqAdded.fasta" --guidetree-out "/Users/Mana/Dropbox/ResCons/UnShared_Old_Files/Demo Files/Mismatch analysis/Alignment required/Output/Tree_Sequences_Reference_SeqAdded.newick" -o "/Users/Mana/Dropbox/ResCons/UnShared_Old_Files/Demo Files/Mismatch analysis/Alignment required/Output/Aligned_Clustalo_Sequences_Reference_SeqAdded.fasta" --outfmt fasta --residuenumber --iterations 3 --force'
-2016-02-12 15:17:46 Clustal_Alignment   INFO     Clustal alignment will begin now. Warning: It may take few seconds to several minutes depending on sequences provided and your processor.
-2016-02-12 15:17:47 Run_Script_Main     INFO     Clustal alignment was completed using local Clustalo!
-2016-02-12 15:17:47 Clustal_Alignment   INFO     Deleted reference sequence appended fasta file: '/Users/Mana/Dropbox/ResCons/UnShared_Old_Files/Demo Files/Mismatch analysis/Alignment required/Output/Sequences_Reference_SeqAdded.fasta'
-2016-02-12 15:17:47 Fetch_Mismatch      INFO     Alignment format is detected as "fasta" format
-2016-02-12 15:17:47 Clustal_Alignment   INFO     Reference sequence matches to corresponding sequence in Alignment file provided.
-2016-02-12 15:17:47 Fetch_Mismatch      INFO     Reference sequence's ID is present in alignment file and their sequences match.
-2016-02-12 15:17:47 Fetch_Mismatch      INFO     Query sites requested: [3, 5]
-2016-02-12 15:17:47 Fetch_Mismatch      INFO     Residues at those query sites: ['L', 'N']
-2016-02-12 15:17:47 Fetch_Mismatch      INFO     Corresponding sites in the alignment's Reference sequence : [3, 5]
-2016-02-12 15:17:47 Fetch_Mismatch      INFO     Begin extracting residues across alignment at the requested query sites
-2016-02-12 15:17:47 Fetch_Mismatch      INFO     Mismatch details will be written in to file:
-  "	/Users/Mana/Dropbox/ResCons/UnShared_Old_Files/Demo Files/Mismatch analysis/Alignment required/Output/Mismatches_Tabulated.csv"
-2016-02-12 15:17:47 Fetch_Mismatch      INFO     Done writing mismatch details in to csv file mentioned above.
-2016-02-12 15:17:47 GUI_Main            INFO     User has requested to format alignment in html format
-2016-02-12 15:17:47 Run_Script_Main     INFO     User requested HTML color formatting for clustal alignment
-2016-02-12 15:17:47 html_formatting     INFO     Alignment file used for formatting: /Users/Mana/Dropbox/ResCons/UnShared_Old_Files/Demo Files/Mismatch analysis/Alignment required/Output/Aligned_Clustalo_Sequences_Reference_SeqAdded.fasta
-2016-02-12 15:17:47 html_formatting     INFO     Alignment format is detected as "fasta" format
-2016-02-12 15:17:47 html_formatting     INFO     Formatted aligment will be stored in html file: '/Users/Mana/Dropbox/ResCons/UnShared_Old_Files/Demo Files/Mismatch analysis/Alignment required/Output/Formatted_Alignment.html'
-2016-02-12 15:17:47 html_formatting     INFO     Alignment formatting was completed and saved as above mentioned html file.
-2016-02-12 15:17:48 Run_Script_Main     INFO     All requested jobs are done! Ready for next job!!
+2016-02-19 18:05:40 Run_Script_Main     INFO     ResCons begins!
+2016-02-19 18:05:40 Run_Script_Main     INFO     ResCon will run in 'Protein mode' as user has requested.
+2016-02-19 18:05:40 Run_Script_Main     INFO     'Reference file provided by user: 
+	/Users/Mana/Dropbox/ResCons/demo files/mismatch analysis/alignment required/Reference.fasta
+2016-02-19 18:05:40 Run_Script_Main     ERROR    Error that resulted when creating path "/Users/Mana/Dropbox/ResCons/demo files/mismatch analysis/alignment required/Output/":
+  [Errno 17] File exists: '/Users/Mana/Dropbox/ResCons/demo files/mismatch analysis/alignment required/Output/'
+2016-02-19 18:05:41 Run_Script_Main     WARNING  Folder "/Users/Mana/Dropbox/ResCons/demo files/mismatch analysis/alignment required/Output/" already exists. All or some files in it may get overwritten by ResCons. Do you wish to continue?
+2016-02-19 18:05:42 Run_Script_Main     INFO     User has selected (True = Yes, False = No):  True
+2016-02-19 18:05:42 Run_Script_Main     INFO     ResCons will continue as user has requested.
+2016-02-19 18:05:42 Run_Script_Main     INFO     Output folder path provided by user: /Users/Mana/Dropbox/ResCons/demo files/mismatch analysis/alignment required/Output/
+2016-02-19 18:05:42 GUI_Main            INFO     Sequences File that will be used for alignment:  /Users/Mana/Dropbox/ResCons/demo files/mismatch analysis/alignment required/Sequences.fasta
+2016-02-19 18:05:42 GUI_Main            INFO     All output files will be stored at: /Users/Mana/Dropbox/ResCons/demo files/mismatch analysis/alignment required/Output/
+2016-02-19 18:05:42 Run_Script_Main     INFO     All residue positions entered are less than the length of reference sequence.
+2016-02-19 18:05:42 Run_Script_Main     INFO     Residue conservation method chosen: amino_acid_grouping
+2016-02-19 18:05:42 Run_Script_Main     INFO     Included Reference sequence in %identity and %conservation calculations?: Yes
+2016-02-19 18:05:42 Clustal_Alignment   INFO     Clustal alignment was requested.
+2016-02-19 18:05:42 Clustal_Alignment   INFO     Clustal omega source: User's computer
+2016-02-19 18:05:42 Clustal_Alignment   INFO     Number of sequences found in '/Users/Mana/Dropbox/ResCons/demo files/mismatch analysis/alignment required/Sequences.fasta' are '4'
+2016-02-19 18:05:42 Clustal_Alignment   INFO     Reference seq is not present in file: '/Users/Mana/Dropbox/ResCons/demo files/mismatch analysis/alignment required/Sequences.fasta'. 
+	A new file '/Users/Mana/Dropbox/ResCons/demo files/mismatch analysis/alignment required/Output/Sequences_Reference_SeqAdded.fasta' is created with Reference Seq appended to it.
+2016-02-19 18:05:42 Clustal_Alignment   INFO     Clustal commandline provided by user: 
+	{'guidetree_out': 'default.newick', 'outfmt': 'fasta', 'force': 'True', 'iterations': 3, 'infile': '/Users/Mana/Dropbox/ResCons/demo files/mismatch analysis/alignment required/Output/Sequences_Reference_SeqAdded.fasta', 'residuenumber': 'True'}
+2016-02-19 18:05:42 Clustal_Alignment   INFO     Equivalent command prompt command that will be used to execute clustal omega alignment: 
+	'clustalo -i "/Users/Mana/Dropbox/ResCons/demo files/mismatch analysis/alignment required/Output/Sequences_Reference_SeqAdded.fasta" --guidetree-out "/Users/Mana/Dropbox/ResCons/demo files/mismatch analysis/alignment required/Output/Tree_Sequences_Reference_SeqAdded.newick" -o "/Users/Mana/Dropbox/ResCons/demo files/mismatch analysis/alignment required/Output/Aligned_Clustalo_Sequences_Reference_SeqAdded.fasta" --outfmt fasta --residuenumber --iterations 3 --force'
+2016-02-19 18:05:42 Clustal_Alignment   INFO     Clustal alignment will begin now. Warning: It may take few seconds to several minutes depending on sequences provided and your processor.
+2016-02-19 18:05:43 Run_Script_Main     INFO     Clustal alignment was completed using local Clustalo!
+2016-02-19 18:05:43 Clustal_Alignment   INFO     Deleted reference sequence appended fasta file: '/Users/Mana/Dropbox/ResCons/demo files/mismatch analysis/alignment required/Output/Sequences_Reference_SeqAdded.fasta'
+2016-02-19 18:05:43 Fetch_Mismatch      INFO     Alignment format is detected as "fasta" format
+2016-02-19 18:05:43 Clustal_Alignment   INFO     Reference sequence matches to corresponding sequence in Alignment file provided.
+2016-02-19 18:05:43 Fetch_Mismatch      INFO     Reference sequence's ID is present in alignment file and their sequences match.
+2016-02-19 18:05:43 Fetch_Mismatch      INFO     Query sites requested: [3, 30, 60, 90, 130]
+2016-02-19 18:05:43 Fetch_Mismatch      INFO     Residues at those query sites: ['L', 'K', 'N', 'P', 'P']
+2016-02-19 18:05:43 Fetch_Mismatch      INFO     Corresponding sites in the alignment's Reference sequence : [3, 30, 60, 90, 130]
+2016-02-19 18:05:43 Fetch_Mismatch      INFO     Begin extracting residues across alignment at the requested query sites
+2016-02-19 18:05:43 Fetch_Mismatch      INFO     Mismatch details will be written in to file:
+  "	/Users/Mana/Dropbox/ResCons/demo files/mismatch analysis/alignment required/Output/Mismatches_Tabulated.csv"
+2016-02-19 18:05:43 Fetch_Mismatch      INFO     Done writing mismatch details in to csv file mentioned above.
+2016-02-19 18:05:43 GUI_Main            INFO     User has requested to format alignment in html format
+2016-02-19 18:05:43 Run_Script_Main     INFO     User requested HTML color formatting for clustal alignment
+2016-02-19 18:05:43 html_formatting     INFO     Alignment file used for formatting: /Users/Mana/Dropbox/ResCons/demo files/mismatch analysis/alignment required/Output/Aligned_Clustalo_Sequences_Reference_SeqAdded.fasta
+2016-02-19 18:05:43 html_formatting     INFO     Alignment format is detected as "fasta" format
+2016-02-19 18:05:43 html_formatting     INFO     Formatted aligment will be stored in html file: '/Users/Mana/Dropbox/ResCons/demo files/mismatch analysis/alignment required/Output/Formatted_Alignment.html'
+2016-02-19 18:05:43 html_formatting     INFO     Alignment formatting was completed and saved as above mentioned html file.
+2016-02-19 18:05:45 Run_Script_Main     INFO     All requested jobs are done! Ready for next job!!
 
 
-2016-02-12 15:17:57 Run_Script_Main     INFO     ResCons begins!
-2016-02-12 15:17:57 Run_Script_Main     INFO     ResCon will run in 'Protein mode' as user has requested.
-2016-02-12 15:17:57 Run_Script_Main     INFO     'Reference file provided by user: 
-	/Users/Mana/Dropbox/ResCons/UnShared_Old_Files/Demo Files/Mismatch analysis/Alignment required/Reference.fasta
-2016-02-12 15:17:57 Run_Script_Main     ERROR    Error that resulted when creating path "/Users/Mana/Dropbox/ResCons/UnShared_Old_Files/Demo Files/Mismatch analysis/Alignment required/Output/":
-  [Errno 17] File exists: '/Users/Mana/Dropbox/ResCons/UnShared_Old_Files/Demo Files/Mismatch analysis/Alignment required/Output/'
-2016-02-12 15:17:57 Run_Script_Main     WARNING  Folder "/Users/Mana/Dropbox/ResCons/UnShared_Old_Files/Demo Files/Mismatch analysis/Alignment required/Output/" already exists. All or some files in it may get overwritten by ResCons. Do you wish to continue?
-2016-02-12 15:17:59 Run_Script_Main     INFO     User has selected (True = Yes, False = No):  True
-2016-02-12 15:17:59 Run_Script_Main     INFO     ResCons will continue as user has requested.
-2016-02-12 15:17:59 Run_Script_Main     INFO     Output folder path provided by user: /Users/Mana/Dropbox/ResCons/UnShared_Old_Files/Demo Files/Mismatch analysis/Alignment required/Output/
-2016-02-12 15:17:59 GUI_Main            INFO     Sequences File that will be used for alignment:  /Users/Mana/Dropbox/ResCons/UnShared_Old_Files/Demo Files/Mismatch analysis/Alignment required/Sequences.fasta
-2016-02-12 15:17:59 GUI_Main            INFO     All output files will be stored at: /Users/Mana/Dropbox/ResCons/UnShared_Old_Files/Demo Files/Mismatch analysis/Alignment required/Output/
-2016-02-12 15:17:59 Run_Script_Main     INFO     All residue positions entered are less than the length of reference sequence.
-2016-02-12 15:17:59 Clustal_Alignment   INFO     Clustal alignment was requested.
-2016-02-12 15:17:59 Clustal_Alignment   INFO     Clustal omega source: User's computer
-2016-02-12 15:17:59 Clustal_Alignment   INFO     Number of sequences found in '/Users/Mana/Dropbox/ResCons/UnShared_Old_Files/Demo Files/Mismatch analysis/Alignment required/Sequences.fasta' are '4'
-2016-02-12 15:17:59 Clustal_Alignment   INFO     Reference seq is not present in file: '/Users/Mana/Dropbox/ResCons/UnShared_Old_Files/Demo Files/Mismatch analysis/Alignment required/Sequences.fasta'. 
-	A new file '/Users/Mana/Dropbox/ResCons/UnShared_Old_Files/Demo Files/Mismatch analysis/Alignment required/Output/Sequences_Reference_SeqAdded.fasta' is created with Reference Seq appended to it.
-2016-02-12 15:17:59 Clustal_Alignment   INFO     Clustal commandline provided by user: 
-	{'guidetree_out': 'default.newick', 'outfmt': 'fasta', 'force': 'True', 'iterations': 3, 'infile': '/Users/Mana/Dropbox/ResCons/UnShared_Old_Files/Demo Files/Mismatch analysis/Alignment required/Output/Sequences_Reference_SeqAdded.fasta', 'residuenumber': 'True'}
-2016-02-12 15:17:59 Clustal_Alignment   INFO     Equivalent command prompt command that will be used to execute clustal omega alignment: 
-	'clustalo -i "/Users/Mana/Dropbox/ResCons/UnShared_Old_Files/Demo Files/Mismatch analysis/Alignment required/Output/Sequences_Reference_SeqAdded.fasta" --guidetree-out "/Users/Mana/Dropbox/ResCons/UnShared_Old_Files/Demo Files/Mismatch analysis/Alignment required/Output/Tree_Sequences_Reference_SeqAdded.newick" -o "/Users/Mana/Dropbox/ResCons/UnShared_Old_Files/Demo Files/Mismatch analysis/Alignment required/Output/Aligned_Clustalo_Sequences_Reference_SeqAdded.fasta" --outfmt fasta --residuenumber --iterations 3 --force'
-2016-02-12 15:17:59 Clustal_Alignment   INFO     Clustal alignment will begin now. Warning: It may take few seconds to several minutes depending on sequences provided and your processor.
-2016-02-12 15:18:00 Run_Script_Main     INFO     Clustal alignment was completed using local Clustalo!
-2016-02-12 15:18:00 Clustal_Alignment   INFO     Deleted reference sequence appended fasta file: '/Users/Mana/Dropbox/ResCons/UnShared_Old_Files/Demo Files/Mismatch analysis/Alignment required/Output/Sequences_Reference_SeqAdded.fasta'
-2016-02-12 15:18:00 Fetch_Mismatch      INFO     Alignment format is detected as "fasta" format
-2016-02-12 15:18:00 Clustal_Alignment   INFO     Reference sequence matches to corresponding sequence in Alignment file provided.
-2016-02-12 15:18:00 Fetch_Mismatch      INFO     Reference sequence's ID is present in alignment file and their sequences match.
-2016-02-12 15:18:00 Fetch_Mismatch      INFO     Query sites requested: [3, 5, 50]
-2016-02-12 15:18:00 Fetch_Mismatch      INFO     Residues at those query sites: ['L', 'N', 'M']
-2016-02-12 15:18:00 Fetch_Mismatch      INFO     Corresponding sites in the alignment's Reference sequence : [3, 5, 50]
-2016-02-12 15:18:00 Fetch_Mismatch      INFO     Begin extracting residues across alignment at the requested query sites
-2016-02-12 15:18:00 Fetch_Mismatch      INFO     Mismatch details will be written in to file:
-  "	/Users/Mana/Dropbox/ResCons/UnShared_Old_Files/Demo Files/Mismatch analysis/Alignment required/Output/Mismatches_Tabulated.csv"
-2016-02-12 15:18:00 Fetch_Mismatch      INFO     Done writing mismatch details in to csv file mentioned above.
-2016-02-12 15:18:00 GUI_Main            INFO     User has requested to format alignment in html format
-2016-02-12 15:18:00 Run_Script_Main     INFO     User requested HTML color formatting for clustal alignment
-2016-02-12 15:18:00 html_formatting     INFO     Alignment file used for formatting: /Users/Mana/Dropbox/ResCons/UnShared_Old_Files/Demo Files/Mismatch analysis/Alignment required/Output/Aligned_Clustalo_Sequences_Reference_SeqAdded.fasta
-2016-02-12 15:18:00 html_formatting     INFO     Alignment format is detected as "fasta" format
-2016-02-12 15:18:00 html_formatting     INFO     Formatted aligment will be stored in html file: '/Users/Mana/Dropbox/ResCons/UnShared_Old_Files/Demo Files/Mismatch analysis/Alignment required/Output/Formatted_Alignment.html'
-2016-02-12 15:18:00 html_formatting     INFO     Alignment formatting was completed and saved as above mentioned html file.
-2016-02-12 15:18:01 Run_Script_Main     INFO     All requested jobs are done! Ready for next job!!
+2016-02-19 18:06:21 Run_Script_Main     INFO     ResCons begins!
+2016-02-19 18:06:21 Run_Script_Main     INFO     ResCon will run in 'Protein mode' as user has requested.
+2016-02-19 18:06:21 Run_Script_Main     INFO     'Reference file provided by user: 
+	/Users/Mana/Dropbox/ResCons/demo files/mismatch analysis/alignment required/Reference.fasta
+2016-02-19 18:06:21 Run_Script_Main     ERROR    Error that resulted when creating path "/Users/Mana/Dropbox/ResCons/demo files/mismatch analysis/alignment required/Output/":
+  [Errno 17] File exists: '/Users/Mana/Dropbox/ResCons/demo files/mismatch analysis/alignment required/Output/'
+2016-02-19 18:06:21 Run_Script_Main     WARNING  Folder "/Users/Mana/Dropbox/ResCons/demo files/mismatch analysis/alignment required/Output/" already exists. All or some files in it may get overwritten by ResCons. Do you wish to continue?
+2016-02-19 18:06:22 Run_Script_Main     INFO     User has selected (True = Yes, False = No):  True
+2016-02-19 18:06:22 Run_Script_Main     INFO     ResCons will continue as user has requested.
+2016-02-19 18:06:22 Run_Script_Main     INFO     Output folder path provided by user: /Users/Mana/Dropbox/ResCons/demo files/mismatch analysis/alignment required/Output/
+2016-02-19 18:06:22 GUI_Main            INFO     Sequences File that will be used for alignment:  /Users/Mana/Dropbox/ResCons/demo files/mismatch analysis/alignment required/Sequences.fasta
+2016-02-19 18:06:22 GUI_Main            INFO     All output files will be stored at: /Users/Mana/Dropbox/ResCons/demo files/mismatch analysis/alignment required/Output/
+2016-02-19 18:06:22 Run_Script_Main     INFO     All residue positions entered are less than the length of reference sequence.
+2016-02-19 18:06:22 Run_Script_Main     INFO     Residue conservation method chosen: liu08_simple
+2016-02-19 18:06:22 Run_Script_Main     INFO     Included Reference sequence in %identity and %conservation calculations?: Yes
+2016-02-19 18:06:22 Clustal_Alignment   INFO     Clustal alignment was requested.
+2016-02-19 18:06:22 Clustal_Alignment   INFO     Clustal omega source: User's computer
+2016-02-19 18:06:22 Clustal_Alignment   INFO     Number of sequences found in '/Users/Mana/Dropbox/ResCons/demo files/mismatch analysis/alignment required/Sequences.fasta' are '4'
+2016-02-19 18:06:22 Clustal_Alignment   INFO     Reference seq is not present in file: '/Users/Mana/Dropbox/ResCons/demo files/mismatch analysis/alignment required/Sequences.fasta'. 
+	A new file '/Users/Mana/Dropbox/ResCons/demo files/mismatch analysis/alignment required/Output/Sequences_Reference_SeqAdded.fasta' is created with Reference Seq appended to it.
+2016-02-19 18:06:22 Clustal_Alignment   INFO     Clustal commandline provided by user: 
+	{'guidetree_out': 'default.newick', 'outfmt': 'fasta', 'force': 'True', 'iterations': 3, 'infile': '/Users/Mana/Dropbox/ResCons/demo files/mismatch analysis/alignment required/Output/Sequences_Reference_SeqAdded.fasta', 'residuenumber': 'True'}
+2016-02-19 18:06:22 Clustal_Alignment   INFO     Equivalent command prompt command that will be used to execute clustal omega alignment: 
+	'clustalo -i "/Users/Mana/Dropbox/ResCons/demo files/mismatch analysis/alignment required/Output/Sequences_Reference_SeqAdded.fasta" --guidetree-out "/Users/Mana/Dropbox/ResCons/demo files/mismatch analysis/alignment required/Output/Tree_Sequences_Reference_SeqAdded.newick" -o "/Users/Mana/Dropbox/ResCons/demo files/mismatch analysis/alignment required/Output/Aligned_Clustalo_Sequences_Reference_SeqAdded.fasta" --outfmt fasta --residuenumber --iterations 3 --force'
+2016-02-19 18:06:22 Clustal_Alignment   INFO     Clustal alignment will begin now. Warning: It may take few seconds to several minutes depending on sequences provided and your processor.
+2016-02-19 18:06:22 Run_Script_Main     INFO     Clustal alignment was completed using local Clustalo!
+2016-02-19 18:06:22 Clustal_Alignment   INFO     Deleted reference sequence appended fasta file: '/Users/Mana/Dropbox/ResCons/demo files/mismatch analysis/alignment required/Output/Sequences_Reference_SeqAdded.fasta'
+2016-02-19 18:06:22 Fetch_Mismatch      INFO     Alignment format is detected as "fasta" format
+2016-02-19 18:06:22 Clustal_Alignment   INFO     Reference sequence matches to corresponding sequence in Alignment file provided.
+2016-02-19 18:06:22 Fetch_Mismatch      INFO     Reference sequence's ID is present in alignment file and their sequences match.
+2016-02-19 18:06:22 Fetch_Mismatch      INFO     Query sites requested: [3, 30, 60, 90, 130]
+2016-02-19 18:06:22 Fetch_Mismatch      INFO     Residues at those query sites: ['L', 'K', 'N', 'P', 'P']
+2016-02-19 18:06:22 Fetch_Mismatch      INFO     Corresponding sites in the alignment's Reference sequence : [3, 30, 60, 90, 130]
+2016-02-19 18:06:22 Fetch_Mismatch      INFO     Begin extracting residues across alignment at the requested query sites
+2016-02-19 18:06:22 Fetch_Mismatch      INFO     Mismatch details will be written in to file:
+  "	/Users/Mana/Dropbox/ResCons/demo files/mismatch analysis/alignment required/Output/Mismatches_Tabulated.csv"
+2016-02-19 18:06:22 Fetch_Mismatch      INFO     Done writing mismatch details in to csv file mentioned above.
+2016-02-19 18:06:22 GUI_Main            INFO     User has requested to format alignment in html format
+2016-02-19 18:06:22 Run_Script_Main     INFO     User requested HTML color formatting for clustal alignment
+2016-02-19 18:06:22 html_formatting     INFO     Alignment file used for formatting: /Users/Mana/Dropbox/ResCons/demo files/mismatch analysis/alignment required/Output/Aligned_Clustalo_Sequences_Reference_SeqAdded.fasta
+2016-02-19 18:06:22 html_formatting     INFO     Alignment format is detected as "fasta" format
+2016-02-19 18:06:22 html_formatting     INFO     Formatted aligment will be stored in html file: '/Users/Mana/Dropbox/ResCons/demo files/mismatch analysis/alignment required/Output/Formatted_Alignment.html'
+2016-02-19 18:06:22 html_formatting     INFO     Alignment formatting was completed and saved as above mentioned html file.
+2016-02-19 18:06:23 Run_Script_Main     INFO     All requested jobs are done! Ready for next job!!
 
 
-2016-02-12 15:18:56 Run_Script_Main     INFO     ResCons begins!
-2016-02-12 15:18:56 Run_Script_Main     INFO     ResCon will run in 'Protein mode' as user has requested.
-2016-02-12 15:18:56 Run_Script_Main     INFO     'Reference file provided by user: 
-	/Users/Mana/Dropbox/ResCons/UnShared_Old_Files/Demo Files/Mismatch analysis/Alignment required/Reference.fasta
-2016-02-12 15:18:56 Run_Script_Main     ERROR    Error that resulted when creating path "/Users/Mana/Dropbox/ResCons/UnShared_Old_Files/Demo Files/Mismatch analysis/Alignment required/Output/":
-  [Errno 17] File exists: '/Users/Mana/Dropbox/ResCons/UnShared_Old_Files/Demo Files/Mismatch analysis/Alignment required/Output/'
-2016-02-12 15:18:56 Run_Script_Main     WARNING  Folder "/Users/Mana/Dropbox/ResCons/UnShared_Old_Files/Demo Files/Mismatch analysis/Alignment required/Output/" already exists. All or some files in it may get overwritten by ResCons. Do you wish to continue?
-2016-02-12 15:18:57 Run_Script_Main     INFO     User has selected (True = Yes, False = No):  True
-2016-02-12 15:18:57 Run_Script_Main     INFO     ResCons will continue as user has requested.
-2016-02-12 15:18:57 Run_Script_Main     INFO     Output folder path provided by user: /Users/Mana/Dropbox/ResCons/UnShared_Old_Files/Demo Files/Mismatch analysis/Alignment required/Output/
-2016-02-12 15:18:57 GUI_Main            INFO     Sequences File that will be used for alignment:  /Users/Mana/Dropbox/ResCons/UnShared_Old_Files/Demo Files/Mismatch analysis/Alignment required/Sequences.fasta
-2016-02-12 15:18:57 GUI_Main            INFO     All output files will be stored at: /Users/Mana/Dropbox/ResCons/UnShared_Old_Files/Demo Files/Mismatch analysis/Alignment required/Output/
-2016-02-12 15:18:57 Run_Script_Main     INFO     All residue positions entered are less than the length of reference sequence.
-2016-02-12 15:18:57 Clustal_Alignment   INFO     Clustal alignment was requested.
-2016-02-12 15:18:57 Clustal_Alignment   INFO     Clustal omega source: User's computer
-2016-02-12 15:18:57 Clustal_Alignment   INFO     Number of sequences found in '/Users/Mana/Dropbox/ResCons/UnShared_Old_Files/Demo Files/Mismatch analysis/Alignment required/Sequences.fasta' are '4'
-2016-02-12 15:18:57 Clustal_Alignment   INFO     Reference seq is not present in file: '/Users/Mana/Dropbox/ResCons/UnShared_Old_Files/Demo Files/Mismatch analysis/Alignment required/Sequences.fasta'. 
-	A new file '/Users/Mana/Dropbox/ResCons/UnShared_Old_Files/Demo Files/Mismatch analysis/Alignment required/Output/Sequences_Reference_SeqAdded.fasta' is created with Reference Seq appended to it.
-2016-02-12 15:18:57 Clustal_Alignment   INFO     Clustal commandline provided by user: 
-	{'guidetree_out': 'default.newick', 'outfmt': 'fasta', 'force': 'True', 'iterations': 3, 'infile': '/Users/Mana/Dropbox/ResCons/UnShared_Old_Files/Demo Files/Mismatch analysis/Alignment required/Output/Sequences_Reference_SeqAdded.fasta', 'residuenumber': 'True'}
-2016-02-12 15:18:57 Clustal_Alignment   INFO     Equivalent command prompt command that will be used to execute clustal omega alignment: 
-	'clustalo -i "/Users/Mana/Dropbox/ResCons/UnShared_Old_Files/Demo Files/Mismatch analysis/Alignment required/Output/Sequences_Reference_SeqAdded.fasta" --guidetree-out "/Users/Mana/Dropbox/ResCons/UnShared_Old_Files/Demo Files/Mismatch analysis/Alignment required/Output/Tree_Sequences_Reference_SeqAdded.newick" -o "/Users/Mana/Dropbox/ResCons/UnShared_Old_Files/Demo Files/Mismatch analysis/Alignment required/Output/Aligned_Clustalo_Sequences_Reference_SeqAdded.fasta" --outfmt fasta --residuenumber --iterations 3 --force'
-2016-02-12 15:18:57 Clustal_Alignment   INFO     Clustal alignment will begin now. Warning: It may take few seconds to several minutes depending on sequences provided and your processor.
-2016-02-12 15:18:58 Run_Script_Main     INFO     Clustal alignment was completed using local Clustalo!
-2016-02-12 15:18:58 Clustal_Alignment   INFO     Deleted reference sequence appended fasta file: '/Users/Mana/Dropbox/ResCons/UnShared_Old_Files/Demo Files/Mismatch analysis/Alignment required/Output/Sequences_Reference_SeqAdded.fasta'
-2016-02-12 15:18:58 Fetch_Mismatch      INFO     Alignment format is detected as "fasta" format
-2016-02-12 15:18:58 Clustal_Alignment   INFO     Reference sequence matches to corresponding sequence in Alignment file provided.
-2016-02-12 15:18:58 Fetch_Mismatch      INFO     Reference sequence's ID is present in alignment file and their sequences match.
-2016-02-12 15:18:58 Fetch_Mismatch      INFO     Query sites requested: [3, 50]
-2016-02-12 15:18:58 Fetch_Mismatch      INFO     Residues at those query sites: ['L', 'M']
-2016-02-12 15:18:58 Fetch_Mismatch      INFO     Corresponding sites in the alignment's Reference sequence : [3, 50]
-2016-02-12 15:18:58 Fetch_Mismatch      INFO     Begin extracting residues across alignment at the requested query sites
-2016-02-12 15:18:58 Fetch_Mismatch      INFO     Mismatch details will be written in to file:
-  "	/Users/Mana/Dropbox/ResCons/UnShared_Old_Files/Demo Files/Mismatch analysis/Alignment required/Output/Mismatches_Tabulated.csv"
-2016-02-12 15:18:58 Fetch_Mismatch      INFO     Done writing mismatch details in to csv file mentioned above.
-2016-02-12 15:18:58 GUI_Main            INFO     User has requested to format alignment in html format
-2016-02-12 15:18:58 Run_Script_Main     INFO     User requested HTML color formatting for clustal alignment
-2016-02-12 15:18:58 html_formatting     INFO     Alignment file used for formatting: /Users/Mana/Dropbox/ResCons/UnShared_Old_Files/Demo Files/Mismatch analysis/Alignment required/Output/Aligned_Clustalo_Sequences_Reference_SeqAdded.fasta
-2016-02-12 15:18:58 html_formatting     INFO     Alignment format is detected as "fasta" format
-2016-02-12 15:18:58 html_formatting     INFO     Formatted aligment will be stored in html file: '/Users/Mana/Dropbox/ResCons/UnShared_Old_Files/Demo Files/Mismatch analysis/Alignment required/Output/Formatted_Alignment.html'
-2016-02-12 15:18:58 html_formatting     INFO     Alignment formatting was completed and saved as above mentioned html file.
-2016-02-12 15:18:59 Run_Script_Main     INFO     All requested jobs are done! Ready for next job!!
+2016-02-19 18:06:36 Run_Script_Main     INFO     ResCons begins!
+2016-02-19 18:06:36 Run_Script_Main     INFO     ResCon will run in 'Protein mode' as user has requested.
+2016-02-19 18:06:36 Run_Script_Main     INFO     'Reference file provided by user: 
+	/Users/Mana/Dropbox/ResCons/demo files/mismatch analysis/alignment required/Reference.fasta
+2016-02-19 18:06:36 Run_Script_Main     ERROR    Error that resulted when creating path "/Users/Mana/Dropbox/ResCons/demo files/mismatch analysis/alignment required/Output/":
+  [Errno 17] File exists: '/Users/Mana/Dropbox/ResCons/demo files/mismatch analysis/alignment required/Output/'
+2016-02-19 18:06:36 Run_Script_Main     WARNING  Folder "/Users/Mana/Dropbox/ResCons/demo files/mismatch analysis/alignment required/Output/" already exists. All or some files in it may get overwritten by ResCons. Do you wish to continue?
+2016-02-19 18:06:37 Run_Script_Main     INFO     User has selected (True = Yes, False = No):  True
+2016-02-19 18:06:37 Run_Script_Main     INFO     ResCons will continue as user has requested.
+2016-02-19 18:06:37 Run_Script_Main     INFO     Output folder path provided by user: /Users/Mana/Dropbox/ResCons/demo files/mismatch analysis/alignment required/Output/
+2016-02-19 18:06:37 GUI_Main            INFO     Sequences File that will be used for alignment:  /Users/Mana/Dropbox/ResCons/demo files/mismatch analysis/alignment required/Sequences.fasta
+2016-02-19 18:06:37 GUI_Main            INFO     All output files will be stored at: /Users/Mana/Dropbox/ResCons/demo files/mismatch analysis/alignment required/Output/
+2016-02-19 18:06:37 Run_Script_Main     INFO     All residue positions entered are less than the length of reference sequence.
+2016-02-19 18:06:37 Run_Script_Main     INFO     Residue conservation method chosen: liu08_simple
+2016-02-19 18:06:37 Run_Script_Main     INFO     Included Reference sequence in %identity and %conservation calculations?: No
+2016-02-19 18:06:37 Clustal_Alignment   INFO     Clustal alignment was requested.
+2016-02-19 18:06:37 Clustal_Alignment   INFO     Clustal omega source: User's computer
+2016-02-19 18:06:37 Clustal_Alignment   INFO     Number of sequences found in '/Users/Mana/Dropbox/ResCons/demo files/mismatch analysis/alignment required/Sequences.fasta' are '4'
+2016-02-19 18:06:37 Clustal_Alignment   INFO     Reference seq is not present in file: '/Users/Mana/Dropbox/ResCons/demo files/mismatch analysis/alignment required/Sequences.fasta'. 
+	A new file '/Users/Mana/Dropbox/ResCons/demo files/mismatch analysis/alignment required/Output/Sequences_Reference_SeqAdded.fasta' is created with Reference Seq appended to it.
+2016-02-19 18:06:37 Clustal_Alignment   INFO     Clustal commandline provided by user: 
+	{'guidetree_out': 'default.newick', 'outfmt': 'fasta', 'force': 'True', 'iterations': 3, 'infile': '/Users/Mana/Dropbox/ResCons/demo files/mismatch analysis/alignment required/Output/Sequences_Reference_SeqAdded.fasta', 'residuenumber': 'True'}
+2016-02-19 18:06:37 Clustal_Alignment   INFO     Equivalent command prompt command that will be used to execute clustal omega alignment: 
+	'clustalo -i "/Users/Mana/Dropbox/ResCons/demo files/mismatch analysis/alignment required/Output/Sequences_Reference_SeqAdded.fasta" --guidetree-out "/Users/Mana/Dropbox/ResCons/demo files/mismatch analysis/alignment required/Output/Tree_Sequences_Reference_SeqAdded.newick" -o "/Users/Mana/Dropbox/ResCons/demo files/mismatch analysis/alignment required/Output/Aligned_Clustalo_Sequences_Reference_SeqAdded.fasta" --outfmt fasta --residuenumber --iterations 3 --force'
+2016-02-19 18:06:37 Clustal_Alignment   INFO     Clustal alignment will begin now. Warning: It may take few seconds to several minutes depending on sequences provided and your processor.
+2016-02-19 18:06:38 Run_Script_Main     INFO     Clustal alignment was completed using local Clustalo!
+2016-02-19 18:06:38 Clustal_Alignment   INFO     Deleted reference sequence appended fasta file: '/Users/Mana/Dropbox/ResCons/demo files/mismatch analysis/alignment required/Output/Sequences_Reference_SeqAdded.fasta'
+2016-02-19 18:06:38 Fetch_Mismatch      INFO     Alignment format is detected as "fasta" format
+2016-02-19 18:06:38 Clustal_Alignment   INFO     Reference sequence matches to corresponding sequence in Alignment file provided.
+2016-02-19 18:06:38 Fetch_Mismatch      INFO     Reference sequence's ID is present in alignment file and their sequences match.
+2016-02-19 18:06:38 Fetch_Mismatch      INFO     Query sites requested: [3, 30, 60, 90, 130]
+2016-02-19 18:06:38 Fetch_Mismatch      INFO     Residues at those query sites: ['L', 'K', 'N', 'P', 'P']
+2016-02-19 18:06:38 Fetch_Mismatch      INFO     Corresponding sites in the alignment's Reference sequence : [3, 30, 60, 90, 130]
+2016-02-19 18:06:38 Fetch_Mismatch      INFO     Begin extracting residues across alignment at the requested query sites
+2016-02-19 18:06:38 Fetch_Mismatch      INFO     Mismatch details will be written in to file:
+  "	/Users/Mana/Dropbox/ResCons/demo files/mismatch analysis/alignment required/Output/Mismatches_Tabulated.csv"
+2016-02-19 18:06:38 Fetch_Mismatch      INFO     Done writing mismatch details in to csv file mentioned above.
+2016-02-19 18:06:38 GUI_Main            INFO     User has requested to format alignment in html format
+2016-02-19 18:06:38 Run_Script_Main     INFO     User requested HTML color formatting for clustal alignment
+2016-02-19 18:06:38 html_formatting     INFO     Alignment file used for formatting: /Users/Mana/Dropbox/ResCons/demo files/mismatch analysis/alignment required/Output/Aligned_Clustalo_Sequences_Reference_SeqAdded.fasta
+2016-02-19 18:06:38 html_formatting     INFO     Alignment format is detected as "fasta" format
+2016-02-19 18:06:38 html_formatting     INFO     Formatted aligment will be stored in html file: '/Users/Mana/Dropbox/ResCons/demo files/mismatch analysis/alignment required/Output/Formatted_Alignment.html'
+2016-02-19 18:06:38 html_formatting     INFO     Alignment formatting was completed and saved as above mentioned html file.
+2016-02-19 18:06:39 Run_Script_Main     INFO     All requested jobs are done! Ready for next job!!
 
 
-Traceback (most recent call last):
-  File "/Users/Mana/Dropbox/ResCons/Ver27_ResCon.py", line 4478, in <module>
-    app.mainloop()			# Executes gui
-  File "/Library/Frameworks/Python.framework/Versions/2.7/lib/python2.7/lib-tk/Tkinter.py", line 1121, in mainloop
-    self.tk.mainloop(n)
-KeyboardInterrupt
+2016-02-19 18:07:12 Run_Script_Main     INFO     ResCons begins!
+2016-02-19 18:07:12 Run_Script_Main     INFO     ResCon will run in 'Protein mode' as user has requested.
+2016-02-19 18:07:12 Run_Script_Main     INFO     'Reference file provided by user: 
+	/Users/Mana/Dropbox/ResCons/demo files/mismatch analysis/alignment required/Reference.fasta
+2016-02-19 18:07:12 Run_Script_Main     ERROR    Error that resulted when creating path "/Users/Mana/Dropbox/ResCons/demo files/mismatch analysis/alignment required/Output/":
+  [Errno 17] File exists: '/Users/Mana/Dropbox/ResCons/demo files/mismatch analysis/alignment required/Output/'
+2016-02-19 18:07:12 Run_Script_Main     WARNING  Folder "/Users/Mana/Dropbox/ResCons/demo files/mismatch analysis/alignment required/Output/" already exists. All or some files in it may get overwritten by ResCons. Do you wish to continue?
+2016-02-19 18:07:13 Run_Script_Main     INFO     User has selected (True = Yes, False = No):  True
+2016-02-19 18:07:13 Run_Script_Main     INFO     ResCons will continue as user has requested.
+2016-02-19 18:07:13 Run_Script_Main     INFO     Output folder path provided by user: /Users/Mana/Dropbox/ResCons/demo files/mismatch analysis/alignment required/Output/
+2016-02-19 18:07:13 GUI_Main            INFO     Sequences File that will be used for alignment:  /Users/Mana/Dropbox/ResCons/demo files/mismatch analysis/alignment required/Sequences.fasta
+2016-02-19 18:07:13 GUI_Main            INFO     All output files will be stored at: /Users/Mana/Dropbox/ResCons/demo files/mismatch analysis/alignment required/Output/
+2016-02-19 18:07:13 Run_Script_Main     INFO     All residue positions entered are less than the length of reference sequence.
+2016-02-19 18:07:13 Run_Script_Main     INFO     Residue conservation method chosen: liu08_seq_weighted
+2016-02-19 18:07:13 Run_Script_Main     INFO     Included Reference sequence in %identity and %conservation calculations?: No
+2016-02-19 18:07:13 Clustal_Alignment   INFO     Clustal alignment was requested.
+2016-02-19 18:07:13 Clustal_Alignment   INFO     Clustal omega source: User's computer
+2016-02-19 18:07:13 Clustal_Alignment   INFO     Number of sequences found in '/Users/Mana/Dropbox/ResCons/demo files/mismatch analysis/alignment required/Sequences.fasta' are '4'
+2016-02-19 18:07:13 Clustal_Alignment   INFO     Reference seq is not present in file: '/Users/Mana/Dropbox/ResCons/demo files/mismatch analysis/alignment required/Sequences.fasta'. 
+	A new file '/Users/Mana/Dropbox/ResCons/demo files/mismatch analysis/alignment required/Output/Sequences_Reference_SeqAdded.fasta' is created with Reference Seq appended to it.
+2016-02-19 18:07:13 Clustal_Alignment   INFO     Clustal commandline provided by user: 
+	{'guidetree_out': 'default.newick', 'outfmt': 'fasta', 'force': 'True', 'iterations': 3, 'infile': '/Users/Mana/Dropbox/ResCons/demo files/mismatch analysis/alignment required/Output/Sequences_Reference_SeqAdded.fasta', 'residuenumber': 'True'}
+2016-02-19 18:07:13 Clustal_Alignment   INFO     Equivalent command prompt command that will be used to execute clustal omega alignment: 
+	'clustalo -i "/Users/Mana/Dropbox/ResCons/demo files/mismatch analysis/alignment required/Output/Sequences_Reference_SeqAdded.fasta" --guidetree-out "/Users/Mana/Dropbox/ResCons/demo files/mismatch analysis/alignment required/Output/Tree_Sequences_Reference_SeqAdded.newick" -o "/Users/Mana/Dropbox/ResCons/demo files/mismatch analysis/alignment required/Output/Aligned_Clustalo_Sequences_Reference_SeqAdded.fasta" --outfmt fasta --residuenumber --iterations 3 --force'
+2016-02-19 18:07:13 Clustal_Alignment   INFO     Clustal alignment will begin now. Warning: It may take few seconds to several minutes depending on sequences provided and your processor.
+2016-02-19 18:07:14 Run_Script_Main     INFO     Clustal alignment was completed using local Clustalo!
+2016-02-19 18:07:14 Clustal_Alignment   INFO     Deleted reference sequence appended fasta file: '/Users/Mana/Dropbox/ResCons/demo files/mismatch analysis/alignment required/Output/Sequences_Reference_SeqAdded.fasta'
+2016-02-19 18:07:14 Fetch_Mismatch      INFO     Alignment format is detected as "fasta" format
+2016-02-19 18:07:14 Clustal_Alignment   INFO     Reference sequence matches to corresponding sequence in Alignment file provided.
+2016-02-19 18:07:14 Fetch_Mismatch      INFO     Reference sequence's ID is present in alignment file and their sequences match.
+2016-02-19 18:07:14 Fetch_Mismatch      INFO     Query sites requested: [3, 30, 60, 90, 130]
+2016-02-19 18:07:14 Fetch_Mismatch      INFO     Residues at those query sites: ['L', 'K', 'N', 'P', 'P']
+2016-02-19 18:07:14 Fetch_Mismatch      INFO     Corresponding sites in the alignment's Reference sequence : [3, 30, 60, 90, 130]
+2016-02-19 18:07:14 Fetch_Mismatch      INFO     Begin extracting residues across alignment at the requested query sites
+2016-02-19 18:07:14 Fetch_Mismatch      INFO     Mismatch details will be written in to file:
+  "	/Users/Mana/Dropbox/ResCons/demo files/mismatch analysis/alignment required/Output/Mismatches_Tabulated.csv"
+2016-02-19 18:07:14 Fetch_Mismatch      INFO     Done writing mismatch details in to csv file mentioned above.
+2016-02-19 18:07:14 GUI_Main            INFO     User has requested to format alignment in html format
+2016-02-19 18:07:14 Run_Script_Main     INFO     User requested HTML color formatting for clustal alignment
+2016-02-19 18:07:14 html_formatting     INFO     Alignment file used for formatting: /Users/Mana/Dropbox/ResCons/demo files/mismatch analysis/alignment required/Output/Aligned_Clustalo_Sequences_Reference_SeqAdded.fasta
+2016-02-19 18:07:14 html_formatting     INFO     Alignment format is detected as "fasta" format
+2016-02-19 18:07:14 html_formatting     INFO     Formatted aligment will be stored in html file: '/Users/Mana/Dropbox/ResCons/demo files/mismatch analysis/alignment required/Output/Formatted_Alignment.html'
+2016-02-19 18:07:14 html_formatting     INFO     Alignment formatting was completed and saved as above mentioned html file.
+2016-02-19 18:07:15 Run_Script_Main     INFO     All requested jobs are done! Ready for next job!!
+
+
+2016-02-19 18:07:20 Run_Script_Main     INFO     ResCons begins!
+2016-02-19 18:07:20 Run_Script_Main     INFO     ResCon will run in 'Protein mode' as user has requested.
+2016-02-19 18:07:20 Run_Script_Main     INFO     'Reference file provided by user: 
+	/Users/Mana/Dropbox/ResCons/demo files/mismatch analysis/alignment required/Reference.fasta
+2016-02-19 18:07:20 Run_Script_Main     ERROR    Error that resulted when creating path "/Users/Mana/Dropbox/ResCons/demo files/mismatch analysis/alignment required/Output/":
+  [Errno 17] File exists: '/Users/Mana/Dropbox/ResCons/demo files/mismatch analysis/alignment required/Output/'
+2016-02-19 18:07:20 Run_Script_Main     WARNING  Folder "/Users/Mana/Dropbox/ResCons/demo files/mismatch analysis/alignment required/Output/" already exists. All or some files in it may get overwritten by ResCons. Do you wish to continue?
+2016-02-19 18:07:21 Run_Script_Main     INFO     User has selected (True = Yes, False = No):  True
+2016-02-19 18:07:21 Run_Script_Main     INFO     ResCons will continue as user has requested.
+2016-02-19 18:07:21 Run_Script_Main     INFO     Output folder path provided by user: /Users/Mana/Dropbox/ResCons/demo files/mismatch analysis/alignment required/Output/
+2016-02-19 18:07:21 GUI_Main            INFO     Sequences File that will be used for alignment:  /Users/Mana/Dropbox/ResCons/demo files/mismatch analysis/alignment required/Sequences.fasta
+2016-02-19 18:07:21 GUI_Main            INFO     All output files will be stored at: /Users/Mana/Dropbox/ResCons/demo files/mismatch analysis/alignment required/Output/
+2016-02-19 18:07:21 Run_Script_Main     INFO     All residue positions entered are less than the length of reference sequence.
+2016-02-19 18:07:21 Run_Script_Main     INFO     Residue conservation method chosen: liu08_seq_weighted
+2016-02-19 18:07:21 Run_Script_Main     INFO     Included Reference sequence in %identity and %conservation calculations?: Yes
+2016-02-19 18:07:21 Clustal_Alignment   INFO     Clustal alignment was requested.
+2016-02-19 18:07:21 Clustal_Alignment   INFO     Clustal omega source: User's computer
+2016-02-19 18:07:21 Clustal_Alignment   INFO     Number of sequences found in '/Users/Mana/Dropbox/ResCons/demo files/mismatch analysis/alignment required/Sequences.fasta' are '4'
+2016-02-19 18:07:21 Clustal_Alignment   INFO     Reference seq is not present in file: '/Users/Mana/Dropbox/ResCons/demo files/mismatch analysis/alignment required/Sequences.fasta'. 
+	A new file '/Users/Mana/Dropbox/ResCons/demo files/mismatch analysis/alignment required/Output/Sequences_Reference_SeqAdded.fasta' is created with Reference Seq appended to it.
+2016-02-19 18:07:21 Clustal_Alignment   INFO     Clustal commandline provided by user: 
+	{'guidetree_out': 'default.newick', 'outfmt': 'fasta', 'force': 'True', 'iterations': 3, 'infile': '/Users/Mana/Dropbox/ResCons/demo files/mismatch analysis/alignment required/Output/Sequences_Reference_SeqAdded.fasta', 'residuenumber': 'True'}
+2016-02-19 18:07:21 Clustal_Alignment   INFO     Equivalent command prompt command that will be used to execute clustal omega alignment: 
+	'clustalo -i "/Users/Mana/Dropbox/ResCons/demo files/mismatch analysis/alignment required/Output/Sequences_Reference_SeqAdded.fasta" --guidetree-out "/Users/Mana/Dropbox/ResCons/demo files/mismatch analysis/alignment required/Output/Tree_Sequences_Reference_SeqAdded.newick" -o "/Users/Mana/Dropbox/ResCons/demo files/mismatch analysis/alignment required/Output/Aligned_Clustalo_Sequences_Reference_SeqAdded.fasta" --outfmt fasta --residuenumber --iterations 3 --force'
+2016-02-19 18:07:21 Clustal_Alignment   INFO     Clustal alignment will begin now. Warning: It may take few seconds to several minutes depending on sequences provided and your processor.
+2016-02-19 18:07:22 Run_Script_Main     INFO     Clustal alignment was completed using local Clustalo!
+2016-02-19 18:07:22 Clustal_Alignment   INFO     Deleted reference sequence appended fasta file: '/Users/Mana/Dropbox/ResCons/demo files/mismatch analysis/alignment required/Output/Sequences_Reference_SeqAdded.fasta'
+2016-02-19 18:07:22 Fetch_Mismatch      INFO     Alignment format is detected as "fasta" format
+2016-02-19 18:07:22 Clustal_Alignment   INFO     Reference sequence matches to corresponding sequence in Alignment file provided.
+2016-02-19 18:07:22 Fetch_Mismatch      INFO     Reference sequence's ID is present in alignment file and their sequences match.
+2016-02-19 18:07:22 Fetch_Mismatch      INFO     Query sites requested: [3, 30, 60, 90, 130]
+2016-02-19 18:07:22 Fetch_Mismatch      INFO     Residues at those query sites: ['L', 'K', 'N', 'P', 'P']
+2016-02-19 18:07:22 Fetch_Mismatch      INFO     Corresponding sites in the alignment's Reference sequence : [3, 30, 60, 90, 130]
+2016-02-19 18:07:22 Fetch_Mismatch      INFO     Begin extracting residues across alignment at the requested query sites
+2016-02-19 18:07:22 Fetch_Mismatch      INFO     Mismatch details will be written in to file:
+  "	/Users/Mana/Dropbox/ResCons/demo files/mismatch analysis/alignment required/Output/Mismatches_Tabulated.csv"
+2016-02-19 18:07:22 Fetch_Mismatch      INFO     Done writing mismatch details in to csv file mentioned above.
+2016-02-19 18:07:22 GUI_Main            INFO     User has requested to format alignment in html format
+2016-02-19 18:07:22 Run_Script_Main     INFO     User requested HTML color formatting for clustal alignment
+2016-02-19 18:07:22 html_formatting     INFO     Alignment file used for formatting: /Users/Mana/Dropbox/ResCons/demo files/mismatch analysis/alignment required/Output/Aligned_Clustalo_Sequences_Reference_SeqAdded.fasta
+2016-02-19 18:07:22 html_formatting     INFO     Alignment format is detected as "fasta" format
+2016-02-19 18:07:22 html_formatting     INFO     Formatted aligment will be stored in html file: '/Users/Mana/Dropbox/ResCons/demo files/mismatch analysis/alignment required/Output/Formatted_Alignment.html'
+2016-02-19 18:07:22 html_formatting     INFO     Alignment formatting was completed and saved as above mentioned html file.
+2016-02-19 18:07:22 Run_Script_Main     INFO     All requested jobs are done! Ready for next job!!
+
+

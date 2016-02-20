@@ -18,7 +18,7 @@
   ## Include Reference sequence in %Identity and % residue conservation analysis ##
   ## (Default is 'Yes'. If it should not be included, set it to 'No')
 
-    ref_included_in_analysis:     Yes
+    ref_included_in_analysis:     No
 
 
   ## Similar amino acid residues set ##

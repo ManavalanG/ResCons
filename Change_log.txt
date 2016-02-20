@@ -17,6 +17,11 @@ Ver 27 (under development) major modifications:
    Completed: Output (csv & html) are modified to reflect such changes
    Completed: Logging is added to enable logging the options chosen by user
 
+6. Moved option buttons to choose 'residue conservation method' and 'include reference seq in calculations?' from
+   'Edit settings' menu to 'Mismatch analyzer' canvas. This way makes more sense but looks ugly though.
+
+7. Removed checkbutton for 'html formatting' from 'Mismatch analyzer'. It is set to True in code.
+
 
 ------------------------------------------------------------------------------------------------------------------------
 
