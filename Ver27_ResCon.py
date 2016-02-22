@@ -47,8 +47,8 @@ import operator
 import StringIO
 from clustalo_embl_api import clustalo_api
 
-terminal_output = False			# to show or not to show error/info in the terminal
-# terminal_output = True
+# terminal_output = False			# to show or not to show error/info in the terminal
+terminal_output = True
 
 additional_imports = True	# this enables to run script in case such features from thrid party libs are not desired.
 if additional_imports:
@@ -93,6 +93,9 @@ Ver 27 (under development) major modifications:
    'Edit settings' menu to 'Mismatch analyzer' canvas. This way makes more sense but looks ugly though.
 
 7. Removed checkbutton for 'html formatting' from 'Mismatch analyzer'. It is set to True in code.
+
+8. Tool 'Filter fasta by Blast's E-value' has been partly rewritten. Now this tool can filter by 'Bit score' in addition
+   to 'E-value' filtering. Tool has been renamed as 'Filter Blast by Bit or E-value'.
 
 
 ------------------------------------------------------------------------------------------------------------------------
@@ -464,7 +467,7 @@ def verify_filepath_exists(path):
 				raise_enabler('User opted not to write in selected output folder!')
 
 			else:
-				runscript_log.info("ResCons will continue as user has requested.")
+				runscript_log.info("ResCons will continue as user requested.")
 
 	# Warns user if they intend to write output files into 'Program Files' folder in Windows OS.
 	if not ubuntu_os and win_os and 'Program Files' in dir_path:
@@ -2027,49 +2030,18 @@ def html_formatting():
 	html_log.info('Alignment formatting was completed and saved as above mentioned html file.')
 
 
-# Function that reads blast xml file and then writes fasta files into an output file - all based on
-# e-value entered by user
+# Function to extract sequences from Fasta file and Blast XML based on Bit-score or E-value threshold set by user
 def blast_filter():
 	blast_log.info("User selected tool - 'Filtering sequences by Blast e-value'.")
-	global Blast_xml, Blast_fasta, E_threshold_entry
-	# global Higher_E_val_checkboxval, Lower_E_val_checkboxval
+	global Blast_xml, Blast_fasta, filter_method_val, high_or_low_val, threshold_val
 	global Blast_Submit, output_blast_entry, blast_processing
 	global lower_or_higher_e_threshold
 	global top
 	Blast_Submit.configure(state=DISABLED)
 	blast_processing.grid()
 
-	# Reads E-value threshold provided by user
-	try:
-		E_threshold = float(E_threshold_entry.get())
-	except ValueError as exception:
-		blast_log.error("Error that resulted: %s" % exception)
-		temp = 'E-threshold box is empty or number entered is invalid. Enter a valid number'
-		blast_log.error(temp)
-		popup_error(temp)
-		raise_enabler('stop')
-	else:
-		temp = ('E-threshold entered by user: %s' % str(E_threshold))
-		blast_log.info(temp)
-
-	# Determines if user has requested to filter sequences in blast with e-values lesser or higher than threshold
-	if lower_or_higher_e_threshold.get() == 1:
-		Requested_Lower = True
-		Requested_Higher = False
-		blast_log.info("User chose 'Lower than E-threshold'")
-	else:
-		Requested_Lower = False
-		Requested_Higher = True
-		blast_log.info("User chose 'Higher than and equal to E-threshold'")
-
-		temp = "Note that checking 'Higher than and equal to E-threshold' will also record sequences that are not in blast " \
-			   "XML file but are present in provided fasta file that do not have any e-value listed in XML file"
-		blast_log.info(temp)
-		tkMessageBox.showinfo('Note', temp, parent = top)
-
-	# Reads Blast xml file provided by user
+	# Gets Blast xml file provided by user
 	blast_handle = Blast_xml.get()
-	# blast_handle = "C:/Users/Mana/Desktop/ResCons/Anaibogi/seqs/blast/Blast_Against_Family_II_IPPases.xml"
 	if not blast_handle:
 		temp = "Please enter file path of Blast XML file."
 		blast_log.error(temp)
@@ -2089,7 +2061,7 @@ def blast_filter():
 		popup_error(temp)
 		raise_enabler('stop')
 	else:
-		temp = ('Can successfully read Blast xml file provided by user: \n\t%s' % blast_handle)
+		temp = ('Successfully read Blast xml file provided by user: \n\t%s' % blast_handle)
 		blast_log.debug(temp)
 
 	# Reads fasta file provided by user
@@ -2117,64 +2089,119 @@ def blast_filter():
 		temp = ("Output folder provided by user :\n\t%s" %Output_Path_blast)
 		blast_log.info(temp)
 
+	# gets the filter method requested
+	try:
+		blast_filter_method = filter_method_val.get()
+	except Exception as e:
+		blast_log.error("Error that resulted when reading filter method: %s" % e)
+		temp = 'Having trouble reading Blast Filter Method requested.'
+		blast_log.error(temp)
+		popup_error(temp)
+		raise_enabler('stop')
+	else:
+		blast_log.info("Blast Filter method chosen: %s" % blast_filter_method)
 
-	# this part collects IDs of sequences, that have e-values less than requested e-score threshold, into a list
-	Lower_than_E_threshold_list = []
+	# reads if data has to be filtered higher or lower than threshold
+	try:
+		high_or_low = high_or_low_val.get()
+	except Exception as e:
+		blast_log.error("Error that resulted when reading 'higher' or 'lower' than threshold: %s" % e)
+		temp = 'Having trouble reading "Higher" or "Lower" than threshold.'
+		blast_log.error(temp)
+		popup_error(temp)
+		raise_enabler('stop')
+	else:
+		blast_log.info("Requested to be filtered '%s' than threshold." % high_or_low)
+
+	# Reads threshold value provided by user
+	try:
+		if blast_filter_method == "E-value":
+			threshold = float(threshold_val.get())
+		else:           # bit score
+			threshold = int(threshold_val.get())
+	except ValueError as exception:
+		blast_log.error("Error that resulted: %s" % exception)
+		temp = 'Threshold box is empty or number entered is invalid. Enter a valid number'
+		blast_log.error(temp)
+		popup_error(temp)
+		raise_enabler('stop')
+	else:
+		temp = ('Threshold entered by user: %s' % str(threshold))
+		blast_log.info(temp)
+
+	# Determines if user has requested to filter sequences in blast lower or higher than threshold
+
+	# Note that if a seq has E-value higher than parameter set during Blast execution, it will not be part of seq
+	# entries in output Blast XML file. Hence, for scenarios where seqs with E-value higher than threshold or
+	# Bit-value lower than threshold need to be extracted, ResCon will extract all seqs that do not have those values
+	# higher (bit-score) or lower (E-value) or equal to them.
+	temp = "Note that using '%s %s threshold' option will also extract sequences that may not be present in Blast " \
+		   "XML file but present in input fasta file." %(high_or_low, blast_filter_method)
+	if high_or_low == 'Higher than':
+		requested_higher = True
+		# blast_log.info("User chose to extract seqs 'Higher than' threshold value")
+		if blast_filter_method == "E-value":        # warns user
+			blast_log.info(temp)
+			tkMessageBox.showinfo('Note', temp, parent = top)
+	else:
+		requested_higher = False
+		if blast_filter_method == "Bit-score":      # warns user
+			blast_log.info(temp)
+			tkMessageBox.showinfo('Note', temp, parent = top)
+
+	# this part collects IDs of sequences that have respective score higher or lower than requested threshold
+	lower_than_threshold_seqs_list = []
+	equal_to_threshold_seqs_list = []
 	lower = 0
+	equal_count = 0
 	for index in range(0, len(blast_records.descriptions)):
-		E_score = float(blast_records.descriptions[index].e)
-		title = str(blast_records.descriptions[index].title)
-		title_list = title.split()
-		title_id = title_list[1]  # Description id in the seqs used for blast must be unique for each seq.
-		if E_score < E_threshold:
-			Lower_than_E_threshold_list.append(title_id)
-			lower += 1
+		if blast_filter_method == "E-value":
+			score = float(blast_records.descriptions[index].e)      # E-value
+		else:
+			score = int(blast_records.descriptions[index].bits)      #Bit-score
 
-	Filtered_records = []
+		title = str(blast_records.descriptions[index].title)
+		title_id = title.split()[1]     # Sequence id in the seqs used for blast must be unique for each seq.
+		if score < threshold:
+			lower_than_threshold_seqs_list.append(title_id)
+			lower += 1
+		elif score == threshold:
+			equal_to_threshold_seqs_list.append(title_id)
+			equal_count += 1
+
+	extracted_seqrecords = []
 	total = 0
 	filtered_lower = 0
 	filtered_higher = 0
 	for seq_record in SeqIO.parse(Input_handle_blast_fasta, "fasta"):
 		seq_id = seq_record.id
 
-		# Appends IDs of records that has e-score less than requested threshold
-		if Requested_Lower and seq_id in Lower_than_E_threshold_list:
-			Filtered_records.append(seq_record)
+		# Appends IDs of records that have score less than requested threshold
+		if not requested_higher and seq_id in lower_than_threshold_seqs_list:
+			extracted_seqrecords.append(seq_record)
 			filtered_lower += 1
 
-		# Appends IDs of records that has e-score highr than requested threshold
+		# Appends IDs of records that has score highr than requested threshold
 		# This will also record IDs of sequences that are not in blast xml file but are present in fasta file
-		if Requested_Higher and seq_id not in Lower_than_E_threshold_list:
-			Filtered_records.append(seq_record)
+		if requested_higher and seq_id not in lower_than_threshold_seqs_list and seq_id not in equal_to_threshold_seqs_list:
+			extracted_seqrecords.append(seq_record)
 			filtered_higher += 1
 
 		total += 1
 
-	# Output_Path_blast = os.path.dirname(blast_handle)
-	# Output_Path_blast += '/Output/'
-	# verify_filepath_exists(Output_Path_blast)
-
-	Output_handle_blast = Output_Path_blast + 'Filtered_Sequences_E_' + str(E_threshold) + '.fasta'
-	SeqIO.write(Filtered_records, Output_handle_blast, 'fasta')
-
-	blast_log.info('Total number of sequences in input fasta file:	 %s' % str(total))
+	Output_handle_blast = "%sFiltered_Seqs_%s_%s_%s.fasta" %(Output_Path_blast, blast_filter_method, high_or_low, str(threshold))
+	SeqIO.write(extracted_seqrecords, Output_handle_blast, 'fasta')
 	blast_log.info("Filtered sequences are stored in file:  \n\t'%s'" % Output_handle_blast)
 
-	# if Requested_Lower and seq_id in Lower_than_E_threshold_list:
-	if Requested_Lower:
-		temp = ('Total number of sequences in input fasta file:	 %s' % str(total)) \
-				+ ('\nTotal number of records with E-value less than entered threshold in blast xml file:  %s' % str(lower)) \
-				+ ('\nNumber of sequences written in above output file:  %s' % str(filtered_lower))
-		blast_log.info(temp)
-		tkMessageBox.showinfo("Job done!", temp, parent = top)
-
-	# if Requested_Higher and seq_id not in Lower_than_E_threshold_list:
-	if Requested_Higher:
-		temp = ('Total number of sequences in input fasta file:  %s' % str(total)) \
-			   	+ ('\nTotal number of records with E-value less than entered threshold in blast xml file:  %s' % str(lower)) \
-				+ ('\nNumber of sequences written in above output file:  %s' % str(filtered_higher))
-		blast_log.info(temp)
-		tkMessageBox.showinfo("Job Done!", temp, parent = top)
+	temp = 'Total number of sequences in input fasta file:	 %s' % str(total)
+	if not requested_higher:
+		temp += '\nTotal number of records with %s lower than entered threshold in Blast XML file:  %s' % (blast_filter_method, str(lower))
+	else:
+		temp += '\nTotal number of records with %s higher than entered threshold in Blast XML file:  %s' \
+													% (blast_filter_method, str(total - lower - equal_count))
+	temp += '\nNumber of sequences written in output file:  %i' % len(extracted_seqrecords)
+	blast_log.info(temp)
+	tkMessageBox.showinfo("Job completed!", temp, parent = top)
 
 	Blast_Submit.configure(state=ACTIVE)
 	blast_processing.grid_remove()
@@ -3896,9 +3923,9 @@ def top_win():
 
 	'''This part is GUI stuff for E-value based BLAST filter tool'''
 
-	global Blast_xml, Blast_fasta, E_threshold_entry
+	global Blast_xml, Blast_fasta, filter_method_val, high_or_low_val, threshold_val
 	# global Higher_E_val_checkboxval, Lower_E_val_checkboxval
-	global lower_or_higher_e_threshold
+	# global lower_or_higher_e_threshold
 	global genbank_entry
 	global Newick_entry, Fasta_Original_entry, BranchLength_entry
 
@@ -3906,7 +3933,7 @@ def top_win():
 	frame_blast.grid(row = 5, column = 0, columnspan=2, sticky = 'w')
 	frame_blast.grid_remove()
 
-	button_blast_filter = Button(top, text = "Filter fasta by Blast's E-value", width =30,
+	button_blast_filter = Button(top, text = "Filter Blast by Bit or E-value", width =30,
 								 command = lambda: select_tools(frame_blast, button_blast_filter))
 	button_blast_filter.grid(row = 2, column = 1, padx=10, pady=10)
 	if mac_os:
@@ -3938,19 +3965,24 @@ def top_win():
 	# filetype_all = []
 	browse_button(frame_blast, lambda: browse_for_directory(output_blast_entry), 5, 2)
 
-	label_text(frame_blast, "   E-value Threshold    ", 2, 20, 7, 0)
+	label_text(frame_blast, "   Filter method    ", 2, 20, 7, 0)
 
-	E_threshold = StringVar()
-	E_threshold_entry = entry_box(frame_blast, E_threshold, 20, 7, 1)
-	E_threshold_entry.configure(bg='#FFFF94')
+	options = ("E-value", "Bit-score")
+	filter_method_val = StringVar()
+	filter_method_val.set( options[0] )
+	filter_method = OptionMenu(frame_blast, filter_method_val, *options)
+	filter_method.grid(row = 7, column = 1, sticky = E+W, padx = 90)
 
-	lower_or_higher_e_threshold = IntVar()
-	lower_or_higher_e_threshold.set(1)
-	lower_e_radio = Radiobutton(frame_blast, text= 'Lower than E-threshold', variable= lower_or_higher_e_threshold, value=1)
-	lower_e_radio.grid(row=8, column=1, sticky='w')
+	options = ("Higher than", "Lower than")
+	high_or_low_val = StringVar()
+	high_or_low_val.set( options[0] )
+	high_or_low_option = OptionMenu(frame_blast, high_or_low_val, *options)
+	high_or_low_option.grid(row = 8, column = 1, sticky = W, columnspan = 2)
 
-	higher_e_radio = Radiobutton(frame_blast, text= 'Higher than and equal to E-threshold', variable= lower_or_higher_e_threshold, value=2)
-	higher_e_radio.grid(row=9, column=1, sticky='w')
+	threshold_val = StringVar()
+	threshold_entry = entry_box(frame_blast, threshold_val, 22, 8, 1)
+	threshold_entry.configure(bg='#FFFF94')
+	threshold_entry.grid(sticky=E)
 
 	if linux_os:
 		Blast_Submit = Button(frame_blast, text='Filter now!', width=12, command= lambda: gen_thread(blast_processing, blast_filter), bg='steelblue2')	# for linux

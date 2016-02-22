@@ -22,6 +22,9 @@ Ver 27 (under development) major modifications:
 
 7. Removed checkbutton for 'html formatting' from 'Mismatch analyzer'. It is set to True in code.
 
+8. Tool 'Filter fasta by Blast's E-value' has been partly rewritten. Now this tool can filter by 'Bit score' in addition
+   to 'E-value' filtering. Tool has been renamed as 'Filter Blast by Bit or E-value'.
+
 
 ------------------------------------------------------------------------------------------------------------------------
 
