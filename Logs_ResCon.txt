@@ -1,0 +1,23 @@
+2016-02-23 00:38:38 blast_filter        INFO     User selected tool - 'Filtering sequences by Blast e-value'.
+2016-02-23 00:38:38 blast_filter        INFO     Blast XML file provided by user :
+	/Users/Mana/Dropbox/22Feb_Data/3_Blast_vs_reference_seqs/Vs_Ecoli/Ecoli_vs_Blast_22feb_17332seqs.xml
+2016-02-23 00:38:54 blast_filter        INFO     Fasta file provided by user :
+	/Users/Mana/Dropbox/22Feb_Data/Dupes_removed_17332_Seqs_22Feb.fasta
+2016-02-23 00:38:54 Run_Script_Main     ERROR    Error that resulted when creating path "/Users/Mana/Dropbox/22Feb_Data/3_Blast_vs_reference_seqs/Vs_Ecoli/Output/":
+  [Errno 17] File exists: '/Users/Mana/Dropbox/22Feb_Data/3_Blast_vs_reference_seqs/Vs_Ecoli/Output/'
+2016-02-23 00:38:54 Run_Script_Main     WARNING  Folder "/Users/Mana/Dropbox/22Feb_Data/3_Blast_vs_reference_seqs/Vs_Ecoli/Output/" already exists. All or some files in it may get overwritten by ResCons. Do you wish to continue?
+2016-02-23 00:38:57 Run_Script_Main     INFO     User has selected (True = Yes, False = No):  True
+2016-02-23 00:38:57 Run_Script_Main     INFO     ResCons will continue as user requested.
+2016-02-23 00:38:57 blast_filter        INFO     Output folder provided by user :
+	/Users/Mana/Dropbox/22Feb_Data/3_Blast_vs_reference_seqs/Vs_Ecoli/Output/
+2016-02-23 00:38:57 blast_filter        INFO     Blast Filter method chosen: Bit-score
+2016-02-23 00:38:57 blast_filter        INFO     Requested to be filtered 'Higher than' than threshold.
+2016-02-23 00:38:57 blast_filter        INFO     Threshold entered by user: 50.0
+2016-02-23 00:39:01 blast_filter        INFO     Filtered sequences are stored in file:
+	'/Users/Mana/Dropbox/22Feb_Data/3_Blast_vs_reference_seqs/Vs_Ecoli/Output/Filtered_Seqs_Bit-score_Higher than_50.0.fasta'
+2016-02-23 00:39:01 blast_filter        INFO     Total number of sequences in input fasta file:	 17332
+Total number of records with Bit-score higher than entered threshold in Blast XML file:  6828
+Number of sequences written in output file:  6828
+2016-02-23 00:39:07 blast_filter        INFO     Blast-Filtering job is done! Ready for next job
+
+

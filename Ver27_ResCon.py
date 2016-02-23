@@ -47,8 +47,8 @@ import operator
 import StringIO
 from clustalo_embl_api import clustalo_api
 
-# terminal_output = False			# to show or not to show error/info in the terminal
-terminal_output = True
+terminal_output = False			# to show or not to show error/info in the terminal
+# terminal_output = True
 
 additional_imports = True	# this enables to run script in case such features from thrid party libs are not desired.
 if additional_imports:
@@ -2118,7 +2118,7 @@ def blast_filter():
 		if blast_filter_method == "E-value":
 			threshold = float(threshold_val.get())
 		else:           # bit score
-			threshold = int(threshold_val.get())
+			threshold = float(threshold_val.get())
 	except ValueError as exception:
 		blast_log.error("Error that resulted: %s" % exception)
 		temp = 'Threshold box is empty or number entered is invalid. Enter a valid number'
@@ -2158,16 +2158,18 @@ def blast_filter():
 		if blast_filter_method == "E-value":
 			score = float(blast_records.descriptions[index].e)      # E-value
 		else:
-			score = int(blast_records.descriptions[index].bits)      #Bit-score
+			score = float(blast_records.descriptions[index].bits)      #Bit-score
 
 		title = str(blast_records.descriptions[index].title)
 		title_id = title.split()[1]     # Sequence id in the seqs used for blast must be unique for each seq.
 		if score < threshold:
-			lower_than_threshold_seqs_list.append(title_id)
-			lower += 1
+			if title_id not in lower_than_threshold_seqs_list:
+				lower_than_threshold_seqs_list.append(title_id)
+				lower += 1
 		elif score == threshold:
-			equal_to_threshold_seqs_list.append(title_id)
-			equal_count += 1
+			if title_id in equal_to_threshold_seqs_list:
+				equal_to_threshold_seqs_list.append(title_id)
+				equal_count += 1
 
 	extracted_seqrecords = []
 	total = 0
