@@ -3889,12 +3889,12 @@ if Image_in_GUI:
 
 # Labels that will show up when ResCon is under execution
 global processing, processing_clustal
-processing = label_text(frame2, 'Processing...', 0, 20, 15, 1)
+processing = label_text(frame2, 'Processing...', 0, 20, 16, 1)
 processing.configure(fg='red', font= ("times", 16))
 processing.grid(sticky= E+W)
 processing.grid_remove()
 
-processing_clustal = label_text(frame2, 'Clustal alignment under progress...', 0, 20, 15, 1)
+processing_clustal = label_text(frame2, 'Clustal alignment under progress...', 0, 20, 16, 1)
 if mac_os:
 	processing_clustal.configure(fg='red', font= ("times", 16),  width=20)
 else:
@@ -4482,7 +4482,7 @@ def top_win():
 
 button_moretools = Button(frame2, text='More Tools', width=13, command=top_win, font=('times', '12', 'italic'),
 						  bg='steelblue1')
-button_moretools.grid(row=16, column=1, pady=10)
+button_moretools.grid(row=18, column=1, pady=10)
 if mac_os:
 	button_moretools.configure(font=('times', '15', 'italic'))			# for Mac
 
