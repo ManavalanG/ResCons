@@ -2051,19 +2051,6 @@ def blast_filter():
 		temp = ("Blast XML file provided by user :\n\t%s" %blast_handle)
 		blast_log.info(temp)
 
-	# Reads user-provided blast xml file
-	try:
-		blast_records = NCBIXML.read(open(blast_handle))
-	except Exception as e:
-		temp = ('Having trouble reading file: \n\t%s. \nMake sure it is in valid xml format' % blast_handle)
-		blast_log.error(temp)
-		blast_log.error('Error that resulted: %s' % e)
-		popup_error(temp)
-		raise_enabler('stop')
-	else:
-		temp = ('Successfully read Blast xml file provided by user: \n\t%s' % blast_handle)
-		blast_log.debug(temp)
-
 	# Reads fasta file provided by user
 	if not Blast_fasta.get():
 		temp = "Please enter file path of fasta file."
@@ -2115,10 +2102,7 @@ def blast_filter():
 
 	# Reads threshold value provided by user
 	try:
-		if blast_filter_method == "E-value":
-			threshold = float(threshold_val.get())
-		else:           # bit score
-			threshold = float(threshold_val.get())
+		threshold = float(threshold_val.get())
 	except ValueError as exception:
 		blast_log.error("Error that resulted: %s" % exception)
 		temp = 'Threshold box is empty or number entered is invalid. Enter a valid number'
@@ -2130,29 +2114,46 @@ def blast_filter():
 		blast_log.info(temp)
 
 	# Determines if user has requested to filter sequences in blast lower or higher than threshold
-
-	# Note that if a seq has E-value higher than parameter set during Blast execution, it will not be part of seq
-	# entries in output Blast XML file. Hence, for scenarios where seqs with E-value higher than threshold or
-	# Bit-value lower than threshold need to be extracted, ResCon will extract all seqs that do not have those values
-	# higher (bit-score) or lower (E-value) or equal to them.
-	temp = "Note that using '%s %s threshold' option will also extract sequences that may not be present in Blast " \
-		   "XML file but present in input fasta file." %(high_or_low, blast_filter_method)
+	# Note that Fasta file may have sequences that are not part of Blast XML file. This might be bcoz such sequence may
+	# not have significant similarity to query sequence. Or else user chose to use different fasta than that was used
+	# to get the Blast XML file provided here.
+	# Hence, ResCon throws a warning here and gives option to user on how to proceed further.
+	temp = "Do you want to include sequences that are in FASTA file but not in Blast XML file?" \
+		   "\n\nNote: Such instances may happen when sequences do not have significant similarity to query sequence." \
+		   "\nUsage of combination '%s %s threshold' triggered this warning." %(high_or_low, blast_filter_method)
+	not_in_blast_seqs = False
 	if high_or_low == 'Higher than':
 		requested_higher = True
-		# blast_log.info("User chose to extract seqs 'Higher than' threshold value")
 		if blast_filter_method == "E-value":        # warns user
-			blast_log.info(temp)
-			tkMessageBox.showinfo('Note', temp, parent = top)
+			blast_log.warning(temp)
+			not_in_blast_seqs = tkMessageBox.askyesno('Warning', temp, default = 'yes')
+			blast_log.info('User has selected (True = Yes, False = No): %s' % not_in_blast_seqs)
 	else:
 		requested_higher = False
 		if blast_filter_method == "Bit-score":      # warns user
 			blast_log.info(temp)
-			tkMessageBox.showinfo('Note', temp, parent = top)
+			not_in_blast_seqs = tkMessageBox.askyesno('Warning', temp, default = 'yes')
+			blast_log.info('User has selected (True = Yes, False = No): %s' % not_in_blast_seqs)
+
+	# Reads user-provided blast xml file
+	try:
+		blast_records = NCBIXML.read(open(blast_handle))
+	except Exception as e:
+		temp = ('Having trouble reading file: \n\t%s. \nMake sure it is in valid xml format' % blast_handle)
+		blast_log.error(temp)
+		blast_log.error('Error that resulted: %s' % e)
+		popup_error(temp)
+		raise_enabler('stop')
+	else:
+		temp = ('Successfully read Blast xml file provided by user: \n\t%s' % blast_handle)
+		blast_log.debug(temp)
 
 	# this part collects IDs of sequences that have respective score higher or lower than requested threshold
 	lower_than_threshold_seqs_list = []
+	higher_than_threshold_seqs_list = []
 	equal_to_threshold_seqs_list = []
 	lower = 0
+	higher = 0
 	equal_count = 0
 	for index in range(0, len(blast_records.descriptions)):
 		if blast_filter_method == "E-value":
@@ -2163,31 +2164,44 @@ def blast_filter():
 		title = str(blast_records.descriptions[index].title)
 		title_id = title.split()[1]     # Sequence id in the seqs used for blast must be unique for each seq.
 		if score < threshold:
-			if title_id not in lower_than_threshold_seqs_list:
-				lower_than_threshold_seqs_list.append(title_id)
-				lower += 1
+			# if title_id not in lower_than_threshold_seqs_list:
+			lower_than_threshold_seqs_list.append(title_id)
+			lower += 1
 		elif score == threshold:
-			if title_id in equal_to_threshold_seqs_list:
-				equal_to_threshold_seqs_list.append(title_id)
-				equal_count += 1
+			# if title_id in equal_to_threshold_seqs_list:
+			equal_to_threshold_seqs_list.append(title_id)
+			equal_count += 1
+		elif score > threshold:
+			higher_than_threshold_seqs_list.append(title_id)
+			higher += 1
+
+	if not_in_blast_seqs:
+		blast_all_seqs_list = lower_than_threshold_seqs_list + equal_to_threshold_seqs_list\
+								 + higher_than_threshold_seqs_list
+
+		print 'all in blast xml', len(blast_all_seqs_list)
 
 	extracted_seqrecords = []
 	total = 0
-	filtered_lower = 0
-	filtered_higher = 0
+	not_in_blast_count = 0
+	# filtered_lower = 0
+	# filtered_higher = 0
 	for seq_record in SeqIO.parse(Input_handle_blast_fasta, "fasta"):
 		seq_id = seq_record.id
 
 		# Appends IDs of records that have score less than requested threshold
 		if not requested_higher and seq_id in lower_than_threshold_seqs_list:
 			extracted_seqrecords.append(seq_record)
-			filtered_lower += 1
+			# filtered_lower += 1
 
-		# Appends IDs of records that has score highr than requested threshold
-		# This will also record IDs of sequences that are not in blast xml file but are present in fasta file
-		if requested_higher and seq_id not in lower_than_threshold_seqs_list and seq_id not in equal_to_threshold_seqs_list:
+		# Appends IDs of records that has score higher than requested threshold
+		elif requested_higher and seq_id in higher_than_threshold_seqs_list:
 			extracted_seqrecords.append(seq_record)
-			filtered_higher += 1
+			# filtered_higher += 1
+
+		elif not_in_blast_seqs and seq_id not in blast_all_seqs_list:
+			extracted_seqrecords.append(seq_record)
+			not_in_blast_count += 1
 
 		total += 1
 
@@ -2197,10 +2211,13 @@ def blast_filter():
 
 	temp = 'Total number of sequences in input fasta file:	 %s' % str(total)
 	if not requested_higher:
-		temp += '\nTotal number of records with %s lower than entered threshold in Blast XML file:  %s' % (blast_filter_method, str(lower))
+		temp += '\nTotal number of records with %s lower than entered threshold in Blast XML file:  %i' % (blast_filter_method, lower)
 	else:
-		temp += '\nTotal number of records with %s higher than entered threshold in Blast XML file:  %s' \
-													% (blast_filter_method, str(total - lower - equal_count))
+		temp += '\nTotal number of records with %s higher than entered threshold in Blast XML file:  %i' \
+													% (blast_filter_method, higher)
+	if not_in_blast_seqs:
+		temp += '\nTotal number os sequences that were in Fasta file but not in Blast XML list:  %i' % not_in_blast_count
+
 	temp += '\nNumber of sequences written in output file:  %i' % len(extracted_seqrecords)
 	blast_log.info(temp)
 	tkMessageBox.showinfo("Job completed!", temp, parent = top)
@@ -3977,7 +3994,7 @@ def top_win():
 
 	options = ("Higher than", "Lower than")
 	high_or_low_val = StringVar()
-	high_or_low_val.set( options[0] )
+	high_or_low_val.set( options[1] )
 	high_or_low_option = OptionMenu(frame_blast, high_or_low_val, *options)
 	high_or_low_option.grid(row = 8, column = 1, sticky = W, columnspan = 2)
 
