@@ -3990,18 +3990,18 @@ def top_win():
 	filter_method_val = StringVar()
 	filter_method_val.set( options[0] )
 	filter_method = OptionMenu(frame_blast, filter_method_val, *options)
-	filter_method.grid(row = 7, column = 1, sticky = E+W, padx = 90)
+	filter_method.grid(row = 7, column = 1, columnspan = 2, sticky = W, padx=40)
 
 	options = ("Higher than", "Lower than")
 	high_or_low_val = StringVar()
 	high_or_low_val.set( options[1] )
 	high_or_low_option = OptionMenu(frame_blast, high_or_low_val, *options)
-	high_or_low_option.grid(row = 8, column = 1, sticky = W, columnspan = 2)
+	high_or_low_option.grid(row = 7, column = 1, sticky = E, padx=40)
 
 	threshold_val = StringVar()
-	threshold_entry = entry_box(frame_blast, threshold_val, 22, 8, 1)
+	threshold_entry = entry_box(frame_blast, threshold_val, 10, 7, 2)
 	threshold_entry.configure(bg='#FFFF94')
-	threshold_entry.grid(sticky=E)
+	threshold_entry.grid(sticky=E+W, padx= 30)
 
 	if linux_os:
 		Blast_Submit = Button(frame_blast, text='Filter now!', width=12, command= lambda: gen_thread(blast_processing, blast_filter), bg='steelblue2')	# for linux
