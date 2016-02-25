@@ -1198,7 +1198,12 @@ def fetch_mismatch():
 				for row_no in range(0, len(column_aa)):
 					matrix_score = float( dict_similarity_matrix[aa_most][column_aa[row_no]] )
 					liu08_weighted_score += (dict_seq_weight[row_no] * matrix_score)
-				liu08_weighted_score_list.append(liu08_weighted_score * 10)	# multiplied by 10 to present in percentage
+				liu08_weighted_score = liu08_weighted_score * 10
+				# this is to avoid Python rounding up, for eg., 99.999 to 100.0. This is a bit of hard coding but this
+				# list will not be used anywhere else for calculation purposes. It'll be just used for writing in output
+				if temp > 99.94:
+					temp = 99.9
+				liu08_weighted_score_list.append(temp)	# multiplied by 10 to present in percentage
 				# print '%i Liu08  %s  %0.2f' %(column_no,aa_most, liu08_weighted_score)
 
 			# Calculates simple Liu08 NON-Sequence Weighted residue conservation score
@@ -1208,7 +1213,12 @@ def fetch_mismatch():
 				for aa in aa_label:
 					matrix_score = float(dict_similarity_matrix[aa_most][aa])
 					liu08_simple_score += ( matrix_score * dict_pos_freq[column_no][aa] )
-				liu08_simple_score_list.append(liu08_simple_score/len(column_aa) * 10)
+				temp = liu08_simple_score/len(column_aa) * 10
+				# this is to avoid Python rounding up, for eg., 99.999 to 100.0. This is a bit of hard coding but this
+				# list will not be used anywhere else for calculation purposes. It'll be just used for writing in output
+				if temp > 99.94:
+					temp = 99.9
+				liu08_simple_score_list.append(temp)
 
 
 		# # calculates shannon entropy - Turned off for now as it needs to be tested further
@@ -1441,6 +1451,10 @@ def fetch_mismatch():
 				identity_perc = float(identity_count) / (len(aligned_ids_list) - 1) * 100
 			else:
 				identity_perc = float(identity_count) / (len(aligned_ids_list)) * 100
+			# this is to avoid Python rounding up, for eg., 99.999 to 100.0. This is a bit of hard coding but this
+			# list will not be used anywhere else for calculation purposes. It'll be just used for writing in output
+			if identity_perc > 99.94:
+				identity_perc = 99.9
 			identity_perc_list.append(identity_perc)
 		else:
 			identity_count = 0
@@ -1466,6 +1480,10 @@ def fetch_mismatch():
 				similarity_perc = float(similarity_count) / (len(aligned_ids_list) - 1) * 100
 			else:
 				similarity_perc = float(similarity_count) / (len(aligned_ids_list)) * 100
+			# this is to avoid Python rounding up, for eg., 99.999 to 100.0. This is a bit of hard coding but this
+			# list will not be used anywhere else for calculation purposes. It'll be just used for writing in output
+			if similarity_perc > 99.94:
+				similarity_perc = 99.9
 			similarity_perc_list.append(similarity_perc)
 
 		# calculates count of unique amino acidss in column and sorts them in ascending order
