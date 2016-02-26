@@ -1,0 +1,20 @@
+2016-02-26 13:09:17 Run_Script_Main     INFO     ResCons begins!
+2016-02-26 13:09:17 Run_Script_Main     INFO     ResCon will run in 'Protein mode' as user has requested.
+2016-02-26 13:09:17 Run_Script_Main     INFO     'Reference file provided by user: 
+	/Users/Mana/Dropbox/22Feb_Data/Reference_seqs/Reference_IPPase_Bsub.fasta
+2016-02-26 13:09:17 Run_Script_Main     INFO     Output folder path provided by user: /Users/Mana/Dropbox/22Feb_Data/6_Residue_Conservation_Analysis/FamII/Output/
+2016-02-26 13:09:17 GUI_Main            INFO     Sequences File that will be used for alignment:  /Users/Mana/Dropbox/22Feb_Data/6_Residue_Conservation_Analysis/FamII/FamII_2487seqs.fasta
+2016-02-26 13:09:17 GUI_Main            INFO     All output files will be stored at: /Users/Mana/Dropbox/22Feb_Data/6_Residue_Conservation_Analysis/FamII/Output/
+2016-02-26 13:09:17 Run_Script_Main     INFO     All residue positions entered are less than the length of reference sequence.
+2016-02-26 13:09:17 Run_Script_Main     INFO     Residue conservation method chosen: liu08_simple
+2016-02-26 13:09:17 Run_Script_Main     INFO     Included Reference sequence in %identity and %conservation calculations?: No
+2016-02-26 13:09:17 Clustal_Alignment   INFO     Clustal alignment was requested.
+2016-02-26 13:09:17 Clustal_Alignment   INFO     Clustal omega source: User's computer
+2016-02-26 13:09:17 Clustal_Alignment   INFO     Number of sequences found in '/Users/Mana/Dropbox/22Feb_Data/6_Residue_Conservation_Analysis/FamII/FamII_2487seqs.fasta' are '2487'
+2016-02-26 13:09:17 Clustal_Alignment   INFO     Reference seq is not present in file: '/Users/Mana/Dropbox/22Feb_Data/6_Residue_Conservation_Analysis/FamII/FamII_2487seqs.fasta'. 
+	A new file '/Users/Mana/Dropbox/22Feb_Data/6_Residue_Conservation_Analysis/FamII/Output/FamII_2487seqs_Reference_SeqAdded.fasta' is created with Reference Seq appended to it.
+2016-02-26 13:09:17 Clustal_Alignment   INFO     Clustal commandline provided by user: 
+	{'guidetree_out': 'default.newick', 'outfmt': 'fasta', 'force': 'True', 'infile': '/Users/Mana/Dropbox/22Feb_Data/6_Residue_Conservation_Analysis/FamII/Output/FamII_2487seqs_Reference_SeqAdded.fasta', 'iterations': 5}
+2016-02-26 13:09:17 Clustal_Alignment   INFO     Equivalent command prompt command that will be used to execute clustal omega alignment: 
+	'clustalo -i /Users/Mana/Dropbox/22Feb_Data/6_Residue_Conservation_Analysis/FamII/Output/FamII_2487seqs_Reference_SeqAdded.fasta --guidetree-out /Users/Mana/Dropbox/22Feb_Data/6_Residue_Conservation_Analysis/FamII/Output/Tree_FamII_2487seqs_Reference_SeqAdded.newick -o /Users/Mana/Dropbox/22Feb_Data/6_Residue_Conservation_Analysis/FamII/Output/Aligned_Clustalo_FamII_2487seqs_Reference_SeqAdded.fasta --outfmt fasta --iterations 5 --force'
+2016-02-26 13:09:17 Clustal_Alignment   INFO     Clustal alignment will begin now. Warning: It may take few seconds to several minutes depending on sequences provided and your processor.

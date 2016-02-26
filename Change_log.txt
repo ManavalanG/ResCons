@@ -1,4 +1,13 @@
-Ver 27 (under development) major modifications:
+Change logs for ResCon since version 21:
+========================================
+
+Ver 28 (under development) major modifications:
+
+
+------------------------------------------------------------------------------------------------------------------------
+
+
+Ver 27 major modifications:
 
 1. Added lower case or mixed upper/lower case support for Liu08 scoring method.
 
