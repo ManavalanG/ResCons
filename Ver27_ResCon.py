@@ -90,7 +90,7 @@ Ver 27 (under development) major modifications:
    Completed: Logging is added to enable logging the options chosen by user
 
 6. Moved option buttons to choose 'residue conservation method' and 'include reference seq in calculations?' from
-   'Edit settings' menu to 'Mismatch analyzer' canvas. This way makes more sense but looks ugly though.
+   'Edit settings' menu to 'Mismatch analyzer' canvas. This way makes more sense but looks a bit ugly though.
 
 7. Removed checkbutton for 'html formatting' from 'Mismatch analyzer'. It is set to True in code.
 
@@ -345,6 +345,10 @@ with open(settings_file_name, 'Ur') as settings_data:
 
 			elif var_name == 'mismatch_color':	# gets color for mismatching residues
 				mismatch_color = trimmed_3
+
+			elif var_name == 'color_gradient':
+				color_gradient = trimmed_3.replace(' ', '')
+				color_gradient = color_gradient.split(',')
 
 			elif var_name == 'conservation_method':		# gets scoring method to calculate residue conservation
 				conserve_method = trimmed_3.lower()
@@ -1201,7 +1205,7 @@ def fetch_mismatch():
 				liu08_weighted_score = liu08_weighted_score * 10
 				# this is to avoid Python rounding up, for eg., 99.999 to 100.0. This is a bit of hard coding but this
 				# list will not be used anywhere else for calculation purposes. It'll be just used for writing in output
-				if temp > 99.94:
+				if temp > 99.94 and temp < 100:
 					temp = 99.9
 				liu08_weighted_score_list.append(temp)	# multiplied by 10 to present in percentage
 				# print '%i Liu08  %s  %0.2f' %(column_no,aa_most, liu08_weighted_score)
@@ -1216,7 +1220,7 @@ def fetch_mismatch():
 				temp = liu08_simple_score/len(column_aa) * 10
 				# this is to avoid Python rounding up, for eg., 99.999 to 100.0. This is a bit of hard coding but this
 				# list will not be used anywhere else for calculation purposes. It'll be just used for writing in output
-				if temp > 99.94:
+				if temp > 99.94 and temp < 100:
 					temp = 99.9
 				liu08_simple_score_list.append(temp)
 
@@ -1453,7 +1457,7 @@ def fetch_mismatch():
 				identity_perc = float(identity_count) / (len(aligned_ids_list)) * 100
 			# this is to avoid Python rounding up, for eg., 99.999 to 100.0. This is a bit of hard coding but this
 			# list will not be used anywhere else for calculation purposes. It'll be just used for writing in output
-			if identity_perc > 99.94:
+			if identity_perc > 99.94 and identity_perc < 100:
 				identity_perc = 99.9
 			identity_perc_list.append(identity_perc)
 		else:
@@ -1482,7 +1486,7 @@ def fetch_mismatch():
 				similarity_perc = float(similarity_count) / (len(aligned_ids_list)) * 100
 			# this is to avoid Python rounding up, for eg., 99.999 to 100.0. This is a bit of hard coding but this
 			# list will not be used anywhere else for calculation purposes. It'll be just used for writing in output
-			if similarity_perc > 99.94:
+			if similarity_perc > 99.94 and similarity_perc < 100:
 				similarity_perc = 99.9
 			similarity_perc_list.append(similarity_perc)
 
@@ -1915,8 +1919,9 @@ def html_formatting():
 		# color_gradient = ['#FF8000', '#E28E00', '#C69C00', '#AAAA00', '#8DB800', '#71C600', '#55D400', '#38E200', '#1CF000', '#00FF00']	# orange to green
 		# color_gradient = ['#FF0000', '#FF2A00', '#FF5500', '#FF7F00', '#FFAA00', '#FFFF00', '#D4FF00', '#AAFF00', '#7FFF00', '#2AFF00']		# red, green, yellow
 		# color_gradient = ['#a50026', '#d73027', '#f46d43', '#fdae61', '#fee08b', '#d9ef8b', '#a6d96a', '#66bd63', '#1a9850', '#006837']		# red to green
-		color_gradient = ['#f2e6ec', '#f0c0d9', '#de68a6', '#cc3399', '#fed98e', '#fe9929', '#cc4c02', '#99cc99', '#34a963', '#006837']		# pink to brown to green
+		# color_gradient = ['#f2e6ec', '#f0c0d9', '#de68a6', '#cc3399', '#fed98e', '#fe9929', '#cc4c02', '#99cc99', '#34a963', '#006837']		# pink to brown to green
 
+		# Value of variable 'color_gradient' is read from Settings file
 		seq_colored = '\n\n<strong><ins>Reference Sequence Color Coded by Conservation</ins></strong>\n\n'
 		seq_colored += 'Color code:\n\n<spaced>'
 		for no in range(0, len(color_gradient)):

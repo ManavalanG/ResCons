@@ -15,6 +15,13 @@
     mismatch_color:  #F73D94
 
 
+  ## Color codes used to rank conservation of residues in reference sequence in HTML output file
+  ## Color codes should be separated by comma. Space is optional.
+  ## Default:    #f2e6ec, #f0c0d9, #de68a6, #cc3399, #fed98e, #fe9929, #cc4c02, #99cc99, #34a963, #006837
+
+  color_gradient:    #f2e6ec, #f0c0d9, #de68a6, #cc3399, #fed98e, #fe9929, #cc4c02, #99cc99, #34a963, #006837
+
+
   ## Include Reference sequence in %Identity and % residue conservation analysis ##
   ## (Default is 'Yes'. If it should not be included, set it to 'No')
 
@@ -41,9 +48,9 @@
 
   ## Clustalo command (local) used in ResCon ##
   ## Note that accented/smart symbols will result in error. Especially True in Mac OS when using TextEdit. For example: ‘ is not same as '. Former is not allowed. Use dumb quotes. Copy and paste can help.
-  ## Default:   {'outfmt': 'clu', 'iterations': 3, 'residuenumber': 'True', 'force': 'True', 'guidetree_out': 'default.newick'}
+  ## Default:   {'outfmt': 'clu', 'iterations': 3, 'force': 'True', 'guidetree_out': 'default.newick'}
 
-    Clustalo_Command_local:  {'outfmt': 'fasta', 'iterations': 3, 'residuenumber': 'True', 'force': 'True', 'guidetree_out': 'default.newick'}
+    Clustalo_Command_local:  {'outfmt': 'fasta', 'iterations': 3, 'force': 'True', 'guidetree_out': 'default.newick'}
 
 
   ## Clustalo command (for web server) used in ResCon ##
