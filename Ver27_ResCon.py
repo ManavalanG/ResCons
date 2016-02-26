@@ -26,49 +26,6 @@ __version__ = "18 beta"
 __email__ = "manavalan.g@gmail.com"
 
 
-from Bio.Align.Applications import ClustalOmegaCommandline
-from Bio import AlignIO
-from Bio import SeqIO
-from Bio.Blast import NCBIXML
-from Bio.SeqRecord import SeqRecord
-from Bio.Align import MultipleSeqAlignment
-from Bio import Phylo
-from Tkinter import *
-import tkMessageBox
-from tkFileDialog import askopenfilename, askdirectory
-from tkColorChooser import askcolor
-import os, errno, logging, ast, shutil, re
-import subprocess
-import traceback		# to raise exceptions in gui
-import threading
-from sys import platform as _platform	# to determine OS under use
-import csv
-import operator
-import StringIO
-from clustalo_embl_api import clustalo_api
-
-terminal_output = False			# to show or not to show error/info in the terminal
-# terminal_output = True
-
-additional_imports = True	# this enables to run script in case such features from thrid party libs are not desired.
-if additional_imports:
-	natural_sorting = True		# if native sorting is desired in output csv file from mismatch analyzer
-	if natural_sorting:
-		from natsort import natsorted
-
-	Image_in_GUI = False		# if logos needed to be shown in GUI
-	if Image_in_GUI:
-		from PIL import Image, ImageTk		# to add image to the GUI
-
-	matplot_reqd = False		# to draw bar graph in output html using matplot; if set to false, javascript may be used to draw bar chart
-	if matplot_reqd:
-		import matplotlib.pyplot as plt
-else:
-	natural_sorting = False
-	Image_in_GUI = False
-	matplot_reqd = False
-
-
 '''
 Ver 27 (under development) major modifications:
 
@@ -96,6 +53,8 @@ Ver 27 (under development) major modifications:
 
 8. Tool 'Filter fasta by Blast's E-value' has been partly rewritten. Now this tool can filter by 'Bit score' in addition
    to 'E-value' filtering. Tool has been renamed as 'Filter Blast by Bit or E-value'.
+
+9. Now 10-color-gradient-codes are read from Settings file for coloring reference seq by conservation score in HTML output file.
 
 
 ------------------------------------------------------------------------------------------------------------------------
@@ -208,8 +167,52 @@ Ver 21 modifications:
 3. Added bar chart to html output showing similarity and identity % (using two methods:
 	1. used Matplotlib	- successfully done but final software product size increases to > 150 MB.
 	2. Used javascript in html5 - successfully implemented. Final software will remain the same size as now!)
-
+------------------------------------------------------------------------------------------------------------------------
 '''
+
+
+from Bio.Align.Applications import ClustalOmegaCommandline
+from Bio import AlignIO
+from Bio import SeqIO
+from Bio.Blast import NCBIXML
+from Bio.SeqRecord import SeqRecord
+from Bio.Align import MultipleSeqAlignment
+from Bio import Phylo
+from Tkinter import *
+import tkMessageBox
+from tkFileDialog import askopenfilename, askdirectory
+from tkColorChooser import askcolor
+import os, errno, logging, ast, shutil, re
+import subprocess
+import traceback		# to raise exceptions in gui
+import threading
+from sys import platform as _platform	# to determine OS under use
+import csv
+import operator
+import StringIO
+from clustalo_embl_api import clustalo_api
+
+terminal_output = False			# to show or not to show error/info in the terminal
+# terminal_output = True
+
+additional_imports = True	# this enables to run script in case such features from thrid party libs are not desired.
+if additional_imports:
+	natural_sorting = True		# if native sorting is desired in output csv file from mismatch analyzer
+	if natural_sorting:
+		from natsort import natsorted
+
+	Image_in_GUI = False		# if logos needed to be shown in GUI
+	if Image_in_GUI:
+		from PIL import Image, ImageTk		# to add image to the GUI
+
+	matplot_reqd = False		# to draw bar graph in output html using matplot; if set to false, javascript may be used to draw bar chart
+	if matplot_reqd:
+		import matplotlib.pyplot as plt
+else:
+	natural_sorting = False
+	Image_in_GUI = False
+	matplot_reqd = False
+
 
 # This is to enable actions specific to particular operating system
 # win_os = False		# for both Windows and Ubuntu OS
