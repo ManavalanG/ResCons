@@ -250,7 +250,10 @@ elif _platform == "win32":		# for Windows
 
 # For logging. Logging module is utilized but sys.stderr is utilized for writing
 # into output log file as it enables to record unexpected errors (stderr) from the program during its execution.
-current_path = os.path.dirname( os.path.realpath(__file__) )	# gets filepath of this script file
+if win_os:		# if __file__ not in quotes, it results in error after executable is installed in Windows
+	current_path = os.path.dirname( os.path.realpath("__file__") )	# gets filepath of this script file
+else:
+	current_path = os.path.dirname( os.path.realpath(__file__) )	# gets filepath of this script file
 if win_os and not ubuntu_os:
 	# In Windows, write privilages restricts writing log file in 'program files' folder
 	# This part writes log file to C:/temp folder. However if C: is not
