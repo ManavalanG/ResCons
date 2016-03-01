@@ -1013,7 +1013,7 @@ def fetch_mismatch():
 		alignment_len = len(msa_data[0].seq)
 
 		# Choose which Liu08 scoring method (Sequence weighted or not)
-		if conserve_method  == 'liu08_simple':
+		if conserve_method  == 'liu08_non_seq_weighted':
 			liu08_simple_score_list = []
 			positions_concerned = query_in_Alignment
 			method_name = "Liu08 Non-Sequence-weighted"		# for csv output
@@ -1025,7 +1025,7 @@ def fetch_mismatch():
 
 		# get frequency and unique amino acid count in a column
 		# To calculate sequence weight, all columns need to be processed here
-		# if conserve_method in ['liu08_simple', 'liu08_seq_weighted']:
+		# if conserve_method in ['liu08_non_seq_weighted', 'liu08_seq_weighted']:
 		dict_pos_freq = {}
 		dict_pos_unique_aa = {}
 		for column_no in positions_concerned:
@@ -1074,7 +1074,7 @@ def fetch_mismatch():
 				for row_no in range(0, len(column_aa)):
 					matrix_score = float( dict_similarity_matrix[aa_most][column_aa[row_no]] )
 					liu08_weighted_score += (dict_seq_weight[row_no] * matrix_score)
-				liu08_weighted_score = liu08_weighted_score * 10
+				temp = liu08_weighted_score * 10
 				# this is to avoid Python rounding up, for eg., 99.999 to 100.0. This is a bit of hard coding but this
 				# list will not be used anywhere else for calculation purposes. It'll be just used for writing in output
 				if temp > 99.94 and temp < 100:
@@ -1084,7 +1084,7 @@ def fetch_mismatch():
 
 			# Calculates simple Liu08 NON-Sequence Weighted residue conservation score
 			# Score is presented in percentage
-			if conserve_method == 'liu08_simple':
+			if conserve_method == 'liu08_non_seq_weighted':
 				liu08_simple_score = 0
 				for aa in aa_label:
 					matrix_score = float(dict_similarity_matrix[aa_most][aa])
@@ -1299,7 +1299,7 @@ def fetch_mismatch():
 	# List 'conserve_score_list' will be used to write data in output files based on residue conservation method needed
 	if conserve_method == 'amino_acid_grouping':
 		conserve_score_list = similarity_perc_list      # both lists will change when one changes
-	elif conserve_method == 'liu08_simple':
+	elif conserve_method == 'liu08_non_seq_weighted':
 		conserve_score_list = liu08_simple_score_list
 	elif conserve_method == 'liu08_seq_weighted':
 		conserve_score_list = liu08_weighted_score_list
@@ -3737,8 +3737,8 @@ dummy.grid(padx = 15)
 
 label_text(frame2, 'Conservation Scoring', 1, 17, 13, 1)
 
-options = ("Amino Acid Grouping", "Liu08 Simple", "Liu08 Seq Weighted")		# Easy readable format
-options_lower = ['amino_acid_grouping', 'liu08_simple', 'liu08_seq_weighted']
+options = ("Amino Acid Grouping", "Liu08 Non Seq Weighted", "Liu08 Seq Weighted")		# Easy readable format
+options_lower = ['amino_acid_grouping', 'liu08_non_seq_weighted', 'liu08_seq_weighted']
 index_no = options_lower.index(conserve_method)
 conserve_method_val = StringVar()
 conserve_method_val.set( options[index_no] )
