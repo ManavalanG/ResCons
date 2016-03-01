@@ -1016,9 +1016,12 @@ def fetch_mismatch():
 		if conserve_method  == 'liu08_simple':
 			liu08_simple_score_list = []
 			positions_concerned = query_in_Alignment
+			method_name = "Liu08 Non-Sequence-weighted"		# for csv output
 		elif conserve_method == 'liu08_seq_weighted':
 			liu08_weighted_score_list = []
 			positions_concerned = range(alignment_len)
+			method_name = "Liu08 Sequence-weighted"			# for csv output
+
 
 		# get frequency and unique amino acid count in a column
 		# To calculate sequence weight, all columns need to be processed here
@@ -1280,8 +1283,7 @@ def fetch_mismatch():
 		Output_handle_mismatch_csv.write("** (Note: Calculation DOESN'T include Reference sequences's residue at that position) **\n\n")
 
 	if protein_mode:
-		Output_handle_mismatch_csv.write(",Expected Residue, ,Identity_count,% Identity,% Conservation_Liu08_Weighted,"
-									 "Unique residues' count and fraction\n")
+		Output_handle_mismatch_csv.write( (",Expected Residue, ,Identity_count,%% Identity,%% Conservation (%s),Unique residues' count and fraction\n") % method_name)
 	else:
 		Output_handle_mismatch_csv.write(",Expected Residue, ,Identity_count,% Identity,"
 									 "Unique residues' count and fraction\n")
@@ -1358,6 +1360,8 @@ def fetch_mismatch():
 			if similarity_perc > 99.94 and similarity_perc < 100:
 				similarity_perc = 99.9
 			similarity_perc_list.append(similarity_perc)
+			method_name = "Liu08 Amino acid Grouping"			# for csv output
+
 
 		# calculates count of unique amino acidss in column and sorts them in ascending order
 		unique_each = ''
@@ -1452,7 +1456,7 @@ def fetch_mismatch():
 											 '%%\t(%i residues are identical)' % identity_count_list[num] + '\n')
 
 			if protein_mode:		# residue conservation details only if proteins sequences are used
-				Output_handle_mismatch_txt.write('% Conservation_Score_Liu08_Weighted'.ljust(45) + ':\t' +
+				Output_handle_mismatch_txt.write('% Conservation_Score'.ljust(45) + ':\t' +
 													str(conserve_score_list[num]) + '%%\n')
 
 			if len(Mismatch) != 0:					# This is to write into output file if mismatches were found
@@ -1911,12 +1915,12 @@ def html_formatting():
 			out_html_handle.write('\n')
 
 	temp = '\n<ins>Input files used:</ins>\n\t %s \n\t %s\n\n' %(Aligned_Filename, Reference_file)
-	temp += 'Residue conservation method used                :   %s\n' %conserve_method
+	temp += 'Residue conservation method used                :   <b>%s</b>\n' %conserve_method
 	if ref_included:
 		ref_temp = 'Yes'
 	else:
 		ref_temp = 'No'
-	temp += 'Is Reference sequence included in calculations? :   %s\n' % ref_temp
+	temp += 'Is Reference sequence included in calculations? :   <b>%s</b>\n' % ref_temp
 	out_html_handle.write(temp + "\n</PRE>\n</BODY>\n</HTML>")
 	out_html_handle.close()
 	html_log.info('Alignment formatting was completed and saved as above mentioned html file.')
