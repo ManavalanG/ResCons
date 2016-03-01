@@ -27,7 +27,7 @@ __email__ = "manavalan.g@gmail.com"
 
 
 '''
-Ver 27 (under development) major modifications:
+Ver 27 major modifications (Completed):
 
 1. Added lower case or mixed upper/lower case support for Liu08 scoring method.
 
@@ -55,119 +55,6 @@ Ver 27 (under development) major modifications:
    to 'E-value' filtering. Tool has been renamed as 'Filter Blast by Bit or E-value'.
 
 9. Now 10-color-gradient-codes are read from Settings file for coloring reference seq by conservation score in HTML output file.
-
-
-------------------------------------------------------------------------------------------------------------------------
-
-
-Ver 26 major modifications:
-
-1. Adding residue conservation score by following methods:
-		a. Shannon entropy (discontinued)
-		b. Liu08
-
-2. Adding color coded Reference sequence as part of html file output based on conservation scale for residue positions
-   requested. Only in Protein-mode.
-
-3. Changed %Similarity by alphanet grouping to % conservation using Liu08 method. These are implemented in both html
-   and csv output file. Grouping by alphabet will still be used for coloring residues in html output.
-
-4. In HTML output, space between letters in alignment section are increased using <spaced> tag.
-
-5. Added ability for user to choose 'All residue positions' in Mismatch analyzer.
-
-6. Added verification step to compare if Reference sequence matches exactly to corresponding sequence in input
-   MSA file or input Sequences file (if needed) as part of tool 'Mismatch analyzer'.
-
-
-------------------------------------------------------------------------------------------------------------------------
-
-
-Ver 25 major modifications:
-
-1. Removed 'outfile' parameter option that was used as part of clustalo command. It was redundant now that Rescon allows
-   choosing output folder.
-
-2. Made GUI changes so as to appropriately accommodate clustal omega's web server options.
-
-3. Made several changes to the function that manages clustal alignment using EMBL-EBI webserver.
-
-4. Edited files -settings file, log file and user guide - to be called by complete file path instead of relative path.
-
-5. In GenPept/GenBank to fasta converter, titles 'domain, phylum, class' were changed to more generic 'taxon-1, 2, 3'
-
-6  In 'Mismatch analyzer', text file output is set to 'False'. CSV is better in every sense over this text output.
-   If needed, it can be enabled by setting 'mismatches_text_output' to True.
-
-7. Corrected bug - Mismatch analyzer fails if input clustal aligned MSA doesn't have symbol data about residue
-   conservation in a column. For example, ClustalW aligned MSA doesn't have symbol line.
-
-------------------------------------------------------------------------------------------------------------------------
-
-Ver 24 major modifications:
-
-1. External files required to run Rescon are put into a new folder.
-
-2. Bug found and removed: Bug in 'subtree seqs extractor' where it suggests probable numbers if branch length input
-   was not found in the tree file. This bug was Windows/Ubuntu specific. It is fixed now.
-
-3. In 'Subtree Seqs Extractor' tool, the checkbox option 'Remove -ve branch length' was removed. It might confuse users.
-   Now, code is changed to always extract branch with -ve value.
-
-4. Now input residue positions in 'mismatch analyzer' can be separated by tabs (previously only comma was allowed.)
-
-Note: 1. Have to clean up the feature - clustal alignment through internet.
-
-------------------------------------------------------------------------------------------------------------------------
-
-Ver 23 major modifications:
-
-1. In process of facilitating clustal alignment through internet (Acheived but it needs to be cleaned up).
-
-2. Added 'count of matches and mismatches' feature in both csv and html output.
-
-3. GenPept to fasta converter is modified to account for Candidatus species.
-
-------------------------------------------------------------------------------------------------------------------------
-
-Ver 22 major modifications:
-1. Results get sorted now in output csv file. Uses third party lib 'natsort' to achieve best sorting. Added ability
-   to run without 'natsort' lib but sorting is done in undesired format. For example, [1,10,2,13] will appear as
-   [1,10,13,2] if natsort lib is not used. If it is used, result would be [1,2,10,13] as user would expect.
-
-2. Added a feature of accounting for negative branch length in the phylogenetic tree, if user opts to.
-
-3. In Genpept to fasta converter, 'Taxon ID' and 'Version' are added as header options to choose from and 'locus name'
-   has been changed to 'Locus ID'.
-
-4. In Genpept to fasta converter, now you can change 'sensitive symbols that are allowed to be replaced in header id'
-   through settings file or gui settings.
-
-5. If 'amino acid similarity sets' is set to empty in either gui settings or settings file, now ResCon will treat
-   as if processing is done in dna mode (ie. residue similarity will not be analyzed).
-
-6. In 'Subtree sequences extractor', branch length probables are edited slightly to account for trees with less than
-   6 branch lengths.
-
-7. HTML code cleaned up a bit.
-
-
-------------------------------------------------------------------------------------------------------------------------
-
-Ver 21 modifications:
-1. Removed the feature of replacing comma with '_$' in tool 'Fasta Description/ID extractor'. Instead standardized the
-   way csv file gets written when comma or double quote is part of the string itself.
-
-   As a part of above change, disabled the feature of allowing user to change '_$' with any symbol. Also removed feature
-   that looks for '_$' when 'filter by seqs' description' tool is used.
-
-2. Standardized csv file writing in tool 'mismatch analyzer'. If comma or double quote is in the cell value, now
-   they are formatted in the standardized manner.
-
-3. Added bar chart to html output showing similarity and identity % (using two methods:
-	1. used Matplotlib	- successfully done but final software product size increases to > 150 MB.
-	2. Used javascript in html5 - successfully implemented. Final software will remain the same size as now!)
-------------------------------------------------------------------------------------------------------------------------
 '''
 
 

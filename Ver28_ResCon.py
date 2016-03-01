@@ -2980,7 +2980,7 @@ def fasta_filter_by_id():
 	else:
 		include_IDs = False
 		exclude_IDs = True
-		idfilter_log.info("User chose 'Remove IDs in list'.")
+		idfilter_log.info("User chose 'Exclude IDs in list'.")
 
 
 	partial_ids = partial_id_checkval.get()
@@ -4348,7 +4348,7 @@ def top_win():
 	include_IDs_val = Radiobutton(frame_fasta_id_filter, text= 'Include IDs in list', variable=include_or_exclude_IDs, value=1, command=fn_to_pass)
 	include_IDs_val.grid(row=49, column=1)
 
-	remove_IDs_val = Radiobutton(frame_fasta_id_filter, text= 'Remove IDs in list', variable=include_or_exclude_IDs, value=2, command=fn_to_pass)
+	remove_IDs_val = Radiobutton(frame_fasta_id_filter, text= 'Exclude IDs in list', variable=include_or_exclude_IDs, value=2, command=fn_to_pass)
 	remove_IDs_val.grid(row=50, column=1)
 
 	partial_id_check, partial_id_checkval = checkbox_fn(frame_fasta_id_filter, 'IDs are Partial', 49, 2, fn_to_pass)

@@ -1,20 +1,63 @@
-2016-02-26 13:09:17 Run_Script_Main     INFO     ResCons begins!
-2016-02-26 13:09:17 Run_Script_Main     INFO     ResCon will run in 'Protein mode' as user has requested.
-2016-02-26 13:09:17 Run_Script_Main     INFO     'Reference file provided by user: 
-	/Users/Mana/Dropbox/22Feb_Data/Reference_seqs/Reference_IPPase_Bsub.fasta
-2016-02-26 13:09:17 Run_Script_Main     INFO     Output folder path provided by user: /Users/Mana/Dropbox/22Feb_Data/6_Residue_Conservation_Analysis/FamII/Output/
-2016-02-26 13:09:17 GUI_Main            INFO     Sequences File that will be used for alignment:  /Users/Mana/Dropbox/22Feb_Data/6_Residue_Conservation_Analysis/FamII/FamII_2487seqs.fasta
-2016-02-26 13:09:17 GUI_Main            INFO     All output files will be stored at: /Users/Mana/Dropbox/22Feb_Data/6_Residue_Conservation_Analysis/FamII/Output/
-2016-02-26 13:09:17 Run_Script_Main     INFO     All residue positions entered are less than the length of reference sequence.
-2016-02-26 13:09:17 Run_Script_Main     INFO     Residue conservation method chosen: liu08_simple
-2016-02-26 13:09:17 Run_Script_Main     INFO     Included Reference sequence in %identity and %conservation calculations?: No
-2016-02-26 13:09:17 Clustal_Alignment   INFO     Clustal alignment was requested.
-2016-02-26 13:09:17 Clustal_Alignment   INFO     Clustal omega source: User's computer
-2016-02-26 13:09:17 Clustal_Alignment   INFO     Number of sequences found in '/Users/Mana/Dropbox/22Feb_Data/6_Residue_Conservation_Analysis/FamII/FamII_2487seqs.fasta' are '2487'
-2016-02-26 13:09:17 Clustal_Alignment   INFO     Reference seq is not present in file: '/Users/Mana/Dropbox/22Feb_Data/6_Residue_Conservation_Analysis/FamII/FamII_2487seqs.fasta'. 
-	A new file '/Users/Mana/Dropbox/22Feb_Data/6_Residue_Conservation_Analysis/FamII/Output/FamII_2487seqs_Reference_SeqAdded.fasta' is created with Reference Seq appended to it.
-2016-02-26 13:09:17 Clustal_Alignment   INFO     Clustal commandline provided by user: 
-	{'guidetree_out': 'default.newick', 'outfmt': 'fasta', 'force': 'True', 'infile': '/Users/Mana/Dropbox/22Feb_Data/6_Residue_Conservation_Analysis/FamII/Output/FamII_2487seqs_Reference_SeqAdded.fasta', 'iterations': 5}
-2016-02-26 13:09:17 Clustal_Alignment   INFO     Equivalent command prompt command that will be used to execute clustal omega alignment: 
-	'clustalo -i /Users/Mana/Dropbox/22Feb_Data/6_Residue_Conservation_Analysis/FamII/Output/FamII_2487seqs_Reference_SeqAdded.fasta --guidetree-out /Users/Mana/Dropbox/22Feb_Data/6_Residue_Conservation_Analysis/FamII/Output/Tree_FamII_2487seqs_Reference_SeqAdded.newick -o /Users/Mana/Dropbox/22Feb_Data/6_Residue_Conservation_Analysis/FamII/Output/Aligned_Clustalo_FamII_2487seqs_Reference_SeqAdded.fasta --outfmt fasta --iterations 5 --force'
-2016-02-26 13:09:17 Clustal_Alignment   INFO     Clustal alignment will begin now. Warning: It may take few seconds to several minutes depending on sequences provided and your processor.
+2016-02-29 18:26:34 Filter_by_id        INFO     User has requested tool 'Filter fasta by sequences ID'.
+2016-02-29 18:26:34 Filter_by_id        INFO     User chose 'Remove IDs in list'.
+2016-02-29 18:26:34 Filter_by_id        INFO     State of 'IDs are Partial': True
+2016-02-29 18:26:34 Filter_by_id        INFO     Text file (containing IDs) provided by user:
+	/Users/Mana/Dropbox/22Feb_Data/6_Residue_Conservation_Analysis/Ecoli/Output_iter3/Analysis/Mismatches_only/Mismatching_IDs_Ecoli.txt
+2016-02-29 18:26:34 Run_Script_Main     ERROR    Error that resulted when creating path "/Users/Mana/Dropbox/22Feb_Data/6_Residue_Conservation_Analysis/Ecoli/Output_iter3/Analysis/Matches_only/":
+  [Errno 17] File exists: '/Users/Mana/Dropbox/22Feb_Data/6_Residue_Conservation_Analysis/Ecoli/Output_iter3/Analysis/Matches_only/'
+2016-02-29 18:26:34 Run_Script_Main     WARNING  Folder "/Users/Mana/Dropbox/22Feb_Data/6_Residue_Conservation_Analysis/Ecoli/Output_iter3/Analysis/Matches_only/" already exists. All or some files in it may get overwritten by ResCons. Do you wish to continue?
+2016-02-29 18:26:36 Run_Script_Main     INFO     User has selected (True = Yes, False = No):  True
+2016-02-29 18:26:36 Run_Script_Main     INFO     ResCons will continue as user requested.
+2016-02-29 18:26:36 Filter_by_id        INFO     Output folder path provided by user:
+	/Users/Mana/Dropbox/22Feb_Data/6_Residue_Conservation_Analysis/Ecoli/Output_iter3/Analysis/Matches_only/
+2016-02-29 18:26:36 Filter_by_id        INFO     IDs recognised by software: ['WP_012625475.1', 'WP_012474940.1', 'WP_053438794.1', 'WP_009780237.1', 'WP_047874896.1', 'WP_045045090.1', 'WP_045028211.1', 'WP_038477742.1', 'WP_038192711.1', 'WP_038139208.1', 'WP_036791911.1', 'WP_030073894.1', 'WP_005471144.1', 'WP_018916403.1', 'WP_014291612.1', 'WP_009388256.1', 'WP_037319789.1', 'WP_034257663.1', 'WP_032526634.1', 'WP_027065459.1', 'WP_035599143.1', 'WP_008956972.1', 'WP_014953602.1', 'WP_020571882.1', 'WP_020539118.1', 'XP_010930986.1', 'XP_010325309.1', 'WP_029337941.1', 'WP_012947940.1', 'WP_013444283.1', 'XP_012701719.1', 'WP_038471911.1', 'WP_035908648.1', 'WP_055721937.1', 'WP_043368586.1', 'WP_036917053.1', 'WP_038651679.1', 'WP_036901187.1', 'NP_874903.1', 'WP_010316670.1', 'WP_010307330.1', 'WP_006171226.1', 'WP_012195066.1', 'WP_011294476.1', 'WP_011130626.1', 'WP_030421777.1', 'WP_049714356.1', 'WP_045932882.1', 'WP_042424779.1', 'WP_042415340.1', 'WP_042365301.1', 'WP_040275884.1', 'WP_037606825.1', 'WP_030367711.1', 'WP_030354645.1', 'WP_027944868.1', 'WP_058927454.1', 'WP_058042586.1', 'WP_051450398.1', 'WP_020717964.1', 'WP_020554529.1', 'WP_048346929.1', 'WP_043695633.1', 'WP_006853397.1', 'WP_007101918.1', 'WP_007097364.1', 'WP_006043594.1', 'WP_011932536.1', 'WP_011619933.1', 'WP_048017973.1', 'WP_010311975.1', 'WP_003921656.1', 'WP_057003462.1', 'WP_048893630.1', 'WP_020823986.1', 'WP_041542133.1', 'WP_029981239.1', 'WP_052456751.1', 'WP_044708262.1', 'XP_005973273.1', 'WP_037319374.1', 'WP_026933612.1', 'WP_026915214.1', 'WP_013073192.1', 'WP_011710619.1', 'WP_057482175.1', 'WP_044228174.1', 'YP_446130.1', 'WP_013062410.1', 'WP_011404754.1', 'WP_013768185.1', 'WP_044594794.1', 'WP_032968426.1', 'XP_010489523.1', 'XP_010113422.1', 'XP_007046886.1', 'XP_013444528.1', 'XP_009405327.1', 'XP_006429017.1', 'XP_006418371.1', 'XP_007144464.1', 'WP_007597438.1', 'WP_019478425.1', 'WP_042849971.1', 'WP_032526815.1', 'WP_032524695.1', 'WP_032522498.1', 'WP_032519407.1', 'WP_032517787.1', 'WP_032513915.1', 'WP_025955351.1', 'WP_025975748.1', 'WP_025971850.1', 'WP_025969094.1', 'WP_025965434.1', 'WP_025953551.1', 'WP_025941431.1', 'WP_025929939.1', 'WP_025926151.1', 'WP_025924270.1', 'WP_025914330.1', 'WP_025892912.1', 'WP_002805942.1', 'WP_019474049.1', 'WP_011862531.1', 'WP_011819891.1', 'WP_011818020.1', 'WP_011376071.1', 'XP_001327291.1', 'WP_038556297.1', 'WP_011363697.1', 'WP_011360432.1', 'WP_009789251.1', 'WP_011132146.1', 'WP_038543655.1', 'WP_015621649.1', 'XP_001442714.1', 'WP_012953793.1', 'XP_010905721.1', 'WP_028227131.1', 'WP_017968915.1', 'XP_009371641.1', 'WP_042388310.1', 'WP_007420790.1', 'WP_008489581.1', 'WP_049652137.1', 'WP_045696511.1', 'WP_037973866.1', 'WP_037901266.1', 'WP_033351763.1', 'WP_051829822.1', 'WP_023790767.1', 'WP_042507785.1', 'NP_661717.1', 'WP_007306938.1', 'WP_010932504.1', 'WP_051127291.1', 'XP_010263621.1', 'XP_005968954.1', 'XP_010462897.1', 'WP_037468284.1', 'WP_012948686.1', 'WP_011935290.1', 'WP_028951460.1', 'WP_009687411.1', 'XP_010254786.1', 'WP_051072622.1', 'XP_005977341.1', 'XP_014626017.1', 'XP_010482434.1', 'WP_060175032.1', 'WP_011128629.1', 'XP_013227981.1', 'XP_010489935.1', 'XP_014627990.1', 'WP_027341333.1', 'WP_040666440.1', 'XP_008781015.1', 'WP_018263385.1', 'WP_014219371.1', 'WP_004030436.1', 'WP_014727087.1', 'XP_008781409.1', 'WP_039146731.1', 'WP_027561371.1', 'WP_028352275.1', 'WP_014493256.1', 'WP_050385533.1', 'WP_027054444.1', 'WP_041009554.1', 'WP_038646356.1', 'WP_027029348.1', 'WP_056568384.1', 'WP_019857724.1', 'WP_032929992.1', 'WP_052214706.1', 'WP_015932235.1', 'WP_048463263.1', 'WP_044511184.1', 'WP_025225334.1', 'WP_041932228.1', 'WP_022841761.1', 'WP_035349492.1', 'WP_044934140.1', 'WP_036174138.1', 'WP_034360154.1', 'WP_011684777.1', 'WP_015807556.1', 'WP_020708296.1', 'WP_044182939.1', 'WP_011423145.1', 'WP_012528180.1', 'WP_059438257.1', 'WP_047855092.1', 'WP_043403906.1', 'WP_002635613.1', 'WP_002611555.1', 'WP_015346479.1', 'WP_013935980.1', 'WP_011550983.1', 'WP_044243203.1', 'WP_041448770.1', 'WP_046710998.1', 'WP_014393600.1', 'WP_027102232.1', 'WP_040549275.1', 'WP_043839886.1', 'WP_021070780.1', 'WP_022831749.1', 'WP_027168587.1', 'WP_026387513.1', 'WP_029351027.1', 'WP_023804020.1', 'WP_022688735.1', 'WP_026462441.1', 'WP_020797754.1', 'XP_008648631.1', 'WP_050420915.1', 'NP_774287.1', 'WP_039184858.1', 'WP_038959825.1', 'WP_038958321.1', 'WP_038387024.1', 'WP_028162302.1', 'WP_018645210.1', 'WP_016841006.1', 'WP_057752922.1', 'WP_050401574.1', 'WP_048085152.1', 'WP_011684752.1', 'WP_007657439.1', 'WP_028528751.1', 'WP_007778286.1', 'WP_038989274.1', 'WP_037468281.1', 'WP_004879422.1']
+2016-02-29 18:26:37 Filter_by_id        INFO      Number of sequences present in fasta file:  5383
+ Number of IDs present in IDs-text file:  256
+ Number of matching sequence records extracted and written in output file:  5127
+
+ Output file: /Users/Mana/Dropbox/22Feb_Data/6_Residue_Conservation_Analysis/Ecoli/Output_iter3/Analysis/Matches_only/Filtered_Sequences_based_on_IDs.fasta
+2016-02-29 18:27:37 Filter_by_id        INFO     Job done! Ready for next job.
+
+
+2016-02-29 18:27:56 Filter_by_id        INFO     User has requested tool 'Filter fasta by sequences ID'.
+2016-02-29 18:27:56 Filter_by_id        INFO     User chose 'Remove IDs in list'.
+2016-02-29 18:27:56 Filter_by_id        INFO     State of 'IDs are Partial': True
+2016-02-29 18:27:56 Filter_by_id        INFO     Text file (containing IDs) provided by user:
+	/Users/Mana/Dropbox/22Feb_Data/6_Residue_Conservation_Analysis/Yeast/Output_iter3/Analysis/Mismatches_only/Mismatching_IDs_Yeast.txt
+2016-02-29 18:27:56 Run_Script_Main     ERROR    Error that resulted when creating path "/Users/Mana/Dropbox/22Feb_Data/6_Residue_Conservation_Analysis/Yeast/Output_iter3/Analysis/Matches_only/":
+  [Errno 17] File exists: '/Users/Mana/Dropbox/22Feb_Data/6_Residue_Conservation_Analysis/Yeast/Output_iter3/Analysis/Matches_only/'
+2016-02-29 18:27:56 Run_Script_Main     WARNING  Folder "/Users/Mana/Dropbox/22Feb_Data/6_Residue_Conservation_Analysis/Yeast/Output_iter3/Analysis/Matches_only/" already exists. All or some files in it may get overwritten by ResCons. Do you wish to continue?
+2016-02-29 18:27:58 Run_Script_Main     INFO     User has selected (True = Yes, False = No):  True
+2016-02-29 18:27:58 Run_Script_Main     INFO     ResCons will continue as user requested.
+2016-02-29 18:27:58 Filter_by_id        INFO     Output folder path provided by user:
+	/Users/Mana/Dropbox/22Feb_Data/6_Residue_Conservation_Analysis/Yeast/Output_iter3/Analysis/Matches_only/
+2016-02-29 18:27:58 Filter_by_id        INFO     IDs recognised by software: ['XP_963564.2', 'XP_009851843.1', 'XP_003344181.1', 'XP_003667355.1', 'XP_001903527.1', 'XP_002582880.1', 'XP_008187333.1', 'XP_006422674.1', 'XP_011396105.1', 'XP_012360483.1', 'XP_008964850.1', 'XP_009448409.1', 'XP_011319388.1', 'XP_002784627.1', 'XP_007131120.1', 'XP_013972996.1', 'XP_012647482.1', 'XP_013756789.1', 'XP_012373131.1', 'XP_009309750.1', 'XP_008117407.1', 'XP_013155165.1', 'XP_002771058.1', 'XP_014427109.1', 'XP_012872515.1', 'XP_008602692.1', 'XP_008938932.1', 'XP_006749881.1', 'XP_001862097.1', 'NP_001089524.1', 'XP_008953599.1', 'XP_012354929.1', 'XP_011821719.1', 'XP_011798646.1', 'XP_010792338.1', 'XP_009446365.1', 'XP_010708092.1', 'XP_006280876.1', 'XP_010068328.1', 'XP_007814156.1', 'XP_010358491.1', 'XP_009036015.1', 'XP_009239565.1', 'XP_001012306.1', 'XP_002772105.1', 'XP_002768368.1', 'XP_001784606.1', 'XP_006144459.1', 'XP_013895361.1', 'XP_005070965.1', 'XP_009158037.1', 'XP_001549931.1', 'XP_012859685.1', 'NP_008834.3', 'XP_005207717.1', 'XP_003830018.1', 'XP_012634455.1', 'XP_012634454.1', 'XP_003257508.1', 'XP_012291978.1', 'XP_011821717.1', 'XP_011798644.1', 'XP_010369848.1', 'XP_001170451.1', 'XP_008573005.1', 'XP_007997631.1', 'XP_006874618.1', 'XP_004040275.1', 'XP_015417589.1', 'XP_014349517.1', 'XP_006144430.1', 'XP_011855377.1', 'XP_008049277.1', 'XP_006690652.1', 'XP_011474367.1', 'XP_007567374.1', 'XP_011158238.1', 'XP_007890119.1', 'XP_014118644.1', 'XP_012636973.1', 'XP_007819550.1', 'XP_011313464.1', 'XP_009171673.1', 'XP_001257965.1', 'XP_004029796.1', 'XP_012513899.1', 'XP_003838909.1', 'XP_009493103.1', 'XP_004624420.1', 'XP_013965521.1', 'XP_002866618.1', 'XP_004631990.1', 'XP_003883129.1', 'XP_013434616.1', 'XP_750738.2', 'XP_002192220.2', 'XP_013214318.1', 'XP_006502279.1', 'XP_007299907.1', 'XP_011814475.1', 'XP_002510002.1', 'XP_008664356.1', 'XP_013678962.1', 'XP_008468490.1', 'XP_013155168.1', 'XP_006502280.1', 'XP_002844233.1', 'NP_789842.2', 'XP_003257509.1', 'XP_011821720.1', 'XP_011798647.1', 'XP_010369850.1', 'XP_004040276.1', 'XP_006288931.1', 'XP_007664955.1', 'XP_012962679.1', 'XP_012392551.1', 'XP_008266967.1', 'XP_011238560.1', 'XP_014065144.1', 'XP_004862334.1', 'XP_013702372.1', 'XP_010648028.1', 'XP_008589994.1', 'XP_004049612.1', 'XP_010369851.1', 'XP_004089091.1', 'XP_011821721.1', 'XP_011798648.1', 'NP_789843.2', 'XP_004040277.1', 'XP_014200198.1', 'XP_012963066.1', 'XP_009228650.1', 'XP_009125356.1', 'XP_013678500.1']
+2016-02-29 18:27:58 Filter_by_id        INFO      Number of sequences present in fasta file:  996
+ Number of IDs present in IDs-text file:  136
+ Number of matching sequence records extracted and written in output file:  860
+
+ Output file: /Users/Mana/Dropbox/22Feb_Data/6_Residue_Conservation_Analysis/Yeast/Output_iter3/Analysis/Matches_only/Filtered_Sequences_based_on_IDs.fasta
+2016-02-29 18:28:35 Filter_by_id        INFO     Job done! Ready for next job.
+
+
+2016-02-29 18:29:11 Filter_by_id        INFO     User has requested tool 'Filter fasta by sequences ID'.
+2016-02-29 18:29:11 Filter_by_id        INFO     User chose 'Remove IDs in list'.
+2016-02-29 18:29:11 Filter_by_id        INFO     State of 'IDs are Partial': True
+2016-02-29 18:29:11 Filter_by_id        INFO     Text file (containing IDs) provided by user:
+	/Users/Mana/Dropbox/22Feb_Data/6_Residue_Conservation_Analysis/FamII/Output_iter3/Analysis/Mismatches_only/Mismatching_IDs_FamII.txt
+2016-02-29 18:29:11 Run_Script_Main     ERROR    Error that resulted when creating path "/Users/Mana/Dropbox/22Feb_Data/6_Residue_Conservation_Analysis/FamII/Output_iter3/Analysis/Matches_only/":
+  [Errno 17] File exists: '/Users/Mana/Dropbox/22Feb_Data/6_Residue_Conservation_Analysis/FamII/Output_iter3/Analysis/Matches_only/'
+2016-02-29 18:29:11 Run_Script_Main     WARNING  Folder "/Users/Mana/Dropbox/22Feb_Data/6_Residue_Conservation_Analysis/FamII/Output_iter3/Analysis/Matches_only/" already exists. All or some files in it may get overwritten by ResCons. Do you wish to continue?
+2016-02-29 18:29:12 Run_Script_Main     INFO     User has selected (True = Yes, False = No):  True
+2016-02-29 18:29:12 Run_Script_Main     INFO     ResCons will continue as user requested.
+2016-02-29 18:29:12 Filter_by_id        INFO     Output folder path provided by user:
+	/Users/Mana/Dropbox/22Feb_Data/6_Residue_Conservation_Analysis/FamII/Output_iter3/Analysis/Matches_only/
+2016-02-29 18:29:12 Filter_by_id        INFO     IDs recognised by software: ['WP_026660912.1', 'WP_012875652.1', 'WP_009102825.1', 'WP_034497599.1', 'WP_035235538.1', 'WP_015403837.1', 'XP_451703.1', 'XP_011404658.1', 'XP_011114275.1', 'XP_008899618.1', 'WP_022668371.1', 'WP_020586627.1', 'XP_003646740.1', 'XP_001419770.1', 'XP_002900227.1', 'WP_044882799.1', 'WP_039383502.1', 'XP_008043387.1', 'WP_039334432.1', 'WP_033744377.1', 'WP_033777924.1', 'WP_010616472.1', 'XP_014160407.1', 'WP_028062319.1', 'WP_009424027.1', 'WP_008081951.1', 'XP_001709328.1', 'WP_033170097.1', 'WP_052610713.1', 'WP_011936248.1', 'WP_003594415.1']
+2016-02-29 18:29:12 Filter_by_id        INFO      Number of sequences present in fasta file:  2485
+ Number of IDs present in IDs-text file:  31
+ Number of matching sequence records extracted and written in output file:  2454
+
+ Output file: /Users/Mana/Dropbox/22Feb_Data/6_Residue_Conservation_Analysis/FamII/Output_iter3/Analysis/Matches_only/Filtered_Sequences_based_on_IDs.fasta
+2016-02-29 18:29:57 Filter_by_id        INFO     Job done! Ready for next job.
+
+
