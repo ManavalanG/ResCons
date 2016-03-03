@@ -53,12 +53,13 @@
     Clustalo_Command_local:  {'outfmt': 'fasta', 'iterations': 3, 'force': 'True', 'guidetree_out': 'default.newick'}
 
 
-  ## Clustalo command (for web server) used in ResCon ##
+  ## Clustalo command (for web server) used in ResCon. An email id is required to use EMBL's Clustal omega webserver##
 
-    Clustalo_Command_web:  --email mg0010@uah.edu
+    Clustalo_Command_web:  --email your_email@here.com
+
 
   ## Method  used to draw bar chart in html output file ##
-  ## Available options:  ‘pro’  ‘chart.js’    ‘chart new.js’    (‘pro’ uses matplotlib whereas the rest uses javascript-html5)
+  ## Available options:  ‘matplot’  ‘chart.js’    ‘chart new.js’    (‘matplot’ uses matplotlib whereas the rest uses javascript-html5)
 
     chart_method:     chartnew.js
 

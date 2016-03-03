@@ -28,7 +28,13 @@ __email__ = "manavalan.g@gmail.com"
 
 '''
 Ver 28 (under development) major modifications:
+1. File 'clustalo_embl_api' is moved in to directory 'Rescon_Files' so as to contain all files to execute ResCon
+   in one location. Script modified to reflect the same for importing.
 
+2. Added following checkpoints to user-provided Clustal omega command when used in 'web-server' mode:
+ 		a. Is parameter 'email' present?
+ 		b. Proper email id provided?
+ 		b. Is user providing parameters that needs to be set by ResCon?
 
 
 '''
@@ -53,7 +59,7 @@ from sys import platform as _platform	# to determine OS under use
 import csv
 import operator
 import StringIO
-from clustalo_embl_api import clustalo_api
+from Rescon_Files.clustalo_embl_api import clustalo_api
 
 terminal_output = False			# to show or not to show error/info in the terminal
 # terminal_output = True
@@ -309,7 +315,7 @@ simi_matrix_handle.close()
 
 
 
-# chart_method = 'chart.js'		# options: 'pro', 'chart.js' or 'chartnew.js' (if commented, value is used from settings file)
+# chart_method = 'chart.js'		# options: 'matplot', 'chart.js' or 'chartnew.js' (if commented, value is used from settings file)
 
 
 # Function to verify existence of a path and create it if non-existent.
@@ -552,6 +558,35 @@ def clustalo_webserver_fn():
 	global Output_Path
 	global Aligned_Filename
 
+
+	# verify if certain parameters are not provided by user as they will be set by ResCon
+	para_not_allowed = ['--outfmt', '--outformat', '--sequence', '--outfile']
+	para_problem = False
+	for para in para_not_allowed:
+		if para in clustal_web_user_command:
+			para_problem = True
+			break
+
+	temp = ''
+	# verify if certain parameters are not provided by user as they will be set by ResCon
+	if para_problem:
+		para_string = '\t' + '\n\t'.join(para_not_allowed)
+		temp = "Following parameters are not allowed in Clutal omega command:\n\n%s\n\n Fix it and try again!" % para_string
+
+	# verify email id address is present as part of clustal command for EMBL web server
+	elif '-email' not in clustal_web_user_command:
+		temp = "Parameter '--email' is required to utilize Clustal omega through EMBL webserver. Try again!"
+
+	# Raises error if email id provided is 'your_email@here.com'
+	elif 'your_email@here.com' in clustal_web_user_command:
+		temp = "Provide a valid email address instead of 'your_email@here.com' in Clustalo command.\n\n" \
+			   "Tip: To permanantly store your valid email id, change it in ResCon's settings file. It is available " \
+			   "at bottom of the window of 'File menu --> Edit settings'"
+	if temp:
+		clustal_log.info(temp)
+		popup_error(temp)
+		raise_enabler('stop')
+
 	Output_Path_web = Output_Path + 'webserver_results/'
 	verify_filepath_exists(Output_Path_web)
 	Aligned_Filename = Output_Path_web + 'output.aln-fasta.fasta'  # reads output aligned file. Had to hard code. Sorry!
@@ -562,7 +597,10 @@ def clustalo_webserver_fn():
 		clustal_log.debug("Deleted pre-existing file: '%s'" % Aligned_Filename)
 
 	# All results from webserver will be stored with 'output' as filename with different extensions
-	parameters_string = '%s --sequence "%s" --outfile "%s"output' % (clustal_web_user_command, SeqQuery_file, Output_Path_web)
+	# fasta is the only alignment output format allowed when in webserver mode.
+	# To avoid unnecessary clutter, only formats mentioned in 'outformat' are written as output
+	parameters_string = '%s --sequence "%s" --outfile "%s"output  --outfmt fa --outformat "aln-fasta, phylotree, pim"' \
+						% (clustal_web_user_command, SeqQuery_file, Output_Path_web)
 	clustal_log.info('Parameters sent to Clustal omega server:\t"%s"' %parameters_string)
 
 	temp = 'Clustal alignment via webserver will begin now. Warning: It may take few seconds ' \
@@ -1627,7 +1665,7 @@ def html_formatting():
 				if line.replace('\n', '') == 'check_by_ResCon-->':
 					check_line = 1
 
-	if chart_method == 'pro' and matplot_reqd:
+	if chart_method == 'matplot' and matplot_reqd:
 		# this part draws bar chart using matplotlib
 		plot_filename = 'plot.png'
 		plot_filepath = Output_Path + plot_filename
@@ -3493,15 +3531,6 @@ def run_script():
 			clustal_log.info("Clustal omega source: EBI Web Server")
 
 			clustal_web_user_command = clustal_command.get()
-			if 'outfmt' in clustal_web_user_command or 'outformat' in clustal_web_user_command:
-				temp = "Parameter 'outfmt' or 'outformat' is not allowed in the clutalo command. Change and try again!"
-				clustal_log.info(temp)
-				popup_error(temp)
-				raise_enabler('stop')
-
-			# fasta is the only alignment format allowed when in webserver mode.
-			# To avoid unnecessary clutter, only formats mentioned in 'outformat' are written as output
-			clustal_web_user_command += " --outfmt fa --outformat 'aln-fasta, phylotree, pim'"
 
 			is_ref_in_seqs_file()
 			clustalo_webserver_fn()
