@@ -22,7 +22,7 @@ Author's Email id: manavalan.g@gmail.com
 
 __author__ = "Manavalan Gajapathy, Joseph D. Ng"
 __license__ = "Lesser General Public License"
-__version__ = "18 beta"
+__version__ = "28 beta"
 __email__ = "manavalan.g@gmail.com"
 
 

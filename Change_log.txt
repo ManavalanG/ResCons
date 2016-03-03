@@ -2,6 +2,14 @@ Change logs for ResCon since version 21:
 ========================================
 
 Ver 28 (under development) major modifications:
+1. File 'clustalo_embl_api' is moved in to directory 'Rescon_Files' so as to contain all files to execute ResCon
+   in one location. Script modified to reflect the same for importing.
+
+2. Added following checkpoints to user-provided Clustal omega command when used in 'web-server' mode:
+ 		a. Is parameter 'email' present?
+ 		b. Proper email id provided?
+ 		b. Is user providing parameters that needs to be set by ResCon?
+
 
 
 ------------------------------------------------------------------------------------------------------------------------
