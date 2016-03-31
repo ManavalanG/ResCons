@@ -28,7 +28,7 @@ __email__ = "manavalan.g@gmail.com"
 
 '''
 Ver 28 (under development) major modifications:
-1. File 'clustalo_embl_api' is moved in to directory 'Rescon_Files' so as to contain all files to execute ResCon
+1. File 'ClustalO_embl_api' is moved in to directory 'Rescon_Files' so as to contain all files to execute ResCon
    in one location. Script modified to reflect the same for importing.
 
 2. Added following checkpoints to user-provided Clustal omega command when used in 'web-server' mode:
@@ -234,12 +234,12 @@ with open(settings_file_name, 'Ur') as settings_data:
 				else:
 					ref_included = True
 
-			elif var_name == 'Clustalo_Command_local':	# gets clustalo command (for running locally)
+			elif var_name == 'ClustalO_Command_local':	# gets ClustalO command (for running locally)
 				line_list = line.split(' {')
 				clustalo_command_local_default = trimmed_3
 
 			elif var_name == 'Clustalo_Command_web':	# gets clustalo command (for running locally)
-				clustalo_command_web_default = trimmed_3
+				ClustalO_command_web_default = trimmed_3
 
 			elif var_name == 'id_delimiter':
 				id_delimiter = trimmed_3
@@ -532,12 +532,12 @@ def is_ref_in_seqs_file():
 						 "with Reference Seq appended to it." % (SeqQuery_file, outfile_ref_added))
 
 		SeqQuery_file = outfile_ref_added
-		Aligned_Filename = Output_Path + "Aligned_Clustalo_" + OutputFile_temp.replace('.fasta', '')
+		Aligned_Filename = Output_Path + "Aligned_ClustalO_" + OutputFile_temp.replace('.fasta', '')
 		tree_filename = Output_Path + "Tree_" + OutputFile_temp.replace('.fasta', '') + ".newick"
 
 	else:
 		clustal_log.info('Reference seq is present in file: %s' % SeqQuery_file)
-		Aligned_Filename = Output_Path + "Aligned_Clustalo_" + SeqQuery_FileName.replace('.fasta', '')
+		Aligned_Filename = Output_Path + "Aligned_ClustalO_" + SeqQuery_FileName.replace('.fasta', '')
 		tree_filename = Output_Path + "Tree_" + SeqQuery_FileName.replace('.fasta', '') + ".newick"
 
 		# verify sequence in Reference file matches to that in Sequences file
@@ -579,7 +579,7 @@ def clustalo_webserver_fn():
 
 	# Raises error if email id provided is 'your_email@here.com'
 	elif 'your_email@here.com' in clustal_web_user_command:
-		temp = "Provide a valid email address instead of 'your_email@here.com' in Clustalo command.\n\n" \
+		temp = "Provide a valid email address instead of 'your_email@here.com' in ClustalO command.\n\n" \
 			   "Tip: To permanantly store your valid email id, change it in ResCon's settings file. It is available " \
 			   "at bottom of the window of 'File menu --> Edit settings'"
 	if temp:
@@ -718,7 +718,7 @@ def clustal_alignment_local():
 
 	# paramter 'outfile' is not allowed anymore as Rescon now allows to choose output folder. It is redundant
 	if "outfile" in clustal_command_temp_2:
-		temp = "Parameter 'outfile' is not allowed in clustalo command. Output file instead will be stored in output folder chosen. Press yes to proceed further"
+		temp = "Parameter 'outfile' is not allowed in ClustalO command. Output file instead will be stored in output folder chosen. Press yes to proceed further"
 		ans = tkMessageBox.askquestion('Error', temp, default = 'yes')
 		if ans == 'no':
 			clustal_log.info("User clicked 'No'. ResCon will stop now.")
@@ -754,7 +754,7 @@ def clustal_alignment_local():
 	# 		Aligned_Filename += ('.' + file_extension)
 	# 		clustal_commandline['outfile'] = Aligned_Filename
 	# else:
-	# 	temp = "Parameter 'outfile' is missing in clustalo command provided. It is required to execute clustalo."
+	# 	temp = "Parameter 'outfile' is missing in ClustalO command provided. It is required to execute ClustalO."
 	# 	clustal_log.error(temp)
 	# 	popup_error(temp)
 	# 	raise_enabler('stop')
@@ -785,7 +785,7 @@ def clustal_alignment_local():
 	try:
 		clustalomega_cline = ClustalOmegaCommandline(**clustal_commandline)
 	except Exception as e:			# This will catch all the major errors
-		temp = 'Error in command directed to Clustalo. Check the command entered!'
+		temp = 'Error in command directed to ClustalO. Check the command entered!'
 		clustal_log.error(temp)
 		clustal_log.error('Error that resulted: %s' % e)
 		popup_error(temp)
@@ -813,7 +813,7 @@ def clustal_alignment_local():
 	# This is if clustal omega results in an error. Usage of threading makes it hard to catch exceptions(errors)
 	if not os.path.exists(Aligned_Filename):
 		processing_clustal.grid_remove()
-		temp = 'Error executing clustalo command. Possible problems include: \n  ' \
+		temp = 'Error executing ClustalO command. Possible problems include: \n  ' \
 			   '1. Clustal omega is not installed in your computer  or \n  ' \
 			   '2. Error in Clustal omega installation or \n  ' \
 			   '3. If already installed, correct path may not have been properly specified or \n  ' \
@@ -3409,7 +3409,7 @@ def read_user_input():
 			SeqQuery_file = seq_entry.get()
 			gui_log.info('Sequences File that will be used for alignment:  %s' % SeqQuery_file)
 
-		# this part verifies if seq file path contains single/double quote as clustalo hates them
+		# this part verifies if seq file path contains single/double quote as ClustalO hates them
 		if "'" in SeqQuery_file or '"' in SeqQuery_file or '(' in SeqQuery_file or ')' in SeqQuery_file:
 			temp = "Single or double quote or parenthesis is present in Sequences file's name or in its file path. " \
 				   "Clustal omega will result in error in such cases. Try again!"
@@ -3525,7 +3525,7 @@ def run_script():
 
 			is_ref_in_seqs_file()
 			clustal_alignment_local()
-			runscript_log.info('Clustal alignment was completed using local Clustalo!')
+			runscript_log.info('Clustal alignment was completed using local ClustalO!')
 
 		else:								# to run clustal using web server
 			clustal_log.info("Clustal omega source: EBI Web Server")
@@ -3698,7 +3698,7 @@ checkboxval_Clustal.set(True)
 checkbox_Clustal.grid(rowspan=2, sticky=W)  # to center the label in  window
 
 
-# this changes the clustalo command showed in GUI depending on clustal source being webserver or local
+# this changes the ClustalO command showed in GUI depending on clustal source being webserver or local
 clustal_local_user_command_string = clustalo_command_local_default	# these are to keep user provided values while switching b/w clustal client options
 clustal_web_user_command_string = clustalo_command_web_default
 def clustal_client():
@@ -3721,7 +3721,7 @@ clustalo_source.set(2)
 clustalo_local = Radiobutton(frame2, text= 'Use Web Server    ', variable= clustalo_source, value=1, command = clustal_client)
 clustalo_local.grid(row=6, column=1, sticky=E)
 
-clustalo_web = Radiobutton(frame2, text= 'Use Local Clustalo', variable= clustalo_source, value=2, command = clustal_client)
+clustalo_web = Radiobutton(frame2, text= 'Use Local ClustalO', variable= clustalo_source, value=2, command = clustal_client)
 clustalo_web.grid(row=7, column=1, sticky=E)
 
 label_clustal = label_text(frame2, "   Alignment File", 0, 17, 9, 0)
@@ -3739,7 +3739,7 @@ frame_clustal = Frame(frame2, bd=3)
 frame_clustal.grid(row=9, column=0, columnspan=10, sticky='w')
 # frame_clustal.grid_remove()
 
-clustal_command_label = label_text(frame_clustal, "   Clustalo Command", 0, 17, 0, 0)
+clustal_command_label = label_text(frame_clustal, "   ClustalO Command", 0, 17, 0, 0)
 
 clustal_command_value = StringVar()
 clustal_command_value.set(clustalo_command_local_default)
