@@ -3579,10 +3579,10 @@ if win_os:			# to show logo in windows task bar and in app border top.
 make_menu(app)		# this initiates right-click menu which will pop-up when right-clicked.
 
 if mac_os:
-	label_title = Label(app, text='Mismatch analyzer', height= 2, justify=CENTER, font=('Times', '16', 'bold'))
+	label_title = Label(app, text='Mismatch Analyzer', height= 2, justify=CENTER, font=('Times', '16', 'bold'))
 else:
 	# label_title = Label(app, text='Mismatch analyzer', height=1, justify=CENTER, font=('Times', '14', 'bold'))
-	label_title = Label(app, text='Mismatch analyzer', height=2, justify=CENTER, font=('Times', '14', 'bold'))
+	label_title = Label(app, text='Mismatch Analyzer', height=2, justify=CENTER, font=('Times', '14', 'bold'))
 label_title.grid(row=0, column=0, sticky= N)  # Didn't use label_text function here as it forces text to be in  left side
 
 frame1 = Frame(app)
