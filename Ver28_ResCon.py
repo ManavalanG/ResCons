@@ -61,8 +61,8 @@ import operator
 import StringIO
 from Rescon_Files.clustalo_embl_api import clustalo_api		# to run clustal omega through EMBL webserver
 
-terminal_output = False			# to show or not to show error/info in the terminal
-# terminal_output = True
+# terminal_output = False			# to show or not to show error/info in the terminal
+terminal_output = True
 
 additional_imports = True	# this enables to run script in case such features from thrid party libs are not desired.
 if additional_imports:
@@ -238,8 +238,8 @@ with open(settings_file_name, 'Ur') as settings_data:
 				line_list = line.split(' {')
 				clustalo_command_local_default = trimmed_3
 
-			elif var_name == 'Clustalo_Command_web':	# gets clustalo command (for running locally)
-				ClustalO_command_web_default = trimmed_3
+			elif var_name == 'ClustalO_Command_web':	# gets clustalo command (for running locally)
+				clustalo_command_web_default = trimmed_3
 
 			elif var_name == 'id_delimiter':
 				id_delimiter = trimmed_3

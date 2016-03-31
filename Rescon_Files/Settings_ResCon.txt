@@ -46,16 +46,16 @@
     id_delimiter:     |
 
 
-  ## Clustalo command (local) used in ResCon ##
+  ## ClustalO command (local) used in ResCon ##
   ## Note that accented/smart symbols will result in error. Especially True in Mac OS when using TextEdit. For example: ‘ is not same as '. Former is not allowed. Use dumb quotes. Copy and paste can help.
   ## Default:   {'outfmt': 'clu', 'iterations': 3, 'force': 'True', 'guidetree_out': 'default.newick'}
 
-    Clustalo_Command_local:  {'outfmt': 'fasta', 'iterations': 3, 'force': 'True', 'guidetree_out': 'default.newick'}
+    ClustalO_Command_local:  {'outfmt': 'fasta', 'iterations': 3, 'force': 'True', 'guidetree_out': 'default.newick'}
 
 
-  ## Clustalo command (for web server) used in ResCon. An email id is required to use EMBL's Clustal omega webserver##
+  ## ClustalO command (for web server) used in ResCon. An email id is required to use EMBL's Clustal omega webserver##
 
-    Clustalo_Command_web:  --email your_email@here.com
+    ClustalO_Command_web:  --email your_email@here.com
 
 
   ## Method  used to draw bar chart in html output file ##
