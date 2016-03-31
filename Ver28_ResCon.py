@@ -278,7 +278,7 @@ with open(settings_file_name, 'Ur') as settings_data:
 				newick_sym_replace = trimmed_2
 
 
-			# settings for Fasta Description/ID Extractor
+			# settings for FASTA Description/ID Extractor
 			# elif var_name == 'symbol_replacing_comma':	# gets symbol for use if user don't want comma in output
 			# 	symbol_replacing_comma = trimmed_2
 
@@ -495,7 +495,7 @@ def is_ref_in_seqs_file():
 		raise_enabler('stop')
 
 	if len(all_seqs_input) == 0:
-		temp = ('Sequences are not found in your sequences file. Make sure it is in fasta format.'
+		temp = ('Sequences are not found in your sequences file. Make sure it is in FASTA format.'
 				'Try again after fixing this problem')
 		clustal_log.error(temp)
 		popup_error(temp)
@@ -1964,9 +1964,9 @@ def html_formatting():
 	html_log.info('Alignment formatting was completed and saved as above mentioned html file.')
 
 
-# Function to extract sequences from Fasta file and Blast XML based on Bit-score or E-value threshold set by user
+# Function to extract sequences from FASTA file and BLAST XML based on Bit-score or E-value threshold set by user
 def blast_filter():
-	blast_log.info("User selected tool - 'Filtering sequences by Blast e-value'.")
+	blast_log.info("User selected tool - 'Filtering sequences by BLAST e-value'.")
 	global Blast_xml, Blast_fasta, filter_method_val, high_or_low_val, threshold_val
 	global Blast_Submit, output_blast_entry, blast_processing
 	global lower_or_higher_e_threshold
@@ -1974,26 +1974,26 @@ def blast_filter():
 	Blast_Submit.configure(state=DISABLED)
 	blast_processing.grid()
 
-	# Gets Blast xml file provided by user
+	# Gets BLAST xml file provided by user
 	blast_handle = Blast_xml.get()
 	if not blast_handle:
-		temp = "Please enter file path of Blast XML file."
+		temp = "Please enter file path of BLAST XML file."
 		blast_log.error(temp)
 		popup_error(temp)
 		raise_enabler('stop')
 	else:
-		temp = ("Blast XML file provided by user :\n\t%s" %blast_handle)
+		temp = ("BLAST XML file provided by user :\n\t%s" %blast_handle)
 		blast_log.info(temp)
 
 	# Reads fasta file provided by user
 	if not Blast_fasta.get():
-		temp = "Please enter file path of fasta file."
+		temp = "Please enter file path of FASTA file."
 		blast_log.error(temp)
 		popup_error(temp)
 		raise_enabler('stop')
 	else:
 		Input_handle_blast_fasta = Blast_fasta.get()
-		temp = ("Fasta file provided by user :\n\t%s" %Input_handle_blast_fasta)
+		temp = ("FASTA file provided by user :\n\t%s" %Input_handle_blast_fasta)
 		blast_log.info(temp)
 
 	# Reads output folder path provided by user
@@ -2015,12 +2015,12 @@ def blast_filter():
 		blast_filter_method = filter_method_val.get()
 	except Exception as e:
 		blast_log.error("Error that resulted when reading filter method: %s" % e)
-		temp = 'Having trouble reading Blast Filter Method requested.'
+		temp = 'Having trouble reading BLAST Filter Method requested.'
 		blast_log.error(temp)
 		popup_error(temp)
 		raise_enabler('stop')
 	else:
-		blast_log.info("Blast Filter method chosen: %s" % blast_filter_method)
+		blast_log.info("BLAST Filter method chosen: %s" % blast_filter_method)
 
 	# reads if data has to be filtered higher or lower than threshold
 	try:
@@ -2047,12 +2047,12 @@ def blast_filter():
 		temp = ('Threshold entered by user: %s' % str(threshold))
 		blast_log.info(temp)
 
-	# Determines if user has requested to filter sequences in blast lower or higher than threshold
-	# Note that Fasta file may have sequences that are not part of Blast XML file. This might be bcoz such sequence may
-	# not have significant similarity to query sequence. Or else user chose to use different fasta than that was used
-	# to get the Blast XML file provided here.
+	# Determines if user has requested to filter sequences in BLAST lower or higher than threshold
+	# Note that FASTA file may have sequences that are not part of BLAST XML file. This might be bcoz such sequence may
+	# not have significant similarity to query sequence. Or else user chose to use different FASTA than that was used
+	# to get the BLAST XML file provided here.
 	# Hence, ResCon throws a warning here and gives option to user on how to proceed further.
-	temp = "Do you want to include sequences that are in FASTA file but not in Blast XML file?" \
+	temp = "Do you want to include sequences that are in FASTA file but not in BLAST XML file?" \
 		   "\n\nNote: Such instances may happen when sequences do not have significant similarity to query sequence." \
 		   "\nUsage of combination '%s %s threshold' triggered this warning." %(high_or_low, blast_filter_method)
 	not_in_blast_seqs = False
@@ -2069,7 +2069,7 @@ def blast_filter():
 			not_in_blast_seqs = tkMessageBox.askyesno('Warning', temp, default = 'yes')
 			blast_log.info('User has selected (True = Yes, False = No): %s' % not_in_blast_seqs)
 
-	# Reads user-provided blast xml file
+	# Reads user-provided BLAST xml file
 	try:
 		blast_records = NCBIXML.read(open(blast_handle))
 	except Exception as e:
@@ -2079,7 +2079,7 @@ def blast_filter():
 		popup_error(temp)
 		raise_enabler('stop')
 	else:
-		temp = ('Successfully read Blast xml file provided by user: \n\t%s' % blast_handle)
+		temp = ('Successfully read BLAST xml file provided by user: \n\t%s' % blast_handle)
 		blast_log.debug(temp)
 
 	# this part collects IDs of sequences that have respective score higher or lower than requested threshold
@@ -2096,7 +2096,7 @@ def blast_filter():
 			score = float(blast_records.descriptions[index].bits)      #Bit-score
 
 		title = str(blast_records.descriptions[index].title)
-		title_id = title.split()[1]     # Sequence id in the seqs used for blast must be unique for each seq.
+		title_id = title.split()[1]     # Sequence id in the seqs used for BLAST must be unique for each seq.
 		if score < threshold:
 			# if title_id not in lower_than_threshold_seqs_list:
 			lower_than_threshold_seqs_list.append(title_id)
@@ -2113,7 +2113,7 @@ def blast_filter():
 		blast_all_seqs_list = lower_than_threshold_seqs_list + equal_to_threshold_seqs_list\
 								 + higher_than_threshold_seqs_list
 
-		print 'all in blast xml', len(blast_all_seqs_list)
+		# print 'all in BLAST xml', len(blast_all_seqs_list)
 
 	extracted_seqrecords = []
 	total = 0
@@ -2143,14 +2143,14 @@ def blast_filter():
 	SeqIO.write(extracted_seqrecords, Output_handle_blast, 'fasta')
 	blast_log.info("Filtered sequences are stored in file:  \n\t'%s'" % Output_handle_blast)
 
-	temp = 'Total number of sequences in input fasta file:	 %s' % str(total)
+	temp = 'Total number of sequences in input FASTA file:	 %s' % str(total)
 	if not requested_higher:
-		temp += '\nTotal number of records with %s lower than entered threshold in Blast XML file:  %i' % (blast_filter_method, lower)
+		temp += '\nTotal number of records with %s lower than entered threshold in BLAST XML file:  %i' % (blast_filter_method, lower)
 	else:
-		temp += '\nTotal number of records with %s higher than entered threshold in Blast XML file:  %i' \
+		temp += '\nTotal number of records with %s higher than entered threshold in BLAST XML file:  %i' \
 													% (blast_filter_method, higher)
 	if not_in_blast_seqs:
-		temp += '\nTotal number os sequences that were in Fasta file but not in Blast XML list:  %i' % not_in_blast_count
+		temp += '\nTotal number os sequences that were in FASTA file but not in BLAST XML list:  %i' % not_in_blast_count
 
 	temp += '\nNumber of sequences written in output file:  %i' % len(extracted_seqrecords)
 	blast_log.info(temp)
@@ -2158,7 +2158,7 @@ def blast_filter():
 
 	Blast_Submit.configure(state=ACTIVE)
 	blast_processing.grid_remove()
-	blast_log.info("Blast-Filtering job is done! Ready for next job\n\n")
+	blast_log.info("BLAST-Filtering job is done! Ready for next job\n\n")
 	blast_log.debug("Exiting 'blast_filter' module.\n")
 
 	log_path = Output_Path_blast + 'log.txt'
@@ -2168,7 +2168,7 @@ def blast_filter():
 # Function that reads GenPept/GenBank files and then outputs those sequences in fasta format - with their
 # header having info about their taxanomy
 def genpept_converter():
-	genbank_log.info("User selected tool - 'GenPept/GenBank to Fasta converter'.")
+	genbank_log.info("User selected tool - 'GenPept/GenBank to FASTA converter'.")
 	global genbank_entry, fasta_id_length_entry, ignore_incomplete_checkboxval, options_dict, genbank_Submit, top, output_genbank_entry, genbank_processing
 
 	genbank_Submit.configure(state=DISABLED)
@@ -2178,14 +2178,14 @@ def genpept_converter():
 	if fasta_id_length_entry.get():
 		fasta_id_length = fasta_id_length_entry.get()
 	else:
-		temp = 'Fasta ID length box cannot be empty.'
+		temp = 'FASTA ID length box cannot be empty.'
 		genbank_log.error(temp)
 		popup_error(temp)
 		raise_enabler('stop')
 
 	fasta_id_len_test = re.findall(r'[^0-9 ]', fasta_id_length)
 	if fasta_id_len_test:
-		temp = "Invalid character(s) found in 'Fasta id length' entered!"
+		temp = "Invalid character(s) found in 'FASTA id length' entered!"
 		genbank_log.error(temp)
 		popup_error(temp)
 		raise_enabler('stop')
@@ -2221,7 +2221,7 @@ def genpept_converter():
 
 	# This part will extract taxanomy details from GenPept/GenBank records
 	genbank_log.info("State of 'Ignore sequence records that are incomplete/partial?':   %s" % str(bool(ignore_incomplete_checkboxval.get())))
-	genbank_log.info("Length of fasta ID requested by user':   %s" % str(fasta_id_length))
+	genbank_log.info("Length of FASTA ID requested by user':   %s" % str(fasta_id_length))
 	genbank_log.debug('Starting to extract taxonomy details for each sequence record.')
 
 	# options_list is used to extract details requested by user for the header id.
@@ -2351,12 +2351,12 @@ def genpept_converter():
 			# record_modified = SeqRecord(seq, id=name_modified, description='')
 			Fasta_Output.append(record_modified)
 
-	genbank_log.info('Total number of fasta ID names whose names were longer than %i characters and \n hence restricted '
+	genbank_log.info('Total number of FASTA ID names whose names were longer than %i characters and \n hence restricted '
 					 'to the maximum of %i characters: %s' % (fasta_id_length, fasta_id_length, str(hate_128)))
 	genbank_log.info('Number of sequence records that are incomplete:  %s' % str(ignore_incomplete))
 	genbank_log.debug('Done extracting taxonomy details from GenPept/GenBank sequence records')
 
-	# Create output folder, then output fasta file and write fasta sequences with custom header
+	# Create output folder, then output FASTA file and write FASTA sequences with custom header
 	# Output_Path_genbank = os.path.dirname(Input_Path_genbank)
 	# Output_Path_genbank += '/Output/'
 	# verify_filepath_exists(Output_Path_genbank)
@@ -2366,8 +2366,8 @@ def genpept_converter():
 
 	# logging details
 	temp = (' Number of records present in input GenPept/GenBank file:  ' +  str(NoDomainName + WithDomainName)) \
-		   + '\n Number of sequences written into Fasta file:  '+ str(NoDomainName + WithDomainName - ignore_incomplete)\
-		   + ('\n GenPept/GenBank to Fasta conversion was successful and stored in file:\n  ' + Output_handle_genbank)
+		   + '\n Number of sequences written into FASTA file:  '+ str(NoDomainName + WithDomainName - ignore_incomplete)\
+		   + ('\n GenPept/GenBank to FASTA conversion was successful and stored in file:\n  ' + Output_handle_genbank)
 	genbank_log.info(temp)
 	tkMessageBox.showinfo('Job Done', temp, parent = top)
 
@@ -2411,7 +2411,7 @@ def Extract_Clades():
 		raise_enabler('stop')
 	else:
 		Extract_input_fasta = Fasta_Original_entry.get()
-		clades_log.info('Fasta file provided by user:\n\t%s' % Extract_input_fasta)
+		clades_log.info('FASTA file provided by user:\n\t%s' % Extract_input_fasta)
 
 	# gets output folder
 	if not output_subtree_entry.get():
@@ -2553,7 +2553,7 @@ def Extract_Clades():
 			Output_handle_Extract = open(Output_file_Extract, 'w')
 			SeqIO.write(Extracted_Seqs, Output_handle_Extract, 'fasta')
 
-			temp = ("Fasta sequences corresponding to clade %s were extracted and saved in to: \n\t '%s'"
+			temp = ("FASTA sequences corresponding to clade %s were extracted and saved in to: \n\t '%s'"
 					% (str(Branch_Length), Output_file_Extract))
 			clades_log.info(temp)
 			temp += ("\n\nTotal number of sequences extracted: %i" % len(Extracted_Seqs))
@@ -2624,7 +2624,7 @@ def description_extractor():
 	# global descr_option
 	global id_option
 
-	header_extractor_log.info("User has requested tool 'Fasta Description/ID Extractor'")
+	header_extractor_log.info("User has requested tool 'FASTA Description/ID Extractor'")
 	descr_extractor_Submit.configure(state=DISABLED)
 	descr_extract_processing.grid()
 
@@ -2643,7 +2643,7 @@ def description_extractor():
 		raise_enabler('stop')
 	else:
 		input_fasta_file = descr_extr_file_entry.get()
-		header_extractor_log.info("Fasta file provided by user: '%s'" % input_fasta_file)
+		header_extractor_log.info("FASTA file provided by user: '%s'" % input_fasta_file)
 
 	# reads output path provided by user
 	if not output_descr_extract_entry.get():
@@ -2712,8 +2712,8 @@ def description_extractor():
 		for ele in not_conforming_titles:
 			not_conf_string += (ele + '\n')
 
-		temp = (' Make sure sequence header in fasta file conforms to requirements provided.'
-		'\n Problem arose when reading following fasta header(s): \n %s' %not_conf_string)
+		temp = (' Make sure sequence header in FASTA file conforms to requirements provided.'
+		'\n Problem arose when reading following FASTA header(s): \n %s' %not_conf_string)
 		header_extractor_log.error(temp)
 		popup_error(temp)
 
@@ -2724,11 +2724,11 @@ def description_extractor():
 		popup_error(temp)
 
 	else:
-		header_extractor_log.info('All sequence headers in fasta file conform to the requirements.')
+		header_extractor_log.info('All sequence headers in FASTA file conform to the requirements.')
 
 	unique_descriptions = set(protein_descriptions)
-	header_extractor_log.debug('Number of sequences found in fasta file: %i' % len(protein_descriptions) +
-							'Number of unique %ss found in fasta file:  %i' % (keyword, len(unique_descriptions)))
+	header_extractor_log.debug('Number of sequences found in FASTA file: %i' % len(protein_descriptions) +
+							'Number of unique %ss found in FASTA file:  %i' % (keyword, len(unique_descriptions)))
 
 	# this part gathers count of each description
 	Dict_unique_descriptions = {k: [] for k in unique_descriptions}
@@ -2764,8 +2764,8 @@ def description_extractor():
 				raise_enabler('stop')
 
 		# opens and writes data
-		Output_handle.write('Data below is obtained from fasta file:  "%s"\n' %input_fasta_file +
-							'Total number of sequences present in fasta file:  ' + str(len(protein_descriptions)) + '\n' +
+		Output_handle.write('Data below is obtained from FASTA file:  "%s"\n' %input_fasta_file +
+							'Total number of sequences present in FASTA file:  ' + str(len(protein_descriptions)) + '\n' +
 							'Number of unique %ss present among them:  ' % keyword + str(len(unique_descriptions)) + '\n\n' +
 							'### Following are the unique %ss extracted: ###\n\n' % keyword +
 							'%s, Count\n' % keyword + data_csv)
@@ -2773,14 +2773,14 @@ def description_extractor():
 
 		header_extractor_log.info('Data writing in to above csv file was completed.')
 
-		temp = (" Total number of sequences present in fasta file:  %i" % len(protein_descriptions) +
+		temp = (" Total number of sequences present in FASTA file:  %i" % len(protein_descriptions) +
 				"\n Number of unique %ss present among them:  %i" % (keyword, len(unique_descriptions)))
 		header_extractor_log.info(temp)
 		tkMessageBox.showinfo('Job Done', temp)
 
 	else:
-		temp = ('%s was not found in fasta file provided. ' % keyword +
-			   'Make sure title of fasta sequence records are in required format.')
+		temp = ('%s was not found in FASTA file provided. ' % keyword +
+			   'Make sure title of FASTA sequence records are in required format.')
 		header_extractor_log.error(temp)
 		popup_error(temp)
 
@@ -2806,7 +2806,7 @@ def fasta_filter_by_description():
 	global partial_dscrp_boxval
 	global include_or_exclude_names
 
-	descr_filter_log.info("User has requested tool 'Filter fasta by sequences' Description'.")
+	descr_filter_log.info("User has requested tool 'Filter FASTA by sequences' Description'.")
 	fasta_filter_by_name_Submit.configure(state=DISABLED)
 	filter_name_processing.grid()
 
@@ -2965,17 +2965,17 @@ def fasta_filter_by_description():
 
 	# provides details to user if requirements are not met in fasta headers provided
 	if header_error_count:
-		temp = (' Make sure sequence header in fasta file conforms to requirements provided.'
-		'\n Problem arose when reading following fasta header(s): \n "%s".' % header_error)
+		temp = (' Make sure sequence header in FASTA file conforms to requirements provided.'
+		'\n Problem arose when reading following FASTA header(s): \n "%s".' % header_error)
 		descr_filter_log.error(temp)
 		popup_error(temp)
 
 		temp = (' Total number of non-conforming headers: %i' % header_error_count +
-				"\n 'Filter fasta by sequences name' will continue now.")
+				"\n 'Filter FASTA by sequences name' will continue now.")
 		descr_filter_log.info(temp)
 		popup_error(temp)
 	else:
-		descr_filter_log.info('All sequence headers in fasta file seemed to conform to requirements.')
+		descr_filter_log.info('All sequence headers in FASTA file seemed to conform to requirements.')
 
 
 	output_file_filter = output_path_filter +'Filtered_Sequences_by_description.fasta'
@@ -3010,7 +3010,7 @@ def fasta_filter_by_id():
 	global output_idlist_entry
 	global filter_id_processing
 
-	idfilter_log.info("User has requested tool 'Filter fasta by sequences ID'.")
+	idfilter_log.info("User has requested tool 'Filter FASTA by sequences ID'.")
 	fasta_filter_by_id_Submit.configure(state=DISABLED)
 	filter_id_processing.grid()
 
@@ -3155,7 +3155,7 @@ def fasta_filter_by_id():
 			SeqIO.write(dict_ids[key], Output_handle_idfilter, 'fasta')
 	Output_handle_idfilter.close()
 
-	temp = (' Number of sequences present in fasta file:  %i' % total_seqs +
+	temp = (' Number of sequences present in FASTA file:  %i' % total_seqs +
 			'\n Number of IDs present in IDs-text file:  %i' % ids_total +
 			'\n Number of matching sequence records extracted and written in output file:  %i' % extracted +
 			'\n\n Output file: %s' %Output_filename_idfilter)
@@ -3368,7 +3368,7 @@ def read_user_input():
 		Reference = SeqIO.read(Reference_file, "fasta")
 	except (ValueError, IOError) as exception:
 		temp = ("Error reading Reference file:  '%s'. "
-				"Make sure it is in fasta format and has only one sequence." %Reference_file)
+				"Make sure it is in FASTA format and has only one sequence." %Reference_file)
 		runscript_log.error(temp)
 		runscript_log.error('Error that resulted: %s' % exception)
 		popup_error(temp)
@@ -3540,7 +3540,7 @@ def run_script():
 		# deletes temporarily created fasta file that has reference seq appended to it if wasn't originally present
 		if outfile_ref_added and os.path.exists(outfile_ref_added):
 			os.remove(outfile_ref_added)
-			clustal_log.info("Deleted reference sequence appended fasta file: '%s'" % outfile_ref_added)
+			clustal_log.info("Deleted reference sequence appended FASTA file: '%s'" % outfile_ref_added)
 
 
 	runscript_log.debug("Module 'fetch_mismatch' called.")
@@ -3881,9 +3881,9 @@ def top_win():
 	frame_blast.grid(row = 5, column = 0, columnspan=2, sticky = 'w')
 	frame_blast.grid_remove()
 
-	button_blast_filter = Button(top, text = "Filter Blast by Bit or E-value", width =30,
+	button_blast_filter = Button(top, text = "Filter BLAST by Bit or E-value", width =30,
 								 command = lambda: select_tools(frame_blast, button_blast_filter))
-	button_blast_filter.grid(row = 2, column = 1, padx=10, pady=10)
+	button_blast_filter.grid(row = 2, column = 0, padx=10, pady=10)
 	if mac_os:
 		button_blast_filter.configure(width= 32, font=('times', '14'))		# for Mac
 	else:
@@ -3944,14 +3944,14 @@ def top_win():
 	blast_processing.grid_remove()
 
 
-	'''This part is GUI stuff for GenPept/GenBank to fasta format converter'''
+	'''This part is GUI stuff for GenPept/GenBank to FASTA format converter'''
 	global Newick_hate_sym_checkboxval, ignore_incomplete_checkboxval, fasta_id_length_entry, options_dict
 
 	frame_genbank = Frame(top, bd=2, relief=GROOVE)
 	frame_genbank.grid(row = 5, column = 0, columnspan=2, sticky = 'w')
 	frame_genbank.grid_remove()
 
-	button_genbank = Button(top, text = "GenPept/GenBank To fasta Converter", width =30, command = lambda: select_tools(frame_genbank, button_genbank))
+	button_genbank = Button(top, text = "GenPept/GenBank To FASTA Converter", width =30, command = lambda: select_tools(frame_genbank, button_genbank))
 	button_genbank.grid(row = 1, column = 1, padx=10, pady=10)
 	if mac_os:
 		button_genbank.configure(width= 32, font=('times', '14'))			# for Mac
@@ -3975,7 +3975,7 @@ def top_win():
 	browse_button(frame_genbank, lambda: browse_for_directory(output_genbank_entry), 13, 2)
 
 
-	label_text(frame_genbank, "   Fasta ID length", 2, 20, 15, 0)
+	label_text(frame_genbank, "   FASTA ID length", 2, 20, 15, 0)
 
 	fasta_id_length_entry_val = StringVar()
 	fasta_id_length_entry_val.set(fasta_id_length_default)	# value obtained from settings file
@@ -4101,7 +4101,7 @@ def top_win():
 	subtree_processing.grid_remove()
 
 
-	'''This part is GUI stuff for Fasta Description/ID Extractor'''
+	'''This part is GUI stuff for FASTA Description/ID Extractor'''
 	global descr_extr_file_entry
 	global replace_comma_checkboxval
 	global reg_exp_descr_entry
@@ -4114,8 +4114,8 @@ def top_win():
 	frame_descr_extractor.grid(row = 5, column = 0, columnspan=2, sticky = 'w')
 	frame_descr_extractor.grid_remove()
 
-	button_descr_extractor = Button(top, text = "Fasta Description / ID Extractor", width =30, command = lambda: select_tools(frame_descr_extractor, button_descr_extractor))
-	button_descr_extractor.grid(row = 3, column = 0, padx=10, pady=10)
+	button_descr_extractor = Button(top, text = "FASTA Description / ID Extractor", width =30, command = lambda: select_tools(frame_descr_extractor, button_descr_extractor))
+	button_descr_extractor.grid(row = 3, column = 1, padx=10, pady=10)
 	if mac_os:
 		button_descr_extractor.configure(width= 32, font=('times', '14'))		# for Mac
 	else:
@@ -4223,7 +4223,7 @@ def top_win():
 	descr_extract_processing.grid_remove()
 
 
-	'''This part is GUI stuff for filtering fasta sequences based on their Description'''
+	'''This part is GUI stuff for filtering FASTA sequences based on their Description'''
 	global fasta_filename_entry
 	global namelist_4filtering_entry
 	global namelist_filename_entry
@@ -4236,9 +4236,9 @@ def top_win():
 	frame_fasta_name_filter.grid(row = 5, column = 0, columnspan = 2, sticky = W)
 	frame_fasta_name_filter.grid_remove()
 
-	button_namefilter = Button(top, text = "Filter fasta by Sequences' Description", width =30,
+	button_namefilter = Button(top, text = "Filter FASTA by Sequences' Description", width =30,
 							   command = lambda: select_tools(frame_fasta_name_filter, button_namefilter))
-	button_namefilter.grid(row = 3, column = 1, padx=10, pady=10)
+	button_namefilter.grid(row = 3, column = 0, padx=10, pady=10)
 	if mac_os:
 		button_namefilter.configure(width= 32, font=('times', '14'))			#for Mac
 	else:
@@ -4331,7 +4331,7 @@ def top_win():
 	filter_name_processing.grid_remove()
 
 
-	'''This part is GUI stuff for filtering fasta sequences based on their ID'''
+	'''This part is GUI stuff for filtering FASTA sequences based on their ID'''
 	global fasta_filename2_entry
 	global idlist_filename_entry
 	global include_or_exclude_IDs
@@ -4341,8 +4341,8 @@ def top_win():
 	frame_fasta_id_filter.grid(row = 5, column = 0, columnspan = 2, sticky = W)
 	frame_fasta_id_filter.grid_remove()
 
-	button_idfilter = Button(top, text = "Filter fasta by Sequences' ID", width =30, command = lambda: select_tools(frame_fasta_id_filter, button_idfilter))
-	button_idfilter.grid(row = 2, column = 0, padx=10, pady=10)
+	button_idfilter = Button(top, text = "Filter FASTA by Sequences' ID", width =30, command = lambda: select_tools(frame_fasta_id_filter, button_idfilter))
+	button_idfilter.grid(row = 2, column = 1, padx=10, pady=10)
 	if mac_os:
 		button_idfilter.configure(width= 32, font=('times', '14'))			# for Mac
 	else:
@@ -4450,7 +4450,7 @@ def edit_settings(settings_win):
 	aa_set = aa_set_upper + aa_set_lower
 	aa_set_str = ', '.join(aa_set_upper)
 
-	# settings for GenPept/GenBank to fasta converter
+	# settings for GenPept/GenBank to FASTA converter
 	connector_id = dict_box_values['connector_id_edit'].get()
 
 	symbols_to_be_replaced_str = dict_box_values['symbols_to_be_replaced_str_edit'].get()
@@ -4459,7 +4459,7 @@ def edit_settings(settings_win):
 	old_newick_sym_replace = newick_sym_replace		# to help with error-checking
 	newick_sym_replace = dict_box_values['newick_sym_replace_edit'].get()
 
-	# settings for Fasta Description / ID Extractor
+	# settings for FASTA Description / ID Extractor
 	# old_symbol_replacing_comma = symbol_replacing_comma		# to help with error-checking
 	# symbol_replacing_comma = dict_box_values['symbol_replacing_comma_edit'].get()
 
@@ -4504,7 +4504,7 @@ def settings_win_fn():
 	frame1_set = Frame(settings_win)
 	frame1_set.grid(row=0, column=0, sticky='w')
 
-	headings_list = ['Settings for Mismatch analyzer', 'Settings for GenPept/GenBank to fasta converter', 'Settings for Fasta Description / ID Extractor']
+	headings_list = ['Settings for Mismatch analyzer', 'Settings for GenPept/GenBank to FASTA converter', 'Settings for FASTA Description / ID Extractor']
 	# default_values_edited = [match_color, similar_color, mismatch_color, id_delimiter, aa_set_str, connector_id, newick_sym_replace, symbol_replacing_comma]
 	default_values_edited = [match_color, similar_color, mismatch_color, id_delimiter, aa_set_str, connector_id, newick_sym_replace, symbols_to_be_replaced_str]
 	dict_box_values = {k: '' for k in box_values}
