@@ -326,7 +326,7 @@ def verify_filepath_exists(path):
 	except OSError as exception:
 		runscript_log.error('Error that resulted when creating path "%s":\n  %s' % (path, exception))
 		if exception.errno != errno.EEXIST:			# if administrative privilages prevents from creating folder
-			temp = ("Cannot create file '%s'. Check if you have privileges to create this file "
+			temp = ("Cannot create file: \n  '%s'. \n  Check if you have privileges to create this file "
 					"in the path specified." %path)
 			runscript_log.error(temp)
 			popup_error(temp)
@@ -489,13 +489,13 @@ def is_ref_in_seqs_file():
 		all_seqs_input = list(SeqIO.parse(SeqQuery_file, "fasta"))
 	except Exception as e:
 		clustal_log.error('Error that resulted when reading Sequences file: %s' % e)
-		temp = ("Ran into problem reading file: '%s'" % SeqQuery_file)
+		temp = ("Ran into problem reading file:\n  '%s'" % SeqQuery_file)
 		clustal_log.error(temp)
 		popup_error(temp)
 		raise_enabler('stop')
 
 	if len(all_seqs_input) == 0:
-		temp = ('Sequences are not found in your sequences file. Make sure it is in FASTA format.'
+		temp = ('Sequences file seems to be empty. Make sure it is in FASTA format.'
 				'Try again after fixing this problem')
 		clustal_log.error(temp)
 		popup_error(temp)
@@ -868,7 +868,7 @@ def fetch_mismatch():
 				pass
 	except Exception as e:
 		mismatch_log.error("Error that resulted: %s" % e)
-		temp = ("Could not open file: '\n\t%s'" % Aligned_Filename)
+		temp = ("Could not open file: \n\t'%s'" % Aligned_Filename)
 		mismatch_log.error(temp)
 		popup_error(temp)
 		raise_enabler('stop')
@@ -888,8 +888,8 @@ def fetch_mismatch():
 
 	# Checks if Reference seq is present in MSA and if present, checks if they match or not
 	if Reference_index is None:
-		temp = ('Error: Alignment file "%s" does not have Sequence ID corresponding to your reference sequence. '
-				'Fix it and try again!' % Aligned_Filename)
+		temp = 'Error: Alignment file provided does not have Sequence ID corresponding to your reference sequence. ' \
+				'Fix it and try again!'
 		mismatch_log.error(temp)
 		popup_error(temp)
 		raise_enabler('stop')
@@ -1167,7 +1167,7 @@ def fetch_mismatch():
 	except IOError as exception:
 		mismatch_log.error('Error that resulted when opening csv file for writing: %s' % exception)
 		if exception.errno != errno.EEXIST:
-			temp = ("A file titled '%s' seems to be open in MS Excel. Close that file and try again!" %Output_filename_csv)
+			temp = ("A file titled \n\t'%s' \nseems to be open in MS Excel. Close that file and try again!" %Output_filename_csv)
 			mismatch_log.error(temp)
 			popup_error(temp)
 			raise_enabler('stop')
@@ -1546,7 +1546,7 @@ def html_formatting():
 				pass
 	except Exception as e:
 		html_log.error("Error that resulted: %s" % e)
-		temp = ("Could not open file: '\n\t%s'" % Aligned_Filename)
+		temp = ("Could not open file: \n\t'%s'" % Aligned_Filename)
 		html_log.error(temp)
 		popup_error(temp)
 		raise_enabler('stop')
@@ -2474,7 +2474,7 @@ def Extract_Clades():
 
 	except Exception as e:
 		clades_log.error("Error that resulted: %s" % e)
-		temp = ("Could not open file: '\n\t%s'" % Extract_Input_Newick)
+		temp = ("Could not open file: \n\t'%s'" % Extract_Input_Newick)
 		clades_log.error(temp)
 		popup_error(temp)
 		raise_enabler('stop')
@@ -2757,7 +2757,7 @@ def description_extractor():
 			Output_handle = open(output_file, 'w')
 		except IOError as exception:
 			if exception.errno != errno.EEXIST:
-				temp =  ("A file titled '%s' seems to be open in MS Excel. Close that file and try again!" %output_file)
+				temp =  ("A file titled \n\t'%s' \n\tseems to be open in MS Excel. Close that file and try again!" %output_file)
 				header_extractor_log.error(temp)
 				header_extractor_log.error('Error that resulted: %s' % exception)
 				popup_error(temp)
@@ -3055,7 +3055,7 @@ def fasta_filter_by_id():
 	try:
 		list_id_file = open(list_filename, 'Ur')
 	except Exception as e:
-		temp = ("Error arose when reading file: %s" % list_filename)
+		temp = ("Error arose when reading file: '%s'" % list_filename)
 		idfilter_log.error(temp)
 		idfilter_log.error('Error that resulted: %s' % e)
 		popup_error(temp)
@@ -3460,7 +3460,7 @@ def read_user_input():
 
 			# verifies if zero or duplicate numbers are present in user-provided residue positions list
 			if 0 in resi_positions:
-				temp = 'Why would you have Zero (0) in residue positions?! Try again!'
+				temp = 'Why would you have Zero (0) in residue positions?! You a coder? Try again!'
 				gui_log.error(temp)
 				popup_error(temp)
 				raise_enabler('stop')

@@ -1,0 +1,4 @@
+Traceback (most recent call last):
+  File "/Users/Mana/Dropbox/ResCons/Ver28_ResCon.py", line 3702, in <module>
+    clustal_local_user_command_string = clustalo_command_local_default	# these are to keep user provided values while switching b/w clustal client options
+NameError: name 'clustalo_command_local_default' is not defined
