@@ -47,10 +47,11 @@
 
 
   ## ClustalO command (local) used in ResCon ##
-  ## Note that accented/smart symbols will result in error. Especially True in Mac OS when using TextEdit. For example: ‘ is not same as '. Former is not allowed. Use dumb quotes. Copy and paste can help.
-  ## Default:   {'outfmt': 'clu', 'iterations': 3, 'force': 'True', 'guidetree_out': 'default.newick'}
+  ## Note that accented/smart symbols will result in error. Especially True in Mac OS when using TextEdit. For example: ‘ is not same as '. Former is not allowed. Use dumb quotes. Copy and paste the correct symbol if you don't know what this means.
+  ## Integers, True and False should not be in quotes. Anything else should be in quotes for parameter values.
+  ## Default:   {'outfmt': 'clu', 'iterations': 3, 'force': True, 'guidetree_out': 'default.newick'}
 
-    ClustalO_Command_local:  {'outfmt': 'fasta', 'iterations': 3, 'force': 'True', 'guidetree_out': 'default.newick'}
+    ClustalO_Command_local:  {'outfmt': 'fasta', 'iterations': 3, 'force': True, 'guidetree_out': 'default.newick'}
 
 
   ## ClustalO command (for web server) used in ResCon. An email id is required to use EMBL's Clustal omega webserver##

@@ -61,8 +61,8 @@ import operator
 import StringIO
 from Rescon_Files.clustalo_embl_api import clustalo_api		# to run clustal omega through EMBL webserver
 
-# terminal_output = False			# to show or not to show error/info in the terminal
-terminal_output = True
+terminal_output = False			# to show or not to show error/info in the terminal
+# terminal_output = True
 
 additional_imports = True	# this enables to run script in case such features from thrid party libs are not desired.
 if additional_imports:
@@ -2562,7 +2562,7 @@ def Extract_Clades():
 			Output_handle_Extract.close()
 
 		# If branch length requested is not found in tree. It has to be exactly same number for this script to work.
-		# Rounding off leads to error. This part also provides suggestions by showing coser numbers to branch length.
+		# Rounding off leads to error. This part provides suggestions by showing nearest numbers to such branch length.
 		elif len(index_list) < 1:
 			branches_sorted = sorted(Module_Branch_Length)
 
