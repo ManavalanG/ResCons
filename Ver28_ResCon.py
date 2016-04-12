@@ -36,6 +36,7 @@ Ver 28 (under development) major modifications:
  		b. Proper email id provided?
  		b. Is user providing parameters that needs to be set by ResCon?
 
+3. Edited default command for Clustal Omega in webserver mode. Added '--iterations 3' to existing command.
 
 '''
 
@@ -619,7 +620,8 @@ def clustalo_webserver_fn():
 		temp = 'It seems Clustal Omega webserver resulted in error.\n' \
 			   '  1. Are you connected to internet?\n' \
 			   '  2. Did you provide valid email id address in the command line?\n' \
-			   '  3. Check the command provided for errors\n\n' \
+			   '  3. Does no. of sequences in input exceed 2000? Webserver allows only 2000 or less sequences.\n' \
+			   '  4. Check the command provided for errors\n\n' \
 			   'Here is the error returned by Clustal Omega webserver:\n %s' %e
 		clustal_log.error(temp)
 		popup_error(temp)
@@ -636,7 +638,8 @@ def clustalo_webserver_fn():
 		temp = 'It seems Alignment using Clustal Omega webserver resulted in error.\n' \
 			   '  1. Are you connected to internet?\n' \
 			   '  2. Did you provide valid email id address in the command line?\n' \
-			   '  3. Check the command provided for errors\n\n' \
+			   '  3. Does no. of sequences in input exceed 2000? Webserver allows only 2000 or less sequences.\n' \
+			   '  4. Check the command provided for errors\n\n' \
 			   'See log file for specific error resulted (File -> open log file)'
 		clustal_log.error(temp)
 		popup_error(temp)
@@ -1090,7 +1093,7 @@ def fetch_mismatch():
 					freq = float( dict_pos_freq[aa_no][ sequence[aa_no] ] )
 					if freq:
 						seq_weight += 1 / (freq * dict_pos_unique_aa[aa_no][0])
-				dict_seq_weight[seq_no] = seq_weight / alignment_len
+				dict_seq_weight[seq_no] = seq_weight / alignment_len        # Normalized sequence weight
 
 		# determine residue conservation score by Liu08 method
 		# for column_no in range(0, len(query_in_Alignment)):
@@ -3158,7 +3161,7 @@ def fasta_filter_by_id():
 	temp = (' Number of sequences present in FASTA file:  %i' % total_seqs +
 			'\n Number of IDs present in IDs-text file:  %i' % ids_total +
 			'\n Number of matching sequence records extracted and written in output file:  %i' % extracted +
-			'\n\n Output file: %s' %Output_filename_idfilter)
+			'\n Output file: %s' %Output_filename_idfilter)
 	idfilter_log.info(temp)
 	tkMessageBox.showinfo('Job Done!', temp)
 

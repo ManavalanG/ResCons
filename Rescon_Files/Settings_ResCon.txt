@@ -56,7 +56,7 @@
 
   ## ClustalO command (for web server) used in ResCon. An email id is required to use EMBL's Clustal omega webserver##
 
-    ClustalO_Command_web:  --email your_email@here.com
+    ClustalO_Command_web:  --email your_email@here.com --iterations 3
 
 
   ## Method  used to draw bar chart in html output file ##
