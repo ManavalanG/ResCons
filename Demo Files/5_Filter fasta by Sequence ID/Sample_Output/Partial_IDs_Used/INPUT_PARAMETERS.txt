@@ -1,0 +1,5 @@
+Input files from ‘Demo files’
+
+Exclude IDs in list:  Chosen
+
+IDs are partiall:     Checked

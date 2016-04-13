@@ -1,0 +1,16 @@
+2016-04-13 15:31:15 Filter_by_Descrip   INFO     User has requested tool 'Filter FASTA by sequences' Description'.
+2016-04-13 15:31:15 Filter_by_Descrip   INFO     User chose 'Include Descriptions in list'
+2016-04-13 15:31:15 Filter_by_Descrip   INFO     State of 'Filter using Partial Descriptions': False
+2016-04-13 15:31:15 Filter_by_Descrip   INFO     Text file (containing Descriptions) provided by user:
+	/Users/Mana/Dropbox/ResCons/Demo files/6_Filter fasta by description/List_complete.txt
+2016-04-13 15:31:15 Filter_by_Descrip   INFO     Descriptions recognised by software: ['inorganic pyrophosphatase [Prochlorococcus marinus].', 'inorganic pyrophosphatase [Escherichia coli].']
+2016-04-13 15:31:15 Filter_by_Descrip   INFO     FASTA file provided by user: /Users/Mana/Dropbox/ResCons/Demo files/6_Filter fasta by description/Sequences_demo.fasta
+2016-04-13 15:31:15 Filter_by_Descrip   INFO     Output folder provided by user: /Users/Mana/Dropbox/ResCons/Demo files/6_Filter fasta by description/Output/
+2016-04-13 15:31:15 Filter_by_Descrip   INFO     All sequence headers in FASTA file seemed to conform to requirements.
+2016-04-13 15:31:15 Filter_by_Descrip   INFO      Number of sequences present in fasta file:  677
+ Number of names provided by user:  2
+ Number of sequence records extracted and written in output file:  35
+ Output file: /Users/Mana/Dropbox/ResCons/Demo files/6_Filter fasta by description/Output/
+2016-04-13 15:31:18 Filter_by_Descrip   INFO     Job done! Ready for next job.
+
+

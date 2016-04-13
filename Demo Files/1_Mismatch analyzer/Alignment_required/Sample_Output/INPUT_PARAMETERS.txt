@@ -1,0 +1,24 @@
+Protein mode - Selected
+Input files from ‘Demo files’
+
+Residue positions - 3,30,60,90
+
+Clustal Alignment required? - Selected
+Use local ClustalO - Selected
+ClustalO command - Default command in ResCon
+
+
+Conservation scoring - Liu08 Seq Weighted
+
+Include reference seq - Yes
+
+
+
+In File -> Edit Settings:
+========================
+
+Highlighting colors   -  Default
+
+Delimiter used in FASTA IDs:       |
+
+Amino acids similarity sets:       AVFPMILW, DE, RK, STYHCNGQ

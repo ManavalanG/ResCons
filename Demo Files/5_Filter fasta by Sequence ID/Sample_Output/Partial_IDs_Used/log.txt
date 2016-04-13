@@ -1,0 +1,15 @@
+2016-04-13 15:27:28 Filter_by_id        INFO     User has requested tool 'Filter FASTA by sequences ID'.
+2016-04-13 15:27:28 Filter_by_id        INFO     User chose 'Include IDs in list'.
+2016-04-13 15:27:28 Filter_by_id        INFO     State of 'IDs are Partial': True
+2016-04-13 15:27:28 Filter_by_id        INFO     Text file (containing IDs) provided by user:
+	/Users/Mana/Dropbox/ResCons/Demo files/5_Filter fasta by Sequence ID/List_partial.txt
+2016-04-13 15:27:28 Filter_by_id        INFO     Output folder path provided by user:
+	/Users/Mana/Dropbox/ResCons/Demo files/5_Filter fasta by Sequence ID/Output/
+2016-04-13 15:27:28 Filter_by_id        INFO     IDs recognised by software: ['NP_066952', 'YP_007162693', 'YP_004164947', 'YP_007065375']
+2016-04-13 15:27:28 Filter_by_id        INFO      Number of sequences present in FASTA file:  18
+ Number of IDs present in IDs-text file:  4
+ Number of matching sequence records extracted and written in output file:  4
+ Output file: /Users/Mana/Dropbox/ResCons/Demo files/5_Filter fasta by Sequence ID/Output/Filtered_Sequences_based_on_IDs.fasta
+2016-04-13 15:27:30 Filter_by_id        INFO     Job done! Ready for next job.
+
+

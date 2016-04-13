@@ -1,0 +1,33 @@
+Sequences file used:    "/Users/Mana/Dropbox/ResCons/Demo files/Mismatch analysis/Alignment_required/Output/Sequences_Reference_SeqAdded.fasta"
+Reference file used:    "/Users/Mana/Dropbox/ResCons/Demo files/Mismatch analysis/Alignment_required/Reference.fasta"
+Residue conservation method used:    liu08_seq_weighted
+
+Number of sequences
+       in alignment (including Reference sequence):      5
+       that have all residues matching (including Reference sequence):   2 (40.0 %)
+       that have at least one mismatching residue:      3 (60.0 %)
+
+
+*** Records that have mismatches in at least one of the query sites ***
+
+S.No ,Title_1,Title_2,Title_3,Title_4,Sequence Length,No. of Mismatches,3 "L",30 "K",60 "N",90 "P"
+1,WP_0027768i,Bacteria,Campylobacter,coli,144,2,=,=,A,L
+2,WP_0121692i,Bacteria,Azorhizobium,caulinodans,146,2,I,=,P,=
+3,WP_0196459i,Bacteria,Novispirillum,itersonii,146,2,I,=,P,=
+
+
+*** Unique residues seen at the query sites and their count. ***
+** (Note: Calculation includes Reference sequences's residue at that position) **
+
+,Expected Residue, ,Identity_count,% Identity,% Conservation (Liu08 Sequence-weighted),Unique residues' count and fraction
+,3 "L",,3,60.0,91.9,L: 3 (75.0%),I: 2 (50.0%)
+,30 "K",,5,100.0,99.9,K: 5 (125.0%)
+,60 "N",,2,40.0,60.4,P: 2 (50.0%),N: 2 (50.0%),A: 1 (25.0%)
+,90 "P",,4,80.0,82.8,P: 4 (100.0%),L: 1 (25.0%)
+
+
+*** Records that Do Not have mismatches at any of the query sites ***
+
+S.No ,Title_1,Title_2,Title_3,Title_4,Sequence Length,No. of Mismatches,3 "L",30 "K",60 "N",90 "P"
+1,WP_0098740i,Bacteria,Buchnera,aphidicola,148,0,=,=,=,=
+2,WP_0202604i,Bacteria,Escherichia,coli,148,0,=,=,=,=

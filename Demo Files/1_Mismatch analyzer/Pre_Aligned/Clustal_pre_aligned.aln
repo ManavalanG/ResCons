@@ -1,0 +1,23 @@
+CLUSTAL O(1.2.0) multiple sequence alignment
+
+
+WP_0121692i|Bacteria|Azorhizobium|caulinodans|      MRIDAIPVGKNPPHEVNVVIEVPIGGEPIKYEMDKDAGALFVDRFLYTAMRYPGNYGFIP
+WP_0098740i|Bacteria|Buchnera|aphidicola|           MNLNKIVAGKDLPEDIYVVIEIPANADPIKYEIDKESGALFVDRFMSTAMFYPCNYGYIN
+WP_0196459i|Bacteria|Novispirillum|itersonii|       MDIKKIPIGKDAPRDVNVIIEIPLRSDPVKYEVDKESGAMYVDRFLHTAMHYPCNYGFIP
+WP_0027768i|Bacteria|Campylobacter|coli|            MDLSKIKIG-DIPNKINAVIEIPYG-SSIKYEIDKDSGAIMVDRVMASAMFYPANYGFIA
+WP_0202604i|Bacteria|Escherichia|coli|              MSLLNVPAGKDLPEDIYVVIEIPANADPIKYEIDKESGALFVDRFMSTAMFYPCNYGYIN
+                                                    * :  :  * : *..: .:**:*   . :***:**::**: ***.: :** ** ***:* 
+
+WP_0121692i|Bacteria|Azorhizobium|caulinodans|      HTLSGDGDPCDVLVANTRAIVPGAVMSVRPVGVLLMEDESGVDEKIIA--VPGPKLTKRY
+WP_0098740i|Bacteria|Buchnera|aphidicola|           HTLSLDGDPLDVLVPSHYPIKSSCVIHCKPIGILNMQDESGDDAKIIA--VPKSKICQEY
+WP_0196459i|Bacteria|Novispirillum|itersonii|       HTLSDDGDPVDVMVVGNMPVAVGSVMRVRPVGVMYMEDESGGDEKILA--VPHSKLHPYH
+WP_0027768i|Bacteria|Campylobacter|coli|            NTLADDGDPVDILVLNEYPIQAGAVIPCRLIGVLIMEDESGMDEKLLA--VPNSKIDARY
+WP_0202604i|Bacteria|Escherichia|coli|              HTLSLDGDPVDVLVPTPYPLQPGSVIRCRPVGVLKMTDEAGEDAKLIAVAVPHSKLSKEY
+                                                    .**: **** *::*     :  ..*:  : :*:: * **:* * *::*  **  *:   :
+
+WP_0121692i|Bacteria|Azorhizobium|caulinodans|      DKVLSYKDLADITLKQIEHFFEHYKDLE--
+WP_0098740i|Bacteria|Buchnera|aphidicola|           KNINDISDISELLKKQITHFFQNYKTLENK
+WP_0196459i|Bacteria|Novispirillum|itersonii|       DNVKNYTDLRDVLIRQIEHFFVHYKDLE--
+WP_0027768i|Bacteria|Campylobacter|coli|            DNIKTYTDLPQATLNKIKNFFETYKILE--
+WP_0202604i|Bacteria|Escherichia|coli|              DHIKDVNDLPELLKAQIAHFFEHYKDLE--
+                                                    ..:   .*: :    :* .**  ** **  

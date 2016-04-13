@@ -1071,6 +1071,7 @@ def fetch_mismatch():
 		dict_pos_unique_aa = {}
 		for column_no in positions_concerned:
 			column_aa = msa_data[:,column_no]
+			column_aa = column_aa.upper()		# to help if seqs are in lower case or mix of lower and upper cases
 
 			unique_aa = list( set( column_aa ) )
 			dict_pos_unique_aa[column_no] = [ len(unique_aa) ]

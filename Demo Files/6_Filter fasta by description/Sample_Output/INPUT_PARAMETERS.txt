@@ -1,0 +1,7 @@
+Input files from ‘Demo files’
+
+Include Descriptions in list:  Chosen
+
+Get descriptions from text file:   Checked
+
+Filter using partial descriptions:  Unchecked

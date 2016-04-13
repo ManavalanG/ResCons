@@ -1,0 +1,8 @@
+Tool: Identifier Extractor
+———————————————————————————
+
+
+Input files from ‘Demo files’
+
+Extract Partial Idenitifier:  Unchecked
+

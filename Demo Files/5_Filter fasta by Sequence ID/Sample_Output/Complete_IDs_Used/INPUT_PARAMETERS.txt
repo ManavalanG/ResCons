@@ -1,0 +1,5 @@
+Input files from ‘Demo files’
+
+Include IDs in list:  Checked
+
+IDs are partiall:     Unchecked

@@ -1,0 +1,9 @@
+Tool: Description Extractor
+———————————————————————————
+
+
+Input files from ‘Demo files’
+
+Extract Partial Description:  Checked
+
+Regular expression:           (.+) \[.+

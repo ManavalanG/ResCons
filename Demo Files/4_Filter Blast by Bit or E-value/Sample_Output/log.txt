@@ -1,0 +1,18 @@
+2016-04-13 15:23:36 blast_filter        INFO     User selected tool - 'Filtering sequences by BLAST e-value'.
+2016-04-13 15:23:36 blast_filter        INFO     BLAST XML file provided by user :
+	/Users/Mana/Dropbox/ResCons/Demo files/4_Filter Blast by Bit or E-value/Blast_results_Updated.xml
+2016-04-13 15:23:36 blast_filter        INFO     FASTA file provided by user :
+	/Users/Mana/Dropbox/ResCons/Demo files/4_Filter Blast by Bit or E-value/Sequences_demo.fasta
+2016-04-13 15:23:36 blast_filter        INFO     Output folder provided by user :
+	/Users/Mana/Dropbox/ResCons/Demo files/4_Filter Blast by Bit or E-value/Sample_Output/
+2016-04-13 15:23:36 blast_filter        INFO     BLAST Filter method chosen: E-value
+2016-04-13 15:23:36 blast_filter        INFO     Requested to be filtered 'Lower than' than threshold.
+2016-04-13 15:23:36 blast_filter        INFO     Threshold entered by user: 1e-32
+2016-04-13 15:23:36 blast_filter        INFO     Filtered sequences are stored in file:  
+	'/Users/Mana/Dropbox/ResCons/Demo files/4_Filter Blast by Bit or E-value/Sample_Output/Filtered_Seqs_E-value_Lower than_1e-32.fasta'
+2016-04-13 15:23:36 blast_filter        INFO     Total number of sequences in input FASTA file:	 18
+Total number of records with E-value lower than entered threshold in BLAST XML file:  4
+Number of sequences written in output file:  4
+2016-04-13 15:25:03 blast_filter        INFO     BLAST-Filtering job is done! Ready for next job
+
+

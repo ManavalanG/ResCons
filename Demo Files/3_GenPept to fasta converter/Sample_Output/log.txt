@@ -1,0 +1,22 @@
+2016-04-13 15:15:33 genbank2Fasta       INFO     User selected tool - 'GenPept/GenBank to FASTA converter'.
+2016-04-13 15:15:33 genbank2Fasta       INFO     GenPept/GenBank file provided by user: 
+ /Users/Mana/Dropbox/ResCons/Demo files/3_GenPept to fasta converter/GenPept_demo.gp
+2016-04-13 15:15:33 genbank2Fasta       INFO     Output folder path provided by user: 
+ /Users/Mana/Dropbox/ResCons/Demo files/3_GenPept to fasta converter/Sample_Output/
+2016-04-13 15:15:33 genbank2Fasta       INFO     State of 'Replace sensitive symbols with _':   True
+2016-04-13 15:15:33 genbank2Fasta       INFO     Senstive symbols that are to be replaced in header ID:   ( ) [ ] : ; , '
+2016-04-13 15:15:33 genbank2Fasta       INFO     State of 'Ignore sequence records that are incomplete/partial?':   True
+2016-04-13 15:15:33 genbank2Fasta       INFO     Length of FASTA ID requested by user':   127
+2016-04-13 15:15:33 genbank2Fasta       INFO     State of 'Header options':  {'Seq Length': False, 'Taxon-1': True, 'Taxon-2': True, 'Taxon-3': True, 'Taxon ID': False, 'Seq Name': False, 'Version': False, 'Locus ID': True, 'Genus': True, 'Species': True, 'GI': False}
+2016-04-13 15:15:33 genbank2Fasta       INFO     Total number of FASTA ID names whose names were longer than 127 characters and 
+ hence restricted to the maximum of 127 characters: 0
+2016-04-13 15:15:33 genbank2Fasta       INFO     Number of sequence records that are incomplete:  0
+2016-04-13 15:15:33 genbank2Fasta       INFO      Number of records present in input GenPept/GenBank file:  6
+ Number of sequences written into FASTA file:  6
+ GenPept/GenBank to FASTA conversion was successful and stored in file:
+  /Users/Mana/Dropbox/ResCons/Demo files/3_GenPept to fasta converter/Sample_Output/GenPept_to_Fasta_formatted.fasta
+2016-04-13 15:15:36 genbank2Fasta       INFO      Total number of records that have some level of taxonomy details:   6
+ Total number of records that do not have any level of taxonomy details:   0
+2016-04-13 15:15:36 genbank2Fasta       INFO     Exiting 'genpept_converter' module. Ready for next job! 
+
+

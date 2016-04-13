@@ -1,0 +1,17 @@
+2016-04-13 15:37:36 Descrip/ID_Extractor INFO     User has requested tool 'FASTA Description/ID Extractor'
+2016-04-13 15:37:36 Descrip/ID_Extractor INFO     User chose to use 'Description Extractor'
+2016-04-13 15:37:36 Descrip/ID_Extractor INFO     FASTA file provided by user: '/Users/Mana/Dropbox/ResCons/Demo files/7_Description_ID Extractor/Sequences_demo.fasta'
+2016-04-13 15:37:36 Run_Script_Main     ERROR    Error that resulted when creating path "/Users/Mana/Dropbox/ResCons/Demo files/7_Description_ID Extractor/Sample_Output/Description_Extractor/":
+  [Errno 17] File exists: '/Users/Mana/Dropbox/ResCons/Demo files/7_Description_ID Extractor/Sample_Output/Description_Extractor/'
+2016-04-13 15:37:36 Run_Script_Main     WARNING  Folder "/Users/Mana/Dropbox/ResCons/Demo files/7_Description_ID Extractor/Sample_Output/Description_Extractor/" already exists. All or some files in it may get overwritten by ResCons. Do you wish to continue?
+2016-04-13 15:37:37 Run_Script_Main     INFO     User has selected (True = Yes, False = No):  True
+2016-04-13 15:37:37 Run_Script_Main     INFO     ResCons will continue as user requested.
+2016-04-13 15:37:37 Descrip/ID_Extractor INFO     Output folder path provided by user: '/Users/Mana/Dropbox/ResCons/Demo files/7_Description_ID Extractor/Sample_Output/Description_Extractor/'
+2016-04-13 15:37:37 Descrip/ID_Extractor INFO     State of checkbox 'Extract Partial Description': True
+2016-04-13 15:37:37 Descrip/ID_Extractor INFO     Regular expression provided by user: (.+) \[.+
+2016-04-13 15:37:37 Descrip/ID_Extractor INFO     All sequence headers in FASTA file conform to the requirements.
+2016-04-13 15:37:37 Descrip/ID_Extractor INFO     Descriptions will be written into output file: '/Users/Mana/Dropbox/ResCons/Demo files/7_Description_ID Extractor/Sample_Output/Description_Extractor/Descriptions_Extracted.csv'
+2016-04-13 15:37:37 Descrip/ID_Extractor INFO     Data writing in to above csv file was completed.
+2016-04-13 15:37:37 Descrip/ID_Extractor INFO      Total number of sequences present in FASTA file:  677
+ Number of unique Descriptions present among them:  38
+2016-04-13 15:37:38 Descrip/ID_Extractor INFO     Job done! Ready for next job.

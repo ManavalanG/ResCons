@@ -1,0 +1,29 @@
+2016-04-13 15:06:42 Run_Script_Main     INFO     ResCons begins!
+2016-04-13 15:06:42 Run_Script_Main     INFO     ResCon will run in 'Protein mode' as user has requested.
+2016-04-13 15:06:42 Run_Script_Main     INFO     'Reference file provided by user: 
+	/Users/Mana/Dropbox/ResCons/Demo files/Mismatch analysis/Pre_Aligned/Reference.fasta
+2016-04-13 15:06:42 Run_Script_Main     INFO     Output folder path provided by user: /Users/Mana/Dropbox/ResCons/Demo files/Mismatch analysis/Pre_Aligned/Output/
+2016-04-13 15:06:42 Clustal_Alignment   INFO     Pre-Aligned file was provided by user.
+2016-04-13 15:06:42 Clustal_Alignment   INFO     Pre-Aligned file provided: 
+	/Users/Mana/Dropbox/ResCons/Demo files/Mismatch analysis/Pre_Aligned/Clustal_pre_aligned.aln.
+2016-04-13 15:06:42 GUI_Main            INFO     All output files will be stored at: 
+	/Users/Mana/Dropbox/ResCons/Demo files/Mismatch analysis/Pre_Aligned/Output/.
+2016-04-13 15:06:42 Run_Script_Main     INFO     All residue positions entered are less than the length of reference sequence.
+2016-04-13 15:06:42 Run_Script_Main     INFO     Residue conservation method chosen: liu08_seq_weighted
+2016-04-13 15:06:42 Run_Script_Main     INFO     Included Reference sequence in %identity and %conservation calculations?: Yes
+2016-04-13 15:06:42 Fetch_Mismatch      INFO     Alignment format is detected as "clustal" format
+2016-04-13 15:06:42 Clustal_Alignment   INFO     Reference sequence matches to corresponding sequence in Alignment file provided.
+2016-04-13 15:06:42 Fetch_Mismatch      INFO     Reference sequence's ID is present in alignment file and their sequences match.
+2016-04-13 15:06:42 Fetch_Mismatch      INFO     Query sites requested: [3, 30, 60, 90]
+2016-04-13 15:06:42 Fetch_Mismatch      INFO     Residues at those query sites: ['L', 'K', 'N', 'P']
+2016-04-13 15:06:42 Fetch_Mismatch      INFO     Corresponding sites in the alignment's Reference sequence : [3, 30, 60, 90]
+2016-04-13 15:06:42 Fetch_Mismatch      INFO     Begin extracting residues across alignment at the requested query sites
+2016-04-13 15:06:42 Fetch_Mismatch      INFO     Mismatch details will be written in to file:
+  "	/Users/Mana/Dropbox/ResCons/Demo files/Mismatch analysis/Pre_Aligned/Output/Mismatches_Tabulated.csv"
+2016-04-13 15:06:42 Fetch_Mismatch      INFO     Done writing mismatch details in to csv file mentioned above.
+2016-04-13 15:06:42 GUI_Main            INFO     User has requested to format alignment in html format
+2016-04-13 15:06:42 Run_Script_Main     INFO     User requested HTML color formatting for clustal alignment
+2016-04-13 15:06:42 html_formatting     INFO     Alignment file used for formatting: /Users/Mana/Dropbox/ResCons/Demo files/Mismatch analysis/Pre_Aligned/Clustal_pre_aligned.aln
+2016-04-13 15:06:42 html_formatting     INFO     Alignment format is detected as "clustal" format
+2016-04-13 15:06:42 html_formatting     INFO     Formatted aligment will be stored in html file: '/Users/Mana/Dropbox/ResCons/Demo files/Mismatch analysis/Pre_Aligned/Output/Formatted_Alignment.html'
+2016-04-13 15:06:42 html_formatting     INFO     Alignment formatting was completed and saved as above mentioned html file.

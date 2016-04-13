@@ -1,0 +1,4 @@
+NP_066952|Eukaryota|Metazoa|Chordata|Homo|sapiens|
+YP_007162693|Bacteria|Cyanobacteria|Oscillatoriophycideae|Cyanobacterium|aponinum_PCC_10605|
+YP_004164947|Bacteria|Bacteroidetes|Flavobacteriia|Cellulophaga|algicola_DSM_14237|
+YP_007065375|Bacteria|Cyanobacteria|Nostocales|Calothrix|sp._PCC_7507|

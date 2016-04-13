@@ -1,0 +1,25 @@
+Input files from ‘Demo files’
+
+FASTA ID length = 127
+
+Following Header options were checked:
+  Locus ID
+  Taxon-1
+  Taxon-2
+  Taxon-3
+  Genus
+  Species
+
+Replace sensitive symbols in header ID with ‘_’  - Checked
+Ignore incomplete/partial sequence records       - Checked
+
+
+
+In File -> Edit Settings:
+========================
+
+Connecting delimiter used in FASTA ID:    |
+
+Symbol replacing sensitive symbols:       _
+
+Sensitive symbols to be replaced:        ( ) [ ] : ; , '
