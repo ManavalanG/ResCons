@@ -848,6 +848,7 @@ def fetch_mismatch():
 	global dict_identifier_status
 	global match_seqs_total
 	global mismatched_seqs_total
+	global method_name
 
 	mismatches_text_output = False		# Default: False. If True, writes a text output file along with csv output file.
 
@@ -1057,11 +1058,11 @@ def fetch_mismatch():
 		if conserve_method  == 'liu08_non_seq_weighted':
 			liu08_simple_score_list = []
 			positions_concerned = query_in_Alignment
-			method_name = "Liu08 Non-Sequence-weighted"		# for csv output
+			method_name = "Liu08 Non-Sequence-weighted"		# for csv and html output
 		elif conserve_method == 'liu08_seq_weighted':
 			liu08_weighted_score_list = []
 			positions_concerned = range(alignment_len)
-			method_name = "Liu08 Sequence-weighted"			# for csv output
+			method_name = "Liu08 Sequence-weighted"			# for csv and html output
 
 
 		# get frequency and unique amino acid count in a column
@@ -1158,6 +1159,9 @@ def fetch_mismatch():
 		# score_shannon = 1 - score_shannon
 		# # print "%0.3f" %score_shannon, dict_pos_unique_aa[column_no][1]
 
+	if conserve_method == 'amino_acid_grouping':
+		method_name = "Amino acid Grouping"             # for csv and html output
+
 
 	# Creates and writes  mismatch details in to a csv file
 	mismatch_log.debug('Creates and writes  mismatch details in to a csv file')
@@ -1249,7 +1253,7 @@ def fetch_mismatch():
 
 	Output_handle_mismatch_csv.write('Sequences file used:    "%s"\n' % input_file)
 	Output_handle_mismatch_csv.write('Reference file used:    "%s"\n' % Reference_file)
-	Output_handle_mismatch_csv.write('Residue conservation method used:    %s\n\n' %conserve_method)
+	Output_handle_mismatch_csv.write('Residue conservation method used:    %s\n\n' %method_name)
 	# Output_handle_mismatch_csv.write('Reference sequence included in calculations:    %s\n\n' %ref_included)
 
 	if ref_included:		# reference sequence included in calculations
@@ -1402,7 +1406,7 @@ def fetch_mismatch():
 			if similarity_perc > 99.94 and similarity_perc < 100:
 				similarity_perc = 99.9
 			similarity_perc_list.append(similarity_perc)
-			method_name = "Liu08 Amino acid Grouping"			# for csv output
+			# method_name = "Amino acid Grouping" 			    # for csv output
 
 
 		# calculates count of unique amino acidss in column and sorts them in ascending order
@@ -1530,6 +1534,7 @@ def html_formatting():
 	global dict_identifier_status
 	global match_seqs_total
 	global mismatched_seqs_total
+	global method_name
 
 	# reads alignment file provided
 	html_log.info('Alignment file used for formatting: %s' %Aligned_Filename)
@@ -1957,7 +1962,7 @@ def html_formatting():
 			out_html_handle.write('\n')
 
 	temp = '\n<ins>Input files used:</ins>\n\t %s \n\t %s\n\n' %(Aligned_Filename, Reference_file)
-	temp += 'Residue conservation method used                :   <b>%s</b>\n' %conserve_method
+	temp += 'Residue conservation method used                :   <b>%s</b>\n' %method_name
 	if ref_included:
 		ref_temp = 'Yes'
 	else:
@@ -3498,6 +3503,7 @@ def read_user_input():
 	conserve_method = conserve_method_val.get()
 	conserve_method = ( conserve_method.lower() ).replace(' ', '_')
 	runscript_log.info("Residue conservation method chosen: %s" % conserve_method)
+	runscript_log.info("Amino acid grouping set definition: %s" % aa_set)
 
 	ref_included = ref_included_val.get()
 	runscript_log.info("Included Reference sequence in %%identity and %%conservation calculations?: %s" %ref_included)
