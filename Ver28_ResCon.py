@@ -1971,6 +1971,7 @@ def html_formatting():
 	out_html_handle.write(temp + "\n</PRE>\n</BODY>\n</HTML>")
 	out_html_handle.close()
 	html_log.info('Alignment formatting was completed and saved as above mentioned html file.')
+	html_log.info('Jone Done. Ready for next job!')
 
 
 # Function to extract sequences from FASTA file and BLAST XML based on Bit-score or E-value threshold set by user
@@ -3164,10 +3165,9 @@ def fasta_filter_by_id():
 			SeqIO.write(dict_ids[key], Output_handle_idfilter, 'fasta')
 	Output_handle_idfilter.close()
 
-	temp = (' Number of sequences present in FASTA file:  %i' % total_seqs +
-			'\n Number of IDs present in IDs-text file:  %i' % ids_total +
-			'\n Number of matching sequence records extracted and written in output file:  %i' % extracted +
-			'\n Output file: %s' %Output_filename_idfilter)
+	temp = (' Number of sequences in input FASTA file:  %i' % total_seqs +
+			'\n Number of IDs in input IDs-text file:  %i' % ids_total +
+			'\n\n Number of sequences extracted and written in to output file:  %i' % extracted)
 	idfilter_log.info(temp)
 	tkMessageBox.showinfo('Job Done!', temp)
 
