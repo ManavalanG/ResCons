@@ -1,468 +1,110 @@
-2016-04-13 15:05:24 Run_Script_Main     INFO     ResCons begins!
-2016-04-13 15:05:24 Run_Script_Main     INFO     ResCon will run in 'Protein mode' as user has requested.
-2016-04-13 15:05:24 Run_Script_Main     INFO     'Reference file provided by user: 
-	/Users/Mana/Dropbox/ResCons/Demo files/Mismatch analysis/Alignment_required/Reference.fasta
-2016-04-13 15:05:24 Run_Script_Main     INFO     Output folder path provided by user: /Users/Mana/Dropbox/ResCons/Demo files/Mismatch analysis/Alignment_required/Output/
-2016-04-13 15:05:24 GUI_Main            INFO     Sequences File that will be used for alignment:  /Users/Mana/Dropbox/ResCons/Demo files/Mismatch analysis/Alignment_required/Sequences.fasta
-2016-04-13 15:05:24 GUI_Main            INFO     All output files will be stored at: /Users/Mana/Dropbox/ResCons/Demo files/Mismatch analysis/Alignment_required/Output/
-2016-04-13 15:05:24 Run_Script_Main     INFO     All residue positions entered are less than the length of reference sequence.
-2016-04-13 15:05:24 Run_Script_Main     INFO     Residue conservation method chosen: liu08_seq_weighted
-2016-04-13 15:05:24 Run_Script_Main     INFO     Included Reference sequence in %identity and %conservation calculations?: Yes
-2016-04-13 15:05:24 Clustal_Alignment   INFO     Clustal alignment was requested.
-2016-04-13 15:05:24 Clustal_Alignment   INFO     Clustal omega source: User's computer
-2016-04-13 15:05:24 Clustal_Alignment   INFO     Number of sequences found in '/Users/Mana/Dropbox/ResCons/Demo files/Mismatch analysis/Alignment_required/Sequences.fasta' are '4'
-2016-04-13 15:05:24 Clustal_Alignment   INFO     Reference seq is not present in file: '/Users/Mana/Dropbox/ResCons/Demo files/Mismatch analysis/Alignment_required/Sequences.fasta'. 
-	A new file '/Users/Mana/Dropbox/ResCons/Demo files/Mismatch analysis/Alignment_required/Output/Sequences_Reference_SeqAdded.fasta' is created with Reference Seq appended to it.
-2016-04-13 15:05:24 Clustal_Alignment   INFO     Clustal commandline provided by user: 
-	{'guidetree_out': 'default.newick', 'outfmt': 'fasta', 'force': True, 'infile': '/Users/Mana/Dropbox/ResCons/Demo files/Mismatch analysis/Alignment_required/Output/Sequences_Reference_SeqAdded.fasta', 'iterations': 3}
-2016-04-13 15:05:24 Clustal_Alignment   INFO     Equivalent command prompt command that will be used to execute clustal omega alignment: 
-	'clustalo -i "/Users/Mana/Dropbox/ResCons/Demo files/Mismatch analysis/Alignment_required/Output/Sequences_Reference_SeqAdded.fasta" --guidetree-out "/Users/Mana/Dropbox/ResCons/Demo files/Mismatch analysis/Alignment_required/Output/Tree_Sequences_Reference_SeqAdded.newick" -o "/Users/Mana/Dropbox/ResCons/Demo files/Mismatch analysis/Alignment_required/Output/Aligned_ClustalO_Sequences_Reference_SeqAdded.fasta" --outfmt fasta --iterations 3 --force'
-2016-04-13 15:05:24 Clustal_Alignment   INFO     Clustal alignment will begin now. Warning: It may take few seconds to several minutes depending on sequences provided and your processor.
-2016-04-13 15:05:25 Run_Script_Main     INFO     Clustal alignment was completed using local ClustalO!
-2016-04-13 15:05:25 Clustal_Alignment   INFO     Deleted reference sequence appended FASTA file: '/Users/Mana/Dropbox/ResCons/Demo files/Mismatch analysis/Alignment_required/Output/Sequences_Reference_SeqAdded.fasta'
-2016-04-13 15:05:25 Fetch_Mismatch      INFO     Alignment format is detected as "fasta" format
-2016-04-13 15:05:25 Clustal_Alignment   INFO     Reference sequence matches to corresponding sequence in Alignment file provided.
-2016-04-13 15:05:25 Fetch_Mismatch      INFO     Reference sequence's ID is present in alignment file and their sequences match.
-2016-04-13 15:05:25 Fetch_Mismatch      INFO     Query sites requested: [3, 30, 60, 90]
-2016-04-13 15:05:25 Fetch_Mismatch      INFO     Residues at those query sites: ['L', 'K', 'N', 'P']
-2016-04-13 15:05:25 Fetch_Mismatch      INFO     Corresponding sites in the alignment's Reference sequence : [3, 30, 60, 90]
-2016-04-13 15:05:25 Fetch_Mismatch      INFO     Begin extracting residues across alignment at the requested query sites
-2016-04-13 15:05:25 Fetch_Mismatch      INFO     Mismatch details will be written in to file:
-  "	/Users/Mana/Dropbox/ResCons/Demo files/Mismatch analysis/Alignment_required/Output/Mismatches_Tabulated.csv"
-2016-04-13 15:05:25 Fetch_Mismatch      INFO     Done writing mismatch details in to csv file mentioned above.
-2016-04-13 15:05:25 GUI_Main            INFO     User has requested to format alignment in html format
-2016-04-13 15:05:25 Run_Script_Main     INFO     User requested HTML color formatting for clustal alignment
-2016-04-13 15:05:25 html_formatting     INFO     Alignment file used for formatting: /Users/Mana/Dropbox/ResCons/Demo files/Mismatch analysis/Alignment_required/Output/Aligned_ClustalO_Sequences_Reference_SeqAdded.fasta
-2016-04-13 15:05:25 html_formatting     INFO     Alignment format is detected as "fasta" format
-2016-04-13 15:05:25 html_formatting     INFO     Formatted aligment will be stored in html file: '/Users/Mana/Dropbox/ResCons/Demo files/Mismatch analysis/Alignment_required/Output/Formatted_Alignment.html'
-2016-04-13 15:05:26 html_formatting     INFO     Alignment formatting was completed and saved as above mentioned html file.
-2016-04-13 15:05:27 Run_Script_Main     INFO     All requested jobs are done! Ready for next job!!
-
-
-2016-04-13 15:06:30 Run_Script_Main     INFO     ResCons begins!
-2016-04-13 15:06:30 Run_Script_Main     INFO     ResCon will run in 'Protein mode' as user has requested.
-2016-04-13 15:06:30 Run_Script_Main     INFO     'Reference file provided by user: 
-	/Users/Mana/Dropbox/ResCons/Demo files/Mismatch analysis/Pre_Aligned/Reference.fasta
-2016-04-13 15:06:30 Run_Script_Main     INFO     Output folder path provided by user: /Users/Mana/Dropbox/ResCons/Demo files/Mismatch analysis/Pre_Aligned/Output/
-2016-04-13 15:06:30 Clustal_Alignment   INFO     Pre-Aligned file was provided by user.
-2016-04-13 15:06:30 Clustal_Alignment   INFO     Pre-Aligned file provided: 
-	/Users/Mana/Dropbox/ResCons/Demo files/Mismatch analysis/Pre_Aligned/Clustal_pre_aligned.aln.
-2016-04-13 15:06:30 GUI_Main            INFO     All output files will be stored at: 
-	/Users/Mana/Dropbox/ResCons/Demo files/Mismatch analysis/Pre_Aligned/Output/.
-2016-04-13 15:06:30 Run_Script_Main     INFO     All residue positions entered are less than the length of reference sequence.
-2016-04-13 15:06:30 Run_Script_Main     INFO     Residue conservation method chosen: liu08_seq_weighted
-2016-04-13 15:06:30 Run_Script_Main     INFO     Included Reference sequence in %identity and %conservation calculations?: Yes
-2016-04-13 15:06:30 Fetch_Mismatch      INFO     Alignment format is detected as "clustal" format
-2016-04-13 15:06:30 Clustal_Alignment   INFO     Reference sequence matches to corresponding sequence in Alignment file provided.
-2016-04-13 15:06:30 Fetch_Mismatch      INFO     Reference sequence's ID is present in alignment file and their sequences match.
-2016-04-13 15:06:30 Fetch_Mismatch      INFO     Query sites requested: [3, 30, 60, 90]
-2016-04-13 15:06:30 Fetch_Mismatch      INFO     Residues at those query sites: ['L', 'K', 'N', 'P']
-2016-04-13 15:06:30 Fetch_Mismatch      INFO     Corresponding sites in the alignment's Reference sequence : [3, 30, 60, 90]
-2016-04-13 15:06:30 Fetch_Mismatch      INFO     Begin extracting residues across alignment at the requested query sites
-2016-04-13 15:06:30 Fetch_Mismatch      INFO     Mismatch details will be written in to file:
-  "	/Users/Mana/Dropbox/ResCons/Demo files/Mismatch analysis/Pre_Aligned/Output/Mismatches_Tabulated.csv"
-2016-04-13 15:06:30 Fetch_Mismatch      INFO     Done writing mismatch details in to csv file mentioned above.
-2016-04-13 15:06:30 GUI_Main            INFO     User has requested to format alignment in html format
-2016-04-13 15:06:30 Run_Script_Main     INFO     User requested HTML color formatting for clustal alignment
-2016-04-13 15:06:30 html_formatting     INFO     Alignment file used for formatting: /Users/Mana/Dropbox/ResCons/Demo files/Mismatch analysis/Pre_Aligned/Clustal_pre_aligned.aln
-2016-04-13 15:06:30 html_formatting     INFO     Alignment format is detected as "clustal" format
-2016-04-13 15:06:30 html_formatting     INFO     Formatted aligment will be stored in html file: '/Users/Mana/Dropbox/ResCons/Demo files/Mismatch analysis/Pre_Aligned/Output/Formatted_Alignment.html'
-2016-04-13 15:06:30 html_formatting     INFO     Alignment formatting was completed and saved as above mentioned html file.
-2016-04-13 15:06:30 Run_Script_Main     INFO     All requested jobs are done! Ready for next job!!
-
-
-2016-04-13 15:06:42 Run_Script_Main     INFO     ResCons begins!
-2016-04-13 15:06:42 Run_Script_Main     INFO     ResCon will run in 'Protein mode' as user has requested.
-2016-04-13 15:06:42 Run_Script_Main     INFO     'Reference file provided by user: 
-	/Users/Mana/Dropbox/ResCons/Demo files/Mismatch analysis/Pre_Aligned/Reference.fasta
-2016-04-13 15:06:42 Run_Script_Main     INFO     Output folder path provided by user: /Users/Mana/Dropbox/ResCons/Demo files/Mismatch analysis/Pre_Aligned/Output/
-2016-04-13 15:06:42 Clustal_Alignment   INFO     Pre-Aligned file was provided by user.
-2016-04-13 15:06:42 Clustal_Alignment   INFO     Pre-Aligned file provided: 
-	/Users/Mana/Dropbox/ResCons/Demo files/Mismatch analysis/Pre_Aligned/Clustal_pre_aligned.aln.
-2016-04-13 15:06:42 GUI_Main            INFO     All output files will be stored at: 
-	/Users/Mana/Dropbox/ResCons/Demo files/Mismatch analysis/Pre_Aligned/Output/.
-2016-04-13 15:06:42 Run_Script_Main     INFO     All residue positions entered are less than the length of reference sequence.
-2016-04-13 15:06:42 Run_Script_Main     INFO     Residue conservation method chosen: liu08_seq_weighted
-2016-04-13 15:06:42 Run_Script_Main     INFO     Included Reference sequence in %identity and %conservation calculations?: Yes
-2016-04-13 15:06:42 Fetch_Mismatch      INFO     Alignment format is detected as "clustal" format
-2016-04-13 15:06:42 Clustal_Alignment   INFO     Reference sequence matches to corresponding sequence in Alignment file provided.
-2016-04-13 15:06:42 Fetch_Mismatch      INFO     Reference sequence's ID is present in alignment file and their sequences match.
-2016-04-13 15:06:42 Fetch_Mismatch      INFO     Query sites requested: [3, 30, 60, 90]
-2016-04-13 15:06:42 Fetch_Mismatch      INFO     Residues at those query sites: ['L', 'K', 'N', 'P']
-2016-04-13 15:06:42 Fetch_Mismatch      INFO     Corresponding sites in the alignment's Reference sequence : [3, 30, 60, 90]
-2016-04-13 15:06:42 Fetch_Mismatch      INFO     Begin extracting residues across alignment at the requested query sites
-2016-04-13 15:06:42 Fetch_Mismatch      INFO     Mismatch details will be written in to file:
-  "	/Users/Mana/Dropbox/ResCons/Demo files/Mismatch analysis/Pre_Aligned/Output/Mismatches_Tabulated.csv"
-2016-04-13 15:06:42 Fetch_Mismatch      INFO     Done writing mismatch details in to csv file mentioned above.
-2016-04-13 15:06:42 GUI_Main            INFO     User has requested to format alignment in html format
-2016-04-13 15:06:42 Run_Script_Main     INFO     User requested HTML color formatting for clustal alignment
-2016-04-13 15:06:42 html_formatting     INFO     Alignment file used for formatting: /Users/Mana/Dropbox/ResCons/Demo files/Mismatch analysis/Pre_Aligned/Clustal_pre_aligned.aln
-2016-04-13 15:06:42 html_formatting     INFO     Alignment format is detected as "clustal" format
-2016-04-13 15:06:42 html_formatting     INFO     Formatted aligment will be stored in html file: '/Users/Mana/Dropbox/ResCons/Demo files/Mismatch analysis/Pre_Aligned/Output/Formatted_Alignment.html'
-2016-04-13 15:06:42 html_formatting     INFO     Alignment formatting was completed and saved as above mentioned html file.
-2016-04-13 15:06:43 Run_Script_Main     INFO     All requested jobs are done! Ready for next job!!
-
-
-2016-04-13 15:13:36 Extract_Clades      INFO     User requested tool 'Extract Subtree Sequences'
-2016-04-13 15:13:36 Extract_Clades      INFO     Newick tree file provided by user:
-	/Users/Mana/Dropbox/ResCons/Demo files/Subtree Sequences Extractor/Tree_demo.newick
-2016-04-13 15:13:36 Extract_Clades      INFO     FASTA file provided by user:
-	/Users/Mana/Dropbox/ResCons/Demo files/Subtree Sequences Extractor/All_Sequences.fasta
-2016-04-13 15:13:36 Extract_Clades      INFO     Output folder path provided by user:
-	/Users/Mana/Dropbox/ResCons/Demo files/Subtree Sequences Extractor/Sample_Output/
-2016-04-13 15:13:36 Extract_Clades      INFO     Branch length(s) provided by user:  0.001938
-2016-04-13 15:13:36 Extract_Clades      INFO     Branch length(s) recognized by ResCon: ['0.001938']
-2016-04-13 15:13:36 Extract_Clades      INFO     Following error is produced in an attempt to determine file format of phylogenetic tree. You need to care about this only when ResCon cannot read your tree file at all.
-  File format type attempted: nexml
-  Error produced when attempting to read tree file:   syntax error: line 1, column 0
-2016-04-13 15:13:36 Extract_Clades      INFO     Following error is produced in an attempt to determine file format of phylogenetic tree. You need to care about this only when ResCon cannot read your tree file at all.
-  File format type attempted: phyloxml
-  Error produced when attempting to read tree file:   syntax error: line 1, column 0
-2016-04-13 15:13:36 Extract_Clades      INFO     Phylogenetic Tree format is detected as "newick" format
-2016-04-13 15:13:36 Extract_Clades      INFO     Subtree with Branch length "0.001938" that will be processed now
-2016-04-13 15:13:36 Extract_Clades      INFO     This software understands the branch length as "0.001938" and will search for it in the newick tree provided.
-2016-04-13 15:13:36 Extract_Clades      INFO     Determining if requested branch length is present in the newick file and also verifying it is not in duplicate.
-2016-04-13 15:13:36 Extract_Clades      INFO     Branch length found. Sequences extraction in progress....
-2016-04-13 15:13:36 Extract_Clades      INFO     Total number of sequences in clade with branch length "0.001938" :		3
-2016-04-13 15:13:36 Extract_Clades      INFO     FASTA sequences corresponding to clade 0.001938 were extracted and saved in to: 
-	 '/Users/Mana/Dropbox/ResCons/Demo files/Subtree Sequences Extractor/Sample_Output/Clade_0.001938_Specific_sequences.fasta'
-2016-04-13 15:13:39 Extract_Clades      INFO     Exiting 'Extract_Clades' Module. Ready for next job
-
-
-2016-04-13 15:15:33 genbank2Fasta       INFO     User selected tool - 'GenPept/GenBank to FASTA converter'.
-2016-04-13 15:15:33 genbank2Fasta       INFO     GenPept/GenBank file provided by user: 
- /Users/Mana/Dropbox/ResCons/Demo files/3_GenPept to fasta converter/GenPept_demo.gp
-2016-04-13 15:15:33 genbank2Fasta       INFO     Output folder path provided by user: 
- /Users/Mana/Dropbox/ResCons/Demo files/3_GenPept to fasta converter/Sample_Output/
-2016-04-13 15:15:33 genbank2Fasta       INFO     State of 'Replace sensitive symbols with _':   True
-2016-04-13 15:15:33 genbank2Fasta       INFO     Senstive symbols that are to be replaced in header ID:   ( ) [ ] : ; , '
-2016-04-13 15:15:33 genbank2Fasta       INFO     State of 'Ignore sequence records that are incomplete/partial?':   True
-2016-04-13 15:15:33 genbank2Fasta       INFO     Length of FASTA ID requested by user':   127
-2016-04-13 15:15:33 genbank2Fasta       INFO     State of 'Header options':  {'Seq Length': False, 'Taxon-1': True, 'Taxon-2': True, 'Taxon-3': True, 'Taxon ID': False, 'Seq Name': False, 'Version': False, 'Locus ID': True, 'Genus': True, 'Species': True, 'GI': False}
-2016-04-13 15:15:33 genbank2Fasta       INFO     Total number of FASTA ID names whose names were longer than 127 characters and 
- hence restricted to the maximum of 127 characters: 0
-2016-04-13 15:15:33 genbank2Fasta       INFO     Number of sequence records that are incomplete:  0
-2016-04-13 15:15:33 genbank2Fasta       INFO      Number of records present in input GenPept/GenBank file:  6
- Number of sequences written into FASTA file:  6
- GenPept/GenBank to FASTA conversion was successful and stored in file:
-  /Users/Mana/Dropbox/ResCons/Demo files/3_GenPept to fasta converter/Sample_Output/GenPept_to_Fasta_formatted.fasta
-2016-04-13 15:15:36 genbank2Fasta       INFO      Total number of records that have some level of taxonomy details:   6
- Total number of records that do not have any level of taxonomy details:   0
-2016-04-13 15:15:36 genbank2Fasta       INFO     Exiting 'genpept_converter' module. Ready for next job! 
-
-
-2016-04-13 15:23:36 blast_filter        INFO     User selected tool - 'Filtering sequences by BLAST e-value'.
-2016-04-13 15:23:36 blast_filter        INFO     BLAST XML file provided by user :
-	/Users/Mana/Dropbox/ResCons/Demo files/4_Filter Blast by Bit or E-value/Blast_results_Updated.xml
-2016-04-13 15:23:36 blast_filter        INFO     FASTA file provided by user :
-	/Users/Mana/Dropbox/ResCons/Demo files/4_Filter Blast by Bit or E-value/Sequences_demo.fasta
-2016-04-13 15:23:36 blast_filter        INFO     Output folder provided by user :
-	/Users/Mana/Dropbox/ResCons/Demo files/4_Filter Blast by Bit or E-value/Sample_Output/
-2016-04-13 15:23:36 blast_filter        INFO     BLAST Filter method chosen: E-value
-2016-04-13 15:23:36 blast_filter        INFO     Requested to be filtered 'Lower than' than threshold.
-2016-04-13 15:23:36 blast_filter        INFO     Threshold entered by user: 1e-32
-2016-04-13 15:23:36 blast_filter        INFO     Filtered sequences are stored in file:  
-	'/Users/Mana/Dropbox/ResCons/Demo files/4_Filter Blast by Bit or E-value/Sample_Output/Filtered_Seqs_E-value_Lower than_1e-32.fasta'
-2016-04-13 15:23:36 blast_filter        INFO     Total number of sequences in input FASTA file:	 18
-Total number of records with E-value lower than entered threshold in BLAST XML file:  4
-Number of sequences written in output file:  4
-2016-04-13 15:25:03 blast_filter        INFO     BLAST-Filtering job is done! Ready for next job
-
-
-2016-04-13 15:26:45 Filter_by_id        INFO     User has requested tool 'Filter FASTA by sequences ID'.
-2016-04-13 15:26:45 Filter_by_id        INFO     User chose 'Include IDs in list'.
-2016-04-13 15:26:45 Filter_by_id        INFO     State of 'IDs are Partial': False
-2016-04-13 15:26:45 Filter_by_id        INFO     Text file (containing IDs) provided by user:
-	/Users/Mana/Dropbox/ResCons/Demo files/5_Filter fasta by Sequence ID/List_complete.txt
-2016-04-13 15:26:45 Filter_by_id        INFO     Output folder path provided by user:
-	/Users/Mana/Dropbox/ResCons/Demo files/5_Filter fasta by Sequence ID/Output/
-2016-04-13 15:26:45 Filter_by_id        INFO     IDs recognised by software: ['NP_066952|Eukaryota|Metazoa|Chordata|Homo|sapiens', 'YP_007162693|Bacteria|Cyanobacteria|Oscillatoriophycideae|Cyanobacterium|aponinum_PCC_10605', 'YP_004164947|Bacteria|Bacteroidetes|Flavobacteriia|Cellulophaga|algicola_DSM_14237', 'YP_007065375|Bacteria|Cyanobacteria|Nostocales|Calothrix|sp._PCC_7507']
-2016-04-13 15:26:45 Filter_by_id        INFO      Number of sequences present in FASTA file:  18
- Number of IDs present in IDs-text file:  4
- Number of matching sequence records extracted and written in output file:  4
- Output file: /Users/Mana/Dropbox/ResCons/Demo files/5_Filter fasta by Sequence ID/Output/Filtered_Sequences_based_on_IDs.fasta
-2016-04-13 15:26:47 Filter_by_id        INFO     Job done! Ready for next job.
-
-
-2016-04-13 15:27:28 Filter_by_id        INFO     User has requested tool 'Filter FASTA by sequences ID'.
-2016-04-13 15:27:28 Filter_by_id        INFO     User chose 'Include IDs in list'.
-2016-04-13 15:27:28 Filter_by_id        INFO     State of 'IDs are Partial': True
-2016-04-13 15:27:28 Filter_by_id        INFO     Text file (containing IDs) provided by user:
-	/Users/Mana/Dropbox/ResCons/Demo files/5_Filter fasta by Sequence ID/List_partial.txt
-2016-04-13 15:27:28 Filter_by_id        INFO     Output folder path provided by user:
-	/Users/Mana/Dropbox/ResCons/Demo files/5_Filter fasta by Sequence ID/Output/
-2016-04-13 15:27:28 Filter_by_id        INFO     IDs recognised by software: ['NP_066952', 'YP_007162693', 'YP_004164947', 'YP_007065375']
-2016-04-13 15:27:28 Filter_by_id        INFO      Number of sequences present in FASTA file:  18
- Number of IDs present in IDs-text file:  4
- Number of matching sequence records extracted and written in output file:  4
- Output file: /Users/Mana/Dropbox/ResCons/Demo files/5_Filter fasta by Sequence ID/Output/Filtered_Sequences_based_on_IDs.fasta
-2016-04-13 15:27:30 Filter_by_id        INFO     Job done! Ready for next job.
-
-
-2016-04-13 15:28:47 Filter_by_id        INFO     User has requested tool 'Filter FASTA by sequences ID'.
-2016-04-13 15:28:47 Filter_by_id        INFO     User chose 'Exclude IDs in list'.
-2016-04-13 15:28:47 Filter_by_id        INFO     State of 'IDs are Partial': True
-2016-04-13 15:28:47 Filter_by_id        INFO     Text file (containing IDs) provided by user:
-	/Users/Mana/Dropbox/ResCons/Demo files/5_Filter fasta by Sequence ID/List_partial.txt
-2016-04-13 15:28:47 Filter_by_id        INFO     Output folder path provided by user:
-	/Users/Mana/Dropbox/ResCons/Demo files/5_Filter fasta by Sequence ID/Output/
-2016-04-13 15:28:47 Filter_by_id        INFO     IDs recognised by software: ['NP_066952', 'YP_007162693', 'YP_004164947', 'YP_007065375']
-2016-04-13 15:28:47 Filter_by_id        INFO      Number of sequences present in FASTA file:  18
- Number of IDs present in IDs-text file:  4
- Number of matching sequence records extracted and written in output file:  14
- Output file: /Users/Mana/Dropbox/ResCons/Demo files/5_Filter fasta by Sequence ID/Output/Filtered_Sequences_based_on_IDs.fasta
-2016-04-13 15:28:48 Filter_by_id        INFO     Job done! Ready for next job.
-
-
-2016-04-13 15:28:50 Filter_by_id        INFO     User has requested tool 'Filter FASTA by sequences ID'.
-2016-04-13 15:28:50 Filter_by_id        INFO     User chose 'Exclude IDs in list'.
-2016-04-13 15:28:50 Filter_by_id        INFO     State of 'IDs are Partial': True
-2016-04-13 15:28:50 Filter_by_id        INFO     Text file (containing IDs) provided by user:
-	/Users/Mana/Dropbox/ResCons/Demo files/5_Filter fasta by Sequence ID/List_partial.txt
-2016-04-13 15:28:50 Run_Script_Main     ERROR    Error that resulted when creating path "/Users/Mana/Dropbox/ResCons/Demo files/5_Filter fasta by Sequence ID/Output/":
-  [Errno 17] File exists: '/Users/Mana/Dropbox/ResCons/Demo files/5_Filter fasta by Sequence ID/Output/'
-2016-04-13 15:28:50 Run_Script_Main     WARNING  Folder "/Users/Mana/Dropbox/ResCons/Demo files/5_Filter fasta by Sequence ID/Output/" already exists. All or some files in it may get overwritten by ResCons. Do you wish to continue?
-2016-04-13 15:28:51 Run_Script_Main     INFO     User has selected (True = Yes, False = No):  True
-2016-04-13 15:28:51 Run_Script_Main     INFO     ResCons will continue as user requested.
-2016-04-13 15:28:51 Filter_by_id        INFO     Output folder path provided by user:
-	/Users/Mana/Dropbox/ResCons/Demo files/5_Filter fasta by Sequence ID/Output/
-2016-04-13 15:28:51 Filter_by_id        INFO     IDs recognised by software: ['NP_066952', 'YP_007162693', 'YP_004164947', 'YP_007065375']
-2016-04-13 15:28:51 Filter_by_id        INFO      Number of sequences present in FASTA file:  18
- Number of IDs present in IDs-text file:  4
- Number of matching sequence records extracted and written in output file:  14
- Output file: /Users/Mana/Dropbox/ResCons/Demo files/5_Filter fasta by Sequence ID/Output/Filtered_Sequences_based_on_IDs.fasta
-2016-04-13 15:28:54 Filter_by_id        INFO     Job done! Ready for next job.
-
-
-2016-04-13 15:30:11 Filter_by_Descrip   INFO     User has requested tool 'Filter FASTA by sequences' Description'.
-2016-04-13 15:30:11 Filter_by_Descrip   INFO     User chose 'Include Descriptions in list'
-2016-04-13 15:30:11 Filter_by_Descrip   INFO     State of 'Filter using Partial Descriptions': False
-2016-04-13 15:30:11 Filter_by_Descrip   INFO     Text file (containing Descriptions) provided by user:
-	/Users/Mana/Dropbox/ResCons/Demo files/6_Filter fasta by description/List_complete.txt
-2016-04-13 15:30:11 Filter_by_Descrip   INFO     Descriptions recognised by software: ['inorganic pyrophosphatase [Prochlorococcus marinus].', 'inorganic pyrophosphatase [Escherichia coli].']
-2016-04-13 15:30:11 Filter_by_Descrip   INFO     FASTA file provided by user: /Users/Mana/Dropbox/ResCons/Demo files/5_Filter fasta by Sequence ID/Sequences_demo.fasta
-2016-04-13 15:30:11 Run_Script_Main     ERROR    Error that resulted when creating path "/Users/Mana/Dropbox/ResCons/Demo files/5_Filter fasta by Sequence ID/Output/":
-  [Errno 17] File exists: '/Users/Mana/Dropbox/ResCons/Demo files/5_Filter fasta by Sequence ID/Output/'
-2016-04-13 15:30:11 Run_Script_Main     WARNING  Folder "/Users/Mana/Dropbox/ResCons/Demo files/5_Filter fasta by Sequence ID/Output/" already exists. All or some files in it may get overwritten by ResCons. Do you wish to continue?
-2016-04-13 15:30:12 Run_Script_Main     INFO     User has selected (True = Yes, False = No):  True
-2016-04-13 15:30:12 Run_Script_Main     INFO     ResCons will continue as user requested.
-2016-04-13 15:30:12 Filter_by_Descrip   INFO     Output folder provided by user: /Users/Mana/Dropbox/ResCons/Demo files/5_Filter fasta by Sequence ID/Output/
-2016-04-13 15:30:12 Filter_by_Descrip   INFO     All sequence headers in FASTA file seemed to conform to requirements.
-2016-04-13 15:30:12 Filter_by_Descrip   INFO      Number of sequences present in fasta file:  18
- Number of names provided by user:  2
- Number of sequence records extracted and written in output file:  0
- Output file: /Users/Mana/Dropbox/ResCons/Demo files/5_Filter fasta by Sequence ID/Output/
-2016-04-13 15:30:17 Filter_by_Descrip   INFO     Job done! Ready for next job.
-
-
-2016-04-13 15:30:55 Filter_by_Descrip   INFO     User has requested tool 'Filter FASTA by sequences' Description'.
-2016-04-13 15:30:55 Filter_by_Descrip   INFO     User chose 'Include Descriptions in list'
-2016-04-13 15:30:55 Filter_by_Descrip   INFO     State of 'Filter using Partial Descriptions': False
-2016-04-13 15:30:55 Filter_by_Descrip   INFO     Text file (containing Descriptions) provided by user:
-	/Users/Mana/Dropbox/ResCons/Demo files/6_Filter fasta by description/List_complete.txt
-2016-04-13 15:30:55 Filter_by_Descrip   INFO     Descriptions recognised by software: ['inorganic pyrophosphatase [Prochlorococcus marinus].', 'inorganic pyrophosphatase [Escherichia coli].']
-2016-04-13 15:30:55 Filter_by_Descrip   INFO     FASTA file provided by user: /Users/Mana/Dropbox/ResCons/Demo files/5_Filter fasta by Sequence ID/Sequences_demo.fasta
-2016-04-13 15:30:55 Run_Script_Main     ERROR    Error that resulted when creating path "/Users/Mana/Dropbox/ResCons/Demo files/5_Filter fasta by Sequence ID/Output/":
-  [Errno 17] File exists: '/Users/Mana/Dropbox/ResCons/Demo files/5_Filter fasta by Sequence ID/Output/'
-2016-04-13 15:30:55 Run_Script_Main     WARNING  Folder "/Users/Mana/Dropbox/ResCons/Demo files/5_Filter fasta by Sequence ID/Output/" already exists. All or some files in it may get overwritten by ResCons. Do you wish to continue?
-2016-04-13 15:31:01 Run_Script_Main     INFO     User has selected (True = Yes, False = No):  False
-2016-04-13 15:31:01 Run_Script_Main     INFO     ResCons will stop as user has requested.
-
-2016-04-13 15:31:01 User_error          ERROR    Error that resulted: Traceback (most recent call last):
+2016-05-10 16:12:34 Run_Script_Main     INFO     ResCons begins!
+2016-05-10 16:12:34 Run_Script_Main     INFO     ResCon will run in 'Protein mode' as user has requested.
+2016-05-10 16:12:34 Run_Script_Main     INFO     'Reference file provided by user: 
+	/Users/Mana/Dropbox/22Feb_Data/Reference_seqs/Reference_IPPase_Bsub.fasta
+2016-05-10 16:12:34 Run_Script_Main     INFO     Output folder path provided by user: /Users/Mana/Dropbox/22Feb_Data/8_All_Residues_Conservation/CD-HIT_Clustering_90/FamII/ConSurf/Output/
+2016-05-10 16:12:34 GUI_Main            INFO     Sequences File that will be used for alignment:  /Users/Mana/Dropbox/22Feb_Data/8_All_Residues_Conservation/CD-HIT_Clustering_90/FamII/ConSurf/FamII_matches_only_Clus90_Feb22.fasta
+2016-05-10 16:12:34 GUI_Main            INFO     All output files will be stored at: /Users/Mana/Dropbox/22Feb_Data/8_All_Residues_Conservation/CD-HIT_Clustering_90/FamII/ConSurf/Output/
+2016-05-10 16:12:34 Run_Script_Main     INFO     Residue conservation method chosen: liu08_non_seq_weighted
+2016-05-10 16:12:34 Run_Script_Main     INFO     Amino acid grouping set definition: ['AVFPMILW', 'DE', 'RK', 'STYHCNGQ', 'avfpmilw', 'de', 'rk', 'styhcngq']
+2016-05-10 16:12:34 Run_Script_Main     INFO     Included Reference sequence in %identity and %conservation calculations?: No
+2016-05-10 16:12:34 Clustal_Alignment   INFO     Clustal alignment was requested.
+2016-05-10 16:12:34 Clustal_Alignment   INFO     Clustal omega source: User's computer
+2016-05-10 16:12:34 Clustal_Alignment   INFO     Number of sequences found in '/Users/Mana/Dropbox/22Feb_Data/8_All_Residues_Conservation/CD-HIT_Clustering_90/FamII/ConSurf/FamII_matches_only_Clus90_Feb22.fasta' are '1366'
+2016-05-10 16:12:34 Clustal_Alignment   INFO     Reference seq is not present in file: '/Users/Mana/Dropbox/22Feb_Data/8_All_Residues_Conservation/CD-HIT_Clustering_90/FamII/ConSurf/FamII_matches_only_Clus90_Feb22.fasta'. 
+	A new file '/Users/Mana/Dropbox/22Feb_Data/8_All_Residues_Conservation/CD-HIT_Clustering_90/FamII/ConSurf/Output/FamII_matches_only_Clus90_Feb22_Reference_SeqAdded.fasta' is created with Reference Seq appended to it.
+2016-05-10 16:12:34 Clustal_Alignment   INFO     Clustal commandline provided by user: 
+	{'guidetree_out': 'default.newick', 'outfmt': 'fasta', 'force': True, 'infile': '/Users/Mana/Dropbox/22Feb_Data/8_All_Residues_Conservation/CD-HIT_Clustering_90/FamII/ConSurf/Output/FamII_matches_only_Clus90_Feb22_Reference_SeqAdded.fasta', 'iterations': 3}
+2016-05-10 16:12:34 Clustal_Alignment   INFO     Equivalent command prompt command that will be used to execute clustal omega alignment: 
+	'clustalo -i /Users/Mana/Dropbox/22Feb_Data/8_All_Residues_Conservation/CD-HIT_Clustering_90/FamII/ConSurf/Output/FamII_matches_only_Clus90_Feb22_Reference_SeqAdded.fasta --guidetree-out /Users/Mana/Dropbox/22Feb_Data/8_All_Residues_Conservation/CD-HIT_Clustering_90/FamII/ConSurf/Output/Tree_FamII_matches_only_Clus90_Feb22_Reference_SeqAdded.newick -o /Users/Mana/Dropbox/22Feb_Data/8_All_Residues_Conservation/CD-HIT_Clustering_90/FamII/ConSurf/Output/Aligned_ClustalO_FamII_matches_only_Clus90_Feb22_Reference_SeqAdded.fasta --outfmt fasta --iterations 3 --force'
+2016-05-10 16:12:34 Clustal_Alignment   INFO     Clustal alignment will begin now. Warning: It may take few seconds to several minutes depending on sequences provided and your processor.
+2016-05-10 16:14:56 Unexpected_error    ERROR    Unexpected error occured. Click 'Yes' for more details on this error.
+2016-05-10 16:14:56 Unexpected_error    ERROR    Unexpected error that resulted: Traceback (most recent call last):
   File "/Library/Frameworks/Python.framework/Versions/2.7/lib/python2.7/lib-tk/Tkinter.py", line 1532, in __call__
     return self.func(*args)
-  File "/Users/Mana/Dropbox/ResCons/Ver28_ResCon.py", line 2922, in fasta_filter_by_description
-    verify_filepath_exists(output_path_filter)
-  File "/Users/Mana/Dropbox/ResCons/Ver28_ResCon.py", line 347, in verify_filepath_exists
-    raise_enabler('User opted not to write in selected output folder!')
-  File "/Users/Mana/Dropbox/ResCons/Ver28_ResCon.py", line 441, in raise_enabler
-    raise Exception(string)
-Exception: User opted not to write in selected output folder!
+  File "Ver28_ResCon.py", line 3537, in run_script
+    clustal_alignment_local()
+  File "Ver28_ResCon.py", line 813, in clustal_alignment_local
+    new_thread(clustalomega_cline)
+  File "Ver28_ResCon.py", line 476, in new_thread
+    app.update()
+  File "/Library/Frameworks/Python.framework/Versions/2.7/lib/python2.7/lib-tk/Tkinter.py", line 1015, in update
+    self.tk.call('update')
+KeyboardInterrupt
 
 
-2016-04-13 15:31:15 Filter_by_Descrip   INFO     User has requested tool 'Filter FASTA by sequences' Description'.
-2016-04-13 15:31:15 Filter_by_Descrip   INFO     User chose 'Include Descriptions in list'
-2016-04-13 15:31:15 Filter_by_Descrip   INFO     State of 'Filter using Partial Descriptions': False
-2016-04-13 15:31:15 Filter_by_Descrip   INFO     Text file (containing Descriptions) provided by user:
-	/Users/Mana/Dropbox/ResCons/Demo files/6_Filter fasta by description/List_complete.txt
-2016-04-13 15:31:15 Filter_by_Descrip   INFO     Descriptions recognised by software: ['inorganic pyrophosphatase [Prochlorococcus marinus].', 'inorganic pyrophosphatase [Escherichia coli].']
-2016-04-13 15:31:15 Filter_by_Descrip   INFO     FASTA file provided by user: /Users/Mana/Dropbox/ResCons/Demo files/6_Filter fasta by description/Sequences_demo.fasta
-2016-04-13 15:31:15 Filter_by_Descrip   INFO     Output folder provided by user: /Users/Mana/Dropbox/ResCons/Demo files/6_Filter fasta by description/Output/
-2016-04-13 15:31:15 Filter_by_Descrip   INFO     All sequence headers in FASTA file seemed to conform to requirements.
-2016-04-13 15:31:15 Filter_by_Descrip   INFO      Number of sequences present in fasta file:  677
- Number of names provided by user:  2
- Number of sequence records extracted and written in output file:  35
- Output file: /Users/Mana/Dropbox/ResCons/Demo files/6_Filter fasta by description/Output/
-2016-04-13 15:31:18 Filter_by_Descrip   INFO     Job done! Ready for next job.
+Exception in thread Thread-1:
+Traceback (most recent call last):
+  File "/Library/Frameworks/Python.framework/Versions/2.7/lib/python2.7/threading.py", line 810, in __bootstrap_inner
+    self.run()
+  File "/Library/Frameworks/Python.framework/Versions/2.7/lib/python2.7/threading.py", line 763, in run
+    self.__target(*self.__args, **self.__kwargs)
+  File "/Library/Python/2.7/site-packages/biopython-1.63-py2.7-macosx-10.9-intel.egg/Bio/Application/__init__.py", line 511, in __call__
+    stdout_str, stderr_str)
+ApplicationError: Command 'clustalo -i /Users/Mana/Dropbox/22Feb_Data/8_All_Residues_Conservation/CD-HIT_Clustering_90/FamII/ConSurf/Output/FamII_matches_only_Clus90_Feb22_Reference_SeqAdded.fasta --guidetree-out /Users/Mana/Dropbox/22Feb_Data/8_All_Residues_Conservation/CD-HIT_Clustering_90/FamII/ConSurf/Output/Tree_FamII_matches_only_Clus90_Feb22_Reference_SeqAdded.newick -o /Users/Mana/Dropbox/22Feb_Data/8_All_Residues_Conservation/CD-HIT_Clustering_90/FamII/ConSurf/Output/Aligned_ClustalO_FamII_matches_only_Clus90_Feb22_Reference_SeqAdded.fasta --outfmt fasta --iterations 3 --force' returned non-zero exit status -2
+
+22016-05-10 16:37:45 Run_Script_Main     INFO     ResCons begins!
+2016-05-10 16:37:45 Run_Script_Main     INFO     ResCon will run in 'Protein mode' as user has requested.
+2016-05-10 16:37:45 Run_Script_Main     INFO     'Reference file provided by user: 
+	/Users/Mana/Dropbox/22Feb_Data/Reference_seqs/Reference_IPPase_Ecoli.fasta
+2016-05-10 16:37:45 Run_Script_Main     INFO     Output folder path provided by user: /Users/Mana/Dropbox/22Feb_Data/8_All_Residues_Conservation/CD-HIT_Clustering_90/Ecoli/ConSurf/Output/
+2016-05-10 16:37:45 GUI_Main            INFO     Sequences File that will be used for alignment:  /Users/Mana/Dropbox/22Feb_Data/8_All_Residues_Conservation/CD-HIT_Clustering_90/Ecoli/ConSurf/Ecoli_matches_only_Clus90_Feb22.fasta
+2016-05-10 16:37:45 GUI_Main            INFO     All output files will be stored at: /Users/Mana/Dropbox/22Feb_Data/8_All_Residues_Conservation/CD-HIT_Clustering_90/Ecoli/ConSurf/Output/
+2016-05-10 16:37:45 Run_Script_Main     INFO     Residue conservation method chosen: liu08_non_seq_weighted
+2016-05-10 16:37:45 Run_Script_Main     INFO     Amino acid grouping set definition: ['AVFPMILW', 'DE', 'RK', 'STYHCNGQ', 'avfpmilw', 'de', 'rk', 'styhcngq']
+2016-05-10 16:37:45 Run_Script_Main     INFO     Included Reference sequence in %identity and %conservation calculations?: No
+2016-05-10 16:37:45 Clustal_Alignment   INFO     Clustal alignment was requested.
+2016-05-10 16:37:45 Clustal_Alignment   INFO     Clustal omega source: User's computer
+2016-05-10 16:37:45 Clustal_Alignment   INFO     Number of sequences found in '/Users/Mana/Dropbox/22Feb_Data/8_All_Residues_Conservation/CD-HIT_Clustering_90/Ecoli/ConSurf/Ecoli_matches_only_Clus90_Feb22.fasta' are '2179'
+2016-05-10 16:37:45 Clustal_Alignment   INFO     Reference seq is not present in file: '/Users/Mana/Dropbox/22Feb_Data/8_All_Residues_Conservation/CD-HIT_Clustering_90/Ecoli/ConSurf/Ecoli_matches_only_Clus90_Feb22.fasta'. 
+	A new file '/Users/Mana/Dropbox/22Feb_Data/8_All_Residues_Conservation/CD-HIT_Clustering_90/Ecoli/ConSurf/Output/Ecoli_matches_only_Clus90_Feb22_Reference_SeqAdded.fasta' is created with Reference Seq appended to it.
+2016-05-10 16:37:45 Clustal_Alignment   INFO     Clustal commandline provided by user: 
+	{'guidetree_out': 'default.newick', 'outfmt': 'fasta', 'force': True, 'infile': '/Users/Mana/Dropbox/22Feb_Data/8_All_Residues_Conservation/CD-HIT_Clustering_90/Ecoli/ConSurf/Output/Ecoli_matches_only_Clus90_Feb22_Reference_SeqAdded.fasta', 'iterations': 3}
+2016-05-10 16:37:45 Clustal_Alignment   INFO     Equivalent command prompt command that will be used to execute clustal omega alignment: 
+	'clustalo -i /Users/Mana/Dropbox/22Feb_Data/8_All_Residues_Conservation/CD-HIT_Clustering_90/Ecoli/ConSurf/Output/Ecoli_matches_only_Clus90_Feb22_Reference_SeqAdded.fasta --guidetree-out /Users/Mana/Dropbox/22Feb_Data/8_All_Residues_Conservation/CD-HIT_Clustering_90/Ecoli/ConSurf/Output/Tree_Ecoli_matches_only_Clus90_Feb22_Reference_SeqAdded.newick -o /Users/Mana/Dropbox/22Feb_Data/8_All_Residues_Conservation/CD-HIT_Clustering_90/Ecoli/ConSurf/Output/Aligned_ClustalO_Ecoli_matches_only_Clus90_Feb22_Reference_SeqAdded.fasta --outfmt fasta --iterations 3 --force'
+2016-05-10 16:37:45 Clustal_Alignment   INFO     Clustal alignment will begin now. Warning: It may take few seconds to several minutes depending on sequences provided and your processor.
+2016-05-10 16:46:27 Run_Script_Main     INFO     Clustal alignment was completed using local ClustalO!
+2016-05-10 16:46:27 Clustal_Alignment   INFO     Deleted reference sequence appended FASTA file: '/Users/Mana/Dropbox/22Feb_Data/8_All_Residues_Conservation/CD-HIT_Clustering_90/Ecoli/ConSurf/Output/Ecoli_matches_only_Clus90_Feb22_Reference_SeqAdded.fasta'
+2016-05-10 16:46:27 Fetch_Mismatch      INFO     Alignment format is detected as "fasta" format
+2016-05-10 16:46:27 Clustal_Alignment   INFO     Reference sequence matches to corresponding sequence in Alignment file provided.
+2016-05-10 16:46:27 Fetch_Mismatch      INFO     Reference sequence's ID is present in alignment file and their sequences match.
+2016-05-10 16:46:27 Fetch_Mismatch      INFO     Query sites requested: [1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15, 16, 17, 18, 19, 20, 21, 22, 23, 24, 25, 26, 27, 28, 29, 30, 31, 32, 33, 34, 35, 36, 37, 38, 39, 40, 41, 42, 43, 44, 45, 46, 47, 48, 49, 50, 51, 52, 53, 54, 55, 56, 57, 58, 59, 60, 61, 62, 63, 64, 65, 66, 67, 68, 69, 70, 71, 72, 73, 74, 75, 76, 77, 78, 79, 80, 81, 82, 83, 84, 85, 86, 87, 88, 89, 90, 91, 92, 93, 94, 95, 96, 97, 98, 99, 100, 101, 102, 103, 104, 105, 106, 107, 108, 109, 110, 111, 112, 113, 114, 115, 116, 117, 118, 119, 120, 121, 122, 123, 124, 125, 126, 127, 128, 129, 130, 131, 132, 133, 134, 135, 136, 137, 138, 139, 140, 141, 142, 143, 144, 145, 146, 147, 148, 149, 150, 151, 152, 153, 154, 155, 156, 157, 158, 159, 160, 161, 162, 163, 164, 165, 166, 167, 168, 169, 170, 171, 172, 173, 174, 175]
+2016-05-10 16:46:27 Fetch_Mismatch      INFO     Residues at those query sites: ['S', 'L', 'L', 'N', 'V', 'P', 'A', 'G', 'K', 'D', 'L', 'P', 'E', 'D', 'I', 'Y', 'V', 'V', 'I', 'E', 'I', 'P', 'A', 'N', 'A', 'D', 'P', 'I', 'K', 'Y', 'E', 'I', 'D', 'K', 'E', 'S', 'G', 'A', 'L', 'F', 'V', 'D', 'R', 'F', 'M', 'S', 'T', 'A', 'M', 'F', 'Y', 'P', 'C', 'N', 'Y', 'G', 'Y', 'I', 'N', 'H', 'T', 'L', 'S', 'L', 'D', 'G', 'D', 'P', 'V', 'D', 'V', 'L', 'V', 'P', 'T', 'P', 'Y', 'P', 'L', 'Q', 'P', 'G', 'S', 'V', 'I', 'R', 'C', 'R', 'P', 'V', 'G', 'V', 'L', 'K', 'M', 'T', 'D', 'E', 'A', 'G', 'E', 'D', 'A', 'K', 'L', 'V', 'A', 'V', 'P', 'H', 'S', 'K', 'L', 'S', 'K', 'E', 'Y', 'D', 'H', 'I', 'K', 'D', 'V', 'N', 'D', 'L', 'P', 'E', 'L', 'L', 'K', 'A', 'Q', 'I', 'A', 'H', 'F', 'F', 'E', 'H', 'Y', 'K', 'D', 'L', 'E', 'K', 'G', 'K', 'W', 'V', 'K', 'V', 'E', 'G', 'W', 'E', 'N', 'A', 'E', 'A', 'A', 'K', 'A', 'E', 'I', 'V', 'A', 'S', 'F', 'E', 'R', 'A', 'K', 'N', 'K']
+2016-05-10 16:46:27 Fetch_Mismatch      INFO     Corresponding sites in the alignment's Reference sequence : [699, 700, 701, 702, 703, 704, 708, 709, 710, 740, 742, 743, 744, 745, 746, 747, 748, 749, 750, 751, 752, 753, 754, 755, 760, 762, 763, 765, 766, 767, 768, 769, 770, 771, 772, 773, 774, 776, 777, 778, 779, 780, 781, 782, 783, 784, 785, 786, 787, 788, 789, 790, 791, 792, 793, 794, 795, 796, 797, 798, 799, 800, 801, 821, 822, 823, 824, 825, 826, 827, 828, 829, 830, 831, 833, 834, 838, 840, 841, 842, 843, 844, 845, 846, 847, 848, 849, 850, 851, 852, 853, 854, 855, 856, 857, 858, 859, 860, 889, 890, 891, 892, 893, 894, 895, 896, 897, 898, 899, 900, 901, 902, 903, 904, 905, 907, 908, 910, 916, 917, 918, 919, 920, 921, 922, 923, 924, 925, 926, 927, 928, 929, 930, 931, 932, 933, 934, 935, 936, 937, 945, 946, 947, 948, 949, 950, 952, 968, 970, 971, 972, 973, 974, 976, 977, 978, 979, 981, 982, 983, 984, 985, 986, 987, 997, 998, 999, 1000, 1001, 1002, 1003, 1004, 1005, 1006, 1007]
+2016-05-10 16:46:27 Fetch_Mismatch      INFO     Begin extracting residues across alignment at the requested query sites
+2016-05-10 16:46:29 Fetch_Mismatch      INFO     Mismatch details will be written in to file:
+  "	/Users/Mana/Dropbox/22Feb_Data/8_All_Residues_Conservation/CD-HIT_Clustering_90/Ecoli/ConSurf/Output/Mismatches_Tabulated.csv"
+2016-05-10 16:46:32 Fetch_Mismatch      INFO     Done writing mismatch details in to csv file mentioned above.
+2016-05-10 16:46:32 GUI_Main            INFO     User has requested to format alignment in html format
+2016-05-10 16:46:32 Run_Script_Main     INFO     User requested HTML color formatting for clustal alignment
+2016-05-10 16:46:32 html_formatting     INFO     Alignment file used for formatting: /Users/Mana/Dropbox/22Feb_Data/8_All_Residues_Conservation/CD-HIT_Clustering_90/Ecoli/ConSurf/Output/Aligned_ClustalO_Ecoli_matches_only_Clus90_Feb22_Reference_SeqAdded.fasta
+2016-05-10 16:46:32 html_formatting     INFO     Alignment format is detected as "fasta" format
+2016-05-10 16:46:36 html_formatting     INFO     Formatted aligment will be stored in html file: '/Users/Mana/Dropbox/22Feb_Data/8_All_Residues_Conservation/CD-HIT_Clustering_90/Ecoli/ConSurf/Output/Formatted_Alignment.html'
+2016-05-10 16:46:38 html_formatting     INFO     Alignment formatting was completed and saved as above mentioned html file.
+2016-05-10 16:46:38 html_formatting     INFO     Jone Done. Ready for next job!
+2016-05-10 16:46:43 Run_Script_Main     INFO     All requested jobs are done! Ready for next job!!
 
 
-2016-04-13 15:33:51 Descrip/ID_Extractor INFO     User has requested tool 'FASTA Description/ID Extractor'
-2016-04-13 15:33:51 Descrip/ID_Extractor INFO     User chose to use 'Identifier Extractor'
-2016-04-13 15:33:51 Descrip/ID_Extractor INFO     FASTA file provided by user: '/Users/Mana/Dropbox/ResCons/Demo files/7_Description_ID Extractor/Sequences_demo.fasta'
-2016-04-13 15:33:51 Run_Script_Main     ERROR    Error that resulted when creating path "/Users/Mana/Dropbox/ResCons/Demo files/7_Description_ID Extractor/Output/":
-  [Errno 17] File exists: '/Users/Mana/Dropbox/ResCons/Demo files/7_Description_ID Extractor/Output/'
-2016-04-13 15:33:51 Run_Script_Main     WARNING  Folder "/Users/Mana/Dropbox/ResCons/Demo files/7_Description_ID Extractor/Output/" already exists. All or some files in it may get overwritten by ResCons. Do you wish to continue?
-2016-04-13 15:34:02 Run_Script_Main     INFO     User has selected (True = Yes, False = No):  False
-2016-04-13 15:34:02 Run_Script_Main     INFO     ResCons will stop as user has requested.
-
-2016-04-13 15:34:02 User_error          ERROR    Error that resulted: Traceback (most recent call last):
-  File "/Library/Frameworks/Python.framework/Versions/2.7/lib/python2.7/lib-tk/Tkinter.py", line 1532, in __call__
-    return self.func(*args)
-  File "/Users/Mana/Dropbox/ResCons/Ver28_ResCon.py", line 2662, in description_extractor
-    verify_filepath_exists(output_path)
-  File "/Users/Mana/Dropbox/ResCons/Ver28_ResCon.py", line 347, in verify_filepath_exists
-    raise_enabler('User opted not to write in selected output folder!')
-  File "/Users/Mana/Dropbox/ResCons/Ver28_ResCon.py", line 441, in raise_enabler
-    raise Exception(string)
-Exception: User opted not to write in selected output folder!
+ 932, 933, 934, 935, 936, 937, 938, 939, 940, 941, 943, 944, 946, 948, 949, 950, 951, 952, 953, 954, 955, 956, 957, 963, 964, 965, 966, 967, 968, 969, 970, 971, 972, 973, 974, 975, 976, 977, 979, 980, 996, 997, 998, 999, 1000, 1001, 1002, 1003, 1004, 1005, 1006, 1014, 1015, 1016, 1017, 1018, 1019, 1020, 1021, 1023, 1024, 1026, 1047, 1048, 1049, 1050, 1051, 1052, 1053, 1054, 1055, 1056, 1057, 1058, 1059, 1060, 1061, 1065, 1066, 1067, 1068, 1069, 1070, 1071, 1072, 1073, 1074, 1075, 1076]
+2016-05-10 16:37:27 Fetch_Mismatch      INFO     Begin extracting residues across alignment at the requested query sites
+2016-05-10 16:37:30 Fetch_Mismatch      INFO     Mismatch details will be written in to file:
+  "	/Users/Mana/Dropbox/22Feb_Data/8_All_Residues_Conservation/CD-HIT_Clustering_90/FamII/ConSurf/Output/Mismatches_Tabulated.csv"
+2016-05-10 16:37:33 Fetch_Mismatch      INFO     Done writing mismatch details in to csv file mentioned above.
+2016-05-10 16:37:33 GUI_Main            INFO     User has requested to format alignment in html format
+2016-05-10 16:37:33 Run_Script_Main     INFO     User requested HTML color formatting for clustal alignment
+2016-05-10 16:37:33 html_formatting     INFO     Alignment file used for formatting: /Users/Mana/Dropbox/22Feb_Data/8_All_Residues_Conservation/CD-HIT_Clustering_90/FamII/ConSurf/Output/Aligned_ClustalO_FamII_matches_only_Clus90_Feb22_Reference_SeqAdded.fasta
+2016-05-10 16:37:33 html_formatting     INFO     Alignment format is detected as "fasta" format
+2016-05-10 16:37:37 html_formatting     INFO     Formatted aligment will be stored in html file: '/Users/Mana/Dropbox/22Feb_Data/8_All_Residues_Conservation/CD-HIT_Clustering_90/FamII/ConSurf/Output/Formatted_Alignment.html'
+2016-05-10 16:37:38 html_formatting     INFO     Alignment formatting was completed and saved as above mentioned html file.
+2016-05-10 16:37:38 html_formatting     INFO     Jone Done. Ready for next job!
+2016-05-10 16:37:42 Run_Script_Main     INFO     All requested jobs are done! Ready for next job!!
 
 
-2016-04-13 15:34:05 Descrip/ID_Extractor INFO     User has requested tool 'FASTA Description/ID Extractor'
-2016-04-13 15:34:05 Descrip/ID_Extractor INFO     User chose to use 'Identifier Extractor'
-2016-04-13 15:34:05 Descrip/ID_Extractor INFO     FASTA file provided by user: '/Users/Mana/Dropbox/ResCons/Demo files/7_Description_ID Extractor/Sequences_demo.fasta'
-2016-04-13 15:34:05 Run_Script_Main     ERROR    Error that resulted when creating path "/Users/Mana/Dropbox/ResCons/Demo files/7_Description_ID Extractor/Sample_Output/":
-  [Errno 17] File exists: '/Users/Mana/Dropbox/ResCons/Demo files/7_Description_ID Extractor/Sample_Output/'
-2016-04-13 15:34:05 Run_Script_Main     WARNING  Folder "/Users/Mana/Dropbox/ResCons/Demo files/7_Description_ID Extractor/Sample_Output/" already exists. All or some files in it may get overwritten by ResCons. Do you wish to continue?
-2016-04-13 15:34:06 Run_Script_Main     INFO     User has selected (True = Yes, False = No):  True
-2016-04-13 15:34:06 Run_Script_Main     INFO     ResCons will continue as user requested.
-2016-04-13 15:34:06 Descrip/ID_Extractor INFO     Output folder path provided by user: '/Users/Mana/Dropbox/ResCons/Demo files/7_Description_ID Extractor/Sample_Output/'
-2016-04-13 15:34:06 Descrip/ID_Extractor INFO     State of checkbox 'Extract Partial Identifier': True
-2016-04-13 15:34:06 Descrip/ID_Extractor INFO     Regular expression provided by user: (\w+)\|.+
-2016-04-13 15:34:06 Descrip/ID_Extractor INFO     All sequence headers in FASTA file conform to the requirements.
-2016-04-13 15:34:06 Descrip/ID_Extractor INFO     Identifiers will be written into output file: '/Users/Mana/Dropbox/ResCons/Demo files/7_Description_ID Extractor/Sample_Output/Identifiers_Extracted.csv'
-2016-04-13 15:34:06 Descrip/ID_Extractor INFO     Data writing in to above csv file was completed.
-2016-04-13 15:34:06 Descrip/ID_Extractor INFO      Total number of sequences present in FASTA file:  677
- Number of unique Identifiers present among them:  677
-2016-04-13 15:34:29 Descrip/ID_Extractor INFO     Job done! Ready for next job.
-
-
-2016-04-13 15:34:31 Descrip/ID_Extractor INFO     User has requested tool 'FASTA Description/ID Extractor'
-2016-04-13 15:34:31 Descrip/ID_Extractor INFO     User chose to use 'Identifier Extractor'
-2016-04-13 15:34:31 Descrip/ID_Extractor INFO     FASTA file provided by user: '/Users/Mana/Dropbox/ResCons/Demo files/7_Description_ID Extractor/Sequences_demo.fasta'
-2016-04-13 15:34:31 Run_Script_Main     ERROR    Error that resulted when creating path "/Users/Mana/Dropbox/ResCons/Demo files/7_Description_ID Extractor/Sample_Output/":
-  [Errno 17] File exists: '/Users/Mana/Dropbox/ResCons/Demo files/7_Description_ID Extractor/Sample_Output/'
-2016-04-13 15:34:31 Run_Script_Main     WARNING  Folder "/Users/Mana/Dropbox/ResCons/Demo files/7_Description_ID Extractor/Sample_Output/" already exists. All or some files in it may get overwritten by ResCons. Do you wish to continue?
-2016-04-13 15:34:32 Run_Script_Main     INFO     User has selected (True = Yes, False = No):  True
-2016-04-13 15:34:32 Run_Script_Main     INFO     ResCons will continue as user requested.
-2016-04-13 15:34:32 Descrip/ID_Extractor INFO     Output folder path provided by user: '/Users/Mana/Dropbox/ResCons/Demo files/7_Description_ID Extractor/Sample_Output/'
-2016-04-13 15:34:32 Descrip/ID_Extractor INFO     State of checkbox 'Extract Partial Identifier': False
-2016-04-13 15:34:32 Descrip/ID_Extractor INFO     All sequence headers in FASTA file conform to the requirements.
-2016-04-13 15:34:32 Descrip/ID_Extractor INFO     Identifiers will be written into output file: '/Users/Mana/Dropbox/ResCons/Demo files/7_Description_ID Extractor/Sample_Output/Identifiers_Extracted.csv'
-2016-04-13 15:34:32 Descrip/ID_Extractor INFO     Data writing in to above csv file was completed.
-2016-04-13 15:34:32 Descrip/ID_Extractor INFO      Total number of sequences present in FASTA file:  677
- Number of unique Identifiers present among them:  677
-2016-04-13 15:34:33 Descrip/ID_Extractor INFO     Job done! Ready for next job.
-
-
-2016-04-13 15:34:42 Descrip/ID_Extractor INFO     User has requested tool 'FASTA Description/ID Extractor'
-2016-04-13 15:34:42 Descrip/ID_Extractor INFO     User chose to use 'Description Extractor'
-2016-04-13 15:34:42 Descrip/ID_Extractor INFO     FASTA file provided by user: '/Users/Mana/Dropbox/ResCons/Demo files/7_Description_ID Extractor/Sequences_demo.fasta'
-2016-04-13 15:34:42 Run_Script_Main     ERROR    Error that resulted when creating path "/Users/Mana/Dropbox/ResCons/Demo files/7_Description_ID Extractor/Sample_Output/":
-  [Errno 17] File exists: '/Users/Mana/Dropbox/ResCons/Demo files/7_Description_ID Extractor/Sample_Output/'
-2016-04-13 15:34:42 Run_Script_Main     WARNING  Folder "/Users/Mana/Dropbox/ResCons/Demo files/7_Description_ID Extractor/Sample_Output/" already exists. All or some files in it may get overwritten by ResCons. Do you wish to continue?
-2016-04-13 15:34:43 Run_Script_Main     INFO     User has selected (True = Yes, False = No):  True
-2016-04-13 15:34:43 Run_Script_Main     INFO     ResCons will continue as user requested.
-2016-04-13 15:34:43 Descrip/ID_Extractor INFO     Output folder path provided by user: '/Users/Mana/Dropbox/ResCons/Demo files/7_Description_ID Extractor/Sample_Output/'
-2016-04-13 15:34:43 Descrip/ID_Extractor INFO     State of checkbox 'Extract Partial Description': True
-2016-04-13 15:34:43 Descrip/ID_Extractor INFO     Regular expression provided by user: (.+) \[.+
-2016-04-13 15:34:43 Descrip/ID_Extractor INFO     All sequence headers in FASTA file conform to the requirements.
-2016-04-13 15:34:43 Descrip/ID_Extractor INFO     Descriptions will be written into output file: '/Users/Mana/Dropbox/ResCons/Demo files/7_Description_ID Extractor/Sample_Output/Descriptions_Extracted.csv'
-2016-04-13 15:34:43 Descrip/ID_Extractor INFO     Data writing in to above csv file was completed.
-2016-04-13 15:34:43 Descrip/ID_Extractor INFO      Total number of sequences present in FASTA file:  677
- Number of unique Descriptions present among them:  38
-2016-04-13 15:34:44 Descrip/ID_Extractor INFO     Job done! Ready for next job.
-
-
-2016-04-13 15:35:58 Descrip/ID_Extractor INFO     User has requested tool 'FASTA Description/ID Extractor'
-2016-04-13 15:35:58 Descrip/ID_Extractor INFO     User chose to use 'Description Extractor'
-2016-04-13 15:35:58 Descrip/ID_Extractor INFO     FASTA file provided by user: '/Users/Mana/Dropbox/ResCons/Demo files/7_Description_ID Extractor/Sequences_demo.fasta'
-2016-04-13 15:35:58 Run_Script_Main     ERROR    Error that resulted when creating path "/Users/Mana/Dropbox/ResCons/Demo files/7_Description_ID Extractor/Sample_Output/":
-  [Errno 17] File exists: '/Users/Mana/Dropbox/ResCons/Demo files/7_Description_ID Extractor/Sample_Output/'
-2016-04-13 15:35:58 Run_Script_Main     WARNING  Folder "/Users/Mana/Dropbox/ResCons/Demo files/7_Description_ID Extractor/Sample_Output/" already exists. All or some files in it may get overwritten by ResCons. Do you wish to continue?
-2016-04-13 15:35:59 Run_Script_Main     INFO     User has selected (True = Yes, False = No):  True
-2016-04-13 15:35:59 Run_Script_Main     INFO     ResCons will continue as user requested.
-2016-04-13 15:35:59 Descrip/ID_Extractor INFO     Output folder path provided by user: '/Users/Mana/Dropbox/ResCons/Demo files/7_Description_ID Extractor/Sample_Output/'
-2016-04-13 15:35:59 Descrip/ID_Extractor INFO     State of checkbox 'Extract Partial Description': True
-2016-04-13 15:35:59 Descrip/ID_Extractor INFO     Regular expression provided by user: (.+) \[.+
-2016-04-13 15:35:59 Descrip/ID_Extractor INFO     All sequence headers in FASTA file conform to the requirements.
-2016-04-13 15:35:59 Descrip/ID_Extractor INFO     Descriptions will be written into output file: '/Users/Mana/Dropbox/ResCons/Demo files/7_Description_ID Extractor/Sample_Output/Descriptions_Extracted.csv'
-2016-04-13 15:35:59 Descrip/ID_Extractor INFO     Data writing in to above csv file was completed.
-2016-04-13 15:35:59 Descrip/ID_Extractor INFO      Total number of sequences present in FASTA file:  677
- Number of unique Descriptions present among them:  38
-2016-04-13 15:36:01 Descrip/ID_Extractor INFO     Job done! Ready for next job.
-
-
-2016-04-13 15:37:27 Descrip/ID_Extractor INFO     User has requested tool 'FASTA Description/ID Extractor'
-2016-04-13 15:37:27 Descrip/ID_Extractor INFO     User chose to use 'Description Extractor'
-2016-04-13 15:37:27 Descrip/ID_Extractor INFO     FASTA file provided by user: '/Users/Mana/Dropbox/ResCons/Demo files/7_Description_ID Extractor/Sequences_demo.fasta'
-2016-04-13 15:37:27 Run_Script_Main     ERROR    Error that resulted when creating path "/Users/Mana/Dropbox/ResCons/Demo files/7_Description_ID Extractor/Sample_Output/":
-  [Errno 17] File exists: '/Users/Mana/Dropbox/ResCons/Demo files/7_Description_ID Extractor/Sample_Output/'
-2016-04-13 15:37:27 Run_Script_Main     WARNING  Folder "/Users/Mana/Dropbox/ResCons/Demo files/7_Description_ID Extractor/Sample_Output/" already exists. All or some files in it may get overwritten by ResCons. Do you wish to continue?
-2016-04-13 15:37:29 Run_Script_Main     INFO     User has selected (True = Yes, False = No):  True
-2016-04-13 15:37:29 Run_Script_Main     INFO     ResCons will continue as user requested.
-2016-04-13 15:37:29 Descrip/ID_Extractor INFO     Output folder path provided by user: '/Users/Mana/Dropbox/ResCons/Demo files/7_Description_ID Extractor/Sample_Output/'
-2016-04-13 15:37:29 Descrip/ID_Extractor INFO     State of checkbox 'Extract Partial Description': True
-2016-04-13 15:37:29 Descrip/ID_Extractor INFO     Regular expression provided by user: (.+) \[.+
-2016-04-13 15:37:29 Descrip/ID_Extractor INFO     All sequence headers in FASTA file conform to the requirements.
-2016-04-13 15:37:29 Descrip/ID_Extractor INFO     Descriptions will be written into output file: '/Users/Mana/Dropbox/ResCons/Demo files/7_Description_ID Extractor/Sample_Output/Descriptions_Extracted.csv'
-2016-04-13 15:37:29 Descrip/ID_Extractor INFO     Data writing in to above csv file was completed.
-2016-04-13 15:37:29 Descrip/ID_Extractor INFO      Total number of sequences present in FASTA file:  677
- Number of unique Descriptions present among them:  38
-2016-04-13 15:37:31 Descrip/ID_Extractor INFO     Job done! Ready for next job.
-
-
-2016-04-13 15:37:36 Descrip/ID_Extractor INFO     User has requested tool 'FASTA Description/ID Extractor'
-2016-04-13 15:37:36 Descrip/ID_Extractor INFO     User chose to use 'Description Extractor'
-2016-04-13 15:37:36 Descrip/ID_Extractor INFO     FASTA file provided by user: '/Users/Mana/Dropbox/ResCons/Demo files/7_Description_ID Extractor/Sequences_demo.fasta'
-2016-04-13 15:37:36 Run_Script_Main     ERROR    Error that resulted when creating path "/Users/Mana/Dropbox/ResCons/Demo files/7_Description_ID Extractor/Sample_Output/Description_Extractor/":
-  [Errno 17] File exists: '/Users/Mana/Dropbox/ResCons/Demo files/7_Description_ID Extractor/Sample_Output/Description_Extractor/'
-2016-04-13 15:37:36 Run_Script_Main     WARNING  Folder "/Users/Mana/Dropbox/ResCons/Demo files/7_Description_ID Extractor/Sample_Output/Description_Extractor/" already exists. All or some files in it may get overwritten by ResCons. Do you wish to continue?
-2016-04-13 15:37:37 Run_Script_Main     INFO     User has selected (True = Yes, False = No):  True
-2016-04-13 15:37:37 Run_Script_Main     INFO     ResCons will continue as user requested.
-2016-04-13 15:37:37 Descrip/ID_Extractor INFO     Output folder path provided by user: '/Users/Mana/Dropbox/ResCons/Demo files/7_Description_ID Extractor/Sample_Output/Description_Extractor/'
-2016-04-13 15:37:37 Descrip/ID_Extractor INFO     State of checkbox 'Extract Partial Description': True
-2016-04-13 15:37:37 Descrip/ID_Extractor INFO     Regular expression provided by user: (.+) \[.+
-2016-04-13 15:37:37 Descrip/ID_Extractor INFO     All sequence headers in FASTA file conform to the requirements.
-2016-04-13 15:37:37 Descrip/ID_Extractor INFO     Descriptions will be written into output file: '/Users/Mana/Dropbox/ResCons/Demo files/7_Description_ID Extractor/Sample_Output/Description_Extractor/Descriptions_Extracted.csv'
-2016-04-13 15:37:37 Descrip/ID_Extractor INFO     Data writing in to above csv file was completed.
-2016-04-13 15:37:37 Descrip/ID_Extractor INFO      Total number of sequences present in FASTA file:  677
- Number of unique Descriptions present among them:  38
-2016-04-13 15:37:38 Descrip/ID_Extractor INFO     Job done! Ready for next job.
-
-
-2016-04-13 15:38:15 Descrip/ID_Extractor INFO     User has requested tool 'FASTA Description/ID Extractor'
-2016-04-13 15:38:15 Descrip/ID_Extractor INFO     User chose to use 'Identifier Extractor'
-2016-04-13 15:38:15 Descrip/ID_Extractor INFO     FASTA file provided by user: '/Users/Mana/Dropbox/ResCons/Demo files/7_Description_ID Extractor/Sequences_demo.fasta'
-2016-04-13 15:38:15 Run_Script_Main     ERROR    Error that resulted when creating path "/Users/Mana/Dropbox/ResCons/Demo files/7_Description_ID Extractor/Sample_Output/Description_Extractor/":
-  [Errno 17] File exists: '/Users/Mana/Dropbox/ResCons/Demo files/7_Description_ID Extractor/Sample_Output/Description_Extractor/'
-2016-04-13 15:38:15 Run_Script_Main     WARNING  Folder "/Users/Mana/Dropbox/ResCons/Demo files/7_Description_ID Extractor/Sample_Output/Description_Extractor/" already exists. All or some files in it may get overwritten by ResCons. Do you wish to continue?
-2016-04-13 15:38:16 Run_Script_Main     INFO     User has selected (True = Yes, False = No):  True
-2016-04-13 15:38:16 Run_Script_Main     INFO     ResCons will continue as user requested.
-2016-04-13 15:38:16 Descrip/ID_Extractor INFO     Output folder path provided by user: '/Users/Mana/Dropbox/ResCons/Demo files/7_Description_ID Extractor/Sample_Output/Description_Extractor/'
-2016-04-13 15:38:16 Descrip/ID_Extractor INFO     State of checkbox 'Extract Partial Identifier': False
-2016-04-13 15:38:16 Descrip/ID_Extractor INFO     All sequence headers in FASTA file conform to the requirements.
-2016-04-13 15:38:16 Descrip/ID_Extractor INFO     Identifiers will be written into output file: '/Users/Mana/Dropbox/ResCons/Demo files/7_Description_ID Extractor/Sample_Output/Description_Extractor/Identifiers_Extracted.csv'
-2016-04-13 15:38:16 Descrip/ID_Extractor INFO     Data writing in to above csv file was completed.
-2016-04-13 15:38:16 Descrip/ID_Extractor INFO      Total number of sequences present in FASTA file:  677
- Number of unique Identifiers present among them:  677
-2016-04-13 15:38:17 Descrip/ID_Extractor INFO     Job done! Ready for next job.
-
-
-2016-04-13 15:38:35 Descrip/ID_Extractor INFO     User has requested tool 'FASTA Description/ID Extractor'
-2016-04-13 15:38:35 Descrip/ID_Extractor INFO     User chose to use 'Identifier Extractor'
-2016-04-13 15:38:35 Descrip/ID_Extractor INFO     FASTA file provided by user: '/Users/Mana/Dropbox/ResCons/Demo files/7_Description_ID Extractor/Sequences_demo.fasta'
-2016-04-13 15:38:35 Run_Script_Main     ERROR    Error that resulted when creating path "/Users/Mana/Dropbox/ResCons/Demo files/7_Description_ID Extractor/Sample_Output/Identifier_Extractor/":
-  [Errno 17] File exists: '/Users/Mana/Dropbox/ResCons/Demo files/7_Description_ID Extractor/Sample_Output/Identifier_Extractor/'
-2016-04-13 15:38:35 Run_Script_Main     WARNING  Folder "/Users/Mana/Dropbox/ResCons/Demo files/7_Description_ID Extractor/Sample_Output/Identifier_Extractor/" already exists. All or some files in it may get overwritten by ResCons. Do you wish to continue?
-2016-04-13 15:38:35 Run_Script_Main     INFO     User has selected (True = Yes, False = No):  True
-2016-04-13 15:38:35 Run_Script_Main     INFO     ResCons will continue as user requested.
-2016-04-13 15:38:35 Descrip/ID_Extractor INFO     Output folder path provided by user: '/Users/Mana/Dropbox/ResCons/Demo files/7_Description_ID Extractor/Sample_Output/Identifier_Extractor/'
-2016-04-13 15:38:35 Descrip/ID_Extractor INFO     State of checkbox 'Extract Partial Identifier': False
-2016-04-13 15:38:36 Descrip/ID_Extractor INFO     All sequence headers in FASTA file conform to the requirements.
-2016-04-13 15:38:36 Descrip/ID_Extractor INFO     Identifiers will be written into output file: '/Users/Mana/Dropbox/ResCons/Demo files/7_Description_ID Extractor/Sample_Output/Identifier_Extractor/Identifiers_Extracted.csv'
-2016-04-13 15:38:36 Descrip/ID_Extractor INFO     Data writing in to above csv file was completed.
-2016-04-13 15:38:36 Descrip/ID_Extractor INFO      Total number of sequences present in FASTA file:  677
- Number of unique Identifiers present among them:  677
-2016-04-13 15:38:37 Descrip/ID_Extractor INFO     Job done! Ready for next job.
+_Clus90_Feb22_Reference_SeqAdded.fasta
+2016-05-10 16:22:54 html_formatting     INFO     Alignment format is detected as "fasta" format
+2016-05-10 16:22:56 html_formatting     INFO     Formatted aligment will be stored in html file: '/Users/Mana/Dropbox/22Feb_Data/8_All_Residues_Conservation/CD-HIT_Clustering_90/Yeast/ConSurf/Output/Formatted_Alignment.html'
+2016-05-10 16:22:57 html_formatting     INFO     Alignment formatting was completed and saved as above mentioned html file.
+2016-05-10 16:22:57 html_formatting     INFO     Jone Done. Ready for next job!
+2016-05-10 16:23:05 Run_Script_Main     INFO     All requested jobs are done! Ready for next job!!
 
 

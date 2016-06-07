@@ -12,5 +12,5 @@ See the user guide for further details about ResCon’s tools.<br />
 
 ## To run ResCon script
 Move following into a directory and run the script using Python 2.7<br />
-    * Verxx_ResCon.py<br />
+    * ResCon.py<br />
 	* Rescon_Files (directory)<br />
