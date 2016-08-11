@@ -38,6 +38,8 @@ Ver 28 (under development) major modifications:
 
 3. Edited default command for Clustal Omega in webserver mode. Added '--iterations 3' to existing command.
 
+4. Software title 'ResCon' changed to 'ResCons'
+
 '''
 
 
@@ -158,19 +160,19 @@ if not terminal_output:
 # Following are dummy variables which will be removed when scripting is completed
 # This is just to keep Pycharm's code inspection happy
 # or otherwise code inspection shows error everywhere suggesting 'unresolved reference'
-html_log = logging.getLogger('value')
-genbank_log = logging.getLogger('value')
-runscript_log = logging.getLogger('value')
-blast_log = logging.getLogger('value')
-mismatch_log = logging.getLogger('value')
-clustal_log = logging.getLogger('value')
-gui_log = logging.getLogger('value')
-clades_log = logging.getLogger('value')
-descr_filter_log = logging.getLogger('value')
-idfilter_log = logging.getLogger('value')
-header_extractor_log = logging.getLogger('value')
-unexpected_error_log = logging.getLogger('value')
-user_error_log = logging.getLogger('value')
+# html_log = logging.getLogger('value')
+# genbank_log = logging.getLogger('value')
+# runscript_log = logging.getLogger('value')
+# blast_log = logging.getLogger('value')
+# mismatch_log = logging.getLogger('value')
+# clustal_log = logging.getLogger('value')
+# gui_log = logging.getLogger('value')
+# clades_log = logging.getLogger('value')
+# descr_filter_log = logging.getLogger('value')
+# idfilter_log = logging.getLogger('value')
+# header_extractor_log = logging.getLogger('value')
+# unexpected_error_log = logging.getLogger('value')
+# user_error_log = logging.getLogger('value')
 
 
 logging.basicConfig(level=logging.INFO, format='%(asctime)s %(name)-19s %(levelname)-8s %(message)s',
@@ -4595,8 +4597,9 @@ def settings_win_fn():
 
 # function that displays text when help -> about button is clicked
 def about():
-	tkMessageBox.showinfo('About ResCons', 'Author:  Manavalan Gajapathy, Ng Lab \n'
-								   'Copyright (C) 2015:  GNU Lesser General Public License')
+	tkMessageBox.showinfo('About ResCons', 'ResCons \nVersion 1.0 \n'
+									'Author:  Manavalan Gajapathy, Ng Lab \n'
+									'Copyright (C) 2015:  GNU Lesser General Public License')
 
 
 # function to open a file externally in default application in any OS
