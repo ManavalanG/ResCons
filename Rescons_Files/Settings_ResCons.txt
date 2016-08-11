@@ -29,7 +29,7 @@
 
 
   ## Similar amino acid residues set ##
-  ## (Default used in ResCon - AVFPMILW, DE, RK, STYHCNGQ
+  ## (Default used in ResCons - AVFPMILW, DE, RK, STYHCNGQ
 
     aa_set:           AVFPMILW, DE, RK, STYHCNGQ
 
@@ -46,7 +46,7 @@
     id_delimiter:     |
 
 
-  ## ClustalO command (local) used in ResCon ##
+  ## ClustalO command (local) used in ResCons ##
   ## Note that accented/smart symbols will result in error. Especially True in Mac OS when using TextEdit. For example: ‘ is not same as '. Former is not allowed. Use dumb quotes. Copy and paste the correct symbol if you don't know what this means.
   ## Integers, True and False should not be in quotes. Anything else should be in quotes for parameter values.
   ## Default:   {'outfmt': 'clu', 'iterations': 3, 'force': True, 'guidetree_out': 'default.newick'}
@@ -54,7 +54,7 @@
     ClustalO_Command_local:  {'outfmt': 'fasta', 'iterations': 3, 'force': True, 'guidetree_out': 'default.newick'}
 
 
-  ## ClustalO command (for web server) used in ResCon. An email id is required to use EMBL's Clustal omega webserver##
+  ## ClustalO command (for web server) used in ResCons. An email id is required to use EMBL's Clustal omega webserver##
 
     ClustalO_Command_web:  --email your_email@here.com --iterations 3
 
@@ -84,7 +84,7 @@
   ## Symbols that are to be replaced when present in sequence identifier.
   ## Default symbols used are symbols that cause trouble when used in phylogenetic tree in ‘Newick format’
   ## Enter the symbols to be replaced as separated by single space. Characters can also be used along with symbols. 
-  ## No characters other than symbols to be replaced should be mentioned here. Space character will be replaced by ResCon no matter what!
+  ## No characters other than symbols to be replaced should be mentioned here. Space character will be replaced by ResCons no matter what!
   ## Default is    ( ) [ ] : ; , '
 
     symbols_to_be_replaced:    ( ) [ ] : ; , '

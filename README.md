@@ -10,8 +10,10 @@ residue conservation. It is written in Python 2.7 and can be run in Windows, Mac
 
 See the user guide for further details about ResCons’s tools.<br />
 
-
 ## To run ResCons script
 Move following into a directory and run the script using Python 2.7<br />
     * ResCons.py<br />
-	* Rescons_Files (directory)<br />
+	* ResCons_Files (directory)<br />
+
+
+PS: ResCons was previously called ResCon.
