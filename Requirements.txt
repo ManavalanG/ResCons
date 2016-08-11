@@ -1,4 +1,4 @@
-# Following third party modules are required to run ResCon script which is written in Python 2.7:
+# Following third party modules are required to run ResCons script which is written in Python 2.7:
 
 # Biopython module. Written using version 1.63
 Bio >= 1.63

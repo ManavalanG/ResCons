@@ -1,5 +1,5 @@
 <!-- 
-This file is produced/used by ResCon (which is licensed under open source LGPL license).
+This file is produced/used by ResCons (which is licensed under open source LGPL license).
 This is a html5 file with javascript showing bar chart along with table and clustall alignment -
 all showing results about mismatches in the residue positions under question.
 -->
@@ -7,7 +7,7 @@ all showing results about mismatches in the residue positions under question.
 <!doctype html>
 <HEAD>
 	<META HTTP-EQUIV="CONTENT-TYPE" CONTENT="text/html; charset=utf-8">
-	<TITLE>ResCon Formatted</TITLE>
+	<TITLE>ResCons Formatted</TITLE>
 	<STYLE>
 		* {
 			font-family:"Lucida Sans Typewriter", "Lucida Console", Monaco, "Bitstream Vera Sans Mono", monospace;
@@ -54,8 +54,8 @@ all showing results about mismatches in the residue positions under question.
 	
 
 <!-- 
-Chartnew.js is a javascript licensed under 'The MIT License (MIT)' and the version used in ResCon is a 
-edited/modified version of chartnew.js so as to suit drawing bar chart for the purposes of ResCon.
+Chartnew.js is a javascript licensed under 'The MIT License (MIT)' and the version used in ResCons is a 
+edited/modified version of chartnew.js so as to suit drawing bar chart for the purposes of ResCons.
 Below is the license used by Chartnew.js.
 
 Copyright (c) 2014 FVANCOP
@@ -3666,8 +3666,8 @@ function tpdraw(ctx,dataval) {
 	</script>
 
 <!--
-following line enables ResCon to read following lines and keep it in memory for later use.
-check_by_ResCon-->
+following line enables ResCons to read following lines and keep it in memory for later use.
+check_by_ResCons-->
 							
   var allopts = {
 	//Boolean - If we show the scale above the chart data	  -> Default value Changed

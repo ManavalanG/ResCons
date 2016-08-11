@@ -1,7 +1,7 @@
 <!doctype html>
 <HEAD>
 	<META HTTP-EQUIV="CONTENT-TYPE" CONTENT="text/html; charset=utf-8">
-	<TITLE>ResCon Formatted</TITLE>
+	<TITLE>ResCons Formatted</TITLE>
 	<STYLE>
 		* {
 			font-family:"Lucida Sans Typewriter", "Lucida Console", Monaco, "Bitstream Vera Sans Mono", monospace;

@@ -3,18 +3,18 @@
 LICENSE:
 Copyright (C) <2015>  Manavalan Gajapathy, Joseph D. Ng
 
-ResCon is free software; you can redistribute it and/or
+ResCons is free software; you can redistribute it and/or
 modify it under the terms of the GNU Lesser General Public
 License as published by the Free Software Foundation; either
 version 2.1 or version 3 of the License.
 
-ResCon is distributed in the hope that it will be useful,
+ResCons is distributed in the hope that it will be useful,
 but WITHOUT ANY WARRANTY; without even the implied warranty of
 MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the GNU
 Lesser General Public License for more details.
 
 You should have received a copy of the GNU Lesser General Public
-License along with ResCon; if not, write to the Free Software
+License along with ResCons; if not, write to the Free Software
 Foundation, Inc., 51 Franklin Street, Fifth Floor, Boston, MA  02110-1301  USA
 
 Author's Email id: manavalan.g@gmail.com
@@ -28,13 +28,13 @@ __email__ = "manavalan.g@gmail.com"
 
 '''
 Ver 28 (under development) major modifications:
-1. File 'ClustalO_embl_api' is moved in to directory 'Rescon_Files' so as to contain all files to execute ResCon
+1. File 'ClustalO_embl_api' is moved in to directory 'Rescon_Files' so as to contain all files to execute ResCons
    in one location. Script modified to reflect the same for importing.
 
 2. Added following checkpoints to user-provided Clustal omega command when used in 'web-server' mode:
  		a. Is parameter 'email' present?
  		b. Proper email id provided?
- 		b. Is user providing parameters that needs to be set by ResCon?
+ 		b. Is user providing parameters that needs to be set by ResCons?
 
 3. Edited default command for Clustal Omega in webserver mode. Added '--iterations 3' to existing command.
 
@@ -60,7 +60,7 @@ from sys import platform as _platform	# to determine OS under use
 import csv
 import operator
 import StringIO
-from Rescon_Files.clustalo_embl_api import clustalo_api		# to run clustal omega through EMBL webserver
+from ResCons_Files.clustalo_embl_api import clustalo_api		# to run clustal omega through EMBL webserver
 
 terminal_output = False			# to show or not to show error/info in the terminal
 # terminal_output = True
@@ -129,14 +129,14 @@ if win_os and not ubuntu_os:
 	# This part writes log file to C:/temp folder. However if C: is not
 	# present, then this part will write into a drive that is present in that computer
 	if os.path.exists('C:'):
-		logger_filename = 'C://temp//Logs_ResCon.txt'
+		logger_filename = 'C://temp//Logs_ResCons.txt'
 	else:
 		drive_letter = map(chr, range(68, 91))
 		drive_letter = ['A', 'B'] + drive_letter		# all alphabets except letter C
 		for letter in drive_letter:
 			drive = letter + ':'
 			if os.path.exists(drive):
-				logger_filename = letter + '://temp//Logs_ResCon.txt'
+				logger_filename = letter + '://temp//Logs_ResCons.txt'
 				break
 
 	dir_path = os.path.dirname(logger_filename)	# this part creates temp folder if it is not already present
@@ -149,7 +149,7 @@ if win_os and not ubuntu_os:
 			raise
 
 else:		# for mac and ubuntu, log file is created in the same folder as this script file
-	logger_filename = current_path + '/Logs_ResCon.txt'
+	logger_filename = current_path + '/Logs_ResCons.txt'
 
 if not terminal_output:
 	sys.stderr = open(logger_filename, 'w')		# Logs and errors are directed to stderr which in turn gets logged.
@@ -187,7 +187,7 @@ for key, value in logging_dict.iteritems():  # defines multiple loggers using di
 
 
 # This part gets settings from a text file (so as to allow user to modify certain settings)
-settings_file_name = current_path + "/Rescon_Files/Settings_ResCon.txt"
+settings_file_name = current_path + "/ResCons_Files/Settings_ResCons.txt"
 with open(settings_file_name, 'Ur') as settings_data:
 	for line in settings_data:
 		line = line .replace('\n', '')
@@ -297,7 +297,7 @@ with open(settings_file_name, 'Ur') as settings_data:
 
 
 # reads Similarity Matrix S from text file for Residue Conservation Scoring method by Liu et. al., 2008
-simi_matrix_filename = "Rescon_Files/Similarity_Matrix_S.txt"
+simi_matrix_filename = "ResCons_Files/Similarity_Matrix_S.txt"
 simi_matrix_handle = open(simi_matrix_filename, "Ur")
 dict_similarity_matrix = {}
 line_count = 1
@@ -356,9 +356,9 @@ def verify_filepath_exists(path):
 		user_error_log.warning(temp)
 		ans = tkMessageBox.askyesno('Warning', temp, default = 'no')
 		if ans:
-			user_error_log.info("User clicked 'Yes'. ResCon continues further.")
+			user_error_log.info("User clicked 'Yes'. ResCons continues further.")
 		else:
-			user_error_log.info("User clicked 'No'. ResCon stops here.")
+			user_error_log.info("User clicked 'No'. ResCons stops here.")
 			raise_enabler('stop')
 
 # Function to pop-up an error in gui
@@ -431,8 +431,8 @@ def raise_enabler(string):
 		pass
 
 	if string == 'stop':
-		user_error_log.error("Resulted in an error that can be corrected by User. ResCon is ready for next job now!")
-		raise Exception("Error can be rectified by user (you)!. Controlled termination by ResCon!")
+		user_error_log.error("Resulted in an error that can be corrected by User. ResCons is ready for next job now!")
+		raise Exception("Error can be rectified by user (you)!. Controlled termination by ResCons!")
 	if string == 'OSError':
 		raise OSError
 	elif string == 'none':		# in cases where submit buttons need to be activated but raise fn not to be called
@@ -508,16 +508,16 @@ def is_ref_in_seqs_file():
 	duplicate_ids_list = set([item for item in all_seqs_id if all_seqs_id.count(item) > 1])
 	if duplicate_ids_list:
 		duplicate_ids = '\t' + '\n\t'.join(duplicate_ids_list)
-		temp = "Duplicate Sequence IDs are present in Sequences file. \n  Click 'Yes' if you would like ResCon to " \
+		temp = "Duplicate Sequence IDs are present in Sequences file. \n  Click 'Yes' if you would like ResCons to " \
 			   "proceed as it is. \n  Click 'No' to stop further execution." \
 			   "\n\nFolowing are the duplicate sequence IDs: \n%s" %duplicate_ids
 		clustal_log.error(temp)
 		ans = tkMessageBox.askquestion('Error', temp, default = 'yes')
 		if ans == 'no':
-			gui_log.info("User clicked 'No'. ResCon will stop now.")
+			gui_log.info("User clicked 'No'. ResCons will stop now.")
 			raise_enabler('stop')
 		else:
-			gui_log.info("User clicked 'Yes'. ResCon proceeds further.")
+			gui_log.info("User clicked 'Yes'. ResCons proceeds further.")
 
 	# Verifies if Reference sequence is present in query sequences and adds to it, if non-existent.
 	outfile_ref_added = None
@@ -560,7 +560,7 @@ def clustalo_webserver_fn():
 	global Aligned_Filename
 
 
-	# verify if certain parameters are not provided by user as they will be set by ResCon
+	# verify if certain parameters are not provided by user as they will be set by ResCons
 	para_not_allowed = ['--outfmt', '--outformat', '--sequence', '--outfile']
 	para_problem = False
 	for para in para_not_allowed:
@@ -569,7 +569,7 @@ def clustalo_webserver_fn():
 			break
 
 	temp = ''
-	# verify if certain parameters are not provided by user as they will be set by ResCon
+	# verify if certain parameters are not provided by user as they will be set by ResCons
 	if para_problem:
 		para_string = '\t' + '\n\t'.join(para_not_allowed)
 		temp = "Following parameters are not allowed in Clutal omega command:\n\n%s\n\n Fix it and try again!" % para_string
@@ -581,7 +581,7 @@ def clustalo_webserver_fn():
 	# Raises error if email id provided is 'your_email@here.com'
 	elif 'your_email@here.com' in clustal_web_user_command:
 		temp = "Provide a valid email address instead of 'your_email@here.com' in ClustalO command.\n\n" \
-			   "Tip: To permanantly store your valid email id, change it in ResCon's settings file. It is available " \
+			   "Tip: To permanantly store your valid email id, change it in ResCons's settings file. It is available " \
 			   "at bottom of the window of 'File menu --> Edit settings'"
 	if temp:
 		clustal_log.info(temp)
@@ -626,7 +626,7 @@ def clustalo_webserver_fn():
 		clustal_log.error(temp)
 		popup_error(temp)
 		button_run_script.configure(state = ACTIVE)		# Re-enables submit job button while processing
-		raise_enabler('Clustal Omega resulted in error! So ultimately ResCon had to terminate the job!')
+		raise_enabler('Clustal Omega resulted in error! So ultimately ResCons had to terminate the job!')
 
 	processing_clustal.grid_remove()
 
@@ -644,7 +644,7 @@ def clustalo_webserver_fn():
 		clustal_log.error(temp)
 		popup_error(temp)
 		button_run_script.configure(state = ACTIVE)		# Re-enables submit job button while processing
-		raise_enabler('Clustal Omega resulted in error! So ultimately ResCon had to terminate the job!')
+		raise_enabler('Clustal Omega resulted in error! So ultimately ResCons had to terminate the job!')
 
 
 
@@ -719,15 +719,15 @@ def clustal_alignment_local():
 		popup_error(temp)
 		raise_enabler('stop')
 
-	# paramter 'outfile' is not allowed anymore as Rescon now allows to choose output folder. It is redundant
+	# paramter 'outfile' is not allowed anymore as ResCons now allows to choose output folder. It is redundant
 	if "outfile" in clustal_command_temp_2:
 		temp = "Parameter 'outfile' is not allowed in ClustalO command. Output file instead will be stored in output folder chosen. Press yes to proceed further"
 		ans = tkMessageBox.askquestion('Error', temp, default = 'yes')
 		if ans == 'no':
-			clustal_log.info("User clicked 'No'. ResCon will stop now.")
+			clustal_log.info("User clicked 'No'. ResCons will stop now.")
 			raise_enabler('stop')
 		else:
-			clustal_log.info("User clicked 'Yes'. ResCon proceeds further.")
+			clustal_log.info("User clicked 'Yes'. ResCons proceeds further.")
 
 
 	# reads user provided clustal omega output format
@@ -746,7 +746,7 @@ def clustal_alignment_local():
 		file_extension = 'fasta'		# unless specified, clustal output will be in fasta format
 
 
-	# the following is decided to be unnecessary as Rescon now allows to choose output folder
+	# the following is decided to be unnecessary as ResCons now allows to choose output folder
 	# # if user requests to change default filename or filepath of aligned file, following will take care of it.
 	# if "outfile" in clustal_commandline:
 	# 	if clustal_commandline['outfile'] != 'default':
@@ -802,9 +802,9 @@ def clustal_alignment_local():
 	tkMessageBox.showinfo('Info', temp)
 
 
-	# execute clustal omega in a new thread. As catching exceptions when using threading is problematic, ResCon
+	# execute clustal omega in a new thread. As catching exceptions when using threading is problematic, ResCons
 	# looks for absence of clustal aligned output file as a workaround to verify if clustal omega ran successfully.
-	# For the above reason, ResCon deletes if a file with same name as clustal output file was already
+	# For the above reason, ResCons deletes if a file with same name as clustal output file was already
 	# present in user's output folder.
 	processing_clustal.grid()
 	if linux_os:
@@ -821,13 +821,13 @@ def clustal_alignment_local():
 			   '2. Error in Clustal omega installation or \n  ' \
 			   '3. If already installed, correct path may not have been properly specified or \n  ' \
 			   '4. If this is Windows OS, Clustal omega may have trouble if Sequences file has lot of sequences.' \
-			   " (This error is caused by Clustal Omega application; not ResCon) \n  " \
+			   " (This error is caused by Clustal Omega application; not ResCons) \n  " \
 			   '5. Error in your Sequences file or in its filename. \n  ' \
 			   'Note: This list is not inclusive of all problems though.'
 		clustal_log.error(temp)
 		popup_error(temp)
 		button_run_script.configure(state = ACTIVE)		# Re-enables submit job button while processing
-		raise_enabler('Clustal Omega resulted in error! So ultimately ResCon had to terminate the job!')
+		raise_enabler('Clustal Omega resulted in error! So ultimately ResCons had to terminate the job!')
 
 
 # Function that reads clustal alignment file and extracts details of mismatches, if any, at the sites requested
@@ -878,7 +878,7 @@ def fetch_mismatch():
 		raise_enabler('stop')
 
 	if not format_supported:
-		temp = "Your Alignment file does not have alignment format supported by ResCon"
+		temp = "Your Alignment file does not have alignment format supported by ResCons"
 		mismatch_log.error(temp)
 		popup_error(temp)
 		raise_enabler('stop')
@@ -1561,8 +1561,8 @@ def html_formatting():
 		raise_enabler('stop')
 
 	if not format_supported:
-		# temp = "Your Alignment file does not have alignment format supported by ResCon"
-		temp = 'Format of alignment in your alignment file is not supported by ResCon.'
+		# temp = "Your Alignment file does not have alignment format supported by ResCons"
+		temp = 'Format of alignment in your alignment file is not supported by ResCons.'
 		html_log.error(temp)
 		popup_error(temp)
 		raise_enabler('stop')
@@ -1658,9 +1658,9 @@ def html_formatting():
 	info_lines += '-' * 100
 
 	if chart_method == 'chart.js':
-		html_template_file = "Rescon_Files/Template_html5_chartjs.txt"
+		html_template_file = "ResCons_Files/Template_html5_chartjs.txt"
 	elif chart_method == 'chartnew.js':
-		html_template_file = "Rescon_Files/Template_html5_ChartNewjs.txt"
+		html_template_file = "ResCons_Files/Template_html5_ChartNewjs.txt"
 
 	if chart_method == 'chart.js' or chart_method == 'chartnew.js':
 		with open(html_template_file, 'Ur') as html_template_data:
@@ -1671,7 +1671,7 @@ def html_formatting():
 					out_html_handle.write(line)
 				else:
 					html_remaining += line
-				if line.replace('\n', '') == 'check_by_ResCon-->':
+				if line.replace('\n', '') == 'check_by_ResCons-->':
 					check_line = 1
 
 	if chart_method == 'matplot' and matplot_reqd:
@@ -1713,7 +1713,7 @@ def html_formatting():
 
 		# creates html header and instructs browser to show text using font Lucida Sans Typewriter
 		out_html_handle.write(
-			'<HTML>\n<HEAD>\n\t<META HTTP-EQUIV="CONTENT-TYPE" CONTENT="text/html; charset=utf-8">\n\t<TITLE>ResCon Formatted</TITLE>\n'
+			'<HTML>\n<HEAD>\n\t<META HTTP-EQUIV="CONTENT-TYPE" CONTENT="text/html; charset=utf-8">\n\t<TITLE>ResCons Formatted</TITLE>\n'
 			'\t<STYLE>\n'
 			'\t\t* {\n'
 			'\t\t\tfont-family:"Lucida Sans Typewriter", "Lucida Console", Monaco, "Bitstream Vera Sans Mono", monospace;\n'
@@ -2061,7 +2061,7 @@ def blast_filter():
 	# Note that FASTA file may have sequences that are not part of BLAST XML file. This might be bcoz such sequence may
 	# not have significant similarity to query sequence. Or else user chose to use different FASTA than that was used
 	# to get the BLAST XML file provided here.
-	# Hence, ResCon throws a warning here and gives option to user on how to proceed further.
+	# Hence, ResCons throws a warning here and gives option to user on how to proceed further.
 	temp = "Do you want to include sequences that are in FASTA file but not in BLAST XML file?" \
 		   "\n\nNote: Such instances may happen when sequences do not have significant similarity to query sequence." \
 		   "\nUsage of combination '%s %s threshold' triggered this warning." %(high_or_low, blast_filter_method)
@@ -2455,7 +2455,7 @@ def Extract_Clades():
 	Branch_Length_list = [k for k in Branch_Length_list if k]
 
 	clades_log.info('Branch length(s) provided by user:  %s' % Branch_Length_entry)
-	clades_log.info('Branch length(s) recognized by ResCon: %s' % Branch_Length_list)
+	clades_log.info('Branch length(s) recognized by ResCons: %s' % Branch_Length_list)
 
 	# to edit negative branch lengths automatically (as an option)
 	edited_newick_data = ''
@@ -2471,13 +2471,13 @@ def Extract_Clades():
 				# if not neg_br_lngth_checkboxval.get():
 				# 	tree = Phylo.read(Extract_Input_Newick, format_type)	# reads directly from file
 				# else:
-				tree = Phylo.read(StringIO.StringIO(edited_newick_data), format_type)	# reads ResCon's manipulated string in which negative branch lengths are converted to positive ones
+				tree = Phylo.read(StringIO.StringIO(edited_newick_data), format_type)	# reads ResCons's manipulated string in which negative branch lengths are converted to positive ones
 				clades_log.info('Phylogenetic Tree format is detected as "%s" format' % format_type)
 				format_supported = True
 				break
 			except Exception as e:
 				clades_log.info('Following error is produced in an attempt to determine file format of phylogenetic tree. '
-								'You need to care about this only when ResCon cannot read your tree file at all.\n'
+								'You need to care about this only when ResCons cannot read your tree file at all.\n'
 								'  File format type attempted: %s\n'
 								'  Error produced when attempting to read tree file:   %s' % (format_type, e))
 				pass
@@ -2490,7 +2490,7 @@ def Extract_Clades():
 		raise_enabler('stop')
 
 	if not format_supported:
-		temp = "ResCon has trouble reading your phylogenetic tree.\n " \
+		temp = "ResCons has trouble reading your phylogenetic tree.\n " \
 			   "Supported formats: 'newick', 'nexus', 'nexml', 'phyloxml'.\n\n" \
 			   "If your file is in one of above formats, make sure sequence ID in tree file do " \
 			   "not have sensitive symbols. See user guide for more details."
@@ -3360,9 +3360,9 @@ def read_user_input():
 
 	protein_mode = seq_mode()
 	if protein_mode:
-		runscript_log.info("ResCon will run in 'Protein mode' as user has requested.")
+		runscript_log.info("ResCons will run in 'Protein mode' as user has requested.")
 	else:
-		runscript_log.info("ResCon will run in 'DNA/RNA mode' as user has requested.")
+		runscript_log.info("ResCons will run in 'DNA/RNA mode' as user has requested.")
 
 	if not templ_entry.get():
 		temp = "'Reference file' box is empty. Choose a file."
@@ -3385,13 +3385,13 @@ def read_user_input():
 
 	if '-' in Reference.seq:
 		temp = "Gap character '-' is found in your Reference sequence.\n If this is a mistake, click 'Cancel' and " \
-			   "ResCon will stop.\n If this is acceptable, click 'OK' and ResCon will proceed"
+			   "ResCons will stop.\n If this is acceptable, click 'OK' and ResCons will proceed"
 		runscript_log.warning(temp)
 		ans = tkMessageBox.askokcancel('Warning', temp, default= 'cancel')
 		if ans:
-			runscript_log.info("User clicked 'OK'. ResCon proceeds further.")
+			runscript_log.info("User clicked 'OK'. ResCons proceeds further.")
 		else:
-			runscript_log.info("User clicked 'Cancel'. ResCon stops now.")
+			runscript_log.info("User clicked 'Cancel'. ResCons stops now.")
 			raise_enabler('stop')
 
 	if not output_main_entry.get():
@@ -3477,15 +3477,15 @@ def read_user_input():
 				gui_log.info('User-provided residue positions: %s' % resi_positions)
 				resi_positions = list(set(resi_positions))
 
-				temp = "Duplicate numbers present in residue positions provided. \n  Click 'Yes' if you would like ResCon to " \
+				temp = "Duplicate numbers present in residue positions provided. \n  Click 'Yes' if you would like ResCons to " \
 					   "remove duplicates and proceed further. \n  Click 'No' to stop further execution."
 				gui_log.error(temp)
 				ans = tkMessageBox.askquestion('Error', temp, default = 'yes')
 				if ans == 'no':
-					gui_log.info("User clicked 'No'. ResCon will stop now.")
+					gui_log.info("User clicked 'No'. ResCons will stop now.")
 					raise_enabler('stop')
 				else:
-					gui_log.info("User clicked 'Yes'. ResCon proceeds further.")
+					gui_log.info("User clicked 'Yes'. ResCons proceeds further.")
 
 				gui_log.info('Updated residue positions after removing duplicate(s): %s' % resi_positions)
 
@@ -3579,10 +3579,10 @@ def run_script():
 
 
 app = Tk()
-app.title("ResCon")
+app.title("ResCons")
 app.geometry("")
 app.resizable(width=FALSE, height=FALSE)	# doesn't allow resizing window. This disables maximize button as well
-title_bar_logo = 'Rescon_Files\\128x128_part_no_bg_logo.ico'
+title_bar_logo = 'ResCons_Files\\128x128_part_no_bg_logo.ico'
 if win_os:			# to show logo in windows task bar and in app border top.
 	app.wm_iconbitmap(bitmap=title_bar_logo)
 
@@ -3606,7 +3606,7 @@ if mac_os:
 else:
 	font_size = 12
 
-# Function that determines if user wants ResCon to run in protein mode or dna/rna mode
+# Function that determines if user wants ResCons to run in protein mode or dna/rna mode
 def seq_mode():
 	if protein_or_dna_mode.get() == 1:
 		protein_mode = True
@@ -3817,8 +3817,7 @@ if mac_os:
 
 
 if Image_in_GUI:
-	# image = Image.open("Rescon_Files\\128x128_no_bg_logo.png")			# adds logo image to the GUI
-	image = Image.open("Rescon_Files\\128x128_part_no_bg_logo.png")			# adds logo image to the GUI
+	image = Image.open("ResCons_Files\\128x128_part_no_bg_logo.png")			# adds logo image to the GUI
 	# image = image.resize((170,110), Image.ANTIALIAS)
 	photo1 = ImageTk.PhotoImage(image)
 	xxx= Label(frame2, image = photo1)
@@ -3826,7 +3825,7 @@ if Image_in_GUI:
 	# xxx.image(photo1)
 
 
-# Labels that will show up when ResCon is under execution
+# Labels that will show up when ResCons is under execution
 global processing, processing_clustal
 processing = label_text(frame2, 'Processing...', 0, 20, 16, 1)
 processing.configure(fg='red', font= ("times", 16))
@@ -3858,14 +3857,14 @@ def top_win():
 	top.transient(app)		# keeps toplevel window always on top of root window
 	top.geometry("")
 	top.resizable(width=FALSE, height=FALSE)	# doesn't allow resizing window. This disables maximize button as well
-	top.title("ResCon: More Tools")
+	top.title("ResCons: More Tools")
 
 	# MoreTools_label = Label(top, text = 'More Tools!!', height = 4)
 	MoreTools_label = Label(top, text = '', height = 2)			# for spacing
 	MoreTools_label.grid(row = 0, column = 0, columnspan = 2, sticky = EW)
 
 	if Image_in_GUI:
-		image = Image.open("Rescon_Files\\128x128_part_no_bg_logo.png")			# adds logo image to the GUI
+		image = Image.open("ResCons_Files\\128x128_part_no_bg_logo.png")			# adds logo image to the GUI
 		image = image.resize((300, 195), Image.ANTIALIAS)
 		photo2 = ImageTk.PhotoImage(image)
 		yyy= Button(top, image = photo2, bd=0)
@@ -4509,7 +4508,7 @@ def settings_win_fn():
 	if win_os:			# to show logo in windows task bar and in app border top.
 		settings_win.wm_iconbitmap(bitmap=title_bar_logo)
 	settings_win.resizable(width=FALSE, height=FALSE)	# doesn't allow resizing window. This disables maximize button as well
-	settings_win.title("ResCon: Edit settings")
+	settings_win.title("ResCons: Edit settings")
 
 	frame1_set = Frame(settings_win)
 	frame1_set.grid(row=0, column=0, sticky='w')
@@ -4528,7 +4527,7 @@ def settings_win_fn():
 				dict_box_values[key].set(color[1])
 				dict_entry_box[key].configure(bg=color[1])
 		except Exception as e:
-			temp = 'ResCon has trouble obtaining color code. Enter the code manually'
+			temp = 'ResCons has trouble obtaining color code. Enter the code manually'
 			gui_log.error(temp)
 			popup_error(temp)
 			gui_log.error('Error that occured: %s' % e)
@@ -4596,7 +4595,7 @@ def settings_win_fn():
 
 # function that displays text when help -> about button is clicked
 def about():
-	tkMessageBox.showinfo('About ResCon', 'Author:  Manavalan Gajapathy, Ng Lab \n'
+	tkMessageBox.showinfo('About ResCons', 'Author:  Manavalan Gajapathy, Ng Lab \n'
 								   'Copyright (C) 2015:  GNU Lesser General Public License')
 
 
@@ -4617,13 +4616,13 @@ def open_file(filename):
 filemenu = Menu(menubar, tearoff=0)
 filemenu.add_command(label="Edit Settings", command=settings_win_fn)
 filemenu.add_command(label="Open Log File", command=lambda: open_file(logger_filename))
-filemenu.add_command(label="Quit ResCon", command=app.quit)
+filemenu.add_command(label="Quit ResCons", command=app.quit)
 menubar.add_cascade(label="File", menu=filemenu)
 
 # Help menu with About button
 helpmenu = Menu(menubar, tearoff=0)
-helpmenu.add_command(label="User Guide", command= lambda: open_file(current_path + '/User_Guide_ResCon.pdf'))
-helpmenu.add_command(label="About ResCon", command=about)
+helpmenu.add_command(label="User Guide", command= lambda: open_file(current_path + '/User_Guide_ResCons.pdf'))
+helpmenu.add_command(label="About ResCons", command=about)
 menubar.add_cascade(label="Help", menu=helpmenu)
 
 # displays the menubar
