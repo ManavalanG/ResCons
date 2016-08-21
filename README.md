@@ -6,7 +6,7 @@ Copyright (C) <2015><br />
 
 ResCons is a GUI software suite, made of seven tools, that can be used to assist in analysis of
 residue conservation. It is written in Python 2.7 and can be run in Windows, Mac and Linux (Ubuntu).
-[Installers/executables are available for Windows, Mac and Linux.](https://github.com/ManavalanG/ResCons/releases)
+*Installers/executables are available for Windows, Mac and Linux.*
 
 See the user guide for further details about ResCons’s tools.<br />
 
